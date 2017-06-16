@@ -1,0 +1,9 @@
+{
+  "gallery-vr": {
+    "head-tag": {
+      "title": "Gallery VR",
+      "extensions": [],
+      "css-path": "templates/gallery/vr.css"
+    }
+  }
+}

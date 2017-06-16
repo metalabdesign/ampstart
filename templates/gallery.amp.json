@@ -1,0 +1,12 @@
+{
+  "gallery": {
+    "head-tag": {
+      "title": "Gallery Template",
+      "canonical-path": "templates/gallery.amp",
+      "extensions": [
+        "amp-iframe"
+      ],
+      "css-path": "templates/gallery/page.css"
+    }
+  }
+}

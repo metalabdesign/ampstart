@@ -111,6 +111,22 @@
           "src": "templates/blog.amp.html",
           "download": "archive/blog.zip"
         }
+      },
+      {
+        "template-preview": {
+          "title": "Gallery",
+          "img": {
+            "width": "360",
+            "height": "640",
+            "url": "https://placeholdit.co/i/360x640?bg=eeeeee&fc=577084",
+            "2x_url": "https://placeholdit.co/i/720x1280?bg=eeeeee&fc=577084",
+            "layout": "responsive"
+          },
+          "desc": "Gallery template description.",
+          "lightbox-id": "gallery-template",
+          "src": "templates/gallery.amp.html",
+          "download": "archive/gallery.zip"
+        }
       }
     ],
     "showcase-template-previews": [
