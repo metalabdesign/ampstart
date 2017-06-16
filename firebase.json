@@ -5,6 +5,13 @@
   "hosting": {
     "public": "dist",
     "cleanUrls": true,
-    "redirects": []
+    "redirects": [],
+    "headers": [{
+      "source": "**/*",
+      "headers": [{
+        "key": "Cache-Control",
+        "value": "max-age=0"
+      }]
+    }]
   }
 }
