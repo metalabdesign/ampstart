@@ -150,12 +150,14 @@ limitations under the License.
     var tileSize = 40;
     var tiles = new Array(count);
 
+    var selectedTile;
     function createTile() {
       var width = Math.round(Math.random() * 200 + 200);
       var height = Math.round(Math.random() * 200 + 200);
 
       var tileElement = document.createElement('div');
       var imgElement = document.createElement('img');
+      var buttonElement = document.createElement('div');
 
       tileElement.className = 'tile';
 
@@ -167,8 +169,29 @@ limitations under the License.
 
       imgElement.src = 'https://unsplash.it/' + height + '/' + width + '/?random';
 
+      buttonElement.className = 'button';
+
+      if (width > height) {
+        buttonElement.style.left = (Math.round(Math.random()) * 100) + '%';
+        buttonElement.style.top = (Math.round(Math.random()) * 60 + 20) + '%';
+      } else {
+        buttonElement.style.top = (Math.round(Math.random()) * 100) + '%';
+        buttonElement.style.left = (Math.round(Math.random()) * 60 + 20) + '%';
+      }
+
       tileElement.appendChild(imgElement);
+      tileElement.appendChild(buttonElement);
       sceneElement.appendChild(tileElement);
+
+      tileElement.addEventListener('click', function() {
+        if (selectedTile) {
+          selectedTile.className = 'tile';
+        }
+
+        tileElement.className = 'tile selected';
+        selectedTile = tileElement;
+        positionTiles();
+      });
 
       return tileElement;
     }
@@ -185,8 +208,8 @@ limitations under the License.
       var y = Math.sin(v) * r;
       var z = t - 0.5;
 
-      var pitch = v + Math.PI / 2;
-      var yaw = -Math.sin(z) - Math.PI / 2;
+      var pitch = v + Math.PI / 2 + Math.random() - 0.5;
+      var yaw = -Math.sin(z) - Math.PI / 2 + Math.random() - 0.5;
 
       tiles[i] = {
         element: createTile(),
@@ -198,7 +221,12 @@ limitations under the License.
       };
     }
 
-    function positionTiles(worldTransform) {
+    var worldTransform = 'translateZ(' + 50 + 'vmin) rotateX(90deg)';
+    var indicator = document.createElement('div');
+    indicator.className = 'indicator';
+    document.body.appendChild(indicator);
+
+    function positionTiles() {
       for (var i = 0, len = tiles.length; i < len; i ++) {
         var tile = tiles[i];
 
@@ -208,10 +236,18 @@ limitations under the License.
           worldTransform + ' ' +
           'translate3d(' + tile.x * 100 + 'vmin, ' + tile.y * 100 + 'vmin, ' + tile.z * 150 + 'vmin) ' +
           'rotateZ(' + tile.pitch + 'rad) rotateX(' + tile.yaw + 'rad)' ;
+
+        if (selectedTile) {
+          var rect = selectedTile.getBoundingClientRect();
+          indicator.style.top = rect.top + 'px';
+          indicator.style.left = rect.left + 'px';
+          indicator.style.width = rect.width + 'px';
+          indicator.style.height = rect.height + 'px';
+        }
       }
     }
 
-    positionTiles('translateZ(' + 50 + 'vmin) rotateX(90deg)');
+    positionTiles();
 
     // Listen for orientation change events and update scene.
     var orientationUpdate;
@@ -224,8 +260,9 @@ limitations under the License.
           Matrix.matrix3FromOrientation(message.orientation, 0, 0)
         );
 
-        var transform = Matrix.transformFromMatrix4(Matrix.matrix4FromMatrix3(rotation));
-        positionTiles('translateZ(' + 50 + 'vmin) ' + transform)
+        worldTransform = 'translateZ(' + 50 + 'vmin) ' +
+          Matrix.transformFromMatrix4(Matrix.matrix4FromMatrix3(rotation));
+        positionTiles();
       });
     });
 
