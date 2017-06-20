@@ -14,12 +14,10 @@ install:
 script:
 - npm run build
 after_success:
-- 'if [ "${TRAVIS_BRANCH}" = "production" ]; then firebase deploy --non-interactive --token "$FIREBASE_TOKEN" --project ampstart-8dc54; fi'
-- 'if [ "${TRAVIS_BRANCH}" = "master" ]; then firebase deploy --non-interactive --token "$FIREBASE_TOKEN" --project ampstart-staging; fi'
+- 'if [ "${TRAVIS_BRANCH}" = "next" ]; then firebase deploy --non-interactive --token "$FIREBASE_TOKEN" --project ampstart-staging-metalab; fi'
 branches:
   only:
-  - production
-  - master
+  - next
 env:
   - CXX=g++-4.8
 addons:
