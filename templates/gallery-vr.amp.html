@@ -481,6 +481,7 @@ limitations under the License.
       if (event.button !== 0) {
         return;
       }
+
       this._dragState.down = true;
       this._dragState.dragging = false;
       this._dragState.initialClientX = event.clientX;
@@ -490,18 +491,20 @@ limitations under the License.
     };
 
     Scene.prototype._handleMouseMoveCapture = function(event) {
+      var dragX, dragY, distanceSquared, min, alpha, beta;
+
       if (!this._dragState.down) {
         return;
       }
 
-      var dragX = event.clientX - this._dragState.initialClientX;
-      var dragY = event.clientY - this._dragState.initialClientY;
+      dragX = event.clientX - this._dragState.initialClientX;
+      dragY = event.clientY - this._dragState.initialClientY;
 
       if (!this._dragState.dragging) {
         if (this._dragThresholdSquared === 0) {
           this._dragState.dragging = true;
         } else {
-          var distanceSquared = dragX * dragX + dragY * dragY;
+          distanceSquared = dragX * dragX + dragY * dragY;
 
           this._dragState.dragging =
             distanceSquared > this._dragThresholdSquared;
@@ -514,18 +517,12 @@ limitations under the License.
 
       event.preventDefault();
 
-      var min = Math.min(this._width, this._height);
+      min = Math.min(this._width, this._height);
 
-      var alpha = dragX / min * 45;
-      var beta = dragY / min * 45;
+      alpha = dragX / min * 45;
+      beta = dragY / min * 45;
 
       this._dragState.alpha = this._dragState.initialAlpha + alpha;
-
-      // var current = this._getBeta();
-      // var next = current + this._dragState.initialBeta + beta;
-      // var max = Math.max(20, current);
-      // var min = Math.min(-20, current);
-      // var adjusted = beta - next + Math.min(max, Math.max(min, next));
 
       this._dragState.beta = this._dragState.initialBeta + beta;
 
@@ -553,21 +550,16 @@ limitations under the License.
     };
 
     Scene.prototype._handleWheel = function(event) {
+      var min, alpha, beta;
+
       event.preventDefault();
 
-      var min = Math.min(this._width, this._height);
+      min = Math.min(this._width, this._height);
 
-      var alpha = -event.deltaX / min * 45;
-      var beta = -event.deltaY / min * 45;
+      alpha = -event.deltaX / min * 45;
+      beta = -event.deltaY / min * 45;
 
       this._wheelState.alpha = this._wheelState.alpha + alpha;
-
-      // var current = this._getBeta();
-      // var next = current + this._wheelState.beta + beta;
-      // var max = Math.max(20, current);
-      // var min = Math.min(-20, current);
-      // var adjusted = beta - next + Math.min(max, Math.max(min, next));
-
       this._wheelState.beta = this._wheelState.beta + beta;
 
       this._queueUpdate();
@@ -578,24 +570,25 @@ limitations under the License.
     };
 
     Scene.prototype._getTileTransforms = function() {
+      var i, len, t, v, r, x, y, z, pitch, yaw;
       var GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 
       var result = new Array(this._tiles.length);
 
-      for (var i = 0, len = this._tiles.length; i < len; i++) {
-        var t = i / (len - 1);
-        var v = i * GOLDEN_ANGLE;
+      for (i = 0, len = this._tiles.length; i < len; i++) {
+        t = i / (len - 1);
+        v = i * GOLDEN_ANGLE;
 
-        var r = 0.75 + t - t * t +
+        r = 0.75 + t - t * t +
           (Math.random() - 0.5) * this._cylinderRadiusVariance;
 
-        var x = Math.cos(v) * r;
-        var y = Math.sin(v) * r;
-        var z = t - 0.5;
+        x = Math.cos(v) * r;
+        y = Math.sin(v) * r;
+        z = t - 0.5;
 
-        var pitch = v + Math.PI / 2 +
+        pitch = v + Math.PI / 2 +
           (Math.random() - 0.5) * this._orientationVariance;
-        var yaw = -Math.sin(z) - Math.PI / 2 +
+        yaw = -Math.sin(z) - Math.PI / 2 +
           (Math.random() - 0.5) * this._orientationVariance;
 
         result[i] = {
@@ -611,11 +604,13 @@ limitations under the License.
     };
 
     Scene.prototype._handleClick = function(event) {
+      var index;
+
       if (this._dragState.dragging) {
         return;
       }
 
-      var index = JSON.parse(event.currentTarget.getAttribute('data-index'));
+      index = JSON.parse(event.currentTarget.getAttribute('data-index'));
 
       if (typeof index === 'number') {
         this._selectedIndex = index;
@@ -624,6 +619,8 @@ limitations under the License.
     };
 
     Scene.prototype._initializeDOM = function() {
+      var tileElement, topRight, bottomRight, bottomLeft, topLeft, img, i, len;
+
       this._sceneElement = window.document.createElement('div');
       this._sceneElement.style.pointerEvents = 'none';
       this._sceneElement.style.overflow = 'hidden';
@@ -632,8 +629,8 @@ limitations under the License.
       this._imgElements = new Array(this._tiles.length);
       this._tileCornerElements = new Array(this._tiles.length);
 
-      for (var i = 0, len = this._tiles.length; i < len; i++) {
-        var tileElement = window.document.createElement('div');
+      for (i = 0, len = this._tiles.length; i < len; i++) {
+        tileElement = window.document.createElement('div');
         tileElement.style.backfaceVisibility = 'hidden';
         tileElement.style.WebkitBackfaceVisibility = 'hidden';
         tileElement.style.position = 'absolute';
@@ -644,39 +641,45 @@ limitations under the License.
         tileElement.style.margin = 'auto';
         tileElement.style.pointerEvents = 'all';
         tileElement.style.cursor = 'pointer';
+        tileElement.style.opacity = 0;
+        tileElement.style.transition = 'opacity 1s';
+
+        window.setTimeout((function() {
+          this.style.opacity = 1;
+        }).bind(tileElement), Math.floor(Math.random() * 2000));
 
         tileElement.setAttribute('data-index', i);
         tileElement.addEventListener('click', this._handleClick);
 
-        var topRight = window.document.createElement('div');
+        topRight = window.document.createElement('div');
         topRight.style.position = 'absolute';
         topRight.style.top = 0;
         topRight.style.right = 0;
 
         tileElement.appendChild(topRight);
 
-        var bottomRight = window.document.createElement('div');
+        bottomRight = window.document.createElement('div');
         bottomRight.style.position = 'absolute';
         bottomRight.style.bottom = 0;
         bottomRight.style.right = 0;
 
         tileElement.appendChild(bottomRight);
 
-        var bottomLeft = window.document.createElement('div');
+        bottomLeft = window.document.createElement('div');
         bottomLeft.style.position = 'absolute';
         bottomLeft.style.bottom = 0;
         bottomLeft.style.left = 0;
 
         tileElement.appendChild(bottomLeft);
 
-        var topLeft = window.document.createElement('div');
+        topLeft = window.document.createElement('div');
         topLeft.style.position = 'absolute';
         topLeft.style.top = 0;
         topLeft.style.left = 0;
 
         tileElement.appendChild(topLeft);
 
-        var img = window.document.createElement('img');
+        img = window.document.createElement('img');
         img.src = this._tiles[i].image;
         img.style.display = 'block';
         img.style.position = 'absolute';
@@ -734,13 +737,15 @@ limitations under the License.
     };
 
     Scene.prototype._applyUpdate = function() {
+      var i, len, sceneOrientation, tileElement, tileTransform, tile, scale,
+        viewPosition, tilePosition, tileOrientation;
       var min = Math.min(this._width, this._height) * 0.01;
 
       this._sceneElement.style.perspective = min * this._perspective + 'px';
       this._sceneElement.style.width = this._width + 'px';
       this._sceneElement.style.height = this._height + 'px';
 
-      var sceneOrientation = Matrix.transformFromMatrix4(
+      sceneOrientation = Matrix.transformFromMatrix4(
         Matrix.matrix4FromMatrix3(
           Matrix.matrix3FromOrientation(
             -this._getAlpha(),
@@ -752,12 +757,12 @@ limitations under the License.
 
       window.document.getElementById('debug').innerHTML = '';
 
-      for (var i = 0, len = this._tileElements.length; i < len; i ++) {
-        var tileElement = this._tileElements[i];
-        var tileTransform = this._transforms[i];
-        var tile = this._tiles[i];
+      for (i = 0, len = this._tileElements.length; i < len; i ++) {
+        tileElement = this._tileElements[i];
+        tileTransform = this._transforms[i];
+        tile = this._tiles[i];
 
-        var scale = 1 / Math.sqrt(tile.width * tile.height);
+        scale = 1 / Math.sqrt(tile.width * tile.height);
 
         tileElement.style.height = min * this._tileSize * tile.width * scale + 'px';
         tileElement.style.width = min * this._tileSize * tile.height * scale + 'px';
@@ -767,20 +772,20 @@ limitations under the License.
         // perspective has the effect of moving the camera backwards, moving
         // forwards by the perspective distance will re-orient the camera to the
         // to the center of the scene.
-        var viewPosition = 'translateZ(' +
+        viewPosition = 'translateZ(' +
           min * (this._perspective + this._forwardPosition) + 'px' +
         ')';
 
         // Distribute the tiles around the scene perimeter multiplying the
         // calculated unit-lengths with the configured scene dimensions.
-        var tilePosition = 'translate3d(' +
+        tilePosition = 'translate3d(' +
           min * tileTransform.x * this._cylinderRadius + 'px, ' +
           min * tileTransform.y * this._cylinderRadius + 'px, ' +
           min * tileTransform.z * this._cylinderHeight + 'px' +
         ')';
 
         // Orient the tiles so the normals are facing the camera.
-        var tileOrientation =
+        tileOrientation =
           'rotateZ(' + tileTransform.pitch + 'rad) ' +
           'rotateX(' + tileTransform.yaw + 'rad)';
 
@@ -801,54 +806,42 @@ limitations under the License.
     };
 
     Scene.prototype._debugTile = function (index) {
+      var i, len, rect, right, bottom, left, top, facing, path,
+        topRightNormal, bottomRightNormal, bottomLeftNormal, topLeftNormal;
+
       var min = Math.min(this._width, this._height);
       var cornerElements = this._tileCornerElements[index];
       var points = new Array(cornerElements.length);
 
-      for (var i = 0, len = cornerElements.length; i < len; i++) {
-        var rect = cornerElements[i].getBoundingClientRect();
+      for (i = 0, len = cornerElements.length; i < len; i++) {
+        rect = cornerElements[i].getBoundingClientRect();
         points[i] = {x: rect.left, y: rect.top};
       }
 
-      var right = Util.getUnitVector(points[0], points[1]);
-      var bottom = Util.getUnitVector(points[1], points[2]);
-      var left = Util.getUnitVector(points[2], points[3]);
-      var top = Util.getUnitVector(points[3], points[0]);
+      right = Util.getUnitVector(points[0], points[1]);
+      bottom = Util.getUnitVector(points[1], points[2]);
+      left = Util.getUnitVector(points[2], points[3]);
+      top = Util.getUnitVector(points[3], points[0]);
 
-      var topRightNormal = (top.x * right.y) - (top.y * right.x);
-      var bottomRightNormal = (right.x * bottom.y) - (right.y * bottom.x);
-      var bottomLeftNormal = (bottom.x * left.y) - (bottom.y * left.x);
-      var topLeftNormal = (left.x * top.y) - (left.y * top.x);
+      topRightNormal = (top.x * right.y) - (top.y * right.x);
+      bottomRightNormal = (right.x * bottom.y) - (right.y * bottom.x);
+      bottomLeftNormal = (bottom.x * left.y) - (bottom.y * left.x);
+      topLeftNormal = (left.x * top.y) - (left.y * top.x);
 
-      function scale(point) {
-        return point;
-        // return (point - min / 2) * 0.05 + min / 2;
-      };
-
-      var facing =
+      facing =
         topRightNormal > 0 &&
         bottomRightNormal > 0 &&
         bottomLeftNormal > 0 &&
         topLeftNormal > 0;
 
-      var backFacing =
-        topRightNormal < 0 &&
-        bottomRightNormal < 0 &&
-        bottomLeftNormal < 0 &&
-        topLeftNormal < 0;
-
-      if (facing/* || backFacing*/) {
-        var path = 'M' + points.concat(points.slice(0, 1)).map(function({x, y}) {return scale(x) + ' ' + scale(y);}).join(' L ');
-        // var points = points
-        //   .map(function({x, y}, i) { return `<circle cx="${scale(x)}" cy="${scale(y)}" r="6" fill="${['red', 'yellow', 'green',' blue'][i]}"/>`;})
-        //   .join('');
-
-        var color = index === this._selectedIndex
-          ? 'rgba(0,255,127,0.5)'
-          : facing ? 'rgba(0,127,255,0.2)' : 'rgba(255,0,127,0.2)';
+      if (facing) {
+        path = 'M' + points
+          .concat(points.slice(0, 1))
+          .map(function({x, y}) {return x + ' ' + y;})
+          .join(' L ');
 
         window.document.getElementById('debug').innerHTML +=
-          `<path fill="${color}" d="${path}"/>`;
+          '<path fill="rgba(0,255,127,0.5)" d="' + path + '"/>';
       }
     };
 
@@ -900,10 +893,7 @@ limitations under the License.
       height: window.document.documentElement.clientHeight,
       enableDrag: true,
       dragThreshold: 4,
-      enableWheel: true,
-      onLoad: function() {
-        // console.log('all loaded');
-      }
+      enableWheel: true
     });
 
     window.addEventListener('message', function(event) {
@@ -912,7 +902,7 @@ limitations under the License.
         event.origin === window.location.origin &&
         event.data &&
         event.data.sentinel === 'amp' &&
-        event.data.type === type
+        event.data.type === 'device-orientation'
       ) {
         scene.setDeviceOrientation(
           event.data.orientation,

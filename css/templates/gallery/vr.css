@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@import './page-vars';
+
 html, body {
   overflow: hidden;
 }
@@ -21,81 +23,5 @@ html, body {
 body {
   background: transparent;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  font-family: var(--font-family);
 }
-
-/*
-.scene {
-  background: #fff;
-  perspective: 100vmin;
-
-  pointer-events: none;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-}
-
-.scene *, .scene *::before, .scene *::after {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-}
-
-.tile {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  pointer-events: all;
-  cursor: pointer;
-
-  box-shadow: 0 0 10vmin rgba(0, 0, 0, 0.15);
-}
-
-.button {
-  width: 6vmin;
-  height: 6vmin;
-  line-height: 6vmin;
-
-  border-radius: 100%;
-  background: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-top: -3vmin;
-  margin-left: -3vmin;
-  margin-bottom: -3vmin;
-  margin-right: -3vmin;
-
-  font-size: 4vmin;
-  text-align: center;
-}
-
-.button::before {
-  content: "+";
-}
-
-.tile.selected .button::before {
-  content: "-";
-}
-
-.indicator {
-  pointer-events: none;
-  position: fixed;
-  border: 1px solid #08f;
-  color: #08f;
-  background: rgba(0, 128, 256, 0.1);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.indicator::before {
-  content: "selected target";
-  text-align: center;
-}
-*/

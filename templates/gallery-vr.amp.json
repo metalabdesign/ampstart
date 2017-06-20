@@ -2,8 +2,10 @@
   "gallery-vr": {
     "head-tag": {
       "title": "Gallery VR",
-      "extensions": [],
-      "css-path": "templates/gallery/vr.css"
+      "css-path": "templates/gallery/vr.css",
+      "font-stylesheets": [
+        "https://fonts.googleapis.com/css?family=Poppins:400,500,600,700"
+      ]
     }
   }
 }

@@ -30,6 +30,11 @@
 @import 'basscss-border';
 @import 'basscss-hide';
 
+@import './page-vars';
+
+body {
+  font-family: var(--font-family);
+}
 
 .fill {
   width: 100vw;
