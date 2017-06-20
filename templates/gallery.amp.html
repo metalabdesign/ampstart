@@ -27,141 +27,49 @@ limitations under the License.
         sandbox="allow-scripts allow-top-navigation"
         scrolling="no"
         frameborder="0"
-        observe-orientation
-        observe-viewport
         src="gallery-vr.amp.html"
       >
-        <div placeholder>Placeholder</div>
+        <div placeholder class="placeholder">Placeholder</div>
       </amp-iframe>
     </main>
 <script type="text/javascript">
-
-/*
-  Amp Iframe `observe-eventname` polyfill.
- */
 (function() {
   'use strict';
 
-  /**
-   * Check if the provided element intersects with the viewport.
-   * @param   {element} HTMLElement instance.
-   * @returns {Boolean} `true` if the bounding rect intersects the viewport.
-   */
-  function isElementVisible(element) {
-    var rect = element.getBoundingClientRect();
-    var documentWidth = window.document.documentElement.clientWidth;
-    var documentHeight = window.document.documentElement.clientHeight;
-    var viewportTop = window.document.body.scrollTop;
-    var viewportLeft = window.document.body.scrollLeft;
+  var orientationListeners = [];
 
-    return (
-      (rect.width > 0) &&
-      (rect.height > 0) &&
-      (rect.top <= (viewportTop + documentHeight)) &&
-      (rect.left <= (viewportLeft + documentHeight)) &&
-      (rect.bottom >= viewportTop) &&
-      (rect.right >= viewportLeft)
-    );
-  }
+  window.addEventListener('message', function (event) {
+    if (
+      event.data &&
+      event.data.sentinel === 'amp' &&
+      event.data.type === 'send-device-orientation'
+    ) {
+      orientationListeners.push(event.source);
+    }
+  });
 
-  /**
-   * Polyfill an `observe-key` attribute on the amp-iframe
-   * component.
-   * @param   {string} key Trigget attribute (portion following `observe-`).
-   * @param   {string|string[]} events Event, or events to listen on window.
-   * @param   {function} parseEvent Parse current event and return message.
-   * @returns {void}
-   */
-  function polyfillAmpIframeObserve(key, events, parseEvent) {
-    var eventHandled = false;
-    var selector = 'amp-iframe[observe-' + key + ']:not([nodisplay])';
+  window.addEventListener('deviceorientation', function (event) {
+    var orientation;
 
-    if (!Array.isArray(events)) {
-      events = events !== undefined ? [events] : [];
+    if (window.orientation !== undefined) {
+      orientation = window.orientation ;
+    } else if (typeof event.gamma === 'number') {
+      orientation = (Math.round(event.gamma / 90) * 90) || 0;
     }
 
-    function _handleEvent(event) {
-      // Latch to prevent responding to multiple events on the same tick.
-      if (eventHandled) return;
-      eventHandled = true;
-      setTimeout(function() {
-        eventHandled = false;
-      }, 0);
+    var message = {
+      sentinel: 'amp',
+      type: 'device-orientation',
+      orientation: orientation,
+      alpha: event.alpha,
+      beta: event.beta,
+      gamma: event.gamma,
+    };
 
-      var components = window.document.querySelectorAll(selector);
-
-      // Abort if there are no amp-iframe > iframe elements.
-      if (!frames.length) {
-        return;
-      }
-
-      for (var i = 0, len = components.length; i < len; i++) {
-        var element = components[i].querySelector('iframe');
-
-        if (!element) {
-          continue;
-        }
-
-        if (!isElementVisible(element)) {
-          continue;
-        }
-
-        var message = parseEvent(event, components[i]);
-
-        if (!message) {
-          continue;
-        }
-
-        element.contentWindow.postMessage(message, '*');
-      }
+    for (var i = 0, len = orientationListeners.length; i < len; i++) {
+      orientationListeners[i].postMessage(message, '*');
     }
-
-    if (window.document.querySelectorAll(selector).length) {
-      for (var i = 0, len = events.length; i < len; i++) {
-        window.addEventListener(events[i], _handleEvent);
-      }
-    }
-  }
-
-  polyfillAmpIframeObserve(
-    'orientation',
-    'deviceorientation',
-    function (event /*, component*/) {
-      var orientation;
-
-      if (window.orientation !== undefined) {
-        orientation = window.orientation;
-      } else if (event.gamma !== null) {
-        orientation = (Math.round(event.gamma / 90) * 90) || 0;
-      }
-      // TODO: Patch safari with compas orientation
-      return {
-        sentinel: 'amp',
-        type: 'orientation',
-        orientation: orientation,
-        alpha: event.alpha,
-        beta: event.beta,
-        gamma: event.gamma,
-      };
-    }
-  );
-
-  polyfillAmpIframeObserve(
-    'viewport',
-    ['scroll', 'resize'],
-    function (event /*, component*/) {
-      return {
-        sentinel: 'amp',
-        type: 'viewport',
-        scrollTop: window.document.body.scrollTop,
-        scrollLeft: window.document.body.scrollLeft,
-        documentWidth: window.document.documentElement.clientWidth,
-        documentHeight: window.document.documentElement.clientHeight,
-        innerWidth: window.innerWidth,
-        innerHeight: window.innerHeight,
-      };
-    }
-  );
+  });
 })();
 
 </script>

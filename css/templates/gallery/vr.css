@@ -24,16 +24,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
 }
 
-body.loading {
-  opacity: 0;
-  transition: opacity 2s;
-}
-
-body.loaded {
-  opacity: 1;
-  transition: opacity 2s;
-}
-
+/*
 .scene {
   background: #fff;
   perspective: 100vmin;
@@ -107,3 +98,4 @@ body.loaded {
   content: "selected target";
   text-align: center;
 }
+*/

@@ -118,8 +118,8 @@
           "img": {
             "width": "360",
             "height": "640",
-            "url": "https://placeholdit.co/i/360x640?bg=eeeeee&fc=577084",
-            "2x_url": "https://placeholdit.co/i/720x1280?bg=eeeeee&fc=577084",
+            "url": "../img/www/index/gallery.png",
+            "2x_url": "../img/www/index/gallery.png",
             "layout": "responsive"
           },
           "desc": "Gallery template description.",
