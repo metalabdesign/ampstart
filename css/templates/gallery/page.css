@@ -31,12 +31,48 @@
 @import 'basscss-hide';
 
 @import './page-vars';
+@import './bass-override-vars';
 
 body {
   font-family: var(--font-family);
+  box-sizing: border-box;
 }
 
-.fill {
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.ampstart-gallery-title {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+  mix-blend-mode: difference;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 100vmin;
+  padding: 1rem;
+  font-size: calc(65 / (40 * 16) * 100vmin);
+  pointer-events: none;
+}
+
+@media (--breakpoint-sm) and (--breakpoint-v-sm) {
+  .ampstart-gallery-title {
+    max-width: calc(40 * 16rem);
+    font-size: calc(65 / 16 * 1rem);
+  }
+}
+
+.ampstart-gallery-fill {
+  background-color: #fff;
+  position: relative;
   width: 100vw;
   height: 100vh;
 }
