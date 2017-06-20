@@ -87,7 +87,7 @@ function getPartials(acc, embedderDir, template) {
 
 gulp.task('build', 'build', function(cb) {
   runSequence('clean', 'highlight', 'img', 'postcss', 'posthtml', 'www',
-      'validate', 'bundle', cb);
+      /*'validate', 'bundle',*/ cb);
 });
 
 gulp.task('clean', function() {
@@ -183,9 +183,13 @@ gulp.task('postcss', 'build postcss files', function() {
 });
 
 gulp.task('serve', function() {
+  var host = '0.0.0.0';
+  var port = process.env.PORT || 8000;
   gulp.src(config.dest.default)
     .pipe(server({
-      livereload: true,
+      host,
+      port,
+      livereload: false,
       directoryListing: {
         enable: true,
         path: 'dist'
