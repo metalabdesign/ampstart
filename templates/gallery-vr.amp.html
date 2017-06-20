@@ -318,6 +318,23 @@ limitations under the License.
       ];
     };
 
+    function multiplyMatrix3(a, b) {
+      if (a.length !== 9 || b.length !== 9) {
+        throw new TypeError('Expected Matrix3');
+      }
+      return [
+        a[0] * b[0] + a[1] * b[3] + a[2] * b[6],
+        a[0] * b[1] + a[1] * b[4] + a[2] * b[7],
+        a[0] * b[2] + a[1] * b[5] + a[2] * b[8],
+        a[3] * b[0] + a[4] * b[3] + a[5] * b[6],
+        a[3] * b[1] + a[4] * b[4] + a[5] * b[7],
+        a[3] * b[2] + a[4] * b[5] + a[5] * b[8],
+        a[6] * b[0] + a[7] * b[3] + a[8] * b[6],
+        a[6] * b[1] + a[7] * b[4] + a[8] * b[7],
+        a[6] * b[2] + a[7] * b[5] + a[8] * b[8],
+      ];
+    };
+
     function matrix4FromMatrix3(m) {
       if (m.length !== 9) {
         throw new TypeError('Expected Matrix3');
@@ -345,6 +362,7 @@ limitations under the License.
 
     return {
       matrix3FromOrientation: matrix3FromOrientation,
+      multiplyMatrix3: multiplyMatrix3,
       matrix4FromMatrix3: matrix4FromMatrix3,
       transformFromMatrix4: transformFromMatrix4,
     };
@@ -712,8 +730,7 @@ limitations under the License.
     };
 
     Scene.prototype._getAlpha = function() {
-      return this._deviceState.orientation +
-        this._deviceState.alpha +
+      return this._deviceState.alpha +
         this._dragState.alpha +
         this._wheelState.alpha;
     };
@@ -747,10 +764,9 @@ limitations under the License.
 
       sceneOrientation = Matrix.transformFromMatrix4(
         Matrix.matrix4FromMatrix3(
-          Matrix.matrix3FromOrientation(
-            -this._getAlpha(),
-            -this._getBeta(),
-            this._getGamma()
+          Matrix.multiplyMatrix3(
+            Matrix.matrix3FromOrientation(-this._getAlpha(), -this._getBeta(), this._getGamma()),
+            Matrix.matrix3FromOrientation(this._deviceState.orientation, 0, 0)
           )
         )
       );
