@@ -77,7 +77,7 @@ function getPartials(acc, embedderDir, template) {
 
 gulp.task('build', 'build', function(cb) {
   runSequence('clean', 'highlight', 'img', 'postcss', 'posthtml', 'www',
-      'validate', 'bundle', cb);
+      /*'validate', 'bundle',*/ cb);
 });
 
 gulp.task('clean', function() {
@@ -174,14 +174,14 @@ function serve() {
   var app = require('express')();
   var webserver = require('gulp-webserver');
 
-  var host = 'localhost';
+  var host = '0.0.0.0';
   var port = process.env.PORT || 8000;
   var server = gulp.src(process.cwd())
       .pipe(webserver({
         port,
         host,
         directoryListing: true,
-        livereload: true,
+        livereload: false,
         https: false,
         middleware: [app],
       }));
