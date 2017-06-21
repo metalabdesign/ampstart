@@ -14,35 +14,9 @@
  * limitations under the License.
  */
 
-/*! Bassplate | MIT License | http://github.com/basscss/bassplate */
-@import 'normalize.css';
+@import './base-page';
 
-/* Basscss Modules */
-@import 'basscss-type-scale';
-@import 'basscss-typography';
-@import 'basscss-layout';
-@import 'basscss-align';
-@import 'basscss-margin';
-@import 'basscss-padding';
-@import 'basscss-grid';
-@import 'basscss-flexbox';
-@import 'basscss-position';
-@import 'basscss-border';
-@import 'basscss-hide';
-
-@import './page-vars';
-@import './bass-override-vars';
-
-body {
-  font-family: var(--font-family);
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-.ampstart-gallery-title {
+.ampstart-gallery-landing-title {
   color: #fff;
   display: flex;
   justify-content: center;
@@ -59,18 +33,28 @@ body {
   margin: auto;
   max-width: 100vmin;
   padding: 1rem;
-  font-size: calc(65 / (40 * 16) * 100vmin);
+  /*
+   * The title font size is linear equation as a funciton of screen size:
+   *   font-size = max(3.625rem, 2rem + 1/32 * screen-size)
+   * The max is achieved by setting a breakpoint at the screen size where the
+   * equation equals the max size. (see next style declaration below)
+   */
+  font-size: calc(2rem + (1 / 32) * 100vmin);
   pointer-events: none;
 }
 
-@media (--breakpoint-sm) and (--breakpoint-v-sm) {
-  .ampstart-gallery-title {
-    max-width: calc(40 * 16rem);
-    font-size: calc(65 / 16 * 1rem);
+@media (--breakpoint-md) and (--breakpoint-v-md) {
+  .ampstart-gallery-landing-title {
+    max-width: calc(var(--breakpoint-md) * 1rem);
+    /*
+     * Statically evaluate the font size equation (see above) at the current
+     * breakpoint to enforce a max font-size. This is equal to 3.625rem (58px).
+     */
+    font-size: calc(2rem + (1 / 32) * var(--breakpoint-md) * 1rem);
   }
 }
 
-.ampstart-gallery-fill {
+.ampstart-gallery-landing-fill {
   background-color: #fff;
   position: relative;
   width: 100vw;
