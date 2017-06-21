@@ -14,8 +14,20 @@
  * limitations under the License.
  */
 
-:root {
-  --font-size: 16;
-  --font-color: #000;
-  --font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+@import './bass-override-vars';
+
+@media (--breakpoint-v-xs) {
+  .v-xs-hide { display: none }
+}
+
+@media (--breakpoint-v-sm-md) {
+  .v-sm-hide { display: none }
+}
+
+@media (--breakpoint-v-md-lg) {
+  .v-md-hide { display: none }
+}
+
+@media (--breakpoint-v-lg) {
+  .v-lg-hide { display: none }
 }

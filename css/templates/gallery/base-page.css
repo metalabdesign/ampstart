@@ -30,10 +30,14 @@
 @import 'basscss-border';
 @import 'basscss-hide';
 
+@import './v-hide';
+
 @import './page-vars';
 @import './bass-override-vars';
 
+
 body {
+  color: var(--font-color);
   font-family: var(--font-family);
   box-sizing: border-box;
 }
@@ -42,6 +46,97 @@ body {
   box-sizing: inherit;
 }
 
-.ampstart-gallery-base-navigation {
+.ampstart-gallery-base-invert {
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.ampstart-gallery-base-header {
   position: fixed;
+  top: 0;
+  left: 0;
+  padding: calc((18 / 16) * 1rem);
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  /* Pull abovove sibling relative-positioned elements. */
+  z-index: 1;
+}
+
+/*
+ * Increase the header padding when _both_ the screen width and height are large
+ * enough. This keeps margins tight small screens rotated to landscape.
+ */
+@media (--breakpoint-sm) and (--breakpoint-v-sm) {
+  .ampstart-gallery-base-header {
+    padding: calc((40 / 16) * 1rem);
+    padding-right: 0;
+  }
+}
+
+@media (--breakpoint-sm) {
+  .ampstart-gallery-base-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+.ampstart-gallery-base-header-menu-button {
+  pointer-events: all;
+  width: calc((18 / 16) * 1rem);
+  height: 1px;
+  margin: calc((5 / 16) * 1rem) 0;
+  background: currentColor;
+  position: relative;
+}
+
+.ampstart-gallery-base-header-menu-button::before,
+.ampstart-gallery-base-header-menu-button::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  position: absolute;
+}
+
+.ampstart-gallery-base-header-menu-button::before {
+  bottom: calc((5 / 16) * 1rem);
+}
+
+.ampstart-gallery-base-header-menu-button::after {
+  top: calc((5 / 16) * 1rem);
+}
+
+.ampstart-gallery-base-header-rotate {
+  pointer-events: all;
+  margin: 0 0 0 1rem;
+}
+
+/* Trigger the heading rotation to vertical at the small breakpoint. */
+@media (--breakpoint-sm) {
+  .ampstart-gallery-base-header-rotate {
+    margin: 1rem 0 0 0;
+    transform: rotate(-90deg) translate(-100%, 0);
+    transform-origin: 0 0;
+  }
+}
+
+/*
+ * Increase the margin above the heading if the screen is taller than the small
+ * breakpoint.
+ */
+@media (--breakpoint-sm) and (--breakpoint-v-sm) {
+  .ampstart-gallery-base-header-rotate  {
+    margin: calc((54 / 16) * 1rem) 0 0 0;
+  }
+}
+
+.ampstart-gallery-base-heading {
+  margin: 0;
+  font-size: calc((13.5 / 16) * 1rem);
+  font-weight: 300;
+  line-height: calc((18 / 16) * 1rem);
 }

@@ -57,11 +57,15 @@
   --breakpoint-lg: 64;
 
   @custom-media --breakpoint-xs (max-width: 40rem);
+  @custom-media --breakpoint-v-xs (max-height: 40rem);
   @custom-media --breakpoint-sm (min-width: 40.06rem); /* 640px */
   @custom-media --breakpoint-v-sm (min-height: 40.06rem); /* 640px */
   @custom-media --breakpoint-md (min-width: 52.06rem); /* 832px */
   @custom-media --breakpoint-v-md (min-height: 52.06rem); /* 832px */
   @custom-media --breakpoint-lg (min-width: 64.06rem); /* 1024px */
+  @custom-media --breakpoint-v-lg (min-height: 64.06rem); /* 1024px */
   @custom-media --breakpoint-sm-md (min-width: 40.06rem) and (max-width: 52rem);
+  @custom-media --breakpoint-v-sm-md (min-height: 40.06rem) and (max-height: 52rem);
   @custom-media --breakpoint-md-lg (min-width: 52.06rem) and (max-width: 64rem);
+  @custom-media --breakpoint-v-md-lg (min-height: 52.06rem) and (max-height: 64rem);
 }
