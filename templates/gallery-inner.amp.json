@@ -1,0 +1,18 @@
+{
+  "gallery": {
+    "head-tag": {
+      "title": "Gallery Template",
+      "canonical-path": "templates/gallery.amp",
+      "extensions": [
+        "amp-iframe",
+        "amp-carousel",
+        "amp-fx-parallax"
+      ],
+      "css-path": "templates/gallery/inner.css",
+      "font-stylesheets": [
+        "https://fonts.googleapis.com/css?family=Poppins:400,600",
+        "https://fonts.googleapis.com/css?family=Oswald:400"
+      ]
+    }
+  }
+}

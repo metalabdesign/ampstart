@@ -21,7 +21,7 @@ html, body {
 }
 
 body {
-  background: transparent;
+  background: #fff;
   margin: 0;
-  font-family: var(--font-family);
+  font-family: var(--font-family-primary);
 }

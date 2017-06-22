@@ -35,10 +35,9 @@
 @import './page-vars';
 @import './bass-override-vars';
 
-
 body {
-  color: var(--font-color);
-  font-family: var(--font-family);
+  color: var(--font-color-primary);
+  font-family: var(--font-family-primary);
   box-sizing: border-box;
 }
 
@@ -46,9 +45,30 @@ body {
   box-sizing: inherit;
 }
 
+.ampstart-gallery-base-container {
+  position: relative;
+  width: calc((600 / 16) * 1rem);
+  max-width: calc(100vw - 2 * (24 / 16) * 1rem);
+  margin: 0 auto;
+}
+
+@media (--breakpoint-md) {
+  .ampstart-gallery-base-container {
+    width: calc((700 / 16) * 1rem);
+  }
+}
+
 .ampstart-gallery-base-invert {
   color: #fff;
   mix-blend-mode: difference;
+}
+
+/* Hack media query to target IE, which does not support mix-blend-mode. */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ampstart-gallery-base-invert {
+    color: inherit;
+    mix-blend-mode: initial;
+  }
 }
 
 .ampstart-gallery-base-header {
@@ -60,8 +80,7 @@ body {
   display: flex;
   align-items: center;
   pointer-events: none;
-  /* Pull abovove sibling relative-positioned elements. */
-  z-index: 1;
+  z-index: 100;
 }
 
 /*
@@ -137,6 +156,17 @@ body {
 .ampstart-gallery-base-heading {
   margin: 0;
   font-size: calc((13.5 / 16) * 1rem);
-  font-weight: 300;
   line-height: calc((18 / 16) * 1rem);
+}
+
+.ampstart-gallery-base-button {
+  display: inline-flex;
+  height: 3rem;
+  padding: calc((20 / 16) * 1rem);
+  font-size: calc((19 / 16) * 1rem);
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
 }
