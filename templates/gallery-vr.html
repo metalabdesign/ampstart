@@ -658,7 +658,6 @@ limitations under the License.
       for (i = 0, len = this._tiles.length; i < len; i++) {
         tileElement = window.document.createElement('a');
         tileElement.style.display === 'block';
-        // tileElement.style.WebkitBackfaceVisibility = 'hidden';
         tileElement.style.position = 'absolute';
         tileElement.style.top = 0;
         tileElement.style.left = 0;
@@ -667,12 +666,6 @@ limitations under the License.
         tileElement.style.margin = 'auto';
         tileElement.style.pointerEvents = 'all';
         tileElement.style.cursor = 'pointer';
-        tileElement.style.opacity = 0;
-        tileElement.style.transition = 'opacity 1s';
-
-        window.setTimeout((function() {
-          this.style.opacity = 1;
-        }).bind(tileElement), 0);
 
         tileElement.setAttribute('data-index', i);
         tileElement.addEventListener('click', this._handleClick);
