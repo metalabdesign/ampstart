@@ -678,7 +678,7 @@ limitations under the License.
 
         window.setTimeout((function() {
           this.style.opacity = 1;
-        }).bind(tileElement), Math.floor(Math.random() * 2000));
+        }).bind(tileElement), 0);
 
         tileElement.setAttribute('data-index', i);
         tileElement.addEventListener('click', this._handleClick);
