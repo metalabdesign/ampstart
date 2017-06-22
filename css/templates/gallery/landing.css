@@ -16,6 +16,10 @@
 
 @import './base-page';
 
+.ampstart-gallery-landing-content {
+  background: #fff;
+}
+
 .ampstart-gallery-landing-title {
   display: flex;
   justify-content: center;
