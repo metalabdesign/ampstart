@@ -4,7 +4,7 @@
       "title": "Gallery VR",
       "css-path": "templates/gallery/vr.css",
       "font-stylesheets": [
-        "https://fonts.googleapis.com/css?family=Poppins:400,500,600,700"
+        "https://fonts.googleapis.com/css?family=Poppins:400,500"
       ]
     }
   }

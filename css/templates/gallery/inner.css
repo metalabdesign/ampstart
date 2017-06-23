@@ -16,16 +16,28 @@
 
 @import './base-page';
 
+.ampstart-gallery-inner-header-content,
+.ampstart-gallery-inner-header-carousel {
+  margin-top: calc((11 / 200) * 100vmin + (127 / 16) * 1rem);
+}
+
+@media (--breakpoint-lg) and (--breakpoint-v-lg) {
+  .ampstart-gallery-inner-header-content,
+  .ampstart-gallery-inner-header-carousel {
+    margin-top: calc((11 / 200) * var(--breakpoint-lg) * 1rem + (127 / 16) * 1rem);
+  }
+}
+
 .ampstart-gallery-inner-header-content {
   position: absolute;
   height: 0;
   z-index: 1;
   left: 0;
   right: 0;
-  margin-top: calc((180 / 16) * 1rem);
 }
 
 .ampstart-gallery-inner-header-heading {
+  line-height: 1.2;
   /*
    * The line height is 1.2, so a top margin of  -0.6 * line-height will
    * vertically align this element 2 / 3 of the line height above the parent
@@ -35,6 +47,7 @@
   font-size: calc((60 / 16) * 1rem);
   font-family: var(--font-family-secondary);
   font-weight: 400;
+  letter-spacing: -0.05rem
 }
 
 .ampstart-gallery-inner-header-subheading {
@@ -50,7 +63,7 @@
 
 
 .ampstart-gallery-inner-header-carousel {
-  margin-top: calc((180 / 16) * 1rem);
+  margin-bottom: calc((60 / 16) * 1rem);
 }
 
 .ampstart-gallery-inner-header-carousel .amp-scrollable-carousel-slide {
@@ -58,15 +71,21 @@
 }
 
 .ampstart-gallery-inner-header-carousel .amp-scrollable-carousel-slide:first-child {
-  margin-left: calc((6 / 25) * 100vw - (5 / 2) * 1rem);
+  margin-left: calc((7 / 25) * 100vw - (54 / 16) * 1rem);
 }
 
 .ampstart-gallery-inner-header-carousel .amp-scrollable-carousel-slide:last-child {
-  margin-right: calc((6 / 25) * 100vw - (5 / 2) * 1rem);
+  margin-right: calc((7 / 25) * 100vw - (54 / 16) * 1rem);
 }
 
 @media (--breakpoint-sm) {
   .ampstart-gallery-inner-header-carousel .amp-scrollable-carousel-slide:not(:first-child) {
     margin-left: 2rem;
+  }
+}
+
+@media (--breakpoint-md) {
+  .ampstart-gallery-tree-img {
+    margin-left: calc((-90 / 16) * 1rem);
   }
 }
