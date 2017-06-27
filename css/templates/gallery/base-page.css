@@ -47,6 +47,7 @@ body {
 }
 
 .ampstart-gallery-base-content {
+  position: relative;
   background: #fff;
 }
 
@@ -60,6 +61,7 @@ body {
 .ampstart-gallery-base-invert {
   color: #fff;
   mix-blend-mode: difference;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Hack media query to target IE, which does not support mix-blend-mode. */

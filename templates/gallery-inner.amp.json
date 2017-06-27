@@ -5,8 +5,7 @@
       "canonical-path": "templates/gallery.amp",
       "extensions": [
         "amp-iframe",
-        "amp-carousel",
-        "amp-fx-parallax"
+        "amp-carousel"
       ],
       "css-path": "templates/gallery/inner.css",
       "font-stylesheets": [

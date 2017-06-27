@@ -55,7 +55,7 @@ limitations under the License.
           </div>
         </div>
         <div
-          device-parallax="-100"
+          device-parallax="-50"
           class="ampstart-gallery-inner-header-carousel"
         >
           <amp-carousel
@@ -66,31 +66,37 @@ limitations under the License.
           >
             <amp-img
               src="https://unsplash.it/472/316/?image=1081"
+              srcset="https://unsplash.it/472/316/?image=1081 1x, https://unsplash.it/944/632/?image=1081 2x"
               width="472"
               height="316"
             ></amp-img>
             <amp-img
               src="https://unsplash.it/472/316/?image=1052"
+              srcset="https://unsplash.it/472/316/?image=1052 1x, https://unsplash.it/944/632/?image=1052 2x"
               width="472"
               height="316"
             ></amp-img>
             <amp-img
               src="https://unsplash.it/472/316/?image=954"
+              srcset="https://unsplash.it/472/316/?image=954 1x, https://unsplash.it/944/632/?image=954 2x"
               width="472"
               height="316"
             ></amp-img>
             <amp-img
               src="https://unsplash.it/472/316/?image=949"
+              srcset="https://unsplash.it/472/316/?image=949 1x, https://unsplash.it/944/632/?image=949 2x"
               width="472"
               height="316"
             ></amp-img>
             <amp-img
               src="https://unsplash.it/472/316/?image=830"
+              srcset="https://unsplash.it/472/316/?image=830 1x, https://unsplash.it/944/632/?image=830 2x"
               width="472"
               height="316"
             ></amp-img>
             <amp-img
               src="https://unsplash.it/472/316/?image=334"
+              srcset="https://unsplash.it/472/316/?image=334 1x, https://unsplash.it/944/632/?image=334 2x"
               width="472"
               height="316"
             ></amp-img>
@@ -113,9 +119,44 @@ limitations under the License.
         <div class="ampstart-gallery-base-container">
           <div class="clearfix">
             <div class="col sm-col-12 md-col-9">
-              <p>
+              <p class="ampstart-gallery-base-invert relative z1">
                 In response to the “Architectural Folie of the 21st Century” competition, Montpellier; a city located in Southern France  has chosen “L’ Arbre Blanc”, “White Tree” as the winner; a design proposal by Sou Fujimoto Architects, Nicolas Laisne Associates, Manal Rachdi Oxo Architects. The ideal city focuses on the concept of outdoor living, as well as the use of renewable materials and sustainable resources. It creates a connection between the residential tower and areas that have been developed and those that have not in the surrounding landscape.
               </p>
+            </div>
+          </div>
+          <div class="ampstart-gallery-inner-3d-row ampstart-gallery-inner-perspective">
+            <div class="ampstart-gallery-inner-3d-row-img-left">
+              <div device-parallax="20" class="ampstart-gallery-inner-perspective">
+                <amp-img
+                  width="450"
+                  height="350"
+                  src="https://unsplash.it/450/350?image=334"
+                  srcset="https://unsplash.it/450/350?image=334 1x, https://unsplash.it/900/700?image=334 2x"
+                  layout="responsive"
+                ></amp-img>
+              </div>
+            </div>
+            <div class="ampstart-gallery-inner-3d-row-img-center">
+              <div device-parallax="100" class="ampstart-gallery-inner-perspective">
+                <amp-img
+                  width="450"
+                  height="390"
+                  src="https://unsplash.it/450/390?image=893"
+                  srcset="https://unsplash.it/450/390?image=893 1x, https://unsplash.it/900/780?image=893 2x"
+                  layout="responsive"
+                ></amp-img>
+              </div>
+            </div>
+            <div class="ampstart-gallery-inner-3d-row-img-right">
+              <div device-parallax="60" class="ampstart-gallery-inner-perspective">
+                <amp-img
+                  width="400"
+                  height="500"
+                  src="https://unsplash.it/400/500?image=887"
+                  srcset="https://unsplash.it/400/500?image=887 1x, https://unsplash.it/800/1000?image=887 2x"
+                  layout="responsive"
+                ></amp-img>
+              </div>
             </div>
           </div>
         </div>
@@ -129,13 +170,25 @@ limitations under the License.
                 Just like a tree, the tower will feed off its locally available natural resources to drastically reduce the energy it needs to expend. It will devise passive strategies to induce comfort and use as well as control environmental impacts and scale back emissions.
               </p>
             </div>
-            <div class="col sm-col-12 md-col-4 xs-hide">
+            <div class="col sm-col-12 md-col-4 xs-hide sm-hide">
               <amp-img
                 device-parallax="-100"
-                class="ampstart-gallery-tree-img"
+                class="ampstart-gallery-img-right"
                 width="400"
                 height="416"
-                src="https://unsplash.it/400/412?image=954"
+                src="https://unsplash.it/400/416?image=949"
+                srcset="https://unsplash.it/400/416?image=949 1x, https://unsplash.it/800/824?image=949 2x"
+                layout="responsive"
+              ></amp-img>
+            </div>
+          </div>
+            <div class="col sm-col-12 md-col-4 xs-hide md-hide lg-hide">
+              <amp-img
+                class="ampstart-gallery-img-right"
+                width="400"
+                height="416"
+                src="https://unsplash.it/400/416?image=949"
+                srcset="https://unsplash.it/400/416?image=949 1x, https://unsplash.it/800/824?image=949 2x"
                 layout="responsive"
               ></amp-img>
             </div>
@@ -145,7 +198,8 @@ limitations under the License.
           class="sm-hide md-hide lg-hide"
           width="400"
           height="416"
-          src="https://unsplash.it/400/412?image=954"
+          src="https://unsplash.it/400/416?image=949"
+          srcset="https://unsplash.it/400/416?image=949 1x, https://unsplash.it/800/824?image=949 2x"
           layout="responsive"
         ></amp-img>
       </section>
@@ -190,29 +244,29 @@ limitations under the License.
       </section>
     </main>
 <script type="text/javascript">
-  // (function () {
-  //   'use-strict';
-  //   var src = 'https://cdn.ampproject.org/v0.js';
-  //   var script = document.querySelector('script[src="' + src + '"');
+  (function () {
+    'use-strict';
+    var src = 'https://cdn.ampproject.org/v0.js';
+    var script = document.querySelector('script[src="' + src + '"]');
 
-  //   var experiments = [
-  //     'amp-fx-parallax',
-  //   ];
+    var experiments = [
+      'amp-animation',
+    ];
 
-  //   script.addEventListener('load', function() {
-  //     for (var i = 0, len = experiments.length; i < len; i++) {
-  //       if (!AMP.isExperimentOn(experiments[i])) {
-  //         console.log('enable ' + experiments[i])
-  //         AMP.toggleExperiment(experiments[i]);
-  //       }
-  //     }
-  //   });
-  // })();
+    script.addEventListener('load', function() {
+      for (var i = 0, len = experiments.length; i < len; i++) {
+        if (!AMP.isExperimentOn(experiments[i])) {
+          console.log('enable ' + experiments[i])
+          AMP.toggleExperiment(experiments[i]);
+        }
+      }
+    });
+  })();
 
   (function () {
     'use-strict';
-    var motionScale = 10;
-    var scrollScale = 0.2;
+    var motionScale = 5;
+    var scrollScale = 1;
     var motionRange = 20;
     var filterRate = 0.15;
     var motionDamping = 0.80;
@@ -227,38 +281,40 @@ limitations under the License.
     var parallaxElements;
     var parallaxFactor;
 
+
     function clamp(min, max, number) {
       return Math.min(max, Math.max(min, number));
     }
 
     function applyUpdate() {
-      var i, len, element, range, motionTransformX, motionTransformY,
-        rect, progressX, progressY, scrollTransformX, scrollTransformY;
+      var delta, i, len, element, range, motionTransformX, motionTransformY,
+        rect, progressX, progressY, scrollTransformX, scrollTransformY,
+        docWidth, docHeight, bodyWidth, bodyHeight, rectmin;
 
-      var docWidth = window.document.documentElement.clientWidth;
-      var docHeight = window.document.documentElement.clientHeight;
+      docWidth = window.document.documentElement.clientWidth;
+      docHeight = window.document.documentElement.clientHeight;
 
-      var bodyWidth = window.document.body.clientWidth;
-      var bodyHeight = window.document.body.clientHeight;
-
-      var vmin = Math.min(docWidth, docHeight);
+      bodyWidth = window.document.body.clientWidth;
+      bodyHeight = window.document.body.clientHeight;
 
       for (i = 0, len = parallaxElements.length; i < len; i++) {
         element = parallaxElements[i].element;
         range = parallaxElements[i].range;
 
-        motionTransformX = range * motionScale *
+        motionTransformX = Math.max(0, range) * motionScale *
           clamp(-motionRange * 0.5, motionRange * 0.5, motionX) / motionRange;
 
-        motionTransformY = range * motionScale *
+        motionTransformY = Math.max(0, range) * motionScale *
           clamp(-motionRange * 0.5, motionRange * 0.5, -motionY) / motionRange;
 
         rect = element.getBoundingClientRect();
 
+        rectmin = Math.min(rect.width, rect.height);
+
         if (bodyWidth > docWidth) {
           // var xRange =
           progressX = clamp(0, 1, rect.left / (docWidth + rect.width)) - 0.5;
-          scrollTransformX = range * -progressX;
+          scrollTransformX = range * scrollScale * -progressX;
         } else {
           scrollTransformX = 0;
         }
@@ -266,14 +322,14 @@ limitations under the License.
         if (bodyHeight > docHeight) {
           var rangeY = Math.min(docHeight + rect.height, 2 * (rect.bottom + document.body.scrollTop))
           progressY = clamp(0, 1, rect.bottom / rangeY) - 0.5;
-          scrollTransformY = range * progressY;
+          scrollTransformY = range * scrollScale * progressY;
         } else {
           scrollTransformY = 0;
         }
 
         element.style.transform = 'translate3d(' +
-          (motionTransformX + scrollTransformX) + 'px, ' +
-          (motionTransformY + scrollTransformY) + 'px, ' +
+          (motionTransformX + scrollTransformX) * 0.01 * rectmin + 'px, ' +
+          (motionTransformY + scrollTransformY) * 0.01 * rectmin + 'px, ' +
         '0)';
       }
     }
@@ -332,11 +388,12 @@ limitations under the License.
           queueUpdate();
         });
 
-        queueUpdate();
+        applyUpdate();
       }
     }
 
     initialize();
+
   })();
 </script>
   </body>
