@@ -33,6 +33,7 @@
 @import './page-vars';
 @import './bass-override-vars';
 
+@import '../../../components/travel/navbar/navbar.css';
 
 body {
   color: var(--font-color-primary);
