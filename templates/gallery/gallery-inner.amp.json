@@ -108,7 +108,7 @@
       "content": "<blockquote>Justo libero ut nunc consequat massa. Vitae et nulla. Mus arcu in. Tellus at ut. Ac mi varius ut.</blockquote>"
     },
     "map": {
-      "heading": "Visit the exhibition from Sept <time datetime=\"2017-08-24\">Sept 24</time>-<time datetime=\"2017-08-29\">29</time>",
+      "heading": "Visit the exhibition from <time datetime=\"2017-08-24\">Sept 24</time>-<time datetime=\"2017-08-29\">29</time>",
       "subheading": "123 St Name <br/>City, State 12345",
       "button": {
         "text": "Buy Tickets"
