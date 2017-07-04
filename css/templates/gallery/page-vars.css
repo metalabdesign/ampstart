@@ -22,7 +22,7 @@
   --color-primary: #3F4AE6;
   --color-secondary: #FF5774;
   --color-secondary-inverted: #00A88B;
-  --color-shadow: rgba(6, 7, 22, 0.2);
+  --color-shadow: rgba(6, 7, 22, 0.15);
   --line-height: 1.6;
   --footer-height: calc((50 / 16) * 1rem);
 }
