@@ -22,6 +22,9 @@
     },
     "sidebar": {
       "links": [{
+        "text": "Home",
+        "href": "./gallery.amp.html"
+      }, {
         "text": "Untitled<br/>Evan Ondre",
         "href": "./gallery-inner.amp.html",
         "image": {
