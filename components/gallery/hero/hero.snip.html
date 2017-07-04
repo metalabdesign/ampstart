@@ -20,20 +20,13 @@ limitations under the License.
   <header class="ampstart-gallery-component-hero clearfix">
     <div class="ampstart-gallery-base-container">
       <div class="ampstart-gallery-component-hero-content">
-        <h1
-          device-parallax="120"
-          class="ampstart-gallery-component-hero-heading"
-        >
+        <h1 class="ampstart-gallery-component-hero-heading">
           {{heading}}
         </h1>
-        <div
-          device-parallax="100"
-          class="ampstart-gallery-component-hero-subheading"
-        >
+        <div class="ampstart-gallery-component-hero-subheading">
           {{{subheading}}}
         </div>
         <div
-          device-parallax="50"
           class="ampstart-gallery-component-hero-action"
         >
           {{> ../button/button.snip.html}}
@@ -41,10 +34,7 @@ limitations under the License.
       </div>
     </div>
     {{#carousel}}
-    <div
-      device-parallax="-50"
-      class="ampstart-gallery-component-hero-carousel"
-    >
+    <div class="ampstart-gallery-component-hero-carousel">
       <amp-carousel
         height="{{height}}"
         layout="fixed-height"

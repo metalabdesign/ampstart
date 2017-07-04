@@ -20,7 +20,7 @@
   position: absolute;
   width: calc(20vmin + (200 / 16) * 1rem);
   left: calc(20vw - (100 / 16) * 1rem);
-  top: 140vh;
+  top: 120vh;
 }
 
 .ampstart-gallery-inner-background-2 {
