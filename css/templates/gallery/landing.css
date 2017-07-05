@@ -30,7 +30,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  max-width: 80vmin;
+  max-width: 80vw;
   padding: 1rem;
   /*
    * The title font size is linear equation as a function of screen size:
@@ -38,21 +38,10 @@
    * The max is achieved by setting a breakpoint at the screen size where the
    * equation equals the max size. (see next style declaration below)
    */
-  font-size: calc(2rem + (1 / 32) * 100vmin);
+  font-size: calc(2rem + (1 / 32) * 100vw);
   pointer-events: none;
   /* Pull abovove sibling relative-positioned elements. */
   z-index: 1;
-}
-
-@media (--breakpoint-md) and (--breakpoint-v-md) {
-  .ampstart-gallery-landing-title {
-    max-width: calc(var(--breakpoint-md) * 1rem);
-    /*
-     * Statically evaluate the font size equation (see above) at the current
-     * breakpoint to enforce a max font-size. This is equal to 3.625rem (58px).
-     */
-    font-size: calc(2rem + (1 / 32) * var(--breakpoint-md) * 1rem);
-  }
 }
 
 .ampstart-gallery-landing-wall {
