@@ -71,10 +71,16 @@
   overflow: hidden;
 }
 
-@keyframes hover {
+@keyframes hover-one {
   0% {transform: translateY(-2vh)}
   50% {transform: translateY(2vh)}
   100% {transform: translateY(-2vh)}
+}
+
+@keyframes hover-two {
+  0% {transform: translateY(-1vh)}
+  50% {transform: translateY(1vh)}
+  100% {transform: translateY(-1vh)}
 }
 
 [class^="ampstart-gallery-landing-image-wrap-"] {
@@ -83,11 +89,15 @@
   display: block;
   transform-origin: 0px 0px 0px;
 
-  animation-name: hover;
+  animation-name: hover-one;
   animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
+}
+
+[class^="ampstart-gallery-landing-image-wrap-"]:nth-child(odd) {
+  animation-name: hover-two;
 }
 
 [class^="ampstart-gallery-landing-image-wrap-"] amp-img {
