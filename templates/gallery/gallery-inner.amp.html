@@ -24,6 +24,7 @@ limitations under the License.
     {{> ../../components/gallery/sidebar/sidebar.snip.html}}
     <main id="content" class="ampstart-gallery-base-content" role="main">
       <svg
+        device-parallax="-100"
         class="ampstart-gallery-inner-background-1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 388 809"
@@ -40,6 +41,7 @@ limitations under the License.
         ></path>
       </svg>
       <svg
+        device-parallax="-80"
         class="ampstart-gallery-inner-background-2"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1167 599"
@@ -68,7 +70,7 @@ limitations under the License.
           </div>
           <div class="ampstart-gallery-inner-3d-row ampstart-gallery-inner-perspective">
             <div class="ampstart-gallery-inner-3d-row-img-left">
-              <div class="ampstart-gallery-inner-perspective">
+              <div device-parallax="20" class="ampstart-gallery-inner-perspective">
                 <amp-img
                   width="450"
                   height="350"
@@ -82,7 +84,7 @@ limitations under the License.
               </div>
             </div>
             <div class="ampstart-gallery-inner-3d-row-img-center">
-              <div class="ampstart-gallery-inner-perspective">
+              <div device-parallax="100" class="ampstart-gallery-inner-perspective">
                 <amp-img
                   width="450"
                   height="390"
@@ -96,7 +98,7 @@ limitations under the License.
               </div>
             </div>
             <div class="ampstart-gallery-inner-3d-row-img-right">
-              <div class="ampstart-gallery-inner-perspective">
+              <div device-parallax="60" class="ampstart-gallery-inner-perspective">
                 <amp-img
                   width="400"
                   height="500"
@@ -124,6 +126,7 @@ limitations under the License.
             <div class="col col-12 md-col-4">
               <amp-img
                 class="ampstart-gallery-inner-img-right xs-hide md-hide lg-hide"
+                device-parallax="-30"
                 class="ampstart-gallery-inner-img-right"
                 width="400"
                 height="416"
@@ -136,6 +139,7 @@ limitations under the License.
               ></amp-img>
               <amp-img
                 class="ampstart-gallery-inner-img-right xs-hide sm-hide"
+                device-parallax="-60"
                 class="ampstart-gallery-inner-img-right"
                 width="400"
                 height="416"
@@ -150,6 +154,7 @@ limitations under the License.
           </div>
         </div>
         <amp-img
+          device-parallax="-30"
           class="ampstart-gallery-inner-img-right sm-hide md-hide lg-hide"
           width="400"
           height="416"
@@ -175,6 +180,7 @@ limitations under the License.
             <div class="col col-12 md-col-4">
               <amp-img
                 class="ampstart-gallery-inner-img-right-small"
+                device-parallax="-100"
                 width="217"
                 height="217"
                 src="https://unsplash.it/217/217?image=942"
@@ -189,6 +195,138 @@ limitations under the License.
       </section>
       {{> ../../components/gallery/map/map.snip.html}}
     </main>
+<script type="text/javascript">
+  (function () {
+    'use-strict';
+    var motionScale = 5;
+    var scrollScale = 1;
+    var motionRange = 20;
+    var filterRate = 0.15;
+    var motionDamping = 0.80;
+
+    var accelerationX = 0;
+    var accelerationY = 0;
+
+    var motionX = 0;
+    var motionY = 0;
+
+    var updateRequest = null;
+    var parallaxElements;
+    var parallaxFactor;
+
+
+    function clamp(min, max, number) {
+      return Math.min(max, Math.max(min, number));
+    }
+
+    function applyUpdate() {
+      var delta, i, len, element, range, motionTransformX, motionTransformY,
+        rect, rangeY, progressY, scrollTransformY,
+        docWidth, docHeight, bodyWidth, bodyHeight, rectmin;
+
+      docWidth = window.document.documentElement.clientWidth;
+      docHeight = window.document.documentElement.clientHeight;
+
+      bodyWidth = window.document.body.clientWidth;
+      bodyHeight = window.document.body.clientHeight;
+
+      for (i = 0, len = parallaxElements.length; i < len; i++) {
+        element = parallaxElements[i].element;
+        range = parallaxElements[i].range;
+
+        motionTransformX = Math.max(0, range) * motionScale *
+          clamp(-motionRange * 0.5, motionRange * 0.5, motionX) / motionRange;
+
+        motionTransformY = Math.max(0, range) * motionScale *
+          clamp(-motionRange * 0.5, motionRange * 0.5, -motionY) / motionRange;
+
+        rect = element.getBoundingClientRect();
+
+        rectmin = Math.min(rect.width, rect.height);
+
+        if (bodyHeight > docHeight) {
+          rangeY = Math.min(docHeight + rect.height, 2 * ((rect.bottom - parallaxElements[i].currentY) + document.body.scrollTop))
+          progressY = clamp(0, 1, (rect.bottom - parallaxElements[i].currentY) / rangeY) - 0.5;
+          scrollTransformY = range * scrollScale * progressY;
+        } else {
+          scrollTransformY = 0;
+        }
+
+        parallaxElements[i].currentX = motionTransformX * 0.01 * rectmin;
+        parallaxElements[i].currentY = (motionTransformY + scrollTransformY) * 0.01 * rectmin;
+
+        element.style.transform = 'translate3d(' +
+          parallaxElements[i].currentX + 'px, ' +
+          parallaxElements[i].currentY + 'px, ' +
+        '0)';
+      }
+    }
+
+    function queueUpdate() {
+      applyUpdate();
+      if (updateRequest) {
+        window.cancelAnimationFrame(updateRequest);
+      }
+
+      window.requestAnimationFrame(applyUpdate)
+    }
+
+    function graph(val, id) {
+      var node = document.getElementById(id);
+
+      if (val < 0) {
+        node.style.left = (50 - Math.abs(val)).toFixed(3) + '%';
+        node.style.right = '50%';
+      } else {
+        node.style.left = '50%';
+        node.style.right = (50 - Math.abs(val)).toFixed(3) + '%';
+      }
+    }
+
+    function initialize() {
+      parallaxElements = [].map.call(
+        window.document.querySelectorAll('[device-parallax]'),
+        function(element) {
+          return {
+            element: element,
+            range: parseFloat(element.getAttribute('device-parallax')),
+            currentX: 0,
+            currentY: 0,
+          };
+        }
+      );
+
+
+      if (parallaxElements.length) {
+        window.addEventListener('devicemotion', function(event) {
+          accelerationX = filterRate * event.acceleration.x + (1 - filterRate) * accelerationX;
+          accelerationY = filterRate * event.acceleration.y + (1 - filterRate) * accelerationY;
+
+          motionX += accelerationX * event.interval;
+          motionY += accelerationY * event.interval;
+
+          motionX *= motionDamping;
+          motionY *= motionDamping;
+
+          queueUpdate();
+        });
+
+        window.addEventListener('scroll', function() {
+          queueUpdate();
+        });
+
+        window.addEventListener('resize', function() {
+          queueUpdate();
+        });
+
+        applyUpdate();
+      }
+    }
+
+    initialize();
+
+  })();
+</script>
   </body>
 </html>
 {{/gallery}}
