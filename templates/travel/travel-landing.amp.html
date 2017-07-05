@@ -22,7 +22,175 @@ limitations under the License.
   <body>
     {{> ../../components/travel/navbar/navbar.snip.html}}
     <main id="content" role="main">
+
+      <section>
+        <div class="ampstart-travel-base-container">
+          <h1>Adventures made easy</h1>
+          <div>Find and book activities, tours, and experiences.</div>
+          <form>
+            <input type="text" name="q" placeholder="Where would you like to go?">
+            <label for="depart">Departure</label><input type="date" name="depart">
+            <label for="return">Return</label><input type="date" name="return">
+            <button type="submit">Find Adventures &amp; Tours</button>
+          </form>
+        </div>
+      </section>
+
+      <section>
+        <div class="ampstart-travel-base-container">
+          <h2>Discover Adventures</h2>
+          <div>Get inspired and find your next big trip</div>
+
+          <div>
+            <div>From the blog</div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit amet dolor set.
+            </p>
+            <div>
+              <a href="#">Read more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="ampstart-travel-base-container">
+          <h3>Browse by activity</h3>
+          <form>
+            <div class="ampstart-travel-component-activities">
+              <div class="ampstart-travel-component-activity ampstart-travel-component-activity-nightlife">
+                <button>
+                  <svg></svg>
+                  Nightlife
+                </button>
+              </div>
+
+              <div class="ampstart-travel-component-activity ampstart-travel-component-activity-artistic">
+                <button>
+                  <svg></svg>
+                  Artistic
+                </button>
+              </div>
+
+              <div class="ampstart-travel-component-activity ampstart-travel-component-activity-fashion">
+                <button>
+                  <svg></svg>
+                  Fashion
+                </button>
+              </div>
+
+              <div class="ampstart-travel-component-activity ampstart-travel-component-activity-active">
+                <button>
+                  <svg></svg>
+                  Active
+                </button>
+              </div>
+
+              <div class="ampstart-travel-component-activity ampstart-travel-component-activity-food">
+                <button>
+                  <svg></svg>
+                  Food
+                </button>
+              </div>
+
+              <div class="ampstart-travel-component-activity ampstart-travel-component-activity-nature">
+                <button>
+                  <svg></svg>
+                  Nature
+                </button>
+              </div>
+
+              <div class="ampstart-travel-component-activity ampstart-travel-component-activity-music">
+                <button>
+                  <svg></svg>
+                  Music
+                </button>
+              </div>
+
+              <div class="ampstart-travel-component-activity ampstart-travel-component-activity-drinks">
+                <button>
+                  <svg></svg>
+                  Drinks
+                </button>
+              </div>
+
+              <div class="ampstart-travel-component-activity ampstart-travel-component-activity-tours">
+                <button>
+                  <svg></svg>
+                  Tours
+                </button>
+              </div>
+
+              <div class="ampstart-travel-component-activity ampstart-travel-component-activity-water">
+                <button>
+                  <svg></svg>
+                  Water
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section>
+        <div class="ampstart-travel-base-container">
+          <h3>Featured Destinations</h3>
+          [carousel]
+        </div>
+      </section>
+
+      <section>
+        <div class="ampstart-travel-base-container">
+          <h2>Have a specific destination in mind?</h2>
+          <form>
+            <input type="text" name="q" placeholder="Where would you like to go?">
+            <button type="submit">Find my next adventure</button>
+          </form>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <div class="ampstart-travel-base-container">
+        <div grid>
+          <div col>
+            <div grid>
+              <div col>
+                <h4>Company</h4>
+                <div>
+                  <div><a href="#">About</a></div>
+                  <div><a href="#">Careers</a></div>
+                  <div><a href="#">Contact</a></div>
+                </div>
+              </div>
+              <div col>
+                <h4>Discover</h4>
+                <div>
+                  <div><a href="#">Activites</a></div>
+                  <div><a href="#">Tours</a></div>
+                  <div><a href="#">Experiences</a></div>
+                  <div><a href="#">Featured Adventures</a></div>
+                  <div><a href="#">Search</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div col>
+            <h4>Want travel deals right to your inbox?</h4>
+            <div>Sign up to our newsletter</div>
+            <form>
+              <input type="text" name="email" placeholder="Enter your email address...">
+              <button type="submit">
+                Sign up now
+              </button>
+            </form>
+          </div>
+        </div>
+        <div>
+          &copy; Copyright2017
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
 {{/travel-landing}}

@@ -45,3 +45,8 @@ body {
 *, *::before, *::after {
   box-sizing: inherit;
 }
+
+.ampstart-travel-base-container {
+  max-width: 1152px; /* TODO: px to rem */
+  margin: auto;
+}
