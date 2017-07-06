@@ -20,13 +20,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  margin: calc((18 / 16) * 1rem);
+  margin: calc((9 / 16) * 1rem);
   margin-right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
 }
+
 
 .ampstart-gallery-component-header .ampstart-gallery-component-nav {
   display: none;
@@ -40,14 +41,31 @@
  */
 @media (--breakpoint-sm) and (--breakpoint-v-sm) {
   .ampstart-gallery-component-header {
-    margin: calc((40 / 16) * 1rem);
+    margin: calc((36 / 16) * 1rem);
     margin-right: 0;
+    margin-top: calc((25 / 16) * 1rem);
   }
 }
 
 .ampstart-gallery-component-header-menu-button {
   flex: none;
   cursor: pointer;
+  padding: 8px 10px 10px 8px;
+  transition: 150ms background-color ease-in;
+}
+
+.ampstart-gallery-component-header-menu-button:hover {
+  background: #fff;
+}
+
+.ampstart-gallery-component-header-menu-button:active,
+.ampstart-gallery-component-header-menu-button:focus {
+  background: #aaa;
+  outline: none;
+}
+
+.ampstart-gallery-component-header-menu-button:hover svg g {
+  fill: #000;
 }
 
 .ampstart-gallery-component-header-menu-button svg {
@@ -105,7 +123,7 @@
  */
 @media (--breakpoint-sm) and (--breakpoint-v-sm) {
   .ampstart-gallery-component-header-rotate  {
-    margin: calc((54 / 16) * 1rem) 0;
+    margin: calc((18 / 16) * 1rem) 0;
   }
 }
 

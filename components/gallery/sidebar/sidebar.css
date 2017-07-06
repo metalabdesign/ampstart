@@ -59,6 +59,17 @@
 .ampstart-gallery-component-sidebar-close-button {
   flex: none;
   cursor: pointer;
+  padding: 5px;
+}
+
+.ampstart-gallery-component-sidebar-close-button:hover {
+  background-color: #eee;
+}
+
+.ampstart-gallery-component-sidebar-close-button:active,
+.ampstart-gallery-component-sidebar-close-button:focus {
+  outline: none;
+  background-color: #ccc;
 }
 
 .ampstart-gallery-component-sidebar-close-button svg {
@@ -96,6 +107,8 @@
   display: flex;
   align-items: center;
   font-size: calc((18 / 16) * 1rem);
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
   line-height: 1.2;
   text-decoration: none;
   padding: 1rem 0;
@@ -114,19 +127,22 @@
 
 @media (--breakpoint-sm) {
   .ampstart-gallery-component-sidebar-nav-item::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: -1;
-    transition: transform 0.25s;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease-in-out;
   }
 }
 
 .ampstart-gallery-component-sidebar-nav-item:hover::after {
   display: block;
   content: "";
+  transform: scaleX(1);
 }
 
 .ampstart-gallery-component-sidebar-nav-item:nth-child(6n+1) {
@@ -167,23 +183,8 @@
 }
 
 .ampstart-gallery-component-sidebar-nav-item:first-child {
-  color: var(--font-color-primary);
-  border-top: 0.5px solid color(var(--font-color-primary) a(0.4));
-  border-bottom: 0.5px solid color(var(--font-color-primary) a(0.4));
-}
-
-.ampstart-gallery-component-sidebar-nav-item:first-child:hover {
-  color: white;
-  border-color: var(--font-color-primary);
-}
-
-@media
-(-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
-    .ampstart-gallery-component-sidebar-nav-item:first-child {
-      border-top: 0.5px solid var(--font-color-primary);
-      border-bottom: 0.5px solid var(--font-color-primary);
-    }
+  box-shadow: 0 0.5px 0 color(var(--font-color-primary) a(0.3)), 0 -0.5px 0 color(var(--font-color-primary) a(0.3));
+  background: white;
 }
 
 .ampstart-gallery-component-sidebar-nav-item:first-child::after {
@@ -195,16 +196,52 @@
   margin-right: 1rem;
   text-align: center;
   align-self: flex-start;
+  color: #000;
   font-size: calc((13.5 / 16) * 1rem);
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
   /* The line height is calculated to be the same as the adjacent text. */
   line-height: calc(1.2 * (18 / 16) * 1rem);
   counter-increment: sidebar-nav;
   content: counter(sidebar-nav);
 }
 
+.ampstart-gallery-component-sidebar-nav-item:first-child > .ampstart-gallery-component-sidebar-nav-item-text,
+.ampstart-gallery-component-sidebar-nav-item:first-child::before {
+  color: white;
+  mix-blend-mode: difference;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hack media query to target IE, which does not support mix-blend-mode. */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ampstart-gallery-component-sidebar-nav-item:first-child > .ampstart-gallery-component-sidebar-nav-item-text {
+    color: var(--font-color-primary);
+    mix-blend-mode: initial;
+  }
+}
+
+.ampstart-gallery-component-sidebar-nav-item:first-child:hover {
+  border-color: var(--font-color-primary);
+}
+
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .ampstart-gallery-component-sidebar-nav-item:first-child {
+        box-shadow: 0 0.5px 0 var(--font-color-primary), 0 -0.5px 0 var(--font-color-primary);
+    }
+}
+
 .ampstart-gallery-component-sidebar-nav-item-text {
   flex: auto;
   margin-right: 1rem;
+}
+
+.ampstart-gallery-component-sidebar-nav-item-text,
+.ampstart-gallery-component-sidebar-nav-item-icon,
+.ampstart-gallery-component-sidebar-nav-item::before {
+  z-index: 1;
 }
 
 @media (--breakpoint-sm) and (--breakpoint-v-sm) {
