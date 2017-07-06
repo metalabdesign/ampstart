@@ -33,6 +33,8 @@
 @import './page-vars';
 @import './bass-override-vars';
 
+@import '../../../components/travel/filter-bar/filter-bar.css';
+@import '../../../components/travel/footer/footer.css';
 @import '../../../components/travel/navbar/navbar.css';
 
 body {

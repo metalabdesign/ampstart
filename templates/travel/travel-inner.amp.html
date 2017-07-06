@@ -20,8 +20,29 @@ limitations under the License.
 <html ⚡>
   {{> ../../utils/amp-page-head.snip.html}}
   <body>
-    <main id="content" role="main">
-    </main>
+    <header class="ampstart-travel-inner-navbar">
+      <div class="ampstart-travel-inner-navbar-logo">
+        [logo]
+      </div>
+      <div class="ampstart-travel-inner-navbar-content">
+        <form>
+          <input type="text" name="query" placeholder="[query pladeholder]">
+          <label for="depart">Departure</label><input type="date" name="depart">
+          <label for="return">Return</label><input type="date" name="return">
+        </form>
+      </div>
+      <div class="ampstart-travel-inner-navbar-menu-button">
+        [menu]
+      </div>
+    </header>
+
+    {{> ../../components/travel/filter-bar/filter-bar.snip.html}}
+
+    <section>
+      [results grid]
+    </section>
+
+    {{> ../../components/travel/footer/footer.snip.html}}
   </body>
 </html>
 {{/travel-inner}}
