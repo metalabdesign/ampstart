@@ -16,13 +16,14 @@ limitations under the License.
 -->
 }}
 
-{{#navbar}}
-<header class="ampstart-travel__navbar">
-  <div class="ampstart-travel__navbar__logo">
-    {{> ../icon/logo.snip.html}}
+{{#search}}
+<section class="ampstart-travel-component-search">
+  <div class="ampstart-travel-base-container">
+    <h2>Have a specific destination in mind?</h2>
+    <form>
+      <input type="text" name="q" placeholder="Where would you like to go?">
+      <button type="submit">Find my next adventure</button>
+    </form>
   </div>
-  <div class="ampstart-travel__navbar__menu-button">
-    {{> ../icon/menu.snip.html}}
-  </div>
-</header>
-{{/navbar}}
+</section>
+{{/search}}

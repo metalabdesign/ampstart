@@ -1,0 +1,81 @@
+/**
+ * Copyright 2016 The AMP Start Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import './form-vars.css';
+
+.ampstart-travel__input {
+  display: block;
+  width: 100%;
+  padding: var(--input-v-padding) var(--input-h-padding);
+  line-height: var(--input-line-height);
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: var(--input-border-radius);
+  transition: border-color 0.15s ease-in, box-shadow 0.15s ease-in;
+  margin-bottom: 1rem;
+}
+
+.ampstart-travel__input--border {
+  border-color: var(--color-purple-haze);
+}
+
+.ampstart-travel__input--dark {
+  color: #fff;
+  background: color(#000 a(0.2));
+}
+.ampstart-travel__input--shadow {
+  box-shadow: 0 0 0 0.125rem transparent, 0 0.5rem 1rem color(var(--color-plum) a(0.14));
+}
+
+.ampstart-travel__input:focus {
+  box-shadow: 0 0 0 0.125rem color(var(--color-purple-haze) a(0.5)), 0 0.5rem 1rem transparent;
+  outline: 0;
+}
+
+.ampstart-travel__input--dark:focus {
+  box-shadow: 0 0 0 0.125rem color(#fff a(0.5)), 0 0.5rem 1rem transparent;
+}
+
+.ampstart-travel__input--shadow:focus {
+  box-shadow: 0 0 0 0.125rem color(var(--color-purple-haze) a(0.5)), 0 0.5rem 1rem color(var(--color-plum) a(0.14));
+}
+
+.ampstart-travel__input--dark.ampstart-travel__input--shadow:focus {
+  box-shadow: 0 0 0 0.125rem color(#fff a(0.5)), 0 0.5rem 1rem color(var(--color-plum) a(0.14));
+}
+
+.ampstart-travel__input::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.35;
+}
+.ampstart-travel__input::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.35;
+}
+.ampstart-travel__input:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.35;
+}
+
+.ampstart-travel__input--dark::-webkit-input-placeholder {
+  opacity: 0.75;
+}
+.ampstart-travel__input--dark::-moz-placeholder {
+  opacity: 0.75;
+}
+.ampstart-travel__input--dark:-ms-input-placeholder {
+  opacity: 0.75;
+}
