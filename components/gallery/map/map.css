@@ -14,12 +14,17 @@
  * limitations under the License.
  */
 
-.ampstart-gallery-component-map-heading {
+.ampstart-gallery-component-map {
+  margin-top: calc(180 / 16rem);
+}
+
+.ampstart-gallery-component-map .ampstart-gallery-component-map-heading {
   width: calc((240 / 16) * 1rem);
+  margin-bottom: 3rem;
 }
 
 .ampstart-gallery-component-map .ampstart-gallery-component-button {
-  margin-left: calc(3.1vw + (8.444 / 16) * 1rem);
+  margin-left: calc(3.5vw + 1rem);
 }
 
 @media (--breakpoint-lg) {

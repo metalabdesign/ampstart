@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
+
+.ampstart-gallery-component-hero {
+  margin-bottom: calc(60 / 16rem);
+}
+
 .ampstart-gallery-component-hero-content,
 .ampstart-gallery-component-hero-carousel {
   margin-top: calc((11 / 200) * 100vmin + (127 / 16) * 1rem);
@@ -41,8 +46,8 @@
    * vertically align this element 2 / 3 of the line height above the parent
    * element top edge. Ideally dead center on the font x-height.
    */
-  margin: calc(-0.6 * 1.2 * (60 / 16) * 1rem) 0 0 0;
-  font-size: calc((60 / 16) * 1rem);
+  margin: calc(-0.6 * 1.2 * (76 / 16) * 1rem) 0 0 0;
+  font-size: calc((76 / 16) * 1rem);
   font-family: var(--font-family-secondary);
   font-weight: 400;
   letter-spacing: -0.05rem
@@ -56,11 +61,11 @@
 }
 
 .ampstart-gallery-component-hero-action {
-  margin-top: calc((130 / 16) * 1rem);
+  margin-top: 13rem;
 }
 
 .ampstart-gallery-component-hero-carousel {
-  margin-bottom: calc((70 / 16) * 1rem);
+  margin-bottom: calc((100 / 16) * 1rem);
 }
 
 .ampstart-gallery-component-hero-carousel .amp-carousel-button {
@@ -68,19 +73,13 @@
 }
 
 .ampstart-gallery-component-hero-carousel .amp-scrollable-carousel-slide {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
 }
 
 .ampstart-gallery-component-hero-carousel .amp-scrollable-carousel-slide:first-child {
-  margin-left: calc((7 / 25) * 100vw - (54 / 16) * 1rem);
+  margin-left: 1.2rem;
 }
 
 .ampstart-gallery-component-hero-carousel .amp-scrollable-carousel-slide:last-child {
-  margin-right: calc((7 / 25) * 100vw - (54 / 16) * 1rem);
-}
-
-@media (--breakpoint-sm) {
-  .ampstart-gallery-component-hero-carousel .amp-scrollable-carousel-slide:not(:first-child) {
-    margin-left: 2rem;
-  }
+  margin-right: 2rem;
 }

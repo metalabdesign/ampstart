@@ -16,17 +16,18 @@
 
 .ampstart-gallery-component-button {
   display: inline-flex;
-  height: 3rem;
-  padding: calc((20 / 16) * 1rem);
-  font-size: 1rem;
-  font-weight: 500;
+  height: 3.6rem;
+  padding: calc((30 / 16) * 1rem);
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  font-weight: 600;
   align-items: center;
   justify-content: center;
   background: var(--color-primary);
   color: #fff;
   -webkit-font-smoothing: antialiased;
   transition: transform 0.1s, box-shadow 0.1s;
-  box-shadow: 0 0 0 rgba(6, 7, 22, 0.2);
+  box-shadow: 0 0.3rem 1rem rgba(6, 7, 22, 0.1);
   cursor: pointer;
   white-space: nowrap;
 }

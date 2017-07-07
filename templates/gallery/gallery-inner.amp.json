@@ -28,8 +28,8 @@
         "text": "Untitled<br/>Evan Ondre",
         "href": "./gallery-inner.amp.html",
         "image": {
-          "src": "https://unsplash.it/100/100/?image=821",
-          "2x": "https://unsplash.it/200/200/?image=821"
+          "src": "../../img/gallery/1429886_200.jpg",
+          "2x": "../../img/gallery/1429886_400.jpg"
         }
       }, {
         "text": "Cage<br/>Ellen Doe",
@@ -69,8 +69,8 @@
       }]
     },
     "hero": {
-      "heading": "Exhibit Name",
-      "subheading": "<time datetime=\"2017-08-24\">Sept 24</time>-<time datetime=\"2017-08-29\">29</time> / Artist Name",
+      "heading": "Living Tree",
+      "subheading": "<time datetime=\"2017-08-24\">Sept 24</time>-<time datetime=\"2017-08-29\">29</time> / Anna Moss",
       "button": {
         "text": "Buy Tickets"
       },
@@ -79,33 +79,33 @@
         "images": [{
           "width": 472,
           "height": 316,
-          "src": "https://unsplash.it/472/316/?image=1081",
-          "2x": "https://unsplash.it/944/632/?image=1081"
+          "src": "../../img/gallery/1429886_200.jpg",
+          "2x": "../../img/gallery/1429886_400.jpg"
+        }, {
+          "width": 516,
+          "height": 316,
+          "src": "../../img/gallery/1431916_200.jpg",
+          "2x": "../../img/gallery/1431916_400.jpg"
+        }, {
+          "width": 211,
+          "height": 316,
+          "src": "../../img/gallery/1097005_200.jpg",
+          "2x": "../../img/gallery/1097005_400.jpg"
+        }, {
+          "width": 316,
+          "height": 316,
+          "src": "../../img/gallery/1028245_200.jpg",
+          "2x": "../../img/gallery/1028245_400.jpg"
+        }, {
+          "width": 361,
+          "height": 316,
+          "src": "../../img/gallery/1196479_200.jpg",
+          "2x": "../../img/gallery/1196479_400.jpg"
         }, {
           "width": 472,
           "height": 316,
-          "src": "https://unsplash.it/472/316/?image=1052",
-          "2x": "https://unsplash.it/944/632/?image=1052"
-        }, {
-          "width": 472,
-          "height": 316,
-          "src": "https://unsplash.it/472/316/?image=954",
-          "2x": "https://unsplash.it/944/632/?image=954"
-        }, {
-          "width": 472,
-          "height": 316,
-          "src": "https://unsplash.it/472/316/?image=949",
-          "2x": "https://unsplash.it/944/632/?image=949"
-        }, {
-          "width": 472,
-          "height": 316,
-          "src": "https://unsplash.it/472/316/?image=830",
-          "2x": "https://unsplash.it/944/632/?image=830"
-        }, {
-          "width": 472,
-          "height": 316,
-          "src": "https://unsplash.it/472/316/?image=334",
-          "2x": "https://unsplash.it/944/632/?image=334"
+          "src": "../../img/gallery/1008988_200.jpg",
+          "2x": "../../img/gallery/1008988_400.jpg"
         }]
       },
       "content": "<blockquote>Justo libero ut nunc consequat massa. Vitae et nulla. Mus arcu in. Tellus at ut. Ac mi varius ut.</blockquote>"

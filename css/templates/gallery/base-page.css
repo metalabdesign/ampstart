@@ -87,14 +87,14 @@ body {
 }
 
 .ampstart-gallery-base-section:not(:last-child) {
-  margin-bottom: calc((72 / 16) * 1rem);
+  margin-bottom: calc((122 / 16) * 1rem);
 }
 
 .ampstart-gallery-base-rich-text h2 {
   margin: 0 0 1rem 0;
   font-family: var(--font-family-secondary);
   letter-spacing: 0.05rem;
-  font-size: calc((28 / 16) * 1rem);
+  font-size: calc((32 / 16) * 1rem);
 }
 
 .ampstart-gallery-base-rich-text h3 {
@@ -112,7 +112,7 @@ body {
 .ampstart-gallery-base-rich-text blockquote {
   padding: 0;
   margin: 0 0 calc((56 / 16) * 1rem) 0;
-  font-size: calc((20 / 16) * 1rem);
+  font-size: calc((24 / 16) * 1rem);
   color: var(--color-primary);
   font-weight: 500;
 }

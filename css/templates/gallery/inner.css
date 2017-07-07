@@ -16,18 +16,32 @@
 
 @import './base-page';
 
+.ampstart-gallery-base-section {
+  font-size: 1.12rem;
+}
+
+.ampstart-gallery-inner-offset-img {
+  margin-left: 0;
+}
+
+@media (--breakpoint-sm) {
+  .ampstart-gallery-inner-offset-img {
+    margin-left: calc(-(100 / 16) * 1rem);
+  }
+}
+
 .ampstart-gallery-inner-background-1 {
   position: absolute;
   width: calc(20vmin + (200 / 16) * 1rem);
-  left: calc(20vw - (100 / 16) * 1rem);
+  left: calc(20vw - (160 / 16) * 1rem);
   top: 140vh;
 }
 
 .ampstart-gallery-inner-background-2 {
   position: absolute;
   width: calc(100vmin + (400 / 16) * 1rem);
-  left: 30vw;
-  top: 60vh;
+  left: 40vw;
+  top: 10vh;
 }
 
 .ampstart-gallery-inner-perspective {
