@@ -15,12 +15,12 @@
  */
 
 .ampstart-gallery-component-header {
-  height: calc((18 / 16) * 1rem);
+  height: calc(18 / 16rem);
   width: auto;
   position: absolute;
   top: 0;
   left: 0;
-  margin: calc((9 / 16) * 1rem);
+  margin: calc(18 / 16rem);
   margin-right: 0;
   display: flex;
   align-items: center;
@@ -41,16 +41,16 @@
  */
 @media (--breakpoint-sm) and (--breakpoint-v-sm) {
   .ampstart-gallery-component-header {
-    margin: calc((36 / 16) * 1rem);
+    margin: calc(40 / 16rem);
     margin-right: 0;
-    margin-top: calc((25 / 16) * 1rem);
   }
 }
 
 .ampstart-gallery-component-header-menu-button {
   flex: none;
   cursor: pointer;
-  padding: 8px 10px 10px 8px;
+  padding: calc(10 / 16rem);
+  margin: calc(-10 / 16rem);
   transition: 150ms background-color ease-in;
 }
 
@@ -70,16 +70,16 @@
 
 .ampstart-gallery-component-header-menu-button svg {
   display: block;
-  width: calc((18 / 16) * 1rem);
-  height: calc((18 / 16) * 1rem);
+  width: calc(18 / 16rem);
+  height: calc(18 / 16rem);
 }
 
 .ampstart-gallery-component-header-menu-button::before {
-  bottom: calc((5 / 16) * 1rem);
+  bottom: calc(5 / 16rem);
 }
 
 .ampstart-gallery-component-header-menu-button::after {
-  top: calc((5 / 16) * 1rem);
+  top: calc(5 / 16rem);
 }
 
 .ampstart-gallery-component-header-rotate {
@@ -100,14 +100,14 @@
   .ampstart-gallery-component-header {
     position: fixed;
     flex-direction: column;
-    width: calc((18 / 16) * 1rem);
+    width: calc(18 / 16rem);
     height: auto;
   }
 
   .ampstart-gallery-component-header-rotate {
     display: block;
     margin: 1rem 0;
-    transform: rotate(-90deg) translateY(calc(-50% + (18 / 16) * 1rem / 2));
+    transform: rotate(-90deg) translateY(calc(-50% + (18 / 16rem) / 2));
   }
 
   .ampstart-gallery-component-header-rotate::before {
@@ -123,7 +123,7 @@
  */
 @media (--breakpoint-sm) and (--breakpoint-v-sm) {
   .ampstart-gallery-component-header-rotate  {
-    margin: calc((18 / 16) * 1rem) 0;
+    margin: calc(18 / 16rem) 0;
   }
 }
 
@@ -138,8 +138,8 @@
 
 .ampstart-gallery-component-header-heading {
   margin: 0;
-  font-size: calc((13.5 / 16) * 1rem);
-  line-height: calc((18 / 16) * 1rem);
+  font-size: calc(13.5 / 16rem);
+  line-height: calc(18 / 16rem);
 }
 
 .ampstart-gallery-component-header-heading a {
