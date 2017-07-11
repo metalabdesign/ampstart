@@ -14,30 +14,47 @@
  * limitations under the License.
  */
 
-.ampstart-travel__section-hero {
-  padding-top: var(--fixed-navbar-height);
-  background: #E7EFF2;
+ @import '../bass-override-vars';
+ @import '../page-vars';
+
+.container {
+  max-width: var(--width-lg);
+  margin: auto;
 }
 
-.ampstart-travel__section-hero__heading {
-  font-size: 4.5rem;
-  font-weight: 700;
-  margin-top: 4.5rem;
-  margin-bottom: 1rem;
+.container-fill {
+  max-width: none;
 }
 
-.ampstart-travel__section-hero__subheading {
-  font-size: 18px;
-  font-weight: 600;
-}
+@media (--breakpoint-sm) {
+  .sm-container {
+    max-width: var(--width-lg);
+    margin: auto;
+  }
 
-@media (--breakpoint-md) {
-  .ampstart-travel__section-hero__subheading {
-    font-size: 24px;
+  .sm-container-fill {
+    max-width: none;
   }
 }
 
-.ampstart-travel__section-hero__search {
-  margin-top: 4.25rem;
-  max-width: calc(530 / 16rem)
+@media (--breakpoint-md) {
+  .md-container {
+    max-width: var(--width-lg);
+    margin: auto;
+  }
+
+  .md-container-fill {
+    max-width: none;
+  }
+}
+
+@media (--breakpoint-lg) {
+  .lg-container {
+    max-width: var(--width-lg);
+    margin: auto;
+  }
+
+  .lg-container-fill {
+    max-width: none;
+  }
 }

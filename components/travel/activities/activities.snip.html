@@ -17,82 +17,130 @@ limitations under the License.
 }}
 
 {{#activities}}
-<section class="ampstart-travel-component-activities">
-  <div class="ampstart-travel-base-container">
+<section class="ampstart-travel__activities">
+  <div class="container px1 sm-px2 md-px3">
     <h3>Browse by activity</h3>
-    <form>
-      <div class="ampstart-travel-component-activities-row">
-        <div class="ampstart-travel-component-activities-activity_nightlife">
-          <button type="submit" name="type" value="nightlife">
-            {{> ../icon/moon.snip.html}}
-            Nightlife
-          </button>
-        </div>
-
-        <div class="ampstart-travel-component-activities-activity_artistic">
-          <button type="submit" name="type" value="artistic">
-            {{> ../icon/paintbrush.snip.html}}
-            Artistic
-          </button>
-        </div>
-
-        <div class="ampstart-travel-component-activities-activity_fashion">
-          <button type="submit" name="type" value="fashion">
-            {{> ../icon/jacket.snip.html}}
-            Fashion
-          </button>
-        </div>
-
-        <div class="ampstart-travel-component-activities-activity_active">
-          <button type="submit" name="type" value="active">
-            {{> ../icon/run.snip.html}}
-            Active
-          </button>
-        </div>
-
-        <div class="ampstart-travel-component-activities-activity_food">
-          <button type="submit" name="type" value="food">
-            {{> ../icon/cutlery.snip.html}}
-            Food
-          </button>
-        </div>
-
-        <div class="ampstart-travel-component-activities-activity_nature">
-          <button type="submit" name="type" value="nature">
-            {{> ../icon/pine.snip.html}}
-            Nature
-          </button>
-        </div>
-
-        <div class="ampstart-travel-component-activities-activity_music">
-          <button type="submit" name="type" value="music">
-            {{> ../icon/guitar.snip.html}}
-            Music
-          </button>
-        </div>
-
-        <div class="ampstart-travel-component-activities-activity_drinks">
-          <button type="submit" name="type" value="drinks">
-            {{> ../icon/cocktail.snip.html}}
-            Drinks
-          </button>
-        </div>
-
-        <div class="ampstart-travel-component-activities-activity_tours">
-          <button type="submit" name="type" value="tours">
-            {{> ../icon/bus.snip.html}}
-            Tours
-          </button>
-        </div>
-
-        <div class="ampstart-travel-component-activities-activity_water">
-          <button type="submit" name="type" value="water">
-            {{> ../icon/boat.snip.html}}
-            Water
-          </button>
-        </div>
+    <div class="ampstart-travel__activities_row">
+      <div class="ampstart-travel__activities__activity-nightlife">
+        <button
+          type="button"
+          on="
+            tap:AMP.setState({fields_type: ['Nightlife'], viewIndex: 1})
+          "
+        >
+          {{> ../icon/moon.snip.html}}
+          Nightlife
+        </button>
       </div>
-    </form>
+
+      <div class="ampstart-travel__activities__activity-artistic">
+        <button
+          type="button"
+          on="
+            tap:AMP.setState({fields_type: ['Artistic'], viewIndex: 1})
+          "
+        >
+          {{> ../icon/paintbrush.snip.html}}
+          Artistic
+        </button>
+      </div>
+
+      <div class="ampstart-travel__activities__activity-fashion">
+        <button
+          type="button"
+          on="
+            tap:AMP.setState({fields_type: ['Fashion'], viewIndex: 1})
+          "
+        >
+          {{> ../icon/jacket.snip.html}}
+          Fashion
+        </button>
+      </div>
+
+      <div class="ampstart-travel__activities__activity-active">
+        <button
+          type="button"
+          on="
+            tap:AMP.setState({fields_type: ['Active'], viewIndex: 1})
+          "
+        >
+          {{> ../icon/run.snip.html}}
+          Active
+        </button>
+      </div>
+
+      <div class="ampstart-travel__activities__activity-food">
+        <button
+          type="button"
+          on="
+            tap:AMP.setState({fields_type: ['Food'], viewIndex: 1})
+          "
+        >
+          {{> ../icon/cutlery.snip.html}}
+          Food
+        </button>
+      </div>
+
+      <div class="ampstart-travel__activities__activity-nature">
+        <button
+          type="button"
+          on="
+            tap:AMP.setState({fields_type: ['Nature'], viewIndex: 1})
+          "
+        >
+          {{> ../icon/pine.snip.html}}
+          Nature
+        </button>
+      </div>
+
+      <div class="ampstart-travel__activities__activity-music">
+        <button
+          type="button"
+          on="
+            tap:AMP.setState({fields_type: ['Music'], viewIndex: 1})
+          "
+        >
+          {{> ../icon/guitar.snip.html}}
+          Music
+        </button>
+      </div>
+
+      <div class="ampstart-travel__activities__activity-drinks">
+        <button
+          type="button"
+          on="
+            tap:AMP.setState({fields_type: ['Drinks'], viewIndex: 1})
+          "
+        >
+          {{> ../icon/cocktail.snip.html}}
+          Drinks
+        </button>
+      </div>
+
+      <div class="ampstart-travel__activities__activity-tours">
+        <button
+          type="button"
+          on="
+            tap:AMP.setState({fields_type: ['Tours'], viewIndex: 1})
+          "
+        >
+          {{> ../icon/bus.snip.html}}
+          Tours
+        </button>
+      </div>
+
+      <div class="ampstart-travel__activities__activity-water">
+        <button
+          type="button"
+          on="
+            tap:AMP.setState({fields_type: ['Water'], viewIndex: 1})
+          "
+        >
+          {{> ../icon/boat.snip.html}}
+          Water
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 {{/activities}}

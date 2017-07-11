@@ -14,10 +14,15 @@
  * limitations under the License.
  */
 
-:root {
-  --input-height: 50px;
-  --input-v-padding: calc(14 / 16rem);
-  --input-h-padding: calc(18 / 16rem);
-  --input-line-height: calc(var(--input-height) - var(--input-v-padding) * 2);
-  --input-border-radius: calc(4 / 16rem);
+ @import '../bass-override-vars';
+ @import '../page-vars';
+
+.btn {
+  border-radius: var(--border-radius);
+}
+
+.btn:focus {
+  outline: none;
+  border-color: rgba(0,0,0,.125);
+  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
 }

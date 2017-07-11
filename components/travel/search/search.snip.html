@@ -17,13 +17,17 @@ limitations under the License.
 }}
 
 {{#search}}
-<section class="ampstart-travel-component-search">
-  <div class="ampstart-travel-base-container">
+<section class="ampstart-travel__search">
+  <div class="container px1 sm-px2 md-px3">
     <h2>Have a specific destination in mind?</h2>
-    <form>
-      <input type="text" name="q" placeholder="Where would you like to go?">
-      <button type="submit">Find my next adventure</button>
-    </form>
+    <input
+      type="text"
+      name="query"
+      placeholder="Where would you like to go?"
+      on="change:AMP.setState({fields_query: event.value})"
+      [value]="fields_query.value"
+    >
+    <button type="button">Find my next adventure</button>
   </div>
 </section>
 {{/search}}

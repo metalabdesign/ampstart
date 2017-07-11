@@ -17,16 +17,13 @@ limitations under the License.
 }}
 
 {{#hero}}
-<section class="ampstart-travel__hero">
-  <div class="ampstart-travel__container">
-    <h1 class="ampstart-travel__hero__heading">Adventures made easy</h1>
-    <div class="ampstart-travel__hero__subheading">Find and book activities, tours, and experiences.</div>
-    <form>
-      <input class="ampstart-travel__input" type="text" name="q" placeholder="Where would you like to go?">
-      <label for="depart">Departure</label><input class="ampstart-travel__input" type="date" name="depart">
-      <label for="return">Return</label><input class="ampstart-travel__input" type="date" name="return">
-      <button class="ampstart-travel__button ampstart-travel__button--solid" type="submit">Find Adventures &amp; Tours</button>
-    </form>
+<section class="ampstart-travel__section-hero">
+  <div class="container px1 sm-px2 md-px3">
+    <h1 class="ampstart-travel__section-hero__heading">Adventures<br class="lg-hide"/> made&nbsp;easy</h1>
+    <div class="ampstart-travel__section-hero__subheading">Find and book activities, tours, and experiences.</div>
+    <div class="ampstart-travel__section-hero__search">
+      {{> ../search-form/search-form.snip.html}}
+    </div>
   </div>
 </section>
 {{/hero}}

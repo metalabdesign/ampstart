@@ -17,39 +17,59 @@ limitations under the License.
 }}
 
 {{#footer}}
-<section class="ampstart-travel-component-filter-bar">
-  <div class="ampstart-travel-component-filter-bar-row">
-    <div class="ampstart-travel-component-filter-bar-summary">
+<section class="ampstart-travel__filter-bar">
+  <div class="ampstart-travel__filter-bar__row">
+    <div class="ampstart-travel__filter-bar__summary">
       <div>
         <button>Filters [V]</button>
 
-        <span label>price</span>
-        <span badge>less than $[MAX PRICE]</span>
+        <span data-label>price</span>
+        <span data-badge>less than $[MAX PRICE]</span>
 
-        <span label>Type</span>
-        <span badge>Active</span>
-        <span badge>Nature</span>
-        <span badge>Water</span>
+        <span data-label>Type</span>
+        <span data-badge>Active</span>
+        <span data-badge>Nature</span>
+        <span data-badge>Water</span>
 
-        <span label>City</span>
-        <span badge hollow>All cities</span>
+        <span data-label>City</span>
+        <span data-badge data-hollow>All cities</span>
 
         <div>[count] Tours &amp; Activities Found</div>
       </div>
-      <div expand>
-        <div grid>
-          <div col>
+      <div data-expand>
+        <div data-grid>
+          <div data-col>
             <div>MAX PRICE</div>
             <div>$[MAX PRICE]</div>
-            <input type="range" name="max-price" min="0" max="1000" step="10">
+            <input
+              type="range"
+              name="maxPrice"
+              step="1"
+              min="10"
+              max="810"
+              value="810"
+              on="change:AMP.setState({fields_maxPrice: event.value < event.max ? event.value : null})"
+            >
             <div>
               Average Price for activites in Mexico is
               between $30 and $100.
             </div>
           </div>
-          <div col>
+          <div data-col>
             <div>TYPE</div>
-            <amp-selector layout="container" name="type" multiple>
+            <amp-selector
+              layout="container"
+              name="type"
+              multiple
+              on="
+                select:AMP.setState({
+                  fields_type: fields_type.includes(event.targetOption)
+                    ? copyAndSplice(fields_type, fields_type.indexOf(event.targetOption), 1)
+                    : fields_type.concat([event.targetOption])
+                })
+              "
+              [selected]="fields_type"
+            >
               <div option="Active">Active</div>
               <div option="Artistic">Artistic</div>
               <div option="Drinks">Drinks</div>
@@ -62,15 +82,50 @@ limitations under the License.
               <div option="Water">Water</div>
             </amp-selector>
           </div>
-          <div col>
+          <div data-col>
             <div>CITY</div>
-            <amp-selector layout="container" name="city" multiple>
-              <div option="Mexico City">Mexico City</div>
-              <div option="Tijuana">Tijuana</div>
-              <div option="Puebla">Puebla</div>
-              <div option="Cancún">Cancún</div>
-            </amp-selector>
-            <button>SEE ALL CITIES</button>
+            <amp-list
+              height="200"
+              layout="fixed-height"
+              src="/api/search?query=&departure=&return=&maxPrice=&city=&type=&sort=Popular"
+              [src]="
+                '/api/search' +
+                '?query=' + (fields_query || '') +
+                '&departure=' + (fields_departure || '') +
+                '&return=' + (fields_return || '') +
+                '&maxPrice=' + (fields_maxPrice || '') +
+                '&city=' + fields_city.join('&city=') +
+                '&type=' + fields_type.join('&type=') +
+                '&sort=' + (fields_sort || '')
+              "
+              items="data"
+            >
+              <template type="amp-mustache">
+                {{=[[ ]]=}}
+                  <amp-selector
+                    layout="container"
+                    name="city"
+                    multiple
+                    on="
+                      select:AMP.setState({
+                        fields_city: fields_city.includes(event.targetOption)
+                          ? copyAndSplice(fields_city, fields_city.indexOf(event.targetOption), 1)
+                          : fields_city.concat([event.targetOption])
+                      })
+                    "
+                  >
+                    {{#stats.cities}}
+                      <!-- This should not be an error https://github.com/ampproject/amphtml/pull/9585 -->
+                      {{#selected}}<div option="{{name}}" selected>{{/selected}}
+                      {{^selected}}<div option="{{name}}">{{/selected}}
+                        {{name}}
+                      </div>
+                    {{/stats.cities}}
+                  </amp-selector>
+                  <button overflow>SEE ALL CITIES</button>
+                [[={{ }}=]]
+              </template>
+            </amp-list>
           </div>
         </div>
         <div>
@@ -79,12 +134,17 @@ limitations under the License.
         </div>
       </div>
     </div>
-    <div class="ampstart-travel-component-filter-bar-sort">
+    <div class="ampstart-travel__filter-bar__sort">
       <div>
         Sort by <button>[SORT] [V]</button>
       </div>
-      <div expand>
-        <amp-selector layout="container" name="sort">
+      <div data-expand>
+        <amp-selector
+          layout="container"
+          name="sort"
+          on="select:AMP.setState({fields_sort: event.targetOption})"
+          [selected]="fields_sort"
+        >
           <div option="Popular" selected>Popular</div>
           <div option="Best Rated">Best Rated</div>
           <div option="New">New</div>

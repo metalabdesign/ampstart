@@ -1,0 +1,90 @@
+/**
+ * Copyright 2016 The AMP Start Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+ @import '../bass-override-vars';
+ @import '../page-vars';
+
+.input {
+  display: block;
+  width: 100%;
+  padding: var(--input-padding-y) var(--input-padding-x);
+  line-height: var(--input-line-height);
+  background-color: #fff;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--border-radius);
+  color: currentColor;
+}
+
+.input--outline {
+  border-color: var(--color-purple-haze);
+}
+
+.input--dark {
+  color: #fff;
+  background: color(#000 a(0.2));
+}
+
+.input:focus {
+  box-shadow: 0 0 0 3px var(--darken-3);
+  outline: 0;
+}
+
+.input-small {
+  padding: var(--input-small-padding-y) var(--input-small-padding-x);
+}
+
+.input-big {
+  padding: var(--input-big-padding-y) var(--input-big-padding-x);
+}
+
+.input-narrow {
+  padding-left: var(--input-narrow-padding-x);
+  padding-right: var(--input-narrow-padding-x);
+}
+
+.input::-webkit-input-placeholder {
+  color: var(--placeholder-color);
+}
+
+.input::-moz-placeholder {
+  color: var(--placeholder-color);
+  opacity: 1;
+}
+
+.input:-ms-input-placeholder {
+  color: var(--placeholder-color);
+}
+
+.input--dark::-webkit-input-placeholder {
+  opacity: 0.75;
+}
+
+.input--dark::-moz-placeholder {
+  opacity: 0.75;
+}
+
+.input--dark:-ms-input-placeholder {
+  opacity: 0.75;
+}
+
+.input::-webkit-inner-spin-button {
+  height: var(--input-line-height);
+}
+
+.input::-webkit-datetime-edit-fields-wrapper {
+  padding-top: 0;
+  padding-bottom: 0;
+}

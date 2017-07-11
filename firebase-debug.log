@@ -1,0 +1,37 @@
+[debug] [2017-07-11T04:29:57.020Z] ----------------------------------------------------------------------
+[debug] [2017-07-11T04:29:57.022Z] Command:      /Users/nealgranger/.nvm/versions/node/v7.10.0/bin/node /Users/nealgranger/.nvm/versions/node/v7.10.0/bin/firebase serve --only functions,hosting
+[debug] [2017-07-11T04:29:57.023Z] CLI Version:  3.9.1
+[debug] [2017-07-11T04:29:57.023Z] Platform:     darwin
+[debug] [2017-07-11T04:29:57.023Z] Node Version: v7.10.0
+[debug] [2017-07-11T04:29:57.023Z] Time:         Mon Jul 10 2017 21:29:57 GMT-0700 (PDT)
+[debug] [2017-07-11T04:29:57.023Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-11T04:29:57.039Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-11T04:29:57.040Z] > authorizing via signed-in user
+[debug] [2017-07-11T04:29:57.042Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/ampstart-staging-metalab  
+ Mon Jul 10 2017 21:29:57 GMT-0700 (PDT)
+[debug] [2017-07-11T04:30:02.380Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-11T04:30:02.381Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/ampstart-staging-metalab/tokens  
+ Mon Jul 10 2017 21:30:02 GMT-0700 (PDT)
+[debug] [2017-07-11T04:30:03.320Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/nealgranger/dev/google/ampstart'...
+[info] 
+[info] i  functions: Preparing to emulate HTTPS functions. Support for other event types coming soon.
+[debug] [2017-07-11T04:30:04.207Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/ampstart-staging-metalab  
+ Mon Jul 10 2017 21:30:04 GMT-0700 (PDT)
+[debug] [2017-07-11T04:30:04.207Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/ampstart-staging-metalab/apiKeys  
+ Mon Jul 10 2017 21:30:04 GMT-0700 (PDT)
+[debug] [2017-07-11T04:30:04.208Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/ampstart-staging-metalab  
+ Mon Jul 10 2017 21:30:04 GMT-0700 (PDT)
+[debug] [2017-07-11T04:30:04.659Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-11T04:30:04.684Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-11T04:30:04.688Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/776831106777/clients/_:getWebAppConfig  
+ Mon Jul 10 2017 21:30:04 GMT-0700 (PDT)
+[debug] [2017-07-11T04:30:04.878Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-11T04:30:05.671Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[info] ✔  functions: helloWorld: http://localhost:5003/ampstart-staging-metalab/us-central1/helloWorld
+[info] ✔  functions: search: http://localhost:5003/ampstart-staging-metalab/us-central1/search

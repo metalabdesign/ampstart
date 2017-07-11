@@ -31,46 +31,62 @@
 @import 'basscss-border';
 @import 'basscss-hide';
 
-@import './page-vars';
+/* Optional Modules (not included in Basscss by default) */
+@import 'basscss-addons/modules/responsive-margin';
+@import 'basscss-addons/modules/responsive-padding';
+
+/*@import 'basscss-addons/modules/media-object';*/
+/*@import 'basscss-addons/modules/all';*/
+/*@import 'basscss-addons/modules/forms';*/
+/*@import 'basscss-addons/modules/input-range';*/
+/*@import 'basscss-addons/modules/progress';*/
+
+@import 'basscss-addons/modules/btn';
+/*@import 'basscss-addons/modules/btn-primary';*/
+@import 'basscss-addons/modules/btn-outline';
+@import 'basscss-addons/modules/btn-sizes';
+
+@import 'basscss-addons/modules/colors';
+@import 'basscss-addons/modules/background-colors';
+/*@import 'basscss-addons/modules/border-colors';*/
+/*@import 'basscss-addons/modules/darken';*/
+/*@import 'basscss-addons/modules/lighten';*/
+/*@import 'basscss-addons/modules/background-images';*/
+
 @import './bass-override-vars';
+@import './page-vars';
+
+@import './elements/btn.css';
+@import './elements/input-group.css';
+@import './elements/input-icon.css';
+@import './elements/input.css';
+@import './elements/link';
+@import './elements/responsive-container';
+@import './elements/shadow';
 
 @import '../../../components/travel/activities/activities.css';
 @import '../../../components/travel/discover/discover.css';
 @import '../../../components/travel/featured/featured.css';
 @import '../../../components/travel/filter-bar/filter-bar.css';
 @import '../../../components/travel/footer/footer.css';
-@import '../../../components/travel/form/button.css';
-@import '../../../components/travel/form/input.css';
-@import '../../../components/travel/form/input-group.css';
 @import '../../../components/travel/hero/hero.css';
 @import '../../../components/travel/icon/icon.css';
 @import '../../../components/travel/navbar/navbar.css';
 @import '../../../components/travel/popular/popular.css';
 @import '../../../components/travel/search/search.css';
+@import '../../../components/travel/search-form/search-form.css';
 
 body {
   color: var(--font-color-primary);
   font-family: var(--font-family-primary);
-  line-height: var(--line-height);
   box-sizing: border-box;
-}
-
-a:link, a:visited {
-  transition: color .15s ease-in;
-  color: var(--color-purple);
-  text-decoration: none;
-  transition: color 0.15s ease-in;
-}
-
-a:hover {
-  color: color(var(--color-purple) w(+ 30%) s(+ 20%));
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
-.ampstart-travel__container {
-  max-width: 1152px; /* TODO: px to rem */
-  margin: auto;
+
+[data-view] > div {
+  height: 100%;
 }

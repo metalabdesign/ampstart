@@ -14,8 +14,12 @@
  * limitations under the License.
  */
 
-.ampstart-travel__icon {
+.icon {
   display: inline-block;
-  vertical-align: middle;
-  height: 1.2em;
+  vertical-align: -11%;
+  height: var(--icon-size);
+}
+
+.icon-square, .icon-sqhare > svg {
+  width: var(--icon-size);
 }

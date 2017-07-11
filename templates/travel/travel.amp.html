@@ -20,21 +20,107 @@ limitations under the License.
 <html ⚡>
   {{> ../../utils/amp-page-head.snip.html}}
   <body>
-    {{> ../../components/travel/navbar/navbar.snip.html}}
+    <amp-state id="viewIndex"><script type="application/json">0</script></amp-state>
+    <amp-state id="fields_query"><script type="application/json">null</script></amp-state>
+    <amp-state id="fields_departure"><script type="application/json">null</script></amp-state>
+    <amp-state id="fields_return"><script type="application/json">null</script></amp-state>
+    <amp-state id="fields_type"><script type="application/json">[]</script></amp-state>
+    <amp-state id="fields_city"><script type="application/json">[]</script></amp-state>
+    <amp-state id="fields_sort"><script type="application/json">"Popular"</script></amp-state>
+    <amp-state id="fields_maxPrice"><script type="application/json">null</script></amp-state>
 
-      {{> ../../components/travel/hero/hero.snip.html}}
+<!--     <form
+      method="POST"
+      target="_top"
+      action-xhr="/api/search"
+      on="
+        submit:AMP.setState({loading: true});
+        submit-success:AMP.setState({
+          loading: false,
+          loaded: true,
+          viewIndex: 1,
+          results: event.response.results,
+          stats: event.response.stats
+        });
+        submit-error:AMP.setState({
+          loading: false,
+          error: event.response.error
+        });
+      "
+    > -->
+      <amp-carousel
+        class="ampstart-travel__views"
+        width="100vw"
+        height="100vh"
+        type="slides"
+        [slide]="viewIndex"
+        on="slideChange:AMP.setState({viewIndex: event.index})"
+      >
+        <section data-view="search">
+          <div class="overflow-scroll">
+            {{> ../../components/travel/navbar/navbar.snip.html}}
 
-      {{> ../../components/travel/discover/discover.snip.html}}
+            {{> ../../components/travel/hero/hero.snip.html}}
 
-      {{> ../../components/travel/activities/activities.snip.html}}
+            {{> ../../components/travel/discover/discover.snip.html}}
 
-      {{> ../../components/travel/popular/popular.snip.html}}
+            {{> ../../components/travel/activities/activities.snip.html}}
 
-      {{> ../../components/travel/featured/featured.snip.html}}
+            {{> ../../components/travel/popular/popular.snip.html}}
 
-      {{> ../../components/travel/search/search.snip.html}}
+            {{> ../../components/travel/featured/featured.snip.html}}
 
-    {{> ../../components/travel/footer/footer.snip.html}}
+            {{> ../../components/travel/search/search.snip.html}}
+
+            {{> ../../components/travel/footer/footer.snip.html}}
+          </div>
+        </section>
+        <section data-view="results">
+          <div class="overflow-scroll">
+            {{> ../../components/travel/navbar/navbar.snip.html}}
+
+
+              <svg width="800" height="100" viewBox="0 0 800 100">
+                <path d="m0,100 S12.5 100,25 100 S62.5 91.477,75 82.955 S112.5 64.204,125 62.5 S162.5 55.966,175 52.841 S212.5 41.477,225 36.364 S262.5 28.125,275 30.113 S312.5 43.466,325 52.841 S362.5 76.421,375 81.25 S412.5 85.227,425 79.546 S462.5 51.137,475 34.091 S512.5 1.421,525 2.841 S562.5 15.057,575 24.432 S612.5 45.881,625 48.579 S662.5 56.108,675 58.239 S712.5 71.875,725 81.25 S762.5 100,775 100 S800 100,800 100"></path>
+              </svg>
+
+              <amp-list
+                height="600"
+                layout="fixed-height"
+                src="/api/search?query=&departure=&return=&maxPrice=&city=&type=&sort=Popular"
+                [src]="
+                  '/api/search' +
+                  '?query=' + (fields_query || '') +
+                  '&departure=' + (fields_departure || '') +
+                  '&return=' + (fields_return || '') +
+                  '&maxPrice=' + (fields_maxPrice || '') +
+                  '&city=' + fields_city.join('&city=') +
+                  '&type=' + fields_type.join('&type=') +
+                  '&sort=' + (fields_sort || '')
+                "
+                items="data"
+              >
+                <template type="amp-mustache">
+                  {{=[[ ]]=}}
+                  {{#results}}
+                  <div>
+                    {{name}}<br/>
+                    {{location.city}}<br/>
+                    {{price.value}}
+                  </div>
+                  {{/results}}
+                  [[={{ }}=]]
+                </template>
+              </amp-list>
+
+            {{> ../../components/travel/filter-bar/filter-bar.snip.html}}
+
+
+            {{> ../../components/travel/footer/footer.snip.html}}
+          </div>
+        </section>
+      </div>
+    <!-- </form> -->
   </body>
 </html>
 {{/travel}}

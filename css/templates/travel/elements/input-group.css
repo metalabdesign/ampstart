@@ -14,47 +14,51 @@
  * limitations under the License.
  */
 
-.ampstart-travel__input-group {
+ @import '../bass-override-vars';
+ @import '../page-vars';
+
+.input-group > {
   position: relative;
   display: flex;
   width: 100%;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
-.ampstart-travel__input-group .ampstart-travel__input {
+.input-group > .input,
+.input-group > .input-icon {
   flex: 1 1 auto;
   width: 1%;
 }
 
-
-.ampstart-travel__input-group .ampstart-travel__input,
-.ampstart-travel__input-group .ampstart-travel__button {
+.input-group > .input,
+.input-group > .input-icon > .input,
+.input-group > .btn {
   position: relative;
   z-index: 2;
-  margin-bottom: 0;
 }
 
-.ampstart-travel__input-group .ampstart-travel__input:focus,
-.ampstart-travel__input-group .ampstart-travel__button:focus {
+.input-group > .input:focus,
+.input-group > .btn:focus {
   z-index: 3;
 }
 
-.ampstart-travel__input-group .ampstart-travel__input:not(:first-child),
-.ampstart-travel__input-group .ampstart-travel__button:not(:first-child) {
+.input-group > .input:not(:first-child),
+.input-group > .input-icon:not(:first-child) > .input,
+.input-group > .btn:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
   border-left-width: 0;
 }
 
-.ampstart-travel__input-group .ampstart-travel__input:not(:last-child),
-.ampstart-travel__input-group .ampstart-travel__button:not(:last-child) {
+.input-group > .input:not(:last-child),
+.input-group > .input-icon:not(:last-child) > .input,
+.input-group > .btn:not(:last-child) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   border-right-width: 0;
 }
 
-.ampstart-travel__input-group__sep {
+.input-group__sep {
   z-index: 4;
   display: block;
   width: 0;
