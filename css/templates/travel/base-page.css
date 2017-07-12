@@ -71,10 +71,11 @@
 @import '../../../components/travel/footer/footer.css';
 @import '../../../components/travel/hero/hero.css';
 @import '../../../components/travel/icon/icon.css';
-@import '../../../components/travel/navbar/navbar.css';
 @import '../../../components/travel/popular/popular.css';
-@import '../../../components/travel/search/search.css';
+@import '../../../components/travel/results-navbar/results-navbar.css';
 @import '../../../components/travel/search-form/search-form.css';
+@import '../../../components/travel/search-navbar/search-navbar.css';
+@import '../../../components/travel/search/search.css';
 
 body {
   color: var(--font-color-primary);

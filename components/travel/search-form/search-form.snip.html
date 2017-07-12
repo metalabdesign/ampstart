@@ -23,7 +23,12 @@ limitations under the License.
     type="text"
     name="query"
     placeholder="Where would you like to go?"
-    on="change:AMP.setState({fields_query: event.value})"
+    on="
+      change:AMP.setState({
+        fields_query: event.value,
+        fields_query_edited: query_edited != event.value
+      })
+    "
     [value]="fields_query.value"
   >
   {{> ../icon/map-pin.snip.html}}
@@ -39,7 +44,12 @@ limitations under the License.
       pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
       title="yyyy-mm-dd"
       name="departure"
-      on="change:AMP.setState({fields_departure: true})"
+      on="
+        change:AMP.setState({
+          fields_departure: true,
+          fields_departure_edited: true
+        })
+      "
     >
     {{> ../icon/plane-taking-off.snip.html}}
     <div class="ampstart-travel__search-form__date__label">
@@ -56,9 +66,14 @@ limitations under the License.
       pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
       title="yyyy-mm-dd"
       name="return"
-      on="change:AMP.setState({fields_return: true})"
+      on="
+        change:AMP.setState({
+          fields_return: true,
+          fields_return_edited: true
+        })
+      "
       disabled
-      [disabled]="!fields_departure.touched"
+      [disabled]="!fields_departure"
     >
     {{> ../icon/plane-landing.snip.html}}
     <div class="ampstart-travel__search-form__date__label">
@@ -70,7 +85,25 @@ limitations under the License.
 <button
   class="btn white bg-purple btn-big"
   type="button"
-  on="tap:AMP.setState({viewIndex: 1})"
+  on="
+    tap:AMP.setState({
+      viewIndex: 1,
+      query_query: fields_query,
+      fields_query_edited: false,
+      query_departure: fields_departure,
+      fields_departure_edited: false,
+      query_return: fields_return,
+      fields_return_edited: false,
+      query_maxPrice: fields_maxPrice,
+      fields_maxPrice_edited: false,
+      query_city: fields_city,
+      fields_city_edited: false,
+      query_type: fields_type,
+      fields_type_edited: false,
+      query_sort: fields_sort,
+      fields_sort_edited: false
+    })
+  "
 >
   <span class="h3">Find Adventures &amp; Tours</span>
 </button>

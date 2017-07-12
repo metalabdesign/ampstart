@@ -21,13 +21,36 @@ limitations under the License.
   {{> ../../utils/amp-page-head.snip.html}}
   <body>
     <amp-state id="viewIndex"><script type="application/json">0</script></amp-state>
-    <amp-state id="fields_query"><script type="application/json">null</script></amp-state>
-    <amp-state id="fields_departure"><script type="application/json">null</script></amp-state>
-    <amp-state id="fields_return"><script type="application/json">null</script></amp-state>
+
+    <amp-state id="fields_query"><script type="application/json">""</script></amp-state>
+    <amp-state id="fields_query_edited"><script type="application/json">false</script></amp-state>
+    <amp-state id="query_query"><script type="application/json">""</script></amp-state>
+
+    <amp-state id="fields_departure"><script type="application/json">""</script></amp-state>
+    <amp-state id="fields_departure_edited"><script type="application/json">false</script></amp-state>
+    <amp-state id="query_departure"><script type="application/json">""</script></amp-state>
+
+    <amp-state id="fields_return"><script type="application/json">""</script></amp-state>
+    <amp-state id="fields_return_edited"><script type="application/json">false</script></amp-state>
+    <amp-state id="query_return"><script type="application/json">""</script></amp-state>
+
     <amp-state id="fields_type"><script type="application/json">[]</script></amp-state>
+    <amp-state id="fields_type_edited"><script type="application/json">false</script></amp-state>
+    <amp-state id="query_type"><script type="application/json">[]</script></amp-state>
+
     <amp-state id="fields_city"><script type="application/json">[]</script></amp-state>
+    <amp-state id="fields_city_edited"><script type="application/json">false</script></amp-state>
+    <amp-state id="query_city"><script type="application/json">[]</script></amp-state>
+
     <amp-state id="fields_sort"><script type="application/json">"Popular"</script></amp-state>
-    <amp-state id="fields_maxPrice"><script type="application/json">null</script></amp-state>
+    <amp-state id="fields_sort_edited"><script type="application/json">false</script></amp-state>
+    <amp-state id="query_sort"><script type="application/json">"Popular"</script></amp-state>
+
+    <amp-state id="fields_maxPrice"><script type="application/json">0</script></amp-state>
+    <amp-state id="fields_maxPrice_live"><script type="application/json">0</script></amp-state>
+    <amp-state id="fields_maxPrice_edited"><script type="application/json">false</script></amp-state>
+    <amp-state id="query_maxPrice"><script type="application/json">0</script></amp-state>
+
 
 <!--     <form
       method="POST"
@@ -58,7 +81,7 @@ limitations under the License.
       >
         <section data-view="search">
           <div class="overflow-scroll">
-            {{> ../../components/travel/navbar/navbar.snip.html}}
+            {{> ../../components/travel/search-navbar/search-navbar.snip.html}}
 
             {{> ../../components/travel/hero/hero.snip.html}}
 
@@ -77,7 +100,7 @@ limitations under the License.
         </section>
         <section data-view="results">
           <div class="overflow-scroll">
-            {{> ../../components/travel/navbar/navbar.snip.html}}
+            {{> ../../components/travel/results-navbar/results-navbar.snip.html}}
 
 
               <svg width="800" height="100" viewBox="0 0 800 100">
@@ -86,17 +109,17 @@ limitations under the License.
 
               <amp-list
                 height="600"
-                layout="fixed-height"
-                src="/api/search?query=&departure=&return=&maxPrice=&city=&type=&sort=Popular"
+                layout="nodisplay"
+                src="/api/search?query=&departure=&return=&maxPrice=0&city=&type=&sort=Popular"
                 [src]="
                   '/api/search' +
-                  '?query=' + (fields_query || '') +
-                  '&departure=' + (fields_departure || '') +
-                  '&return=' + (fields_return || '') +
-                  '&maxPrice=' + (fields_maxPrice || '') +
-                  '&city=' + fields_city.join('&city=') +
-                  '&type=' + fields_type.join('&type=') +
-                  '&sort=' + (fields_sort || '')
+                  '?query=' + query_query +
+                  '&departure=' + query_departure +
+                  '&return=' + query_return +
+                  '&maxPrice=' + query_maxPrice +
+                  '&city=' + query_city.join('&city=') +
+                  '&type=' + query_type.join('&type=') +
+                  '&sort=' + query_sort
                 "
                 items="data"
               >
