@@ -16,15 +16,14 @@ limitations under the License.
 -->
 }}
 
-src="/api/search?query=&departure=&return=&maxPrice=0&city=&type=&sort=Popular"
+src="/api/search?query=&departure=&return=&maxPrice=0&sort=Popular"
 [src]="
-  '/api/search' +
-  '?query=' + query_query +
+  '/api/search?query=' + query_query +
   '&departure=' + query_departure +
   '&return=' + query_return +
   '&maxPrice=' + (query_maxPrice < 801 ? query_maxPrice : 0) +
-  '&city=' + query_city.join('&city=') +
-  '&type=' + query_type.join('&type=') +
+  (query_city.length ? '&cities[]=' + query_city.join('&cities[]=') : '') +
+  (query_type.length ? '&types[]=' + query_type.join('&types[]=') : '') +
   '&sort=' + query_sort
 "
 items="data"
