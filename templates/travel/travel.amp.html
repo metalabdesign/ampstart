@@ -20,36 +20,7 @@ limitations under the License.
 <html ⚡>
   {{> ../../utils/amp-page-head.snip.html}}
   <body>
-    <amp-state id="viewIndex"><script type="application/json">0</script></amp-state>
-
-    <amp-state id="fields_query"><script type="application/json">""</script></amp-state>
-    <amp-state id="fields_query_edited"><script type="application/json">false</script></amp-state>
-    <amp-state id="query_query"><script type="application/json">""</script></amp-state>
-
-    <amp-state id="fields_departure"><script type="application/json">""</script></amp-state>
-    <amp-state id="fields_departure_edited"><script type="application/json">false</script></amp-state>
-    <amp-state id="query_departure"><script type="application/json">""</script></amp-state>
-
-    <amp-state id="fields_return"><script type="application/json">""</script></amp-state>
-    <amp-state id="fields_return_edited"><script type="application/json">false</script></amp-state>
-    <amp-state id="query_return"><script type="application/json">""</script></amp-state>
-
-    <amp-state id="fields_type"><script type="application/json">[]</script></amp-state>
-    <amp-state id="fields_type_edited"><script type="application/json">false</script></amp-state>
-    <amp-state id="query_type"><script type="application/json">[]</script></amp-state>
-
-    <amp-state id="fields_city"><script type="application/json">[]</script></amp-state>
-    <amp-state id="fields_city_edited"><script type="application/json">false</script></amp-state>
-    <amp-state id="query_city"><script type="application/json">[]</script></amp-state>
-
-    <amp-state id="fields_sort"><script type="application/json">"Popular"</script></amp-state>
-    <amp-state id="fields_sort_edited"><script type="application/json">false</script></amp-state>
-    <amp-state id="query_sort"><script type="application/json">"Popular"</script></amp-state>
-
-    <amp-state id="fields_maxPrice"><script type="application/json">0</script></amp-state>
-    <amp-state id="fields_maxPrice_live"><script type="application/json">0</script></amp-state>
-    <amp-state id="fields_maxPrice_edited"><script type="application/json">false</script></amp-state>
-    <amp-state id="query_maxPrice"><script type="application/json">0</script></amp-state>
+    {{> ../../components/travel/util/initial-state.snip.html}}
 
 
 <!--     <form
@@ -102,42 +73,21 @@ limitations under the License.
           <div class="overflow-scroll">
             {{> ../../components/travel/results-navbar/results-navbar.snip.html}}
 
-
-              <svg width="800" height="100" viewBox="0 0 800 100">
-                <path d="m0,100 S12.5 100,25 100 S62.5 91.477,75 82.955 S112.5 64.204,125 62.5 S162.5 55.966,175 52.841 S212.5 41.477,225 36.364 S262.5 28.125,275 30.113 S312.5 43.466,325 52.841 S362.5 76.421,375 81.25 S412.5 85.227,425 79.546 S462.5 51.137,475 34.091 S512.5 1.421,525 2.841 S562.5 15.057,575 24.432 S612.5 45.881,625 48.579 S662.5 56.108,675 58.239 S712.5 71.875,725 81.25 S762.5 100,775 100 S800 100,800 100"></path>
-              </svg>
-
-              <amp-list
-                height="600"
-                layout="nodisplay"
-                src="/api/search?query=&departure=&return=&maxPrice=0&city=&type=&sort=Popular"
-                [src]="
-                  '/api/search' +
-                  '?query=' + query_query +
-                  '&departure=' + query_departure +
-                  '&return=' + query_return +
-                  '&maxPrice=' + query_maxPrice +
-                  '&city=' + query_city.join('&city=') +
-                  '&type=' + query_type.join('&type=') +
-                  '&sort=' + query_sort
-                "
-                items="data"
-              >
-                <template type="amp-mustache">
-                  {{=[[ ]]=}}
-                  {{#results}}
-                  <div>
-                    {{name}}<br/>
-                    {{location.city}}<br/>
-                    {{price.value}}
-                  </div>
-                  {{/results}}
-                  [[={{ }}=]]
-                </template>
-              </amp-list>
-
             {{> ../../components/travel/filter-bar/filter-bar.snip.html}}
 
+            <amp-list height="600" {{> ../../components/travel/util/list-src.snip.html}}>
+              <template type="amp-mustache">
+                {{=[[ ]]=}}
+                {{#results}}
+                <div>
+                  {{name}}<br/>
+                  {{location.city}}<br/>
+                  {{price.value}}
+                </div>
+                {{/results}}
+                [[={{ }}=]]
+              </template>
+            </amp-list>
 
             {{> ../../components/travel/footer/footer.snip.html}}
           </div>

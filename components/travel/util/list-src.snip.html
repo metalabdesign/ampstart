@@ -16,19 +16,15 @@ limitations under the License.
 -->
 }}
 
-{{#search}}
-<section class="ampstart-travel__search">
-  <div class="container px1 sm-px2 md-px3">
-    <h2>Have a specific destination in mind?</h2>
-    <input
-      type="text"
-      name="query"
-      placeholder="Where would you like to go?"
-      on="change:AMP.setState({fields_query: event.value})"
-      value=""
-      [value]="fields_query"
-    >
-    <button type="button">Find my next adventure</button>
-  </div>
-</section>
-{{/search}}
+src="/api/search?query=&departure=&return=&maxPrice=0&city=&type=&sort=Popular"
+[src]="
+  '/api/search' +
+  '?query=' + query_query +
+  '&departure=' + query_departure +
+  '&return=' + query_return +
+  '&maxPrice=' + (query_maxPrice < 801 ? query_maxPrice : 0) +
+  '&city=' + query_city.join('&city=') +
+  '&type=' + query_type.join('&type=') +
+  '&sort=' + query_sort
+"
+items="data"
