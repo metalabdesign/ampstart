@@ -158,3 +158,52 @@
     margin-top: 0;
   }
 }
+
+.ampstart-gallery-recommended-image img {
+  object-fit: cover;
+}
+
+.ampstart-related-section-items li:first-child .ampstart-gallery-recommended-image {
+  transform: matrix3d(1.534047, 0.12295, 0, 0.001049,
+                    0.081503, 1.335949, 0, 0.000489,
+                    0, 0, 1, 0,
+                    -49.863192, -29.415962, 0, 1);
+  box-shadow: 1vh 6vh 5vh var(--color-shadow);
+}
+
+.ampstart-related-section-items li:nth-child(2) .ampstart-gallery-recommended-image {
+  transform: matrix3d(1.104404, -0.050629, 0, 0.000115,
+                   0.223984, 1.35379, 0, 0.000809,
+                   0, 0, 1, 0,
+                   -24.574335, -22.172093, 0, 1);
+  transform-origin: 0 0;
+  box-shadow: 0.5vh 3vh 4vh var(--color-shadow);
+}
+
+.ampstart-related-section-items li:nth-child(3) .ampstart-gallery-recommended-image {
+  transform: matrix3d(0.819634, -0.109733, 0, -0.000154,
+                   -0.11382, 0.81154, 0, -0.000399,
+                   0, 0, 1, 0,
+                   33.10833, 33.633254, 0, 1);
+  transform-origin: 0 0;
+  box-shadow: 1.5vh 4vh 5vh var(--color-shadow);
+}
+
+.ampstart-gallery-recommended-image {
+  background: #eee;
+  transform-origin: 0 0;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.ampstart-image-with-caption {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.ampstart-related-section-items li:hover .ampstart-image-with-caption {
+  transform: translateY(-0.5vh) scale(1.05);
+}
+.ampstart-related-section-items li:hover .ampstart-gallery-recommended-image {
+  box-shadow: 1.5vh 7vh 6vh var(--color-shadow);
+}

@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-.ampstart-gallery-component-map {
-  margin-top: calc(180 / 16rem);
-}
 
 .ampstart-gallery-component-map .ampstart-gallery-component-map-heading {
   width: calc((240 / 16) * 1rem);

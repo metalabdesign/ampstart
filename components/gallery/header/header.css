@@ -41,7 +41,7 @@
  */
 @media (--breakpoint-sm) and (--breakpoint-v-sm) {
   .ampstart-gallery-component-header {
-    margin: calc(40 / 16rem);
+    margin: calc(30 / 16rem);
     margin-right: 0;
   }
 }
@@ -123,7 +123,7 @@
  */
 @media (--breakpoint-sm) and (--breakpoint-v-sm) {
   .ampstart-gallery-component-header-rotate  {
-    margin: calc(18 / 16rem) 0;
+    margin: calc(28 / 16rem) 0;
   }
 }
 
