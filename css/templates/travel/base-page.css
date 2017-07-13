@@ -87,7 +87,69 @@ body {
   box-sizing: inherit;
 }
 
-
 [data-view] > div {
   height: 100%;
+}
+
+.inline-list,
+.inline-list [role="list"],
+.inline-list [role="listitem"] {
+  display: inline;
+}
+
+.inline-list [role="list"] {
+  position: static;
+}
+
+/*
+  Add an nbsp character to the inline-list element to ensure prevent it
+  from shrinking to 0px X 0px when otherwise empty which would make AMP think
+  the element was not visible in the viewport and would prevent the list
+  request from firing.
+ */
+.inline-list::after {
+  content: "\00a0";
+  display: inline;
+}
+
+.block-list {
+  min-height: 1px;
+}
+
+.block-list [role="list"] {
+  position: static;
+  height: auto;
+  width: auto;
+}
+
+.badge {
+  padding: calc(4 / 16rem) calc(10 / 16rem);
+  border: 1px solid #aaa;
+  border-radius: var(--border-radius);
+  background: #ccc;
+}
+
+.ellipsis-flex-parent {
+  min-width: 0;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.fade-right {
+  position: relative;
+}
+
+.fade-right::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1.5rem;
+  background: linear-gradient(to left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 1.5rem)
 }

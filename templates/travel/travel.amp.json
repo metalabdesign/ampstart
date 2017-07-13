@@ -1,5 +1,25 @@
 {
   "travel": {
+    "data": {
+      "types": [
+        {"text": "Active", "value": "active"},
+        {"text": "Artistic", "value": "artistic"},
+        {"text": "Drinks", "value": "drinks"},
+        {"text": "Fashion", "value": "fashion"},
+        {"text": "Food", "value": "food"},
+        {"text": "Music", "value": "music"},
+        {"text": "Nature", "value": "nature"},
+        {"text": "Nightlife", "value": "nightlife"},
+        {"text": "Tours", "value": "tours"},
+        {"text": "Water", "value": "water"}
+      ],
+      "sort": [
+        {"text": "Popular", "value": "popularity-desc", "selected": true},
+        {"text": "Best Rated", "value": "rating-desc", "selected": false},
+        {"text": "New", "value": "age-asc", "selected": false},
+        {"text": "Lowest Price", "value": "price-asc", "selected": false}
+      ]
+    },
     "head-tag": {
       "title": "Travel Template",
       "canonical-path": "templates/travel/travel.amp",

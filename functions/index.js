@@ -77,19 +77,24 @@ exports.search = functions.https.onRequest((req, res) => {
     0,
   ];
 
-  const selectedCities = req.query.city || [];
+  const selectedCities = req.query.cities || [];
+  const cities = [
+    'La Paz',
+    'Cancún',
+    'Mexico City',
+    'Oaxaca',
+    'Puebla',
+    'Tijuana',
+  ];
 
   // DANKHACKMODE ACTIVATE: https://github.com/ampproject/amphtml/issues/9536
   res.json({data: [{
     stats: {
-      cities: [
-        {name: 'La Paz', selected: selectedCities.includes('La Paz')},
-        {name: 'Cancún', selected: selectedCities.includes('Cancún')},
-        {name: 'Mexico City', selected: selectedCities.includes('Mexico City')},
-        {name: 'Oaxaca', selected: selectedCities.includes('Oaxaca')},
-        {name: 'Puebla', selected: selectedCities.includes('Puebla')},
-        {name: 'Tijuana', selected: selectedCities.includes('Tijuana')},
-      ],
+      cities: cities.map((name) => ({
+        name,
+        selected: selectedCities.includes(name),
+      })),
+      allCities: !selectedCities.length || cities.every((name) => selectedCities.includes(name)),
       price: {
         graph: {
           pathData: getSVGGraphPathData(priceData, 800, 100),
@@ -102,6 +107,7 @@ exports.search = functions.https.onRequest((req, res) => {
         },
       },
       location: 'Mexico',
+      resultCount: 9,
     },
 
     results: [

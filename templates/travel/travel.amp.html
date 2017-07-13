@@ -75,7 +75,11 @@ limitations under the License.
 
             {{> ../../components/travel/filter-bar/filter-bar.snip.html}}
 
-            <amp-list height="600" {{> ../../components/travel/util/list-src.snip.html}}>
+            <amp-list
+              class="block-list"
+              layout="flex-item"
+              {{> ../../components/travel/util/list-src.snip.html}}
+            >
               <template type="amp-mustache">
                 {{=[[ ]]=}}
                 {{#results}}
