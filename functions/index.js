@@ -33,11 +33,12 @@ function filter(data, query) {
   var results = [];
   var push = true;
 
-  // omit every results that doesn't pass _every_ filter
+  // omit every result that doesn't pass _every_ filter
   data.forEach((val) => {
     var push = true;
 
     // if we fail a filter condition, then don't push
+    // check if we're over the max price
     if (query.maxPrice > 0) {
       if (val.price.value > query.maxPrice) {
         push = false;
@@ -58,19 +59,11 @@ function filter(data, query) {
         if (val.types.includes(type)) found = true;
       });
     } else {
-      // assume it's found if there's no query.type on the request
+      // assume it's found if there's no `query.type` on the request
       found = true;
     }
     if (!found) {
       push = false;
-    }
-
-    // handle search maybe?? :thinking-face:
-    // just try it with the name to see if it works
-    // but obv search multiple fields
-    if (query.query !== '') {
-      if (!val.name.search(`/${query.query}/i`))
-        push = false;
     }
 
     // if we found something, then push it to the results array
@@ -80,6 +73,46 @@ function filter(data, query) {
   });
 
   return results;
+}
+
+/**
+ * Checks to see if any the given cities exist in our travel data,
+ * returning all the ones that are.
+ *
+ * @param {Array} data - Array of objects containing the travel data to
+ * filter.
+ * @param {Array} cities - Array of strings containing city names.
+ * @return {Array} The selected cities.
+ */
+function selectedCities(travelData, cities) {
+  var selected = [];
+  travelData.forEach((data) => {
+    const isSelected = cities.includes(data.location.city);
+
+    // check if the city already exists in our cities array
+    var existsIdx = -1;
+    selected.forEach((city, idx) => {
+      if (city.name === data.location.city) {
+        existsIdx = idx;
+      }
+    });
+
+    // if it doesn't exist already, add it
+    if (existsIdx === -1) {
+      selected.push({
+        name: data.location.city,
+        isSelected: isSelected,
+      });
+    // otherwise update the existing entry only if it's currently false,
+    // otherwise we could overwrite a previous match
+    } else {
+      if (!selected[existsIdx].isSelected) {
+        selected[existsIdx].isSelected = isSelected;
+      }
+    }
+  });
+
+  return selected;
 }
 
 /**
@@ -100,7 +133,6 @@ exports.search = functions.https.onRequest((req, res) => {
     req.query.cities = req.query.cities || []; // TODO for it to be an array even if its a string
     req.query.maxPrice = req.query.maxPrice || 0;
     req.query.type = req.query.type || []; // TODO same deal as cities
-    req.query.query = req.query.query || '';
 
     // Not sure how to handle these yet...
     // const departureDate = req.query.departure;
@@ -128,13 +160,11 @@ exports.search = functions.https.onRequest((req, res) => {
     ];
 
     var results = filter(travelData, req.query);
+    var cities = selectedCities(travelData, req.query.cities);
 
     const stats = {
-      cities: results.map((result) => ({
-        name: result.location.city,
-        selected: req.query.cities.includes(result.location.city)
-      })),
-      //allCities: !req.query.cities.length || req.query.cities.includes(results.location.city),
+      cities: cities,
+      allCities: !req.query.cities.length || cities.every((city) => !req.query.cities.includes(city.name)),
       price: {
         graph: {
           pathData: getSVGGraphPathData(priceData, 800, 100),
