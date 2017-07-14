@@ -457,7 +457,6 @@
   left: calc(-6% - 2.5vh);
   z-index: 40;
   color: white;
-  perspective: 300px;
 }
 
 .ampstart-gallery-landing-image-caption-extraleft {
@@ -478,7 +477,7 @@
   padding: 0.7em 1.2em;
   box-shadow: 0.5rem 2rem 4rem rgba(0,0,0,0.3);
   background: red;
-  font-size: 0.7em;
+  font-size: 0.8em;
   line-height: 1.35;
   opacity: 0;
   transform: scale(0.8) rotateX(0deg);
@@ -501,6 +500,8 @@
   line-height: 1;
   margin-top: 0.6em;
   margin-bottom: 0.25em;
+  visibility: hidden;
+  transition: visibility 0s linear 0.25s;
 }
 
 .amp-mode-mouse .ampstart-gallery-landing-caption-link {
@@ -531,8 +532,14 @@
 [class^="ampstart-gallery-landing-image-wrap-"]:hover .ampstart-gallery-landing-image-caption-content,
 [class^="ampstart-gallery-landing-image-wrap-"]:focus .ampstart-gallery-landing-image-caption-content {
   opacity: 1;
+  pointer-events: auto;
   transform: scale(1) rotateX(0deg);
   transition: opacity 0s linear 0.25s;
+}
+
+[class^="ampstart-gallery-landing-image-wrap-"]:hover .ampstart-gallery-landing-caption-link ,
+[class^="ampstart-gallery-landing-image-wrap-"]:focus .ampstart-gallery-landing-caption-link {
+  visibility: visible;
 }
 
 [class^="ampstart-gallery-landing-image-wrap-"]:hover .ampstart-gallery-landing-image-caption::after,
