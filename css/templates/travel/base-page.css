@@ -66,19 +66,26 @@
 @import './elements/container';
 @import './elements/fade-right';
 @import './elements/inline-list.css';
+@import './elements/input-group.css';
 @import './elements/input-icon.css';
 @import './elements/input-range.css';
 @import './elements/input.css';
+@import './elements/link';
 @import './elements/pane';
 @import './elements/shadow';
 @import './elements/view-controller';
 
 /* Custom template components. */
+@import '../../../components/travel/activities/activities.css';
+@import '../../../components/travel/discover/discover.css';
+@import '../../../components/travel/featured/featured.css';
 @import '../../../components/travel/filter-bar/filter-bar.css';
 @import '../../../components/travel/footer/footer.css';
 @import '../../../components/travel/hero/hero.css';
 @import '../../../components/travel/icon/icon.css';
+@import '../../../components/travel/popular/popular.css';
 @import '../../../components/travel/results-navbar/results-navbar.css';
+@import '../../../components/travel/search/search.css';
 @import '../../../components/travel/search-form/search-form.css';
 @import '../../../components/travel/search-navbar/search-navbar.css';
 
