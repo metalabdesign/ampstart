@@ -1,0 +1,782 @@
+diff --git a/components/travel/hero/hero.css b/components/travel/hero/hero.css
+new file mode 100644
+index 0000000..3bc62c9
+--- /dev/null
++++ b/components/travel/hero/hero.css
+@@ -0,0 +1,43 @@
++/**
++ * Copyright 2016 The AMP Start Authors. All Rights Reserved.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS-IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++.ampstart-travel__section-hero {
++  padding-top: var(--fixed-navbar-height);
++  background: #E7EFF2;
++}
++
++.ampstart-travel__section-hero__heading {
++  font-size: 4.5rem;
++  font-weight: 700;
++  margin-top: 4.5rem;
++  margin-bottom: 1rem;
++}
++
++.ampstart-travel__section-hero__subheading {
++  font-size: 18px;
++  font-weight: 600;
++}
++
++@media (--breakpoint-md) {
++  .ampstart-travel__section-hero__subheading {
++    font-size: 24px;
++  }
++}
++
++.ampstart-travel__section-hero__search {
++  margin-top: 4.25rem;
++  max-width: calc(530 / 16rem)
++}
+diff --git a/components/travel/hero/hero.snip.html b/components/travel/hero/hero.snip.html
+new file mode 100644
+index 0000000..5ce2973
+--- /dev/null
++++ b/components/travel/hero/hero.snip.html
+@@ -0,0 +1,29 @@
++{{!
++<!---
++Copyright 2016 The AMP Start Authors. All Rights Reserved.
++
++Licensed under the Apache License, Version 2.0 (the "License");
++you may not use this file except in compliance with the License.
++You may obtain a copy of the License at
++
++      http://www.apache.org/licenses/LICENSE-2.0
++
++Unless required by applicable law or agreed to in writing, software
++distributed under the License is distributed on an "AS-IS" BASIS,
++WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++See the License for the specific language governing permissions and
++limitations under the License.
++-->
++}}
++
++{{#hero}}
++<section class="ampstart-travel__section-hero">
++  <div class="container px1 sm-px2 md-px3">
++    <h1 class="ampstart-travel__section-hero__heading">Adventures<br class="lg-hide"/> made&nbsp;easy</h1>
++    <div class="ampstart-travel__section-hero__subheading">Find and book activities, tours, and experiences.</div>
++    <div class="ampstart-travel__section-hero__search">
++      {{> ../search-form/search-form.snip.html}}
++    </div>
++  </div>
++</section>
++{{/hero}}
+diff --git a/components/travel/search-form/search-form.css b/components/travel/search-form/search-form.css
+new file mode 100644
+index 0000000..8434697
+--- /dev/null
++++ b/components/travel/search-form/search-form.css
+@@ -0,0 +1,86 @@
++/**
++ * Copyright 2016 The AMP Start Authors. All Rights Reserved.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS-IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++.ampstart-travel__search-form__date {
++  font-weight: 700;
++  padding: var(--input-big-padding-y) 0;
++  padding-left: calc(var(--input-line-height) + 0.5rem);
++  line-height: var(--input-line-height);
++  position: relative;
++}
++
++.ampstart-travel__search-form__date .icon{
++  margin-right: 0.5rem;
++  position: absolute;
++  left: 0;
++}
++
++.ampstart-travel__search-form__date input {
++  opacity: 0;
++  display: block;
++  padding: 0;
++  border: none;
++  background: none;
++  font: inherit;
++  line-height: var(--input-line-height);
++  height: var(--input-line-height);
++  position: relative;
++  margin-bottom: calc(var(--input-line-height) * -1);
++  z-index: 1;
++  width: 8rem;
++}
++
++.ampstart-travel__search-form__date--touched input,
++.ampstart-travel__search-form__date input:focus {
++  opacity: 1;
++}
++
++.ampstart-travel__search-form__date--touched input ~ .ampstart-travel__search-form__date__label,
++.ampstart-travel__search-form__date input:focus ~ .ampstart-travel__search-form__date__label {
++  opacity: 0;
++}
++
++.ampstart-travel__search-form__date input:disabled ~ .icon,
++.ampstart-travel__search-form__date input:disabled ~ .ampstart-travel__search-form__date__label {
++  opacity: 0.5;
++}
++
++.ampstart-travel__search-form__date--touched input:disabled {
++  opacity: 0.5;
++}
++
++.ampstart-travel__search-form__date input::-webkit-datetime-edit-fields-wrapper {
++  padding: 0;
++}
++
++.ampstart-travel__search-form__date input::-webkit-clear-button {
++  display: none;
++}
++
++.ampstart-travel__search-form__date input::-webkit-inner-spin-button {
++  display: none;
++}
++
++.ampstart-travel__search-form__date input::-webkit-calendar-picker-indicator {
++  opacity: 0;
++  padding: 0;
++  position: absolute;
++  top: 0;
++  left: 0;
++  width: 100%;
++  height: 100%;
++  cursor: pointer;
++}
+diff --git a/components/travel/search-form/search-form.snip.html b/components/travel/search-form/search-form.snip.html
+new file mode 100644
+index 0000000..b5df6c5
+--- /dev/null
++++ b/components/travel/search-form/search-form.snip.html
+@@ -0,0 +1,111 @@
++{{!
++<!---
++Copyright 2016 The AMP Start Authors. All Rights Reserved.
++
++Licensed under the Apache License, Version 2.0 (the "License");
++you may not use this file except in compliance with the License.
++You may obtain a copy of the License at
++
++      http://www.apache.org/licenses/LICENSE-2.0
++
++Unless required by applicable law or agreed to in writing, software
++distributed under the License is distributed on an "AS-IS" BASIS,
++WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++See the License for the specific language governing permissions and
++limitations under the License.
++-->
++}}
++
++{{#search}}
++<label class="input-icon shadow rounded">
++  <input
++    class="input input-big"
++    type="text"
++    name="query"
++    placeholder="Where would you like to go?"
++    on="
++      change:AMP.setState({
++        fields_query: event.value,
++        fields_query_edited: query_edited != event.value
++      })
++    "
++    value=""
++    [value]="fields_query"
++  >
++  {{> ../icon/map-pin.snip.html}}
++</label>
++<div class="flex">
++  <label
++    class="ampstart-travel__search-form__date"
++    [class]="'ampstart-travel__search-form__date' + (fields_departure ? ' ampstart-travel__search-form__date--touched' : '')"
++  >
++    <input
++      type="date"
++      placeholder="yyyy-mm-dd"
++      pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
++      title="yyyy-mm-dd"
++      name="departure"
++      on="
++        change:AMP.setState({
++          fields_departure: true,
++          fields_departure_edited: true
++        })
++      "
++    >
++    {{> ../icon/plane-taking-off.snip.html}}
++    <div class="ampstart-travel__search-form__date__label">
++      Departure
++    </div>
++  </label>
++  <label
++    class="ampstart-travel__search-form__date"
++    [class]="'ampstart-travel__search-form__date' + (fields_return ? ' ampstart-travel__search-form__date--touched' : '')"
++  >
++    <input
++      type="date"
++      placeholder="yyyy-mm-dd"
++      pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
++      title="yyyy-mm-dd"
++      name="return"
++      on="
++        change:AMP.setState({
++          fields_return: true,
++          fields_return_edited: true
++        })
++      "
++      disabled
++      [disabled]="!fields_departure"
++    >
++    {{> ../icon/plane-landing.snip.html}}
++    <div class="ampstart-travel__search-form__date__label">
++      Return
++    </div>
++  </label>
++</div>
++
++<button
++  class="btn white bg-purple btn-big"
++  type="button"
++  on="
++    tap:AMP.setState({
++      ui_viewIndex: 1,
++      query_query: fields_query,
++      fields_query_edited: false,
++      query_departure: fields_departure,
++      fields_departure_edited: false,
++      query_return: fields_return,
++      fields_return_edited: false,
++      query_maxPrice: fields_maxPrice,
++      fields_maxPrice_edited: false,
++      query_city: fields_city,
++      fields_city_edited: false,
++      query_type: fields_type,
++      fields_type_edited: false,
++      query_sort: fields_sort,
++      fields_sort_edited: false
++    })
++  "
++>
++  <span class="h3">Find Adventures &amp; Tours</span>
++</button>
++{{/search}}
+diff --git a/components/travel/search-navbar/search-navbar.css b/components/travel/search-navbar/search-navbar.css
+new file mode 100644
+index 0000000..4e18459
+--- /dev/null
++++ b/components/travel/search-navbar/search-navbar.css
+@@ -0,0 +1,27 @@
++/**
++ * Copyright 2016 The AMP Start Authors. All Rights Reserved.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS-IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++.ampstart-travel__search-navbar {
++  /*height: var(--fixed-navbar-height);*/
++  /*padding: 0 calc(62 / 16rem);*/
++/*  position: absolute;
++  top: 0;
++  left: 0;
++  right: 0;*/
++  /*display: flex;*/
++  /*align-items: center;*/
++  /*justify-content: space-between;*/
++}
+diff --git a/components/travel/search-navbar/search-navbar.snip.html b/components/travel/search-navbar/search-navbar.snip.html
+new file mode 100644
+index 0000000..4196abc
+--- /dev/null
++++ b/components/travel/search-navbar/search-navbar.snip.html
+@@ -0,0 +1,46 @@
++{{!
++<!---
++Copyright 2016 The AMP Start Authors. All Rights Reserved.
++
++Licensed under the Apache License, Version 2.0 (the "License");
++you may not use this file except in compliance with the License.
++You may obtain a copy of the License at
++
++      http://www.apache.org/licenses/LICENSE-2.0
++
++Unless required by applicable law or agreed to in writing, software
++distributed under the License is distributed on an "AS-IS" BASIS,
++WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++See the License for the specific language governing permissions and
++limitations under the License.
++-->
++}}
++
++{{#search-navbar}}
++<header class="ampstart-travel__search-navbar absolute top-0 right-0 left-0">
++  <!-- XS Breakpoint Navbar -->
++  <div class="sm-hide md-hide lg-hide px1 py1 flex justify-between items-center">
++    <!--
++      Create a placeholder element the same dimensions of the menu icon so the
++      logo is absolutely centered in the flex container.
++    -->
++    <span class="icon icon-square h3"></span>
++    <div class="inline-block h2 black pointer" role="button" tabindex="-1" on="tap:AMP.setState({ui_viewIndex: 0})">
++      {{> ../icon/logo.snip.html}}
++    </div>
++    <div class="inline-block h3 black pointer" role="button">
++      {{> ../icon/menu.snip.html}}
++    </div>
++  </div>
++
++  <!-- SM+ Breakpoint Navbar -->
++  <div class="xs-hide px1 md-px2 py1 md-py2 flex justify-between items-center">
++    <div class="inline-block h2 black pointer" role="button" tabindex="-1" on="tap:AMP.setState({ui_viewIndex: 0})">
++      {{> ../icon/logo.snip.html}}
++    </div>
++    <div class="h3 black pointer" role="button">
++      {{> ../icon/menu.snip.html}}
++    </div>
++  </div>
++</header>
++{{/search-navbar}}
+diff --git a/components/travel/util/initial-state.snip.html b/components/travel/util/initial-state.snip.html
+index d125a34..5e9f1d6 100644
+--- a/components/travel/util/initial-state.snip.html
++++ b/components/travel/util/initial-state.snip.html
+@@ -28,6 +28,7 @@ limitations under the License.
+ -->
+ }}
+ 
++<amp-state id="ui_viewIndex"><script type="application/json">0</script></amp-state>
+ <amp-state id="ui_filterPane"><script type="application/json">false</script></amp-state>
+ <amp-state id="ui_sortPane"><script type="application/json">false</script></amp-state>
+ 
+diff --git a/css/templates/travel/base-page.css b/css/templates/travel/base-page.css
+index 2c2f94a..784685c 100644
+--- a/css/templates/travel/base-page.css
++++ b/css/templates/travel/base-page.css
+@@ -66,14 +66,21 @@
+ @import './elements/container';
+ @import './elements/fade-right';
+ @import './elements/inline-list.css';
++@import './elements/input-icon.css';
+ @import './elements/input-range.css';
++@import './elements/input.css';
+ @import './elements/pane';
++@import './elements/shadow';
++@import './elements/view-controller';
+ 
+ /* Custom template components. */
+ @import '../../../components/travel/filter-bar/filter-bar.css';
+ @import '../../../components/travel/footer/footer.css';
++@import '../../../components/travel/hero/hero.css';
+ @import '../../../components/travel/icon/icon.css';
+ @import '../../../components/travel/results-navbar/results-navbar.css';
++@import '../../../components/travel/search-form/search-form.css';
++@import '../../../components/travel/search-navbar/search-navbar.css';
+ 
+ body {
+   color: var(--font-color-primary);
+@@ -86,6 +93,7 @@ body {
+   box-sizing: inherit;
+ }
+ 
++
+ /* Util classes. */
+ .min-0 {
+   min-width: 0;
+diff --git a/css/templates/travel/elements/input-icon.css b/css/templates/travel/elements/input-icon.css
+new file mode 100644
+index 0000000..29ab3c1
+--- /dev/null
++++ b/css/templates/travel/elements/input-icon.css
+@@ -0,0 +1,70 @@
++/**
++ * Copyright 2016 The AMP Start Authors. All Rights Reserved.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS-IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++/*
++  These imports are only necessary since the build script unnecessarily treats
++  this as an entry file.
++ */
++@import '../bass-override-vars';
++@import '../page-vars';
++
++/**
++ * input-icon
++ *
++ * Wrap an .input and an .icon element to create an icon-overlayed input.
++ */
++.input-icon {
++  display: flex;
++  width: 100%;
++  position: relative;
++}
++
++.input-icon > .input {
++  padding-left: calc(var(--input-padding-y) * 2 + var(--icon-size));
++}
++
++.input-icon > .input + .icon {
++  position: absolute;
++  left: 0;
++  top: 0;
++  box-sizing: content-box;
++  padding: var(--input-padding-y) var(--input-padding-x);
++}
++
++.input-icon > .input-small {
++  padding-left: calc(var(--input-small-padding-x) * 1.5 + var(--icon-size));
++}
++
++.input-icon > .input-small + .icon {
++  padding: var(--input-small-padding-y) var(--input-small-padding-x);
++}
++
++.input-icon > .input-big {
++  padding-left: calc(var(--input-big-padding-x) * 1.5 + var(--icon-size));
++}
++
++.input-icon > .input-big + .icon {
++  padding: var(--input-big-padding-y) var(--input-big-padding-x);
++}
++
++.input-icon > .input-narrow  {
++  padding-left: calc(var(--input-narrow-padding-x) * 1.5 + var(--icon-size));
++}
++
++.input-icon > .input-narrow + .icon {
++  padding-left: var(--input-narrow-padding-x);
++  padding-right: var(--input-narrow-padding-x);
++}
+diff --git a/css/templates/travel/elements/input.css b/css/templates/travel/elements/input.css
+new file mode 100644
+index 0000000..aeb9352
+--- /dev/null
++++ b/css/templates/travel/elements/input.css
+@@ -0,0 +1,108 @@
++/**
++ * Copyright 2016 The AMP Start Authors. All Rights Reserved.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS-IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++/*
++  These imports are only necessary since the build script unnecessarily treats
++  this as an entry file.
++ */
++@import '../bass-override-vars';
++@import '../page-vars';
++
++/**
++ * input
++ *
++ * Create a stylized input element. Derived from the basscss .input class with
++ * some non-compatible changes.
++ *
++ * Modifier Classes:
++ * - input-outline: add a solid gray outline
++ * - input-dark: style the input as a semi-transparent black overlay with
++ *    white text.
++ * - input-small: reduce the element padding
++ * - input-big: increace the element padding
++ * - input-narrow: reduce the horizontal element padding
++ */
++.input {
++  display: block;
++  width: 100%;
++  padding: var(--input-padding-y) var(--input-padding-x);
++  line-height: var(--input-line-height);
++  background-color: #fff;
++  border: var(--border-width) solid transparent;
++  border-radius: var(--border-radius);
++  color: currentColor;
++}
++
++.input-outline {
++  border-color: var(--gray);
++}
++
++.input-dark {
++  color: #fff;
++  background: color(#000 a(0.2));
++}
++
++.input:focus {
++  box-shadow: 0 0 0 3px var(--darken-3);
++  outline: 0;
++}
++
++.input-small {
++  padding: var(--input-small-padding-y) var(--input-small-padding-x);
++}
++
++.input-big {
++  padding: var(--input-big-padding-y) var(--input-big-padding-x);
++}
++
++.input-narrow {
++  padding-left: var(--input-narrow-padding-x);
++  padding-right: var(--input-narrow-padding-x);
++}
++
++.input::-webkit-input-placeholder {
++  color: var(--placeholder-color);
++}
++
++.input::-moz-placeholder {
++  color: var(--placeholder-color);
++  opacity: 1;
++}
++
++.input:-ms-input-placeholder {
++  color: var(--placeholder-color);
++}
++
++.input--dark::-webkit-input-placeholder {
++  opacity: 0.75;
++}
++
++.input--dark::-moz-placeholder {
++  opacity: 0.75;
++}
++
++.input--dark:-ms-input-placeholder {
++  opacity: 0.75;
++}
++
++.input::-webkit-inner-spin-button {
++  height: var(--input-line-height);
++}
++
++.input::-webkit-datetime-edit-fields-wrapper {
++  padding-top: 0;
++  padding-bottom: 0;
++}
+diff --git a/css/templates/travel/elements/shadow.css b/css/templates/travel/elements/shadow.css
+new file mode 100644
+index 0000000..f2bd744
+--- /dev/null
++++ b/css/templates/travel/elements/shadow.css
+@@ -0,0 +1,26 @@
++/**
++ * Copyright 2016 The AMP Start Authors. All Rights Reserved.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS-IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++/*
++  These imports are only necessary since the build script unnecessarily treats
++  this as an entry file.
++ */
++ @import '../bass-override-vars';
++ @import '../page-vars';
++
++.shadow {
++  box-shadow: 0 0.5rem 1rem color(var(--black) a(0.15));
++}
+diff --git a/css/templates/travel/elements/view-controller.css b/css/templates/travel/elements/view-controller.css
+new file mode 100644
+index 0000000..2dffc50
+--- /dev/null
++++ b/css/templates/travel/elements/view-controller.css
+@@ -0,0 +1,50 @@
++/**
++ * Copyright 2016 The AMP Start Authors. All Rights Reserved.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS-IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++/*
++  These imports are only necessary since the build script unnecessarily treats
++  this as an entry file.
++ */
++@import '../bass-override-vars';
++@import '../page-vars';
++
++/**
++ * view-controller
++ *
++ * Style an <amp-carousel> to behave as an app navigation view controller.
++ *
++ * The styled carousel stretches to fill the viewport and each slide's content
++ * is wrapped in an element to provide overflow-y scrolling.
++ *
++ * This is definitely not the intended use for the carousel component. Building
++ * this with custom css and amp-bind would be an option, unfortunately it would
++ * introduce isues with amp component visibility detection failing when
++ * changing views.
++ */
++.view-controller {
++  width: 100vw;
++  height: 100vh;
++}
++
++.view-controller > div > div > .amp-carousel-slide > div {
++  height: 100%;
++  overflow-x: hidden;
++  overflow-y: scroll;
++}
++
++.view-controller .amp-carousel-button {
++  display: none;
++}
+diff --git a/templates/travel/travel.amp.html b/templates/travel/travel.amp.html
+index 172ea08..63809f2 100644
+--- a/templates/travel/travel.amp.html
++++ b/templates/travel/travel.amp.html
+@@ -21,32 +21,53 @@ limitations under the License.
+   {{> ../../utils/amp-page-head.snip.html}}
+   <body>
+     {{> ../../components/travel/util/initial-state.snip.html}}
++    <amp-carousel
++      class="view-controller"
++      width="100vw"
++      height="100vh"
++      type="slides"
++      [slide]="ui_viewIndex"
++      on="slideChange:AMP.setState({ui_viewIndex: event.index})"
++    >
++      <section>
++        <div>
++          {{> ../../components/travel/search-navbar/search-navbar.snip.html}}
+ 
+-    <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
+-      {{> ../../components/travel/results-navbar/results-navbar.snip.html}}
+-    </div>
++          {{> ../../components/travel/hero/hero.snip.html}}
+ 
+-    {{> ../../components/travel/filter-bar/filter-bar.snip.html}}
+-    <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
+-      <amp-list
+-        class="block-list"
+-        layout="flex-item"
+-        {{> ../../components/travel/util/list-src.snip.html}}
+-      >
+-        <template type="amp-mustache">
+-          {{=[[ ]]=}}
+-          {{#results}}
+-          <div>
+-            {{name}}<br/>
+-            {{location.city}}<br/>
+-            {{price.value}}
++          {{> ../../components/travel/footer/footer.snip.html}}
++        </div>
++      </section>
++      <section>
++        <div>
++          <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
++            {{> ../../components/travel/results-navbar/results-navbar.snip.html}}
+           </div>
+-          {{/results}}
+-          [[={{ }}=]]
+-        </template>
+-      </amp-list>
+ 
+-      {{> ../../components/travel/footer/footer.snip.html}}
++          {{> ../../components/travel/filter-bar/filter-bar.snip.html}}
++          <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
++            <amp-list
++              class="block-list"
++              layout="flex-item"
++              {{> ../../components/travel/util/list-src.snip.html}}
++            >
++              <template type="amp-mustache">
++                {{=[[ ]]=}}
++                {{#results}}
++                <div>
++                  {{name}}<br/>
++                  {{location.city}}<br/>
++                  {{price.value}}
++                </div>
++                {{/results}}
++                [[={{ }}=]]
++              </template>
++            </amp-list>
++
++            {{> ../../components/travel/footer/footer.snip.html}}
++          </div>
++        </div>
++      </section>
+     </div>
+   </body>
+ </html>
