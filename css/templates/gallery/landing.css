@@ -103,7 +103,12 @@
   height: 100vh;
   min-width: 100vw;
   overflow: hidden;
-  margin-bottom: -10px; /* remove spacing from display inline-block */
+}
+
+@media (max-width: 40.06rem) {
+  .ampstart-gallery-landing-wall-scroll {
+    margin-bottom: -3px; /* remove spacing from display inline-block */
+  }
 }
 
 @keyframes hover-one {
