@@ -76,7 +76,7 @@
 
 .ampstart-gallery-landing-wall-scroll {
   position: relative;
-  width: 238vh;
+  width: 285vh;
   height: 100vh;
   min-width: 100vw;
   overflow: hidden;
@@ -162,7 +162,7 @@
   animation-delay: -2s;
   width: 25vh;
   top: -10vh;
-  left: 35vh;
+  left: 38vh;
 }
 .ampstart-gallery-landing-image-wrap-1 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -192,7 +192,7 @@
   animation-delay: -3s;
   width: 34vh;
   top: 38vh;
-  left: 46vh;
+  left: 52vh;
 }
 .ampstart-gallery-landing-image-wrap-3 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -236,8 +236,8 @@
 .ampstart-gallery-landing-image-wrap-6 {
   animation-delay: -4s;
   width: 39vh;
-  top: 13vh;
-  left: 65vh;
+  top: 5vh;
+  left: 71vh;
 }
 .ampstart-gallery-landing-image-wrap-6 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -252,7 +252,7 @@
   animation-delay: -6s;
   width: 34vh;
   top: 5vh;
-  left: 106vh;
+  left: 139vh;
 }
 .ampstart-gallery-landing-image-wrap-7 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -266,8 +266,8 @@
 .ampstart-gallery-landing-image-wrap-8 {
   animation-delay: -5s;
   width: 30vh;
-  top: 1vh;
-  left: 137vh;
+  top: -2vh;
+  left: 177vh;
 }
 .ampstart-gallery-landing-image-wrap-8 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -281,8 +281,8 @@
 .ampstart-gallery-landing-image-wrap-9 {
   animation-delay: -7s;
   width: 42vh;
-  top: 52vh;
-  left: 108vh;
+  top: 54vh;
+  left: 112vh;
 }
 .ampstart-gallery-landing-image-wrap-9 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -296,8 +296,8 @@
 .ampstart-gallery-landing-image-wrap-10 {
   animation-delay: -6s;
   width: 30vh;
-  top: 62vh;
-  left: 85vh;
+  top: 52vh;
+  left: 89vh;
 }
 .ampstart-gallery-landing-image-wrap-10 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -311,8 +311,8 @@
 .ampstart-gallery-landing-image-wrap-11 {
   animation-delay: -9s;
   width: 42vh;
-  top: 78vh;
-  left: 199vh;
+  top: 70vh;
+  left: 239vh;
 }
 .ampstart-gallery-landing-image-wrap-11 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -326,8 +326,8 @@
 .ampstart-gallery-landing-image-wrap-12 {
   animation-delay: -8s;
   width: 25vh;
-  top: -3vh;
-  left: 88vh;
+  top: -2vh;
+  left: 107vh;
 }
 .ampstart-gallery-landing-image-wrap-12 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -341,8 +341,8 @@
 .ampstart-gallery-landing-image-wrap-13 {
   animation-delay: -10s;
   width: 39vh;
-  top: -2vh;
-  left: 182vh;
+  top: -8vh;
+  left: 215vh;
 }
 .ampstart-gallery-landing-image-wrap-13 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -357,7 +357,7 @@
   animation-delay: -9s;
   width: 29vh;
   top: 71vh;
-  left: 126vh;
+  left: 152vh;
 }
 .ampstart-gallery-landing-image-wrap-14 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -371,8 +371,8 @@
 .ampstart-gallery-landing-image-wrap-15 {
   animation-delay: -11s;
   width: 28vh;
-  top: 27vh;
-  left: 172vh;
+  top: 7vh;
+  left: 258vh;
 }
 .ampstart-gallery-landing-image-wrap-15 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -387,7 +387,7 @@
   animation-delay: -10s;
   width: 42vh;
   top: 37vh;
-  left: 204vh;
+  left: 214vh;
 }
 .ampstart-gallery-landing-image-wrap-16 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -402,7 +402,7 @@
   animation-delay: -12s;
   width: 30vh;
   top: 54vh;
-  left: 162vh;
+  left: 192vh;
 }
 .ampstart-gallery-landing-image-wrap-17 .ampstart-gallery-landing-image-transform {
   width: 100%;
@@ -420,7 +420,7 @@
 .ampstart-gallery-landing-image-caption {
   position: absolute;
   top: 2vh;
-  left: calc(-50 / 16rem);
+  left: calc(-6% - 2.5vh);
   z-index: 40;
   color: white;
   perspective: 300px;
@@ -428,12 +428,12 @@
 
 .ampstart-gallery-landing-image-caption-bottom {
   top: auto;
-  bottom: 2vh;
+  bottom: 3vh;
 }
 
 .ampstart-gallery-landing-image-caption-right {
   left: auto;
-  right: calc(-30 / 16rem);
+  right: calc(-2% - 1vh);
 }
 
 .ampstart-gallery-landing-image-caption-content {
