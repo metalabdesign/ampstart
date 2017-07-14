@@ -4,7 +4,8 @@
       "title": "Gallery Template",
       "canonical-path": "templates/gallery.amp",
       "extensions": [
-        "amp-sidebar"
+        "amp-sidebar",
+        "amp-carousel"
       ],
       "css-path": "templates/gallery/landing.css",
       "font-stylesheets": [

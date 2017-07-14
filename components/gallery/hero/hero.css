@@ -70,9 +70,16 @@
 
 .ampstart-gallery-component-hero-carousel .amp-carousel-button {
   border-radius: 0;
-  width: 40px;
-  height: 48px;
+  width: 45px;
+  height: 78px;
+  cursor: pointer;
 }
+.ampstart-gallery-component-hero-carousel .amp-carousel-button:hover,
+.ampstart-gallery-component-hero-carousel .amp-carousel-button:focus {
+  background-color: black;
+  outline: none;
+}
+
 .ampstart-gallery-component-hero-carousel .amp-carousel-button-next { right: 0; }
 .ampstart-gallery-component-hero-carousel .amp-carousel-button-prev { left: 0; }
 
@@ -88,9 +95,9 @@
   margin-right: 2rem;
 }
 
-.amp-scrollable-carousel-slide:nth-child(1) { background: #D8AEC3; }
-.amp-scrollable-carousel-slide:nth-child(2) { background: #BFDAE4; }
-.amp-scrollable-carousel-slide:nth-child(3) { background: #FEFA4A; }
-.amp-scrollable-carousel-slide:nth-child(4) { background: #C9E6F9; }
-.amp-scrollable-carousel-slide:nth-child(5) { background: #E6E8E7; }
-.amp-scrollable-carousel-slide:nth-child(6) { background: #F6BACA; }
+.ampstart-gallery-component-hero-carousel .amp-scrollable-carousel-slide:nth-child(1) { background: #D8AEC3; }
+.ampstart-gallery-component-hero-carousel .amp-scrollable-carousel-slide:nth-child(2) { background: #BFDAE4; }
+.ampstart-gallery-component-hero-carousel .amp-scrollable-carousel-slide:nth-child(3) { background: #FEFA4A; }
+.ampstart-gallery-component-hero-carousel .amp-scrollable-carousel-slide:nth-child(4) { background: #C9E6F9; }
+.ampstart-gallery-component-hero-carousel .amp-scrollable-carousel-slide:nth-child(5) { background: #E6E8E7; }
+.ampstart-gallery-component-hero-carousel .amp-scrollable-carousel-slide:nth-child(6) { background: #F6BACA; }

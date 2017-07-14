@@ -77,12 +77,12 @@
       "carousel": {
         "height": 316,
         "images": [{
-          "width": 472,
+          "width": 473,
           "height": 316,
           "src": "../../img/gallery/1429886_200.jpg",
           "2x": "../../img/gallery/1429886_400.jpg"
         }, {
-          "width": 516,
+          "width": 517,
           "height": 316,
           "src": "../../img/gallery/1431916_200.jpg",
           "2x": "../../img/gallery/1431916_400.jpg"
@@ -102,7 +102,7 @@
           "src": "../../img/gallery/1196479_200.jpg",
           "2x": "../../img/gallery/1196479_400.jpg"
         }, {
-          "width": 472,
+          "width": 473,
           "height": 316,
           "src": "../../img/gallery/1008988_200.jpg",
           "2x": "../../img/gallery/1008988_400.jpg"
