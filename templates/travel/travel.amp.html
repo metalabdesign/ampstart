@@ -21,32 +21,53 @@ limitations under the License.
   {{> ../../utils/amp-page-head.snip.html}}
   <body>
     {{> ../../components/travel/util/initial-state.snip.html}}
+    <amp-carousel
+      class="view-controller"
+      width="100vw"
+      height="100vh"
+      type="slides"
+      [slide]="ui_viewIndex"
+      on="slideChange:AMP.setState({ui_viewIndex: event.index})"
+    >
+      <section>
+        <div>
+          {{> ../../components/travel/search-navbar/search-navbar.snip.html}}
 
-    <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
-      {{> ../../components/travel/results-navbar/results-navbar.snip.html}}
-    </div>
+          {{> ../../components/travel/hero/hero.snip.html}}
 
-    {{> ../../components/travel/filter-bar/filter-bar.snip.html}}
-    <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
-      <amp-list
-        class="block-list"
-        layout="flex-item"
-        {{> ../../components/travel/util/list-src.snip.html}}
-      >
-        <template type="amp-mustache">
-          {{=[[ ]]=}}
-          {{#results}}
-          <div>
-            {{name}}<br/>
-            {{location.city}}<br/>
-            {{price.value}}
+          {{> ../../components/travel/footer/footer.snip.html}}
+        </div>
+      </section>
+      <section>
+        <div>
+          <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
+            {{> ../../components/travel/results-navbar/results-navbar.snip.html}}
           </div>
-          {{/results}}
-          [[={{ }}=]]
-        </template>
-      </amp-list>
 
-      {{> ../../components/travel/footer/footer.snip.html}}
+          {{> ../../components/travel/filter-bar/filter-bar.snip.html}}
+          <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
+            <amp-list
+              class="block-list"
+              layout="flex-item"
+              {{> ../../components/travel/util/list-src.snip.html}}
+            >
+              <template type="amp-mustache">
+                {{=[[ ]]=}}
+                {{#results}}
+                <div>
+                  {{name}}<br/>
+                  {{location.city}}<br/>
+                  {{price.value}}
+                </div>
+                {{/results}}
+                [[={{ }}=]]
+              </template>
+            </amp-list>
+
+            {{> ../../components/travel/footer/footer.snip.html}}
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>
