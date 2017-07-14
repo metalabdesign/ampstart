@@ -150,6 +150,31 @@ exports.search = functions.https.onRequest((req, res) => {
     req.query.maxPrice = req.query.maxPrice || 0;
     req.query.types = castArray(req.query.types);
 
+    // Not sure how to handle these yet...
+    // const departureDate = req.query.departure;
+    // const returnDate = req.query.return;
+
+    // Mock data points representing price distribution.
+    var priceData = [
+      0,
+      0,
+      34.091,
+      40.909,
+      53.409,
+      73.864,
+      65.909,
+      28.409,
+      9.091,
+      31.818,
+      100,
+      94.318,
+      56.818,
+      46.023,
+      37.5,
+      0,
+      0,
+    ];
+
     var results = filter(travelData, req.query);
     var cities = selectedCities(travelData, req.query.cities);
 
@@ -158,6 +183,7 @@ exports.search = functions.https.onRequest((req, res) => {
       allCities: !req.query.cities.length || cities.every((city) => !req.query.cities.includes(city.name)),
       price: {
         graph: {
+          pathData: getSVGGraphPathData(priceData, 800, 100),
           width: 800,
           height: 100
         },
@@ -178,3 +204,48 @@ exports.search = functions.https.onRequest((req, res) => {
     }]});
   });
 });
+
+// Helpers
+
+function getSVGGraphPathData(data, width, height) {
+  var max = Math.max.apply(null, data);
+
+  var width = 800;
+  var height = 100;
+  var scaleH = width / (data.length - 1)
+  var scaleV = height / max;
+
+  var factor = 0.25;
+
+  var commands = [`m0,${applyScaleV(data[0])}`];
+
+  function round(val) {
+    return Math.round(val * 1000) / 1000;
+  }
+
+  function applyScaleH(val) {
+    return round(val * scaleH);
+  }
+
+  function applyScaleV(val) {
+    return round(100 - val * scaleV);
+  }
+
+  for (let i = 0, max = data.length - 1; i < max; i++) {
+    current = data[i];
+    next = data[i + 1];
+
+    let x = (i + 0.5);
+    let y = current + (next - current) * 0.5
+
+    let sX = (i + (0.5 - factor));
+    let sY = current + (next - current) * (0.5 - factor);
+
+    commands.push(`S${applyScaleH(sX)} ${applyScaleV(sY)},${applyScaleH(x)} ${applyScaleV(y)}`);
+  }
+
+  var finalY = data[data.length - 1];
+  commands.push(`S${width} ${applyScaleV(finalY)},${width} ${applyScaleV(finalY)}`);
+
+  return commands.join(' ');
+};
