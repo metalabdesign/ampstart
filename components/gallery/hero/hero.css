@@ -68,20 +68,43 @@
   margin-bottom: calc((100 / 16) * 1rem);
 }
 
-.ampstart-gallery-component-hero-carousel .amp-carousel-button {
-  border-radius: 0;
-  width: 45px;
-  height: 78px;
-  cursor: pointer;
+.ampstart-gallery-component-hero-carousel .i-amphtml-replaced-content {
+  object-fit: cover;
 }
-.ampstart-gallery-component-hero-carousel .amp-carousel-button:hover,
+
+.ampstart-gallery-component-hero-carousel .amp-carousel-button {
+  background-color: white;
+  box-shadow: -10px 0 20px rgba(0,0,0,0.12);
+  border-radius: 0;
+  width: 50px;
+  height: 89px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.ampstart-gallery-component-hero-carousel .amp-carousel-button:hover {
+  background-color: yellow;
+}
+
 .ampstart-gallery-component-hero-carousel .amp-carousel-button:focus {
-  background-color: black;
   outline: none;
 }
 
-.ampstart-gallery-component-hero-carousel .amp-carousel-button-next { right: 0; }
-.ampstart-gallery-component-hero-carousel .amp-carousel-button-prev { left: 0; }
+.ampstart-gallery-component-hero-carousel .amp-carousel-button-next {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%23000' viewBox='0 0 18 18'%3E%3Cpath d='M9 3L7.94 4.06l4.19 4.19H3v1.5h9.13l-4.19 4.19L9 15l6-6z'/%3E%3C/svg%3E");
+  right: 0;
+}
+.ampstart-gallery-component-hero-carousel .amp-carousel-button-prev {
+  left: 0;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%23000' viewBox='0 0 18 18'%3E%3Cpath d='M15 8.25H5.87l4.19-4.19L9 3 3 9l6 6 1.06-1.06-4.19-4.19H15v-1.5z'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 40.06rem) {
+  .ampstart-gallery-component-hero-carousel .amp-carousel-button {
+    width: 40px;
+    height: 55px;
+  }
+}
 
 .ampstart-gallery-component-hero-carousel .amp-scrollable-carousel-slide {
   margin-left: 1.5rem;
