@@ -103,6 +103,7 @@
   height: 100vh;
   min-width: 100vw;
   overflow: hidden;
+  margin-bottom: -10px; /* remove spacing from display inline-block */
 }
 
 @keyframes hover-one {
@@ -548,15 +549,6 @@
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
 }
-
-/*.amp-mode-touch [class^="ampstart-gallery-landing-image-wrap-"] {
-  pointer-events: none;
-}
-
-.amp-mode-touch .ampstart-gallery-landing-image-transform {
-  pointer-events: auto;
-}*/
-
 
 [class^="ampstart-gallery-landing-image-wrap-"]:nth-child(8n-1) .ampstart-gallery-landing-image-caption-content
   { background: #E63C09 }

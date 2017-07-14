@@ -68,7 +68,7 @@
   margin-bottom: calc((100 / 16) * 1rem);
 }
 
-.ampstart-gallery-component-hero-carousel .i-amphtml-replaced-content {
+.ampstart-gallery-component-hero-carousel img {
   object-fit: cover;
 }
 
