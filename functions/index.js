@@ -1,6 +1,7 @@
 const functions = require('firebase-functions');
 const fs = require('fs');
 
+
 // travelData is the sample data that we use to demo filtering on the frontend.
 const travelData = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
@@ -13,11 +14,11 @@ const travelData = JSON.parse(fs.readFileSync('data.json', 'utf8'));
  * @param {Function} next - The next HTTP handler to execute.
  */
 function cors(req, res, next) {
-  const port = process.env.PORT || 5000;
-  res.header(
-    'amp-access-control-allow-source-origin',
-    `${req.protocol}://${req.hostname}:${port}`
-  );
+  const host = process.env.NODE_ENV === 'production'
+    ? `https://${req.hostname}`
+    : `http://${req.hostname}:5000`
+
+  res.header('amp-access-control-allow-source-origin', host);
 
   next();
 }
