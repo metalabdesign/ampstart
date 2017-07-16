@@ -39,17 +39,13 @@
 .pane {
   position: relative;
   z-index: 1;
-}
-
-.pane-visible {
-
+  pointer-events: none;
 }
 
 .pane-overflow {
   position: absolute;
   opacity: 0;
   overflow: hidden;
-  pointer-events: none;
   transition: opacity 200ms ease-in-out;
 }
 
@@ -60,9 +56,9 @@
 
 .pane-visible .pane-overflow {
   opacity: 1;
-  pointer-events: all;
 }
 
 .pane-visible .pane-content {
   transform: translate(0, 0);
+  pointer-events: all;
 }
