@@ -139,6 +139,52 @@ function selectedCities(travelData, cities) {
 }
 
 /**
+ * isSortableValue checks to see if the value is one of the parameters we
+ * knwo how to sort by.
+ * 
+ * @param {String} val - The value to check.
+ * @param {Array} results - Array of object to sort.
+ * @return {Array} The sorted results.
+ */
+function sortResults(val, results) {
+  if (typeof(val) !== "string") {
+    return results;
+  }
+
+  switch (val.toLowerCase()) {
+    case "popularity-desc":
+      results.sort((a, b) => {
+        return a.reviews.count <= b.reviews.count;
+      });
+      break;
+
+    case "rating-desc":
+      results.sort((a, b) => {
+        return a.reviews.averageRaiting <= b.reviews.averageRaiting;
+      });
+      break;
+    
+    case "age-asc":
+      // not sure how to handle this with current data set
+      results.sort((a, b) => {
+        return b.flags.includes("new");
+      });
+      break;
+    
+    case "price-asc":
+      results.sort((a, b) => {
+        return a.price.value - b.price.value;
+      });
+      break;
+    
+    default:
+      break;
+  }
+
+  return results;
+}
+
+/**
  * Search handles the search and filtering functionality.
  *
  * @param {Object} req - The HTTP request object.
@@ -176,6 +222,8 @@ exports.search = functions.https.onRequest((req, res) => {
     ];
 
     var results = filter(travelData, req.query);
+
+    results = sortResults(req.query.sort, results);
     var cities = selectedCities(travelData, req.query.cities);
 
     const stats = {
