@@ -139,8 +139,8 @@ function selectedCities(travelData, cities) {
 }
 
 /**
- * isSortableValue checks to see if the value is one of the parameters we
- * knwo how to sort by.
+ * sortResults checks to see if the value is one of the parameters we
+ * know how to sort by.
  * 
  * @param {String} val - The value to check.
  * @param {Array} results - Array of object to sort.
