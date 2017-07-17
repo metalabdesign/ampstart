@@ -109,7 +109,7 @@ function filter(data, query) {
  */
 function selectedCities(travelData, cities) {
   var selected = [];
-  travelData.forEach((data) => {
+  travelData.activities.forEach((data) => {
     const isSelected = cities.includes(data.location.city);
 
     // check if the city already exists in our cities array
@@ -120,9 +120,12 @@ function selectedCities(travelData, cities) {
       }
     });
 
+    const city = travelData.cities.find((city) => city.name === datal.location.city);
+
     // if it doesn't exist already, add it
     if (existsIdx === -1) {
       selected.push({
+        img: city ? city.img : '',
         name: data.location.city,
         isSelected: isSelected,
       });
@@ -141,7 +144,7 @@ function selectedCities(travelData, cities) {
 /**
  * sortResults checks to see if the value is one of the parameters we
  * know how to sort by.
- * 
+ *
  * @param {String} val - The value to check.
  * @param {Array} results - Array of object to sort.
  * @return {Array} The sorted results.
@@ -163,20 +166,20 @@ function sortResults(val, results) {
         return a.reviews.averageRaiting <= b.reviews.averageRaiting;
       });
       break;
-    
+
     case "age-asc":
       // not sure how to handle this with current data set
       results.sort((a, b) => {
         return b.flags.includes("new");
       });
       break;
-    
+
     case "price-asc":
       results.sort((a, b) => {
         return a.price.value - b.price.value;
       });
       break;
-    
+
     default:
       break;
   }
@@ -221,10 +224,10 @@ exports.search = functions.https.onRequest((req, res) => {
       0,
     ];
 
-    var results = filter(travelData, req.query);
+    var results = filter(travelData.activities, req.query);
 
     results = sortResults(req.query.sort, results);
-    var cities = selectedCities(travelData, req.query.cities);
+    var cities = selectedCities(travelData.activities, req.query.cities);
 
     const stats = {
       cities: cities,
