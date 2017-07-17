@@ -1,0 +1,46 @@
+{{!
+<!---
+Copyright 2016 The AMP Start Authors. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS-IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+}}
+
+{{#search-navbar}}
+<header class="absolute top-0 right-0 left-0">
+  <!-- XS Breakpoint Navbar -->
+  <div class="sm-hide md-hide lg-hide px1 py1 flex justify-between items-center">
+    <!--
+      Create a placeholder element the same dimensions of the menu icon so the
+      logo is absolutely centered in the flex container.
+    -->
+    <span class="icon icon-square h3"></span>
+    <div class="inline-block h2 black pointer" role="button" tabindex="-1" on="tap:AMP.setState({ui_viewIndex: 0})">
+      {{> ../icon/logo.snip.html}}
+    </div>
+    <div class="inline-block h3 black pointer" role="button">
+      {{> ../icon/menu.snip.html}}
+    </div>
+  </div>
+
+  <!-- SM+ Breakpoint Navbar -->
+  <div class="xs-hide px1 md-px2 py1 md-py2 flex justify-between items-center">
+    <div class="inline-block h2 black pointer" role="button" tabindex="-1" on="tap:AMP.setState({ui_viewIndex: 0})">
+      {{> ../icon/logo.snip.html}}
+    </div>
+    <div class="h3 black pointer" role="button">
+      {{> ../icon/menu.snip.html}}
+    </div>
+  </div>
+</header>
+{{/search-navbar}}

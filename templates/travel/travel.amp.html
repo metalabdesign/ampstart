@@ -20,7 +20,7 @@ limitations under the License.
 <html ⚡>
   {{> ../../utils/amp-page-head.snip.html}}
   <body>
-    {{> ../../components/travel/util/initial-state.snip.html}}
+    {{> ./partials/util/initial-state.snip.html}}
     <amp-carousel
       class="view-controller"
       width="100vw"
@@ -31,35 +31,35 @@ limitations under the License.
     >
       <section>
         <div>
-          {{> ../../components/travel/search-navbar/search-navbar.snip.html}}
+          {{> ./partials/search-navbar/search-navbar.snip.html}}
 
-          {{> ../../components/travel/hero/hero.snip.html}}
+          {{> ./partials/hero/hero.snip.html}}
 
-          {{> ../../components/travel/discover/discover.snip.html}}
+          {{> ./partials/discover/discover.snip.html}}
 
-          {{> ../../components/travel/activities/activities.snip.html}}
+          {{> ./partials/activities/activities.snip.html}}
 
-          {{> ../../components/travel/popular/popular.snip.html}}
+          {{> ./partials/popular/popular.snip.html}}
 
-          {{> ../../components/travel/featured/featured.snip.html}}
+          {{> ./partials/featured/featured.snip.html}}
 
-          {{> ../../components/travel/search/search.snip.html}}
+          {{> ./partials/search/search.snip.html}}
 
-          {{> ../../components/travel/footer/footer.snip.html}}
+          {{> ./partials/footer/footer.snip.html}}
         </div>
       </section>
       <section>
         <div>
           <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
-            {{> ../../components/travel/results-navbar/results-navbar.snip.html}}
+            {{> ./partials/results-navbar/results-navbar.snip.html}}
           </div>
 
-          {{> ../../components/travel/filter-bar/filter-bar.snip.html}}
+          {{> ./partials/filter-bar/filter-bar.snip.html}}
           <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
             <amp-list
               class="block-list"
               layout="flex-item"
-              {{> ../../components/travel/util/list-src.snip.html}}
+              {{> ./partials/util/list-src.snip.html}}
             >
               <template type="amp-mustache">
                 {{=[[ ]]=}}
@@ -74,7 +74,7 @@ limitations under the License.
               </template>
             </amp-list>
 
-            {{> ../../components/travel/footer/footer.snip.html}}
+            {{> ./partials/footer/footer.snip.html}}
           </div>
         </div>
       </section>
