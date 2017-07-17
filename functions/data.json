@@ -219,5 +219,301 @@
     "types": [
       "food"
     ]
+  },
+  {
+    "id": "xxx-xxx-xx9",
+    "name": "Bake Traditional Sweet Bread",
+    "price": {
+      "value": 46,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "La Paz",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": 3.5,
+      "count": 13
+    },
+    "flags": [
+      "new"
+    ],
+    "types": [
+      "food",
+      "culture"
+    ]
+  },
+  {
+    "id": "xxx-xxx-x10",
+    "name": "Run Through Mexico City with an Olympian",
+    "price": {
+      "value": 149,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "Mexico City",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": 4.5,
+      "count": 56
+    },
+    "flags": [
+      
+    ],
+    "types": [
+      "active",
+      "tours",
+      "nature"
+    ]
+  },
+  {
+    "id": "xxx-xxx-x11",
+    "name": "Discover Oaxaca's Electronic Music Scene with a Top DJ",
+    "price": {
+      "value": 113,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "Oaxaca",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": 5,
+      "count": 42
+    },
+    "flags": [
+      
+    ],
+    "types": [
+      "music",
+      "nightlife",
+      "culture"
+    ]
+  },
+  {
+    "id": "xxx-xxx-x12",
+    "name": "View the National Museum with an Archeologist",
+    "price": {
+      "value": 79,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "Mexico City",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": null,
+      "count": 0
+    },
+    "flags": [
+      "new"
+    ],
+    "types": [
+      "culture",
+      "tours"
+    ]
+  },
+  {
+    "id": "xxx-xxx-x13",
+    "name": "Ride a Motorcycle along the Coast",
+    "price": {
+      "value": 245,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "Tijuana",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": 4,
+      "count": 122
+    },
+    "flags": [
+      
+    ],
+    "types": [
+      "tours"
+    ]
+  },
+  {
+    "id": "xxx-xxx-x13",
+    "name": "Ride a Motorcycle along the Coast",
+    "price": {
+      "value": 245,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "Canc\u00fan",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": 3,
+      "count": 15
+    },
+    "flags": [
+      
+    ],
+    "types": [
+      "tours"
+    ]
+  },
+  {
+    "id": "xxx-xxx-x14",
+    "name": "Bike Around an Active Volcano",
+    "price": {
+      "value": 34,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "Canc\u00fan",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": 1,
+      "count": 2
+    },
+    "flags": [
+      
+    ],
+    "types": [
+      "tours",
+      "danger"
+    ]
+  },
+  {
+    "id": "xxx-xxx-x15",
+    "name": "Taste Authentic Tapas",
+    "price": {
+      "value": 79,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "Canc\u00fan",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": 3.75,
+      "count": 78
+    },
+    "flags": [
+      "new"
+    ],
+    "types": [
+      "nightlife",
+      "culture",
+      "food",
+      "drinks"
+    ]
+  },
+  {
+    "id": "xxx-xxx-x16",
+    "name": "Skateboard Around the City",
+    "price": {
+      "value": 49,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "Mexico City",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": 5,
+      "count": 17
+    },
+    "flags": [
+      
+    ],
+    "types": [
+      "tours",
+      "culture",
+      "active"
+    ]
+  },
+  {
+    "id": "xxx-xxx-x17",
+    "name": "Go Golfing with a Local Pro",
+    "price": {
+      "value": 129,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "La Paz",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": 3.5,
+      "count": 37
+    },
+    "flags": [
+      
+    ],
+    "types": [
+      "tours",
+      "culture",
+      "active",
+      "nature"
+    ]
+  },
+  {
+    "id": "xxx-xxx-x18",
+    "name": "Learn Photography While Exploring the City",
+    "price": {
+      "value": 89,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "La Paz",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": 4,
+      "count": 99
+    },
+    "flags": [
+      
+    ],
+    "types": [
+      "tours",
+      "culture"
+    ]
+  },
+  {
+    "id": "xxx-xxx-x19",
+    "name": "Enjoy a Traditional Dinner... In the Sky!",
+    "price": {
+      "value": 256,
+      "currency": "USD"
+    },
+    "location": {
+      "city": "Tijuana",
+      "lat": 0,
+      "lng": 0
+    },
+    "reviews": {
+      "averageRaiting": 3.9,
+      "count": 145
+    },
+    "flags": [
+      "new"
+    ],
+    "types": [
+      "tours",
+      "culture",
+      "food",
+      "drinks",
+      "danger"
+    ]
   }
 ]
