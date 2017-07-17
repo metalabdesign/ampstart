@@ -63,7 +63,8 @@
   width: calc(18 / 16rem);
   height: calc(18 / 16rem);
   position: absolute;
-  right: 0;
+  /* Right offset is equal to the focus shadow width. */
+  right: 3px;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -87,6 +88,11 @@
 .checkbox-selector [option][selected]::after {
   display: block;
 }
+
 .checkbox-selector [option]:focus {
   outline: none;
+}
+
+.checkbox-selector [option]:focus::before {
+  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
 }
