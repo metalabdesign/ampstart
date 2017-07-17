@@ -120,7 +120,7 @@ function selectedCities(travelData, cities) {
       }
     });
 
-    const city = travelData.cities.find((city) => city.name === datal.location.city);
+    const city = travelData.cities.find((city) => city.name === data.location.city);
 
     // if it doesn't exist already, add it
     if (existsIdx === -1) {
@@ -227,7 +227,7 @@ exports.search = functions.https.onRequest((req, res) => {
     var results = filter(travelData.activities, req.query);
 
     results = sortResults(req.query.sort, results);
-    var cities = selectedCities(travelData.activities, req.query.cities);
+    var cities = selectedCities(travelData, req.query.cities);
 
     const stats = {
       cities: cities,
