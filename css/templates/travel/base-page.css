@@ -57,37 +57,32 @@
 @import './bass-override-vars';
 @import './page-vars';
 
-/* Custom template elements. */
-@import './elements/badge.css';
-@import './elements/block-list.css';
-@import './elements/btn.css';
-@import './elements/button-selector.css';
-@import './elements/checkbox-selector';
-@import './elements/container';
-@import './elements/fade-right';
-@import './elements/inline-list.css';
-@import './elements/input-group.css';
-@import './elements/input-icon.css';
-@import './elements/input-range.css';
-@import './elements/input.css';
-@import './elements/link';
-@import './elements/pane';
-@import './elements/shadow';
-@import './elements/view-controller';
+/*
+ * Custom elements.
+ */
+@import '../../../templates/travel/elements/badge.css';
+@import '../../../templates/travel/elements/block-list.css';
+@import '../../../templates/travel/elements/btn.css';
+@import '../../../templates/travel/elements/button-selector.css';
+@import '../../../templates/travel/elements/checkbox-selector';
+@import '../../../templates/travel/elements/container';
+@import '../../../templates/travel/elements/fade-right';
+@import '../../../templates/travel/elements/inline-list.css';
+@import '../../../templates/travel/elements/input-group.css';
+@import '../../../templates/travel/elements/input-icon.css';
+@import '../../../templates/travel/elements/input-range.css';
+@import '../../../templates/travel/elements/input.css';
+@import '../../../templates/travel/elements/link';
+@import '../../../templates/travel/elements/pane';
+@import '../../../templates/travel/elements/shadow';
+@import '../../../templates/travel/elements/view-controller';
 
-/* Custom template components. */
-@import '../../../components/travel/activities/activities.css';
-@import '../../../components/travel/discover/discover.css';
-@import '../../../components/travel/featured/featured.css';
-@import '../../../components/travel/filter-bar/filter-bar.css';
-@import '../../../components/travel/footer/footer.css';
-@import '../../../components/travel/hero/hero.css';
-@import '../../../components/travel/icon/icon.css';
-@import '../../../components/travel/popular/popular.css';
-@import '../../../components/travel/results-navbar/results-navbar.css';
-@import '../../../components/travel/search/search.css';
-@import '../../../components/travel/search-form/search-form.css';
-@import '../../../components/travel/search-navbar/search-navbar.css';
+/*
+ * Template partials.
+ */
+@import '../../../templates/travel/partials/hero/hero.css';
+@import '../../../templates/travel/partials/icon/icon.css';
+@import '../../../templates/travel/partials/search-form/search-form.css';
 
 body {
   color: var(--font-color-primary);
@@ -99,7 +94,6 @@ body {
 *, *::before, *::after {
   box-sizing: inherit;
 }
-
 
 /* Util classes. */
 .min-0 {

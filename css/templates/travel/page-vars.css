@@ -55,7 +55,7 @@
   --fixed-navbar-height: calc(86 / 16rem);;
 }
 
-/* input class */
+/* input element */
 :root {
   --input-padding-y: var(--button-padding-y);
   --input-padding-x: var(--button-padding-x);
@@ -68,12 +68,12 @@
   --input-narrow-padding-x: var(--button-narrow-padding-x);
 }
 
-/* icon class */
+/* icon element */
 :root {
   --icon-size: 1.2em;
 }
 
-/* input-range class */
+/* input-range element */
 :root {
   --range-thumb-size: calc(24 / 16rem);
   --range-thumb-color: var(--white);

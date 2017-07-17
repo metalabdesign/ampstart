@@ -1,0 +1,43 @@
+/**
+ * Copyright 2016 The AMP Start Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * view-controller
+ *
+ * Style an <amp-carousel> to behave as an app navigation view controller.
+ *
+ * The styled carousel stretches to fill the viewport and each slide's content
+ * is wrapped in an element to provide overflow-y scrolling.
+ *
+ * This is definitely not the intended use for the carousel component. Building
+ * this with custom css and amp-bind would be an option, unfortunately it would
+ * introduce isues with amp component visibility detection failing when
+ * changing views.
+ */
+.view-controller {
+  width: 100vw;
+  height: 100vh;
+}
+
+.view-controller > div > div > .amp-carousel-slide > div {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.view-controller .amp-carousel-button {
+  display: none;
+}

@@ -1,0 +1,111 @@
+{{!
+<!---
+Copyright 2016 The AMP Start Authors. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS-IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+}}
+
+{{#search}}
+<label class="input-icon shadow rounded">
+  <input
+    class="input input-big"
+    type="text"
+    name="query"
+    placeholder="Where would you like to go?"
+    on="
+      change:AMP.setState({
+        fields_query: event.value,
+        fields_query_edited: query_edited != event.value
+      })
+    "
+    value=""
+    [value]="fields_query"
+  >
+  {{> ../icon/map-pin.snip.html}}
+</label>
+<div class="flex">
+  <label
+    class="travel-search-date"
+    [class]="'travel-search-date' + (fields_departure ? ' travel-search-date-touched' : '')"
+  >
+    <input
+      type="date"
+      placeholder="yyyy-mm-dd"
+      pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+      title="yyyy-mm-dd"
+      name="departure"
+      on="
+        change:AMP.setState({
+          fields_departure: true,
+          fields_departure_edited: true
+        })
+      "
+    >
+    {{> ../icon/plane-taking-off.snip.html}}
+    <div class="travel-search-date-label">
+      Departure
+    </div>
+  </label>
+  <label
+    class="travel-search-date"
+    [class]="'travel-search-date' + (fields_return ? ' travel-search-date-touched' : '')"
+  >
+    <input
+      type="date"
+      placeholder="yyyy-mm-dd"
+      pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+      title="yyyy-mm-dd"
+      name="return"
+      on="
+        change:AMP.setState({
+          fields_return: true,
+          fields_return_edited: true
+        })
+      "
+      disabled
+      [disabled]="!fields_departure"
+    >
+    {{> ../icon/plane-landing.snip.html}}
+    <div class="travel-search-date-label">
+      Return
+    </div>
+  </label>
+</div>
+
+<button
+  class="btn white bg-purple btn-big"
+  type="button"
+  on="
+    tap:AMP.setState({
+      ui_viewIndex: 1,
+      query_query: fields_query,
+      fields_query_edited: false,
+      query_departure: fields_departure,
+      fields_departure_edited: false,
+      query_return: fields_return,
+      fields_return_edited: false,
+      query_maxPrice: fields_maxPrice,
+      fields_maxPrice_edited: false,
+      query_city: fields_city,
+      fields_city_edited: false,
+      query_type: fields_type,
+      fields_type_edited: false,
+      query_sort: fields_sort,
+      fields_sort_edited: false
+    })
+  "
+>
+  <span class="h3">Find Adventures &amp; Tours</span>
+</button>
+{{/search}}
