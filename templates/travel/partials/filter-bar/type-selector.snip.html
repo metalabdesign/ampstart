@@ -16,19 +16,29 @@ limitations under the License.
 -->
 }}
 
-<section>
-  <div class="container px1 sm-px2 md-px3">
-    <h2>Discover Adventures</h2>
-    <div>Get inspired and find your next big trip</div>
-
-    <div>
-      <div>From the blog</div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit amet dolor set.
-      </p>
-      <div>
-        <a href="#">Read more</a>
+<amp-selector
+  class="button-selector clearfix"
+  layout="container"
+  name="type"
+  multiple
+  on="
+    select:AMP.setState({
+      fields_type: fields_type.includes(event.targetOption)
+        ? copyAndSplice(fields_type, fields_type.indexOf(event.targetOption), 1)
+        : fields_type.concat([event.targetOption]),
+      fields_type_edited: true
+    })
+  "
+  [selected]="fields_type"
+>
+  {{#data.types}}
+    <div class="col col-6">
+      <div option="{{value}}">
+        <span>
+          {{> ../icon/icon.snip.html}}
+          {{text}}
+        </span>
       </div>
     </div>
-  </div>
-</section>
+  {{/data.types}}
+</amp-selector>
