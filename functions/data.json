@@ -16,9 +16,10 @@
         "averageRaiting": 4,
         "count": 34
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "active",
         "tours",
@@ -42,9 +43,10 @@
         "averageRaiting": 5,
         "count": 12
       },
-      "flags": [
-        "new"
-      ],
+      "flags": {
+        "liked": false,
+        "new": true
+      },
       "types": [
         "active",
         "tours",
@@ -68,9 +70,10 @@
         "averageRaiting": null,
         "count": 0
       },
-      "flags": [
-        "new"
-      ],
+      "flags": {
+        "liked": false,
+        "new": true
+      },
       "types": [
         "tours",
         "nightlife"
@@ -92,9 +95,10 @@
         "averageRaiting": 3,
         "count": 1
       },
-      "flags": [
-        "new"
-      ],
+      "flags": {
+        "liked": true,
+        "new": true
+      },
       "types": [
         "bus",
         "tours",
@@ -118,9 +122,10 @@
         "averageRaiting": 5,
         "count": 241
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "active",
         "water"
@@ -142,9 +147,10 @@
         "averageRaiting": 4.5,
         "count": 104
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "tours",
         "nature"
@@ -166,9 +172,10 @@
         "averageRaiting": 5,
         "count": 2
       },
-      "flags": [
-        "new"
-      ],
+      "flags": {
+        "liked": true,
+        "new": true
+      },
       "types": [
         "food",
         "drinks"
@@ -190,9 +197,10 @@
         "averageRaiting": 4,
         "count": 66
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "fashion",
         "artistic"
@@ -214,9 +222,10 @@
         "averageRaiting": 2,
         "count": 11
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "food"
       ]
@@ -237,9 +246,10 @@
         "averageRaiting": 3.5,
         "count": 13
       },
-      "flags": [
-        "new"
-      ],
+      "flags": {
+        "liked": false,
+        "new": true
+      },
       "types": [
         "food",
         "culture"
@@ -261,9 +271,10 @@
         "averageRaiting": 4.5,
         "count": 56
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "active",
         "tours",
@@ -286,9 +297,10 @@
         "averageRaiting": 5,
         "count": 42
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "music",
         "nightlife",
@@ -311,9 +323,10 @@
         "averageRaiting": null,
         "count": 0
       },
-      "flags": [
-        "new"
-      ],
+      "flags": {
+        "liked": false,
+        "new": true
+      },
       "types": [
         "culture",
         "tours"
@@ -335,9 +348,10 @@
         "averageRaiting": 4,
         "count": 122
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "tours"
       ]
@@ -358,9 +372,10 @@
         "averageRaiting": 3,
         "count": 15
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "tours"
       ]
@@ -381,9 +396,10 @@
         "averageRaiting": 1,
         "count": 2
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "tours",
         "danger"
@@ -405,9 +421,10 @@
         "averageRaiting": 3.75,
         "count": 78
       },
-      "flags": [
-        "new"
-      ],
+      "flags": {
+        "liked": false,
+        "new": true
+      },
       "types": [
         "nightlife",
         "culture",
@@ -431,9 +448,10 @@
         "averageRaiting": 5,
         "count": 17
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "tours",
         "culture",
@@ -456,9 +474,10 @@
         "averageRaiting": 3.5,
         "count": 37
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "tours",
         "culture",
@@ -482,9 +501,10 @@
         "averageRaiting": 4,
         "count": 99
       },
-      "flags": [
-
-      ],
+      "flags": {
+        "liked": false,
+        "new": false
+      },
       "types": [
         "tours",
         "culture"
@@ -506,9 +526,10 @@
         "averageRaiting": 3.9,
         "count": 145
       },
-      "flags": [
-        "new"
-      ],
+      "flags": {
+        "liked": false,
+        "new": true
+      },
       "types": [
         "tours",
         "culture",
