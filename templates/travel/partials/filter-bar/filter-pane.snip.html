@@ -1,0 +1,59 @@
+{{!
+<!---
+Copyright 2016 The AMP Start Authors. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS-IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+}}
+
+<!-- Filter pane -->
+<div class="pane" [class]="'pane' + (ui_filterPane ? ' pane-visible' : '')">
+  <div class="pane-overflow left-0 right-0 pb2">
+    <div class="pane-content shadow bg-white border-bottom border-silver z1">
+      <div class="container px1 md-px2 py1">
+        <div class="clearfix mxn2 py1">
+          <div class="col col-4 px2">
+            <div class="h5 gray mb1">MAX PRICE</div>
+            {{> ./price-range.snip.html}}
+            <div class="h3 gray line-height-3">
+              <amp-list
+                class="inline-list"
+                layout="flex-item"
+                {{> ../util/list-src.snip.html}}
+              >
+                <template type="amp-mustache">
+                  {{=[[ ]]=}}
+                  Average Price for activites in {{stats.location}} is between ${{stats.price.average.min}} and ${{stats.price.average.max}}.
+                  [[={{ }}=]]
+                </template>
+              </amp-list>
+            </div>
+          </div>
+          <div class="col col-4 px2">
+            <div class="h5 gray mb2">TYPE</div>
+            {{> ./type-selector.snip.html}}
+          </div>
+          <div class="col col-4 px2">
+            <div class="h5 gray mb2">CITY</div>
+            {{> ./city-selector.snip.html}}
+          </div>
+        </div>
+      </div>
+      <div class="mx1 md-mx2 border-top border-silver"></div>
+      <div class="container px1 md-px2 py1 center">
+        {{> ./action-buttons.snip.html}}
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Filter pane -->

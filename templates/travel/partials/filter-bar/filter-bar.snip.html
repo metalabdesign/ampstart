@@ -111,32 +111,5 @@ limitations under the License.
     </div>
   </div>
 
-  <!-- Filter pane -->
-  <div class="pane" [class]="'pane' + (ui_filterPane ? ' pane-visible' : '')">
-    <div class="pane-overflow left-0 right-0 pb2">
-      <div class="pane-content shadow bg-white border-bottom border-silver z1">
-        <div class="container px1 md-px2 py1">
-          <div class="clearfix mxn2 py1">
-            <div class="col col-4 px2">
-              <div class="h5 gray mb1">MAX PRICE</div>
-              {{> ./price-range.snip.html}}
-            </div>
-            <div class="col col-4 px2">
-              <div class="h5 gray mb2">TYPE</div>
-              {{> ./type-selector.snip.html}}
-            </div>
-            <div class="col col-4 px2">
-              <div class="h5 gray mb2">CITY</div>
-              {{> ./city-selector.snip.html}}
-            </div>
-          </div>
-        </div>
-        <div class="mx1 md-mx2 border-top border-silver"></div>
-        <div class="container px1 md-px2 py1 center">
-          {{> ./action-buttons.snip.html}}
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--/ Filter pane -->
+  {{> ./filter-pane.snip.html}}
 </section>
