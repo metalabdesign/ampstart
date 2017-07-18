@@ -19,6 +19,11 @@ limitations under the License.
 <div class="h1" [text]="fields_maxPrice_live < 801 ? '$' + round(fields_maxPrice_live) : '$800+'">
   $800+
 </div>
+<!--
+  This should be rendered with path data from the api but rendering SVG with
+  amp-mustache is currently blocked.
+  see: https://github.com/ampproject/amphtml/issues/8214
+-->
 <svg viewBox="0 0 800 100" class="lime layout-fill block">
   <defs>
     <linearGradient x1="0" y1="0" x2="0" y2="120%" id="price-gradient">

@@ -53,6 +53,10 @@ limitations under the License.
             </div>
             <div class="h4">
               {{#reviews.count}}
+                <!--
+                  Outputting SVG with amp-mustache is currently blocked.
+                  see: https://github.com/ampproject/amphtml/issues/8214
+                -->
                 <span class="green mr1">★★★★★</span>
                 <span class="gray mr1">{{reviews.count}} Reviews</span>
               {{/reviews.count}}
