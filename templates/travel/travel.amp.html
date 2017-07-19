@@ -30,7 +30,7 @@ limitations under the License.
       on="slideChange:AMP.setState({ui_viewIndex: event.index})"
     >
       <section>
-        <div>
+        <div class="view-controller-view">
           {{> ./partials/search-navbar/search-navbar.snip.html}}
 
           {{> ./partials/hero/hero.snip.html}}
@@ -48,21 +48,39 @@ limitations under the License.
           {{> ./partials/footer/footer.snip.html}}
         </div>
       </section>
-      <section>
-        <div>
-          <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
-            {{> ./partials/results-navbar/results-navbar.snip.html}}
-          </div>
+      <section class="bg-purple">
+        <div class="view-controller-view">
+          <div
+            class="overlay-fx-scale"
+            [class]="'overlay-fx-scale' + (ui_filterPane ? ' overlay-fx-scale-active' : '')"
+          >
+            <div
+              class="no-focus"
+              role="button"
+              tabindex="-1"
+              on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})"
+            >
+              {{> ./partials/results-navbar/results-navbar.snip.html}}
+            </div>
 
-          {{> ./partials/filter-bar/filter-bar.snip.html}}
-          <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
-            {{> ./partials/results/results.snip.html}}
+            <div class="bg-white px3 mxn3">
+              {{> ./partials/filter-bar/filter-bar.snip.html}}
 
-            {{> ./partials/footer/footer.snip.html}}
+              {{> ./partials/filter-pane/filter-pane.snip.html}}
+
+              {{> ./partials/sort-bar/sort-bar.snip.html}}
+
+              <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
+                {{> ./partials/results/results.snip.html}}
+
+                {{> ./partials/footer/footer.snip.html}}
+              </div>
+            </div>
           </div>
-        </amp-carousel>
+        </div>
+        {{> ./partials/filter-overlay/filter-overlay.snip.html}}
       </section>
-    </div>
+    </amp-carousel>
   </body>
 </html>
 {{/travel}}

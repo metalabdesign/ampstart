@@ -16,9 +16,10 @@ limitations under the License.
 -->
 }}
 
+<!-- Search Form -->
 <label class="input-icon shadow rounded">
   <input
-    class="input input-big"
+    class="input input-big rounded"
     type="text"
     name="query"
     placeholder="Where would you like to go?"
@@ -81,29 +82,11 @@ limitations under the License.
     </div>
   </label>
 </div>
-
 <button
-  class="btn white bg-purple btn-big"
+  class="btn rounded white bg-purple btn-big"
   type="button"
-  on="
-    tap:AMP.setState({
-      ui_viewIndex: 1,
-      query_query: fields_query,
-      fields_query_edited: false,
-      query_departure: fields_departure,
-      fields_departure_edited: false,
-      query_return: fields_return,
-      fields_return_edited: false,
-      query_maxPrice: fields_maxPrice,
-      fields_maxPrice_edited: false,
-      query_city: fields_city,
-      fields_city_edited: false,
-      query_type: fields_type,
-      fields_type_edited: false,
-      query_sort: fields_sort,
-      fields_sort_edited: false
-    })
-  "
+  {{> ../util/apply-button-props.snip.html}}
 >
   <span class="h3">Find Adventures &amp; Tours</span>
 </button>
+<!--/ Search Form -->

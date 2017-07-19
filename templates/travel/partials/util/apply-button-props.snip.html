@@ -16,11 +16,23 @@ limitations under the License.
 -->
 }}
 
-<!-- Popular -->
-<section>
-  <div class="container px1 md-px2 py1">
-    <h3>Popular Adventures Near You</h3>
-    [carousel]
-  </div>
-</section>
-<!--/ Popular -->
+on="
+  tap:AMP.setState({
+    ui_filterPane: false,
+    ui_viewIndex: 1,
+    query_query: fields_query,
+    fields_query_edited: false,
+    query_departure: fields_departure,
+    fields_departure_edited: false,
+    query_return: fields_return,
+    fields_return_edited: false,
+    query_maxPrice: fields_maxPrice,
+    fields_maxPrice_edited: false,
+    query_city: fields_city,
+    fields_city_edited: false,
+    query_type: fields_type,
+    fields_type_edited: false,
+    query_sort: fields_sort,
+    fields_sort_edited: false
+  })
+"

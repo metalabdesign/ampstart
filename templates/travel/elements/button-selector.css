@@ -38,6 +38,14 @@
   padding-right: calc(10 / 16rem);
   position: relative;
   cursor: pointer;
+
+  min-width: 0;
+}
+
+.button-selector [option] > span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .button-selector [option][selected] {

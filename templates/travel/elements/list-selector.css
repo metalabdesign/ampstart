@@ -15,23 +15,21 @@
  */
 
 /**
- * basscss btn
+ * list-selector
  *
- * Extend the basscss button class.
+ * Style an <amp-selector> element
  */
-
-/* Basscss `.btn` overrides `.block`. Fix that. */
-.btn.block {
-  display: block;
+.list-selector [option] {
+  padding: calc(6 / 16rem) calc(12 / 16rem);
+  border-radius: var(--border-radius);
+  background: var(--white);
+  white-space: nowrap;
 }
 
-.btn:focus {
+.list-selector [option][selected] {
+  /* Override core amp [option][selected] styles. */
+  cursor: pointer;
   outline: none;
-  border-color: rgba(0,0,0,.125);
-  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
-}
 
-.btn:disabled {
-  opacity: 0.5;
-  cursor: default;
+  background: color(var(--green) a(0.2));
 }

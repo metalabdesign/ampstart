@@ -16,16 +16,17 @@ limitations under the License.
 -->
 }}
 
-<section>
+<!-- Results -->
+<section class="pb1 md-pt1">
   <div class="container px1 md-px2">
     <amp-list
       class="block-list"
       layout="flex-item"
-      {{> ../util/list-src.snip.html}}
+      {{> ../util/amp-list-props.snip.html}}
     >
       <template type="amp-mustache">
         {{=[[ ]]=}}
-        <div class="flex flex-wrap mxn1 py1">
+        <div class="flex flex-wrap mxn1">
           {{#results}}
           <div class="col-12 sm-col-6 lg-col-4 p1">
             <div class="relative">
@@ -52,11 +53,12 @@ limitations under the License.
               <span class="gray h3">$</span><span class="black bold">{{price.value}}</span>
             </div>
             <div class="h4">
+              <!--
+                Outputting SVG with amp-mustache is currently blocked. Plain
+                glyphs are used here instead for the map icon and rating.
+                see: https://github.com/ampproject/amphtml/issues/8214
+              -->
               {{#reviews.count}}
-                <!--
-                  Outputting SVG with amp-mustache is currently blocked.
-                  see: https://github.com/ampproject/amphtml/issues/8214
-                -->
                 <span class="green mr1">★★★★★</span>
                 <span class="gray mr1">{{reviews.count}} Reviews</span>
               {{/reviews.count}}
@@ -73,3 +75,4 @@ limitations under the License.
     </amp-list>
   </div>
 </section>
+<!--/ Results -->

@@ -35,7 +35,6 @@
   line-height: var(--input-line-height);
   background-color: #fff;
   border: var(--border-width) solid transparent;
-  border-radius: var(--border-radius);
   color: currentColor;
 }
 

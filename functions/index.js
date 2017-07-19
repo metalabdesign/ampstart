@@ -245,6 +245,14 @@ exports.search = functions.https.onRequest((req, res) => {
       },
       location: 'Mexico',
       resultCount: results.length,
+      startDate: {
+        raw: '2017-06-07',
+        formatted: 'June 7',
+      },
+      endDate: {
+        raw: '2017-06-30',
+        formatted: 'June 30',
+      },
     };
 
     // The entire api response is wrapped in an `items` array in order to

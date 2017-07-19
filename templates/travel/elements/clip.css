@@ -15,23 +15,36 @@
  */
 
 /**
- * basscss btn
+ * clip
  *
- * Extend the basscss button class.
+ * Hide an element without preventing visibility detection.
+ *
  */
 
-/* Basscss `.btn` overrides `.block`. Fix that. */
-.btn.block {
-  display: block;
+.clip {
+  clip: rect(0 0 0 0);
 }
 
-.btn:focus {
-  outline: none;
-  border-color: rgba(0,0,0,.125);
-  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
+@media (--breakpoint-xs) {
+  .xs-clip {
+    clip: rect(0 0 0 0);
+  }
 }
 
-.btn:disabled {
-  opacity: 0.5;
-  cursor: default;
+@media (--breakpoint-sm-md) {
+  .sm-clip {
+    clip: rect(0 0 0 0);
+  }
+}
+
+@media (--breakpoint-md-lg) {
+  .md-clip {
+    clip: rect(0 0 0 0);
+  }
+}
+
+@media (--breakpoint-lg) {
+  .lg-clip {
+    clip: rect(0 0 0 0);
+  }
 }
