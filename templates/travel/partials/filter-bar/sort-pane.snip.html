@@ -20,8 +20,9 @@ limitations under the License.
 <div class="pane" [class]="'pane' + (ui_sortPane ? ' pane-visible' : '')">
   <div class="pane-overflow left-0 right-0 pb2 px2 mxn2">
     <div class="pane-content shadow bg-white border-bottom border-left border-silver z1">
-      <div class="p1">
+      <div class="p1 pr2 mdp2">
         <amp-selector
+          class="list-selector"
           layout="container"
           name="sort"
           on="
@@ -33,7 +34,7 @@ limitations under the License.
           [selected]="fields_sort"
         >
           {{#data.sort}}
-            <div option="{{value}}"{{#selected}} selected{{/selected}}>{{text}}</div>
+            <div class="bold" option="{{value}}"{{#selected}} selected{{/selected}}>{{text}}</div>
           {{/data.sort}}
         </amp-selector>
       </div>

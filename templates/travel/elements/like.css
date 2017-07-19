@@ -36,7 +36,6 @@
   display: inline-flex;
   width: calc(26 / 16rem);
   height: calc(26 / 16rem);
-  justify-content: center;
   align-items: center;
   background-color: color(var(--white) a(0.4));
   border-radius: calc(13 / 16rem);
@@ -45,6 +44,8 @@
 }
 
 .like::after {
+  width: 100%;
+  text-align: center;
   font-size: 1.2rem;
   margin-top: 12%;
   content: "♥︎";

@@ -16,13 +16,23 @@ limitations under the License.
 -->
 }}
 
+<!-- Results Navbar -->
 <header class="bg-purple">
   <div class="px1 md-px2 py1 md-py2 flex justify-between items-center">
     <div class="h2 white pointer" role="button" tabindex="-1" on="tap:AMP.setState({ui_viewIndex: 0})">
       {{> ../icon/logo.snip.html}}
     </div>
-    <div class="h3 white pointer" role="button">
+    <div class="h3 white pointer xs-hide sm-hide" role="button">
       {{> ../icon/menu.snip.html}}
+    </div>
+    <div
+      class="h3 white pointer md-hide lg-hide"
+      role="button"
+      tabindex="-1"
+      on="tap:AMP.setState({ui_filterPane: !ui_filterPane, ui_sortPane: false})"
+    >
+      {{> ../icon/filters.snip.html}}
     </div>
   </div>
 </header>
+<!--/ Results Navbar -->
