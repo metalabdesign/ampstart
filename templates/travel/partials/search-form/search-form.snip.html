@@ -17,24 +17,47 @@ limitations under the License.
 }}
 
 <!-- Search Form -->
-<label class="input-icon shadow rounded">
-  <input
-    class="input input-big rounded"
-    type="text"
-    name="query"
-    placeholder="Where would you like to go?"
-    on="
-      change:AMP.setState({
-        fields_query: event.value,
-        fields_query_edited: query_edited != event.value
-      })
-    "
-    value=""
-    [value]="fields_query"
-  >
-  {{> ../icon/map-pin.snip.html}}
-</label>
-<div class="flex">
+<div class="md-hide lg-hide">
+  <label class="input-icon shadow rounded">
+    <input
+      class="input input-big input-clear rounded"
+      type="text"
+      name="query"
+      placeholder="Where would you like to go?"
+      on="
+        change:AMP.setState({
+          fields_query: event.value,
+          fields_query_edited: query_edited != event.value
+        })
+      "
+      value=""
+      [value]="fields_query"
+    >
+    {{> ../icon/map-pin.snip.html}}
+  </label>
+</div>
+
+<div class="xs-hide sm-hide">
+  <label class="input-icon shadow rounded">
+    <input
+      class="input input-big rounded"
+      type="text"
+      name="query"
+      placeholder="Where would you like to go?"
+      on="
+        change:AMP.setState({
+          fields_query: event.value,
+          fields_query_edited: query_edited != event.value
+        })
+      "
+      value=""
+      [value]="fields_query"
+    >
+    {{> ../icon/map-pin.snip.html}}
+  </label>
+</div>
+
+<div class="flex my2 travel-search-dates">
   <label
     class="travel-search-date"
     [class]="'travel-search-date' + (fields_departure ? ' travel-search-date-touched' : '')"
@@ -82,11 +105,24 @@ limitations under the License.
     </div>
   </label>
 </div>
-<button
-  class="btn rounded white bg-purple btn-big"
-  type="button"
-  {{> ../util/apply-button-props.snip.html}}
->
-  <span class="h3">Find Adventures &amp; Tours</span>
-</button>
+
+<div class="md-hide lg-hide">
+  <button
+    class="btn rounded semibold white block layout-fill bg-purple btn-big"
+    type="button"
+    {{> ../util/apply-button-props.snip.html}}
+  >
+    <span class="h3">Find Adventures &amp; Tours</span>
+  </button>
+</div>
+
+<div class="xs-hide sm-hide">
+  <button
+    class="btn rounded semibold white bg-purple btn-big"
+    type="button"
+    {{> ../util/apply-button-props.snip.html}}
+  >
+    <span class="h3">Find Adventures &amp; Tours</span>
+  </button>
+</div>
 <!--/ Search Form -->

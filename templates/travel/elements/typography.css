@@ -14,13 +14,11 @@
  * limitations under the License.
  */
 
-.link:link, .link:visited {
-  transition: color .15s ease-in;
-  color: var(--purple);
-  text-decoration: none;
-  transition: color 0.15s ease-in;
+.regular {
+  font-weight: 400;
 }
 
-.link:hover {
-  color: color(var(--purple) w(+ 30%) s(+ 20%));
+.semibold {
+  font-weight: 600;
 }
+

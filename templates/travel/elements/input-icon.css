@@ -61,3 +61,7 @@
   padding-left: var(--input-narrow-padding-x);
   padding-right: var(--input-narrow-padding-x);
 }
+
+.input-icon > .input-clear + .icon {
+  color: color(var(--white) a(0.4));
+}

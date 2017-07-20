@@ -37,7 +37,7 @@
   width: calc(26 / 16rem);
   height: calc(26 / 16rem);
   align-items: center;
-  background-color: color(var(--white) a(0.4));
+  background-color: color(var(--white) a(0.5));
   border-radius: calc(13 / 16rem);
   cursor: pointer;
   transition: background-color 100ms;

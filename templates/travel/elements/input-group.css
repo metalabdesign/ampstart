@@ -61,13 +61,12 @@
   border-right-width: 0;
 }
 
-.input-group__sep {
+.input-group-sep {
   z-index: 4;
   display: block;
   width: 0;
   height: calc(12 / 16rem);
-  border-left: 1px solid var(--color-purple-haze);
+  border-left: 1px solid var(--gray);
   margin: 0 -0.5px;
   pointer-events: none;
 }
-

@@ -20,8 +20,13 @@
  * Extend the basscss button class.
  */
 
-/* Basscss `.btn` overrides `.block`. Fix that. */
+.btn {
+  /* Prevent btn bold weight. */
+  font-weight: inherit;
+}
+
 .btn.block {
+  /* Basscss `.btn` overrides `.block`. Fix that. */
   display: block;
 }
 

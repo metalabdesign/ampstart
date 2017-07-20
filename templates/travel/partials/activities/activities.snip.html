@@ -17,128 +17,35 @@ limitations under the License.
 }}
 
 <!-- Activities -->
-<section>
+<section class="travel-activities pb4 pt3">
   <div class="container px1 md-px2">
-    <h3>Browse by activity</h3>
-    <div class="travel-activities_row">
-      <div class="travel-activities__activity-nightlife">
-        <button
-          type="button"
-          on="
-            tap:AMP.setState({fields_type: ['nightlife'], ui_viewIndex: 1})
-          "
-        >
-          {{> ../icon/moon.snip.html}}
-          Nightlife
-        </button>
-      </div>
-
-      <div class="travel-activities__activity-artistic">
-        <button
-          type="button"
-          on="
-            tap:AMP.setState({fields_type: ['artistic'], ui_viewIndex: 1})
-          "
-        >
-          {{> ../icon/paintbrush.snip.html}}
-          Artistic
-        </button>
-      </div>
-
-      <div class="travel-activities__activity-fashion">
-        <button
-          type="button"
-          on="
-            tap:AMP.setState({fields_type: ['fashion'], ui_viewIndex: 1})
-          "
-        >
-          {{> ../icon/jacket.snip.html}}
-          Fashion
-        </button>
-      </div>
-
-      <div class="travel-activities__activity-active">
-        <button
-          type="button"
-          on="
-            tap:AMP.setState({fields_type: ['active'], ui_viewIndex: 1})
-          "
-        >
-          {{> ../icon/run.snip.html}}
-          Active
-        </button>
-      </div>
-
-      <div class="travel-activities__activity-food">
-        <button
-          type="button"
-          on="
-            tap:AMP.setState({fields_type: ['food'], ui_viewIndex: 1})
-          "
-        >
-          {{> ../icon/cutlery.snip.html}}
-          Food
-        </button>
-      </div>
-
-      <div class="travel-activities__activity-nature">
-        <button
-          type="button"
-          on="
-            tap:AMP.setState({fields_type: ['nature'], ui_viewIndex: 1})
-          "
-        >
-          {{> ../icon/pine.snip.html}}
-          Nature
-        </button>
-      </div>
-
-      <div class="travel-activities__activity-music">
-        <button
-          type="button"
-          on="
-            tap:AMP.setState({fields_type: ['music'], ui_viewIndex: 1})
-          "
-        >
-          {{> ../icon/guitar.snip.html}}
-          Music
-        </button>
-      </div>
-
-      <div class="travel-activities__activity-drinks">
-        <button
-          type="button"
-          on="
-            tap:AMP.setState({fields_type: ['drinks'], ui_viewIndex: 1})
-          "
-        >
-          {{> ../icon/cocktail.snip.html}}
-          Drinks
-        </button>
-      </div>
-
-      <div class="travel-activities__activity-tours">
-        <button
-          type="button"
-          on="
-            tap:AMP.setState({fields_type: ['tours'], ui_viewIndex: 1})
-          "
-        >
-          {{> ../icon/bus.snip.html}}
-          Tours
-        </button>
-      </div>
-
-      <div class="travel-activities__activity-water">
-        <button
-          type="button"
-          on="
-            tap:AMP.setState({fields_type: ['water'], ui_viewIndex: 1})
-          "
-        >
-          {{> ../icon/boat.snip.html}}
-          Water
-        </button>
+    <h3 class="h1 semibold mb3 md-hide lg-hide">Browse<br>by activity</h3>
+    <h3 class="h1 semibold mb3 xs-hide sm-hide center">Browse by activity</h3>
+  </div>
+  <div class="overflow-scroll">
+    <div class="container-padded">
+      <div class="flex justify-between px1 md-px2 mxn1">
+        {{#data.types}}
+          <div
+            class="travel-activities-activity type-{{value}} pointer mx1"
+            role="button"
+            tabindex="-1"
+            on="
+              tap:AMP.setState({
+                ui_viewIndex: 1,
+                fields_type: ['{{value}}'],
+                query_type: ['{{value}}']
+              })
+            "
+          >
+            <div class="travel-activities-activity-icon shadow">
+              {{> ../icon/icon.snip.html}}
+            </div>
+            <div class="center line-height-4 semibold">
+              {{text}}
+            </div>
+          </div>
+        {{/data.types}}
       </div>
     </div>
   </div>

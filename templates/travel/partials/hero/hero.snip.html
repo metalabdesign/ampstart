@@ -17,10 +17,22 @@ limitations under the License.
 }}
 
 <!-- Hero -->
-<section class="travel-hero">
-  <div class="container px1 md-px2">
-    <h1 class="travel-hero-heading">Adventures<br class="lg-hide"/> made&nbsp;easy</h1>
-    <div class="travel-hero-subheading">Find and book activities, tours, and experiences.</div>
+<section class="travel-hero relative">
+  <div class="travel-hero-bg">
+    <div class="travel-hero-bg-fade"></div>
+  </div>
+
+  <div class="absolute top-0 left-0 right-0">
+    <div class="relative container">
+      <div class="hero-angle-1"></div>
+      <div class="hero-angle-2"></div>
+      <div class="hero-angle-3"></div>
+    </div>
+  </div>
+
+  <div class="relative container px1 md-px2">
+    <h1 class="travel-hero-heading">Adventures<br class="md-hide lg-hide"/> made&nbsp;easy</h1>
+    <div class="travel-hero-subheading xs-hide sm-hide">Find and book activities, tours, and experiences.</div>
     <div class="travel-hero-search">
       {{> ../search-form/search-form.snip.html}}
     </div>
