@@ -15,8 +15,7 @@
  */
 
 .travel-search-date {
-  font-weight: 700;
-  padding: var(--input-big-padding-y) 0;
+  font-weight: 600;
   padding-left: calc(var(--input-line-height) + 0.5rem);
   line-height: var(--input-line-height);
   position: relative;
@@ -41,6 +40,7 @@
   margin-bottom: calc(var(--input-line-height) * -1);
   z-index: 1;
   width: 8rem;
+  color: currentColor;
 }
 
 .travel-search-date-touched input,
@@ -83,4 +83,16 @@
   width: 100%;
   height: 100%;
   cursor: pointer;
+}
+
+.travel-search-dates {
+  color: var(--white);
+  justify-content: space-around;
+}
+
+@media (--breakpoint-md) {
+  .travel-search-dates {
+    justify-content: flex-start;
+    color: var(--black);
+  }
 }

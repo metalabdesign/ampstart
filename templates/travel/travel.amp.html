@@ -35,17 +35,23 @@ limitations under the License.
 
           {{> ./partials/hero/hero.snip.html}}
 
-          {{> ./partials/discover/discover.snip.html}}
+          <!--
+            Put all sections below the hero in a relatve positioned div to pull
+            them above the absolutely positioned angled divs below the hero.
+          -->
+          <div class="relative">
+            {{> ./partials/discover/discover.snip.html}}
 
-          {{> ./partials/activities/activities.snip.html}}
+            {{> ./partials/activities/activities.snip.html}}
 
-          {{> ./partials/popular/popular.snip.html}}
+            {{> ./partials/popular/popular.snip.html}}
 
-          {{> ./partials/featured/featured.snip.html}}
+            {{> ./partials/featured/featured.snip.html}}
 
-          {{> ./partials/search/search.snip.html}}
+            {{> ./partials/search/search.snip.html}}
 
-          {{> ./partials/footer/footer.snip.html}}
+            {{> ./partials/footer/footer.snip.html}}
+          </div>
         </div>
       </section>
       <section class="bg-purple">
@@ -77,8 +83,8 @@ limitations under the License.
               </div>
             </div>
           </div>
+          {{> ./partials/filter-overlay/filter-overlay.snip.html}}
         </div>
-        {{> ./partials/filter-overlay/filter-overlay.snip.html}}
       </section>
     </amp-carousel>
   </body>

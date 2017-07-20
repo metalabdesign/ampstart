@@ -207,7 +207,7 @@ gulp.task('postcss', 'build postcss files', function() {
     require('postcss-color-function')(),
     require('postcss-discard-comments')(),
     require('postcss-custom-media')(),
-    require('cssnano')({zindex: false}),
+    // require('cssnano')({zindex: false}),
   ];
   const replace = require('gulp-replace');
   const options = {};

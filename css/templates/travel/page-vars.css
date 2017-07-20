@@ -15,44 +15,25 @@
  */
 
 :root {
-  /*--color-magenta: #AA5EFD;*/
-  --color-purple: #8B58E3;
-  --color-green: #47B074; /* 14B52A */
-  --color-pink: #FB52A2;
-  --color-red: #E83A3A;
-  --color-teal: #30D9D9;
-  --color-yellow: #F1C363;
-  /*--color-orange: #EC8936;*/
-  --color-blue: #4E93F8;
-  --color-mint: #0ECE9E;
-  --color-cyan: #3ABEE8;
-
-  /*--color-plum: #312E4E;*/
-  --color-comet: #5C5A72;
-  --color-kashmir: #5D7287;
-
-  --color-porcelain: #FAFBFC;
-  --color-ice: #CFE0E7;
-  --color-mist: #DCE6EA;
-
-  --color-stone: #323A43;
-  --placeholder-color: #8F9FAE; /* Placeholder text */
-
-  --color-purple-haze: #D3D2DD; /* borders */
-  --color-steel: #E1E7ED; /* borders */
-
-  --color-new-york: #1B65D6;
-  --color-barcelona: #91B2C0;
-  --color-tokyo: #91B2C0;
-  --color-paris: #B6936F;
-  --color-chicago: #5E89AB;
-  --color-reykjavik: #13A3C4;
-
   --font-color-primary: var(--black);
   --font-family-primary: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", OpenSansEmoji, EmojiSymbols, EmojiSymb, Symbola;
   --line-height: 1.2;
 
   --fixed-navbar-height: calc(86 / 16rem);;
+}
+
+/* Activity type colors. */
+:root {
+  --type-active-color: #FD68AE;
+  --type-artistic-color: #32DADA;
+  --type-drinks-color: #4E93F8;
+  --type-fashion-color: #F1C363;
+  --type-food-color: #AA5EFD;
+  --type-music-color: #EC8936;
+  --type-nature-color: #14B52A;
+  --type-nightlife-color: #E83A3A;
+  --type-tours-color: #0ECE9E;
+  --type-water-color: #3ABEE8;
 }
 
 /* input element */

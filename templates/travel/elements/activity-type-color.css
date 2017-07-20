@@ -14,13 +14,42 @@
  * limitations under the License.
  */
 
-.link:link, .link:visited {
-  transition: color .15s ease-in;
-  color: var(--purple);
-  text-decoration: none;
-  transition: color 0.15s ease-in;
+.type-active {
+  color: var(--type-active-color);
 }
 
-.link:hover {
-  color: color(var(--purple) w(+ 30%) s(+ 20%));
+.type-artistic {
+  color: var(--type-artistic-color);
+}
+
+.type-drinks {
+  color: var(--type-drinks-color);
+}
+
+.type-fashion {
+  color: var(--type-fashion-color);
+}
+
+.type-food {
+  color: var(--type-food-color);
+}
+
+.type-music {
+  color: var(--type-music-color);
+}
+
+.type-nature {
+  color: var(--type-nature-color);
+}
+
+.type-nightlife {
+  color: var(--type-nightlife-color);
+}
+
+.type-tours {
+  color: var(--type-tours-color);
+}
+
+.type-water {
+  color: var(--type-water-color);
 }

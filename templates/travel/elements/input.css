@@ -43,8 +43,13 @@
 }
 
 .input-dark {
-  color: #fff;
   background: color(#000 a(0.2));
+}
+
+.input-clear {
+  color: var(--white);
+  background: none;
+  border-color: color(var(--white) a(0.4));
 }
 
 .input:focus {
@@ -66,35 +71,38 @@
 }
 
 .input::-webkit-input-placeholder {
-  color: var(--placeholder-color);
+  color: var(--silver);
 }
 
 .input::-moz-placeholder {
-  color: var(--placeholder-color);
+  color: var(--silver);
   opacity: 1;
 }
 
 .input:-ms-input-placeholder {
-  color: var(--placeholder-color);
+  color: var(--silver);
 }
 
-.input--dark::-webkit-input-placeholder {
+.input-dark::-webkit-input-placeholder {
   opacity: 0.75;
 }
 
-.input--dark::-moz-placeholder {
+.input-dark::-moz-placeholder {
   opacity: 0.75;
 }
 
-.input--dark:-ms-input-placeholder {
+.input-dark:-ms-input-placeholder {
   opacity: 0.75;
 }
 
-.input::-webkit-inner-spin-button {
-  height: var(--input-line-height);
+.input-clear::-webkit-input-placeholder {
+  opacity: 0.4;
 }
 
-.input::-webkit-datetime-edit-fields-wrapper {
-  padding-top: 0;
-  padding-bottom: 0;
+.input-clear::-moz-placeholder {
+  opacity: 0.4;
+}
+
+.input-clear:-ms-input-placeholder {
+  opacity: 0.4;
 }

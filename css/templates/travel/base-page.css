@@ -60,6 +60,7 @@
 /*
  * Custom elements.
  */
+@import '../../../templates/travel/elements/activity-type-color.css';
 @import '../../../templates/travel/elements/badge.css';
 @import '../../../templates/travel/elements/block-list.css';
 @import '../../../templates/travel/elements/btn.css';
@@ -81,13 +82,17 @@
 @import '../../../templates/travel/elements/pill';
 @import '../../../templates/travel/elements/row-selector';
 @import '../../../templates/travel/elements/shadow';
+@import '../../../templates/travel/elements/typography';
 @import '../../../templates/travel/elements/view-controller';
 
 /*
  * Template partials.
  */
+@import '../../../templates/travel/partials/activities/activities.css';
+@import '../../../templates/travel/partials/discover/discover.css';
 @import '../../../templates/travel/partials/hero/hero.css';
 @import '../../../templates/travel/partials/icon/icon.css';
+@import '../../../templates/travel/partials/popular/popular.css';
 @import '../../../templates/travel/partials/search-form/search-form.css';
 
 body {

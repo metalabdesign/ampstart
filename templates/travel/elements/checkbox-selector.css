@@ -76,6 +76,8 @@
   text-align: center;
   display: none;
   color: var(--purple);
+  /* Override the page font to prevent the emoji glyph from displaying. */
+  font-family: 'sans-serif';
 }
 
 .checkbox-selector [option][selected]::after {

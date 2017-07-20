@@ -16,28 +16,115 @@
 
 .travel-hero {
   padding-top: var(--fixed-navbar-height);
+  padding-bottom: calc(85 / 16rem);
+}
+
+.travel-hero-bg {
   background: #E7EFF2;
+  position: absolute;
+  top: calc(10vw - (120 / 16rem));
+  left: -5vw;
+  right: -10vw;
+  height: 80vh;
+  background-image: url(https://static.pexels.com/photos/307008/pexels-photo-307008.jpeg);
+  background-size: cover;
+  background-position: 70% 30%;
+}
+
+@media (--breakpoint-lg) {
+  .travel-hero-bg {
+    top: calc((10 / 100 * var(--width-lg)) - (120 / 16rem));
+  }
+}
+
+.travel-hero-bg-fade {
+  position: absolute;
+  height: calc(50vh + 18rem);
+  left: 0;
+  right: 0;
+  top: calc(100% - 18rem);
+  background-image: linear-gradient(180deg, color(var(--black) a(0)) 0%, var(--black) 18rem);
 }
 
 .travel-hero-heading {
-  font-size: 4.5rem;
+  color: var(--white);
+  font-size: calc(60 / 16rem);
   font-weight: 700;
-  margin-top: 4.5rem;
+  margin-top: calc(190 / 16rem);
   margin-bottom: 1rem;
 }
 
 .travel-hero-subheading {
-  font-size: 18px;
+  color: var(--white);
+  font-size: calc(18 / 16rem);
   font-weight: 600;
 }
 
 @media (--breakpoint-md) {
+  .travel-hero-heading {
+    font-size: 4.6rem;
+    margin-top: calc(72 / 16rem);
+    color: var(--black);
+  }
+
   .travel-hero-subheading {
-    font-size: 24px;
+    color: var(--black);
+    font-size: calc(24 / 16rem);
   }
 }
 
 .travel-hero-search {
   margin-top: 4.25rem;
   max-width: calc(530 / 16rem)
+}
+
+
+.hero-angle-1,
+.hero-angle-2,
+.hero-angle-3 {
+  position: absolute;
+  width: 300vw;
+}
+
+.hero-angle-1 {
+  height: calc(800 / 16rem);
+  transform: translate(-50%, calc(-47vw + (900 / 16rem))) rotate(20deg);
+  background-color: #FAFBFC;
+}
+
+@media (--breakpoint-lg) {
+  .hero-angle-1 {
+    transform: translate(-50%, calc((-47 / 100 * var(--width-lg)) + (900 / 16rem))) rotate(20deg);
+  }
+}
+
+.hero-angle-2 {
+  height: calc(800 / 16rem);
+  transform: translate(-50%, calc(-26vw + (1150 / 16rem))) rotate(20deg);
+  background-color: var(--white);
+}
+
+@media (--breakpoint-lg) {
+  .hero-angle-2 {
+    transform: translate(-50%, calc((-26 / 100 * var(--width-lg)) + (1347 / 16rem))) rotate(20deg);
+  }
+}
+
+.hero-angle-3 {
+  right: 0;
+  height: calc(23vw + (240 / 16rem));
+  transform: translate(50%, calc(-4.6vw + (800 / 16rem))) rotate(-7deg);
+  background-image: linear-gradient(90deg, color(#CFE0E7 a(0.2)) 20%, color(#F3F6F7 a(0.4)) 50%);
+}
+
+@media (--breakpoint-lg) {
+  .hero-angle-3 {
+    height: calc((23 / 100 * var(--width-lg)) + (240 / 16rem));
+    transform: translate(50%, calc((-4.6 / 100 * var(--width-lg)) + (800 / 16rem))) rotate(-7deg);
+  }
+}
+
+
+.hero-angle-4 {
+
 }

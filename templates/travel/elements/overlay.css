@@ -70,7 +70,7 @@
 
 .overlay-fx-scale {
   transition: transform 100ms ease-out;
-  transform-origin: 50vw 50vh;
+  transform-origin: 50vw 50vw;
 }
 
 .overlay-fx-scale.overlay-fx-scale-active {

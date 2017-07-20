@@ -22,7 +22,7 @@ limitations under the License.
     <div class="flex flex-auto overflow-hidden">
       <div class="pl2 pr1 py2 nowrap border-bottom border-silver flex-none">
         <span class="pointer" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: !ui_filterPane, ui_sortPane: false})">
-          <span class="bold">Filters</span>
+          <span class="semibold">Filters</span>
           <span class="gray">{{> ../icon/caret-down-small.snip.html}}</span>
         </span>
       </div>
@@ -102,7 +102,7 @@ limitations under the License.
       <div class="pl1 pr2 py2 md-pl2 nowrap border-left border-bottom border-silver">
         <span role="button" tabindex="-1"  class="pointer" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: !ui_sortPane})">
           <span class="gray">Sort by</span>
-          <span class="bold">
+          <span class="semibold">
             {{#data.sort}}
               <span {{^selected}}class="hide"{{/selected}} [class]="fields_sort == '{{value}}' ? '' : 'hide'">
                 {{text}}

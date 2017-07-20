@@ -27,10 +27,9 @@
   margin: calc(6 / 16rem);
   height: calc(38 / 16rem);
   border-radius: calc(38 / 16rem * 0.5);
-  border: 2px solid color(var(--green) a(0.2));
+  border: 2px solid var(--silver);
   white-space: nowrap;
   background: var(--white);
-  color: var(--green);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,15 +48,16 @@
 }
 
 .button-selector [option][selected] {
-  background: var(--green);
-  color: var(--white);
+  background: currentColor;
   border-color: transparent;
-}
 
-/* Override core amp [option][selected] styles. */
-.button-selector [option][selected] {
+  /* Override core amp [option][selected] styles. */
   outline: none;
   cursor: pointer;
+}
+
+.button-selector [option][selected] > * {
+  color: var(--white);
 }
 
 .button-selector [option]:focus {
@@ -81,6 +81,7 @@
 
 .button-selector [option][selected]::after {
   transform: rotate(45deg);
+  color: var(--white);
 }
 .button-selector [option]:focus {
   outline: none;

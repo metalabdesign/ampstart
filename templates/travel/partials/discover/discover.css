@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-.link:link, .link:visited {
-  transition: color .15s ease-in;
-  color: var(--purple);
-  text-decoration: none;
-  transition: color 0.15s ease-in;
+.travel-discover-panel {
+  max-width: calc(370 / 16rem);
 }
 
-.link:hover {
-  color: color(var(--purple) w(+ 30%) s(+ 20%));
+.travel-discover-heading {
+  font-size: calc(50 / 16rem);
 }

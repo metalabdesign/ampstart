@@ -40,7 +40,6 @@
 
 :root {
 /*;
-  --bold-font-weight: bold;
 
   --width-1: 24rem;
   --width-2: 32rem;
@@ -56,6 +55,8 @@
   --caps-letter-spacing: .2em;
 
   */
+  --bold-font-weight: 700;
+
   --border-width: 1px;
   --border-radius: calc(4 / 16rem);
 
@@ -78,7 +79,8 @@
 
   --width-sm: 40rem; /* 640px */
   --width-md: 52rem; /* 832px */
-  --width-lg: 72rem; /* 1552 */
+  --width-lg: 72rem; /* 1152px */
+  --width-xl: 88rem; /* 1408px */
 
   @custom-media --breakpoint-xs (max-width: 40rem);
   @custom-media --breakpoint-v-xs (max-height: 40rem);
@@ -96,7 +98,6 @@
 
 /* Btn Basscss Addon */
 :root {
-  --bold-font-weight: 600;
   /*--button-font-family: inherit;*/
   /*--button-font-size: inherit;*/
   /*--button-font-weight: var(--bold-font-weight);*/
