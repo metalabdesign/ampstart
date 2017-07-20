@@ -18,15 +18,34 @@ limitations under the License.
 
 <!-- Results Navbar -->
 <header class="bg-purple">
-  <div class="px1 md-px2 py1 md-py2 flex justify-between items-center">
-    <div class="h2 white pointer" role="button" tabindex="-1" on="tap:AMP.setState({ui_viewIndex: 0})">
-      {{> ../icon/logo.snip.html}}
+  <div class="px1 md-px2 flex justify-between items-center">
+    <div class="flex items-center">
+      <div class="h2 white pointer mr4 my1 md-my2" role="button" tabindex="-1" on="tap:AMP.setState({ui_viewIndex: 0})">
+        {{> ../icon/logo.snip.html}}
+      </div>
+      <label class="input-icon white">
+        <input
+          class="input input-dark rounded"
+          type="text"
+          name="query"
+          placeholder="Where would you like to go?"
+          on="
+            change:AMP.setState({
+              fields_query: event.value,
+              fields_query_edited: query_query != event.value
+            })
+          "
+          value=""
+          [value]="fields_query"
+        >
+        {{> ../icon/map-pin.snip.html}}
+      </label>
     </div>
-    <div class="h3 white pointer xs-hide sm-hide" role="button">
+    <div class="h3 white pointer my1 md-my2 xs-hide sm-hide" role="button">
       {{> ../icon/menu.snip.html}}
     </div>
     <div
-      class="h3 white pointer md-hide lg-hide"
+      class="h3 white pointer my1 md-my2 md-hide lg-hide"
       role="button"
       tabindex="-1"
       on="tap:AMP.setState({ui_filterPane: !ui_filterPane, ui_sortPane: false})"

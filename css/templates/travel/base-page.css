@@ -77,6 +77,7 @@
 @import '../../../templates/travel/elements/like';
 @import '../../../templates/travel/elements/link';
 @import '../../../templates/travel/elements/list-selector';
+@import '../../../templates/travel/elements/object-cover';
 @import '../../../templates/travel/elements/overlay';
 @import '../../../templates/travel/elements/pane';
 @import '../../../templates/travel/elements/pill';
@@ -90,6 +91,7 @@
  */
 @import '../../../templates/travel/partials/activities/activities.css';
 @import '../../../templates/travel/partials/discover/discover.css';
+@import '../../../templates/travel/partials/featured/featured.css';
 @import '../../../templates/travel/partials/hero/hero.css';
 @import '../../../templates/travel/partials/icon/icon.css';
 @import '../../../templates/travel/partials/popular/popular.css';

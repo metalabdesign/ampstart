@@ -99,7 +99,7 @@
 }
 
 .hero-angle-2 {
-  height: calc(800 / 16rem);
+  height: calc(1000 / 16rem);
   transform: translate(-50%, calc(-26vw + (1150 / 16rem))) rotate(20deg);
   background-color: var(--white);
 }
