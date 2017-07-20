@@ -71,35 +71,40 @@
 }
 
 .input::-webkit-input-placeholder {
-  color: var(--silver);
+  color: var(--gray);
 }
 
 .input::-moz-placeholder {
-  color: var(--silver);
+  color: var(--gray);
   opacity: 1;
 }
 
 .input:-ms-input-placeholder {
-  color: var(--silver);
+  color: var(--gray);
 }
 
 .input-dark::-webkit-input-placeholder {
+  color: currentColor;
   opacity: 0.75;
 }
 
 .input-dark::-moz-placeholder {
+  color: currentColor;
   opacity: 0.75;
 }
 
 .input-dark:-ms-input-placeholder {
+  color: currentColor;
   opacity: 0.75;
 }
 
 .input-clear::-webkit-input-placeholder {
+  color: currentColor;
   opacity: 0.4;
 }
 
 .input-clear::-moz-placeholder {
+  color: currentColor;
   opacity: 0.4;
 }
 

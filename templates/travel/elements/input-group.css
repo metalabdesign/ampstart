@@ -20,7 +20,7 @@
  * Join a sequence of .input, .input-icon, and .btn elements into a connected
  * row.
  */
-.input-group > {
+.input-group {
   position: relative;
   display: flex;
   width: 100%;

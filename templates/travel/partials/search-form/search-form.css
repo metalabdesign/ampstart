@@ -48,7 +48,7 @@
   opacity: 1;
 }
 
-.travel-search-date--touched input ~ .travel-search-date-label,
+.travel-search-date-touched input ~ .travel-search-date-label,
 .travel-search-date input:focus ~ .travel-search-date-label {
   opacity: 0;
 }
@@ -58,7 +58,7 @@
   opacity: 0.5;
 }
 
-.travel-search-date--touched input:disabled {
+.travel-search-date-touched input:disabled {
   opacity: 0.5;
 }
 

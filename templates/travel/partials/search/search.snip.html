@@ -17,18 +17,33 @@ limitations under the License.
 }}
 
 <!-- Search -->
-<section>
-  <div class="container px1 md-px2">
-    <h2>Have a specific destination in mind?</h2>
-    <input
-      type="text"
-      name="query"
-      placeholder="Where would you like to go?"
-      on="change:AMP.setState({fields_query: event.value})"
-      value=""
-      [value]="fields_query"
-    >
-    <button type="button">Find my next adventure</button>
+<section class="py4 bg-purple xs-hide sm-hide">
+  <div class="container px1 md-px2 relative">
+    <h3 class="h1 semibold mb2 white center">Have a specific destination in mind?</h3>
+
+    <div class="flex justify-center">
+      <div class="col-8">
+        <div class="input-group">
+          <input
+            class="input input-big rounded"
+            type="text"
+            name="query"
+            placeholder="Where would you like to go?"
+            on="change:AMP.setState({fields_query: event.value})"
+            value=""
+            [value]="fields_query"
+          >
+          <span class="input-group-sep"></span>
+          <button
+            type="button"
+            class="btn btn-big bg-white purple rounded"
+            {{> ../util/apply-button-props.snip.html}}
+          >
+            Find my next adventure
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <!--/ Search -->

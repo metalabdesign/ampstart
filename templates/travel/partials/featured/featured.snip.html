@@ -17,10 +17,131 @@ limitations under the License.
 }}
 
 <!-- Featured -->
-<section>
-  <div class="container px1 md-px2">
-    <h3>Featured Destinations</h3>
-    [carousel]
+<section class="travel-featured pt3 relative clearfix">
+  <div class="travel-featured-bg bg-purple xs-hide sm-hide"></div>
+  <div class="container px1 md-px2 relative">
+    <h3 class="h1 semibold mb2 md-hide lg-hide">Featured<br>Destinations</h3>
+    <h3 class="h1 semibold mb2 xs-hide sm-hide center">Featured Destinations</h3>
+  </div>
+  <div class="container relative">
+    <div class="flex flex-wrap items-stretch travel-featured-grid">
+      <div class="col-12 md-col-6 flex items-stretch flex-auto">
+        <div
+          class="flex flex-auto pointer travel-featured-tile travel-featured-color-blue"
+          role="button"
+          tabindex="-1"
+          on="tap:AMP.setState({ui_viewIndex: 1, fields_query: 'New York', query_query: 'New York'})"
+        >
+          <amp-img
+            class="flex-auto bg-silver object-cover"
+            layout="responsive"
+            width="336"
+            height="507"
+            src="https://unsplash.it/600/600?random&r=1"
+          ></amp-img>
+          <div class="absolute z1 center top-0 right-0 bottom-0 left-0 white p2">
+            <div class="caps h4">New York</div>
+            <div class="h6">379 adventures</div>
+          </div>
+        </div>
+        <div class="flex flex-column items-stretch flex-auto">
+          <div
+            class="flex flex-auto pointer travel-featured-tile travel-featured-color-cyan"
+            role="button"
+            tabindex="-1"
+            on="tap:AMP.setState({ui_viewIndex: 1, fields_query: 'Barcelona', query_query: 'Barcelona'})"
+          >
+            <amp-img
+              class="flex-auto bg-silver object-cover"
+              layout="responsive"
+              width="264"
+              height="246"
+              src="https://unsplash.it/600/600?random&r=2"
+            ></amp-img>
+            <div class="absolute z1 center top-0 right-0 bottom-0 left-0 white p2">
+              <div class="caps h4">Barcelona</div>
+              <div class="h6">68 adventures</div>
+            </div>
+          </div>
+          <div
+            class="flex flex-auto pointer travel-featured-tile travel-featured-color-orange"
+            role="button"
+            tabindex="-1"
+            on="tap:AMP.setState({ui_viewIndex: 1, fields_query: 'Paris', query_query: 'Paris'})"
+          >
+            <amp-img
+              class="flex-auto bg-silver object-cover"
+              layout="responsive"
+              width="264"
+              height="246"
+              src="https://unsplash.it/600/600?random&r=3"
+            ></amp-img>
+            <div class="absolute z1 center top-0 right-0 bottom-0 left-0 white p2">
+              <div class="caps h4">Paris</div>
+              <div class="h6">221 adventures</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 md-col-6 flex items-stretch flex-auto">
+        <div class="flex flex-column items-stretch flex-auto">
+          <div
+            class="flex flex-auto pointer travel-featured-tile travel-featured-color-purple"
+            role="button"
+            tabindex="-1"
+            on="tap:AMP.setState({ui_viewIndex: 1, fields_query: 'Tokyo', query_query: 'Tokyo'})"
+          >
+            <amp-img
+              class="flex-auto bg-silver object-cover"
+              layout="responsive"
+              width="276"
+              height="207"
+              src="https://unsplash.it/600/600?random&r=4"
+            ></amp-img>
+            <div class="absolute z1 center top-0 right-0 bottom-0 left-0 white p2">
+              <div class="caps h4">Tokyo</div>
+              <div class="h6">500+ adventures</div>
+            </div>
+          </div>
+          <div
+            class="flex flex-auto pointer travel-featured-tile travel-featured-color-cornflower"
+            role="button"
+            tabindex="-1"
+            on="tap:AMP.setState({ui_viewIndex: 1, fields_query: 'Chicago', query_query: 'Chicago'})"
+          >
+            <amp-img
+              class="flex-auto bg-silver object-cover"
+              layout="responsive"
+              width="264"
+              height="286"
+              src="https://unsplash.it/600/600?random&r=5"
+            ></amp-img>
+            <div class="absolute z1 center top-0 right-0 bottom-0 left-0 white p2">
+              <div class="caps h4">Chicago</div>
+              <div class="h6">143 adventures</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-auto pointer travel-featured-tile travel-featured-color-teal"
+          role="button"
+          tabindex="-1"
+          on="tap:AMP.setState({ui_viewIndex: 1, fields_query: 'Reykjavik', query_query: 'Reykjavik'})"
+        >
+          <amp-img
+            class="flex-auto bg-silver object-cover"
+            layout="responsive"
+            width="312"
+            height="507"
+            src="https://unsplash.it/600/600?random&r=6"
+          ></amp-img>
+          <div class="absolute z1 center top-0 right-0 bottom-0 left-0 white p2">
+            <div class="caps h4">Reykjavik</div>
+            <div class="h6">87 adventures</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <!--/ Featured -->
