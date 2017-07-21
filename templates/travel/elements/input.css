@@ -21,7 +21,6 @@
  * some non-compatible changes.
  *
  * Modifier Classes:
- * - input-outline: add a solid gray outline
  * - input-dark: style the input as a semi-transparent black overlay with
  *    white text.
  * - input-small: reduce the element padding
@@ -34,12 +33,13 @@
   padding: var(--input-padding-y) var(--input-padding-x);
   line-height: var(--input-line-height);
   background-color: #fff;
-  border: var(--border-width) solid transparent;
+  border-width: var(--border-width);
+  border-style: solid;
   color: currentColor;
 }
 
-.input-outline {
-  border-color: var(--gray);
+.input:not(.border) {
+  border-color: transparent;
 }
 
 .input-dark {

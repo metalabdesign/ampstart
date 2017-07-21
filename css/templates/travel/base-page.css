@@ -91,10 +91,12 @@
  */
 @import '../../../templates/travel/partials/activities/activities.css';
 @import '../../../templates/travel/partials/discover/discover.css';
+@import '../../../templates/travel/partials/footer/footer.css';
 @import '../../../templates/travel/partials/featured/featured.css';
 @import '../../../templates/travel/partials/hero/hero.css';
 @import '../../../templates/travel/partials/icon/icon.css';
 @import '../../../templates/travel/partials/popular/popular.css';
+@import '../../../templates/travel/partials/results-navbar/results-navbar.css';
 @import '../../../templates/travel/partials/search-form/search-form.css';
 
 body {

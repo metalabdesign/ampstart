@@ -14,21 +14,30 @@
  * limitations under the License.
  */
 
-.ampstart-footer {
-  background-color: var(--color-footer-background);
-  color: var(--color-font-footer);
-  padding-top: var(--space-7);
-  padding-bottom: var(--space-7);
+.travel-footer-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  background: var(--white);
 }
 
-.ampstart-footer .ampstart-icon {
-  fill: var(--color-font-footer);
+.travel-footer-input-bg {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: -1px;
+  left: 0;
 }
 
-.ampstart-footer .ampstart-social-follow li:last-child {
-  margin-right: 0;
-}
+.travel-footer-angle {
+  position: absolute;
+  width: 200vw;
+  bottom: 100%;
 
-.ampstart-footer a {
-  text-decoration: none;
+  height: calc(800 / 16rem);
+  transform: translate(-25%, calc(50 / 16rem)) rotate(20deg);
+  background-color: #DCE6EA;
+  opacity: 0.2;
 }

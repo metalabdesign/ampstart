@@ -79,38 +79,38 @@
 }
 
 
-.hero-angle-1,
-.hero-angle-2,
-.hero-angle-3 {
+.travel-hero-angle-1,
+.travel-hero-angle-2,
+.travel-hero-angle-3 {
   position: absolute;
   width: 300vw;
 }
 
-.hero-angle-1 {
+.travel-hero-angle-1 {
   height: calc(800 / 16rem);
   transform: translate(-50%, calc(-47vw + (900 / 16rem))) rotate(20deg);
   background-color: #FAFBFC;
 }
 
 @media (--breakpoint-lg) {
-  .hero-angle-1 {
+  .travel-hero-angle-1 {
     transform: translate(-50%, calc((-47 / 100 * var(--width-lg)) + (900 / 16rem))) rotate(20deg);
   }
 }
 
-.hero-angle-2 {
+.travel-hero-angle-2 {
   height: calc(1000 / 16rem);
   transform: translate(-50%, calc(-26vw + (1150 / 16rem))) rotate(20deg);
   background-color: var(--white);
 }
 
 @media (--breakpoint-lg) {
-  .hero-angle-2 {
+  .travel-hero-angle-2 {
     transform: translate(-50%, calc((-26 / 100 * var(--width-lg)) + (1347 / 16rem))) rotate(20deg);
   }
 }
 
-.hero-angle-3 {
+.travel-hero-angle-3 {
   right: 0;
   height: calc(23vw + (240 / 16rem));
   transform: translate(50%, calc(-4.6vw + (800 / 16rem))) rotate(-7deg);
@@ -118,13 +118,13 @@
 }
 
 @media (--breakpoint-lg) {
-  .hero-angle-3 {
+  .travel-hero-angle-3 {
     height: calc((23 / 100 * var(--width-lg)) + (240 / 16rem));
     transform: translate(50%, calc((-4.6 / 100 * var(--width-lg)) + (800 / 16rem))) rotate(-7deg);
   }
 }
 
 
-.hero-angle-4 {
+.travel-hero-angle-4 {
 
 }

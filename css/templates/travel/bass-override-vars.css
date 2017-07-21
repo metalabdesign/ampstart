@@ -17,7 +17,7 @@
 /* Colors Basscss Addon */
 :root {
   /*--aqua:  #7FDBFF;*/
-  /*--blue:  #0074D9;*/
+  --blue:  #3682EC;
   /*--navy:  #001F3F;*/
   /*--teal:  #39CCCC;*/
   --green: #47B074;
@@ -32,7 +32,7 @@
   /*--maroon:  #85144B;*/
 
   --white:  #FFFFFF;
-  --black:  #312E4E;
+  --black:  #323A43;
 
   --gray:   color(var(--black) l(60%) s(10%));
   --silver: color(var(--black) l(90%) s(10%));
