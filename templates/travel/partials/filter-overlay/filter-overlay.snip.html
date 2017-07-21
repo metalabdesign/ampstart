@@ -19,10 +19,15 @@ limitations under the License.
 <!-- Filter Overlay -->
 <div class="absolute md-clip lg-clip">
   <div class="overlay" [class]="'overlay' + (ui_filterPane ? ' overlay-visible' : '')">
-    <div class="bg-white overlay-header px1 md-px2 relative">
-      <div class="py1 border-bottom border-silver center">
+    <div class="overlay-header bg-white">
+      <div class="border-bottom border-silver mx1 md-mx2 relative flex items-center">
+        <!--
+          Use a div the same height as an icon to achieve the same height
+          as the results page header without an explicit shared height value.
+         -->
+        <div class="icon my1 h2 flex-none"></div>
         <amp-list
-          class="block-list"
+          class="block-list  center flex-auto"
           layout="flex-item"
           {{> ../util/amp-list-props.snip.html}}
         >
@@ -40,15 +45,15 @@ limitations under the License.
             [[={{ }}=]]
           </template>
         </amp-list>
-      </div>
 
-      <div
-        class="gray absolute pointer top-0 bottom-0 flex items-center"
-        role="button"
-        tabindex="-1"
-        {{>../util/reset-button-props.snip.html}}
-      >
-        Reset
+        <div
+          class="gray absolute pointer top-0 bottom-0 flex items-center"
+          role="button"
+          tabindex="-1"
+          {{>../util/reset-button-props.snip.html}}
+        >
+          Reset
+        </div>
       </div>
     </div>
     <div class="bg-white overlay-content">
