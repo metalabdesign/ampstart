@@ -14,21 +14,12 @@
  * limitations under the License.
  */
 
-.ampstart-footer {
-  background-color: var(--color-footer-background);
-  color: var(--color-font-footer);
-  padding-top: var(--space-7);
-  padding-bottom: var(--space-7);
-}
+.travel-results-navbar {
+  padding-top: 4rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
 
-.ampstart-footer .ampstart-icon {
-  fill: var(--color-font-footer);
-}
-
-.ampstart-footer .ampstart-social-follow li:last-child {
-  margin-right: 0;
-}
-
-.ampstart-footer a {
-  text-decoration: none;
+  margin-top: -4rem;
+  margin-right: -4rem;
+  margin-left: -4rem;
 }

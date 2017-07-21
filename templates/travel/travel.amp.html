@@ -54,7 +54,7 @@ limitations under the License.
           </div>
         </div>
       </section>
-      <section class="bg-purple">
+      <section>
         <div class="view-controller-view">
           <div
             class="overlay-fx-scale"
@@ -69,18 +69,16 @@ limitations under the License.
               {{> ./partials/results-navbar/results-navbar.snip.html}}
             </div>
 
-            <div class="bg-white px3 mxn3">
-              {{> ./partials/filter-bar/filter-bar.snip.html}}
+            {{> ./partials/filter-bar/filter-bar.snip.html}}
 
-              {{> ./partials/filter-pane/filter-pane.snip.html}}
+            {{> ./partials/filter-pane/filter-pane.snip.html}}
 
-              {{> ./partials/sort-bar/sort-bar.snip.html}}
+            {{> ./partials/sort-bar/sort-bar.snip.html}}
 
-              <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
-                {{> ./partials/results/results.snip.html}}
+            <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
+              {{> ./partials/results/results.snip.html}}
 
-                {{> ./partials/footer/footer.snip.html}}
-              </div>
+              {{> ./partials/footer/footer.snip.html}}
             </div>
           </div>
           {{> ./partials/filter-overlay/filter-overlay.snip.html}}
