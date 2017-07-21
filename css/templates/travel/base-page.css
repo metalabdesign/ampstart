@@ -131,3 +131,8 @@ body {
   /* Reset inherited content-box inherited from .i-amphtml-slides-container */
   box-sizing: border-box;
 }
+
+/* For some reason, this class is absent in the latest version of basscss. */
+.flex-grow {
+  flex: 1 0 auto
+}

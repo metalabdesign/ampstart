@@ -55,30 +55,41 @@ limitations under the License.
         </div>
       </section>
       <section>
-        <div class="view-controller-view">
+        <div class="view-controller-view flex flex-column">
           <div
-            class="overlay-fx-scale"
-            [class]="'overlay-fx-scale' + (ui_filterPane ? ' overlay-fx-scale-active' : '')"
+            class="overlay-fx-scale flex-auto flex flex-column"
+            [class]="'overlay-fx-scale flex-auto flex flex-column' + (ui_filterPane ? ' overlay-fx-scale-active' : '')"
           >
-            <div
-              class="no-focus"
-              role="button"
-              tabindex="-1"
-              on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})"
-            >
-              {{> ./partials/results-navbar/results-navbar.snip.html}}
+            <div class="flex-none">
+              <div
+                class="no-focus"
+                role="button"
+                tabindex="-1"
+                on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})"
+              >
+                {{> ./partials/results-navbar/results-navbar.snip.html}}
+              </div>
+
+              {{> ./partials/filter-bar/filter-bar.snip.html}}
+
+              {{> ./partials/filter-pane/filter-pane.snip.html}}
+
+              {{> ./partials/sort-bar/sort-bar.snip.html}}
+
             </div>
-
-            {{> ./partials/filter-bar/filter-bar.snip.html}}
-
-            {{> ./partials/filter-pane/filter-pane.snip.html}}
-
-            {{> ./partials/sort-bar/sort-bar.snip.html}}
-
-            <div class="no-focus" role="button" tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})">
-              {{> ./partials/results/results.snip.html}}
-
-              {{> ./partials/footer/footer.snip.html}}
+            <div
+              class="no-focus flex-auto overflow-auto flex"
+              role="button"
+              tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})"
+            >
+              <div class="flex-auto flex flex-column">
+                <div class="flex-grow">
+                  {{> ./partials/results/results.snip.html}}
+                </div>
+                <div class="flex-none">
+                  {{> ./partials/footer/footer.snip.html}}
+                </div>
+              </div>
             </div>
           </div>
           {{> ./partials/filter-overlay/filter-overlay.snip.html}}
