@@ -41,7 +41,7 @@
   right: 2rem;
   bottom: 2rem;
   left: 2rem;
-  box-shadow: 0 0 2rem 1.5rem color(var(--black) a(0.15));
+  box-shadow: 0 0 1.5rem 2rem color(var(--black) a(0.15));
 }
 
 .travel-popular-tilt-left::before {

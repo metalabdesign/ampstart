@@ -33,12 +33,6 @@
   width: 1%;
 }
 
-.input-group > .input,
-.input-group > .input-icon > .input,
-.input-group > .btn {
-  position: relative;
-}
-
 .input-group > .input:focus,
 .input-group > .btn:focus {
 }
@@ -64,7 +58,8 @@
   display: block;
   width: 0;
   height: calc(12 / 16rem);
-  border-left: 1px solid var(--gray);
+  border-left-width: 1px;
+  border-left-style: solid;
   margin: 0 -0.5px;
   pointer-events: none;
 }

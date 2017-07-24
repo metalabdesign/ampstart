@@ -18,6 +18,24 @@
 
 }
 
+.travel-activities-activity {
+  transition: transform 0.1s;
+}
+
+.travel-activities-activity:hover {
+  transition: transform 0.25s;
+  transform: scale(1.1);
+}
+
+.travel-activities-activity:active {
+  transition: transform 0.1s;
+  transform: scale(1.05);
+}
+
+.travel-activities-activity:focus {
+  outline: none;
+}
+
 .travel-activities-activity-icon {
   display: flex;
   width: calc(70 / 16rem);
@@ -27,4 +45,8 @@
   background: var(--white);
   border-radius: 100%;
   font-size: 2rem;
+}
+
+.travel-activities-activity:focus .travel-activities-activity-icon {
+  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
 }

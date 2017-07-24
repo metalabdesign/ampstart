@@ -24,3 +24,13 @@
 .link:hover {
   color: color(var(--purple) w(+ 30%) s(+ 20%));
 }
+
+.link:focus {
+  outline: none;
+  border-bottom: calc(2 / 16rem) solid rgba(0,0,0,0.25);
+}
+
+.block-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
+}
