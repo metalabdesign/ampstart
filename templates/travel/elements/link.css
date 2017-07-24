@@ -34,3 +34,15 @@
   outline: none;
   box-shadow: 0 0 0 3px rgba(0,0,0,.25);
 }
+
+.link.gray:link, .link.gray:visited {
+  color: var(--gray);
+}
+
+.link.gray:hover {
+  color: color(var(--gray) w(+ 30%) s(+ 20%));
+}
+
+.link.gray:focus {
+  border-bottom: calc(2 / 16rem) solid rgba(255,255,255,0.25);
+}
