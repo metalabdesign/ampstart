@@ -32,12 +32,12 @@ limitations under the License.
 -->
 }}
 
-src="/api/search?query=&departure=&return=&maxPrice=0&sort=popularity-desc"
+src="/api/search?maxPrice=0{{!departure=&return=&query=}}&sort=popularity-desc"
 [src]="
-  '/api/search?query=' + query_query +
-  '&departure=' + query_departure +
-  '&return=' + query_return +
-  '&maxPrice=' + (query_maxPrice < 801 ? query_maxPrice : 0) +
+  '/api/search?maxPrice=' + (query_maxPrice < 801 ? query_maxPrice : 0) +
+  {{!'&departure=' + query_departure +}}
+  {{!'&return=' + query_return +}}
+  {{!'&query=' + query_query +}}
   (query_city.length ? '&cities[]=' + query_city.join('&cities[]=') : '') +
   (query_type.length ? '&types[]=' + query_type.join('&types[]=') : '') +
   '&sort=' + query_sort

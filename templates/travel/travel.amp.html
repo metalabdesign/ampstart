@@ -30,7 +30,10 @@ limitations under the License.
       on="slideChange:AMP.setState({ui_viewIndex: event.index})"
     >
       <section>
-        <div class="view-controller-view">
+        <div
+          class="view-controller-view view-controller-view-active"
+          [class]="'view-controller-view' + (ui_viewIndex == 0 ? ' view-controller-view-active' : '')"
+        >
           {{> ./partials/search-navbar/search-navbar.snip.html}}
 
           {{> ./partials/hero/hero.snip.html}}
@@ -55,7 +58,10 @@ limitations under the License.
         </div>
       </section>
       <section>
-        <div class="view-controller-view flex flex-column">
+        <div
+          class="view-controller-view flex flex-column"
+          [class]="'view-controller-view flex flex-column' + (ui_viewIndex == 1 ? ' view-controller-view-active' : '')"
+        >
           <div
             class="overlay-fx-scale flex-auto flex flex-column"
             [class]="'overlay-fx-scale flex-auto flex flex-column' + (ui_filterPane ? ' overlay-fx-scale-active' : '')"
