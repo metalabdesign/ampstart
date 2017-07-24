@@ -29,8 +29,23 @@
 .travel-featured-tile {
   position: relative;
   margin: calc(2 / 16rem);
+}
 
-  color: red;
+.travel-featured-tile:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
+}
+
+.travel-featured-tile img,
+.travel-featured-tile img {
+  transition: transform 2s ease-in-out;
+  transform-origin: 50% 66%;
+}
+
+.travel-featured-tile:focus img,
+.travel-featured-tile:hover img {
+  transition: transform 5s ease-in-out;
+  transform: scale(1.8);
 }
 
 .travel-featured-tile::after {
@@ -42,7 +57,7 @@
   width: 100%;
   padding-bottom: 75%;
 
-  opacity: 0.6;
+  opacity: 0.7;
 
   background-image: linear-gradient(to bottom, currentColor 0%, transparent 100%);
 }
@@ -87,7 +102,7 @@
 }
 
 .travel-featured-color-orange {
-  color: #B29273;
+  color: #e2a367;
 }
 
 .travel-featured-color-purple {
