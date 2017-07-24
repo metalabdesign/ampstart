@@ -34,6 +34,7 @@
 
 .input-group > .input:focus,
 .input-group > .btn:focus {
+  position: relative;
 }
 
 .input-group > .input:not(:first-child),
