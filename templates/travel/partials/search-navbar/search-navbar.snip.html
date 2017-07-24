@@ -19,27 +19,16 @@ limitations under the License.
 <section class="relative z1">
   <header class="absolute top-0 right-0 left-0">
     <!-- XS Breakpoint Navbar -->
-    <div class="sm-hide md-hide lg-hide px1 py1 flex justify-between items-center">
-      <!--
-        Create a placeholder element the same dimensions of the menu icon so the
-        logo is absolutely centered in the flex container.
-      -->
-      <span class="icon icon-square h3"></span>
-      <div class="inline-block h2 white pointer" role="button" tabindex="-1" on="tap:AMP.setState({ui_viewIndex: 0})">
+    <div class="sm-hide md-hide lg-hide px1 py1 flex justify-center items-center">
+      <div class="inline-block h2 white pointer" role="button" tabindex="0" on="tap:AMP.setState({ui_viewIndex: 0})">
         {{> ../icon/logo.snip.html}}
-      </div>
-      <div class="inline-block h3 black pointer" role="button">
-        {{> ../icon/menu.snip.html}}
       </div>
     </div>
 
     <!-- MD Breakpoint Navbar -->
     <div class="xs-hide px1 md-px2 py1 md-py2 flex justify-between items-center">
-      <div class="inline-block h2 black pointer" role="button" tabindex="-1" on="tap:AMP.setState({ui_viewIndex: 0})">
+      <div class="inline-block h2 black pointer" role="button" tabindex="0" on="tap:AMP.setState({ui_viewIndex: 0})">
         {{> ../icon/logo.snip.html}}
-      </div>
-      <div class="h3 black pointer" role="button">
-        {{> ../icon/menu.snip.html}}
       </div>
     </div>
   </header>
