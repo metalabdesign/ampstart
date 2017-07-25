@@ -150,41 +150,61 @@ function selectedCities(travelData, cities) {
  * @return {Array} The sorted results.
  */
 function sortResults(val, results) {
-  if (typeof(val) !== "string") {
-    return results;
-  }
+  const sortPopularity = (a, b) => {
+    if (a.reviews.count < b.reviews.count) {
+      return 1;
+    } else if (a.reviews.count > b.reviews.count) {
+      return -1;
+    }
+    return 0;
+  };
+
+  const sortRating = (a, b) => {
+    if (a.reviews.averageRating.value < b.reviews.averageRating.value) {
+      return 1;
+    } else if (a.reviews.averageRating.value > b.reviews.averageRating.value) {
+      return -1;
+    }
+
+    return sortPopularity(a, b);
+  };
+
+  const sortPrice = (a, b) => {
+    if (a.price.value > b.price.value) {
+      return 1;
+    } else if (a.price.value < b.price.value) {
+      return -1;
+    }
+
+    return sortRating(a, b);
+  };
+
+  const sortNew = (a, b) => {
+    if (!a.flags.new && b.flags.new) {
+      return 1;
+    } else if (a.flags.new && !b.flags.new) {
+      return -1;
+    }
+
+    return sortRating(a, b);
+  };
 
   switch (val.toLowerCase()) {
     case "popularity-desc":
-      results.sort((a, b) => {
-        return a.reviews.count <= b.reviews.count;
-      });
-      break;
+      return results.slice().sort(sortPopularity);
 
     case "rating-desc":
-      results.sort((a, b) => {
-        return a.reviews.averageRaiting <= b.reviews.averageRaiting;
-      });
-      break;
+      return results.slice().sort(sortRating);
 
     case "age-asc":
-      // not sure how to handle this with current data set
-      results.sort((a, b) => {
-        return b.flags.includes("new");
-      });
-      break;
+      return results.slice().sort(sortNew);
 
     case "price-asc":
-      results.sort((a, b) => {
-        return a.price.value - b.price.value;
-      });
-      break;
+      return results.slice().sort(sortPrice);
 
     default:
-      break;
+      return results;
   }
-
-  return results;
 }
 
 /**

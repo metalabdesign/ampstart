@@ -142,3 +142,7 @@ body {
 .flex-grow {
   flex: 1 0 auto
 }
+
+.no-select {
+  user-select: none;
+}
