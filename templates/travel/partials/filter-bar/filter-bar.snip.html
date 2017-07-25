@@ -101,8 +101,13 @@ limitations under the License.
       </div>
     </div>
 
-    <div class="flex-none pointer focus" role="button" tabindex="0" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: !ui_sortPane})">
-      <div class="pl1 pr2 py2 md-pl2 nowrap border-left border-bottom border-silver">
+    <div class="flex-none">
+      <div
+        class="pl1 pr2 py2 md-pl2 nowrap border-left border-bottom border-silver pointer focus relative z2"
+        role="button"
+        tabindex="0"
+        on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: !ui_sortPane})"
+      >
         <span class="gray">Sort by</span>
         <span class="semibold">
           {{#data.sort}}
