@@ -84,17 +84,11 @@ limitations under the License.
 
             </div>
             <div
-              class="no-focus flex-auto overflow-auto flex"
+              class="no-focus flex-auto overflow-auto"
               role="button"
               tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})"
             >
-              <div class="flex-auto flex flex-column">
-                <div class="flex-grow">
-                  {{> ./partials/results/results.snip.html}}
-                </div>
-                <div class="flex-none">
-                  {{> ./partials/footer/footer.snip.html}}
-                </div>
+                {{> ./partials/results/results.snip.html}}
               </div>
             </div>
           </div>
