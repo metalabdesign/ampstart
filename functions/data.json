@@ -13,7 +13,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 4,
+        "averageRating": {
+          "value": 4,
+          "range": [true, true, true, true]
+        },
         "count": 34
       },
       "flags": {
@@ -40,7 +43,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 5,
+        "averageRating": {
+          "value": 5,
+          "range": [true, true, true, true, true]
+        },
         "count": 12
       },
       "flags": {
@@ -67,7 +73,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": null,
+        "averageRating": {
+          "value": 0,
+          "range": []
+        },
         "count": 0
       },
       "flags": {
@@ -92,7 +101,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 3,
+        "averageRating": {
+          "value": 3,
+          "range": [true, true, true]
+        },
         "count": 1
       },
       "flags": {
@@ -119,7 +131,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 5,
+        "averageRating": {
+          "value": 5,
+          "range": [true, true, true, true, true]
+        },
         "count": 241
       },
       "flags": {
@@ -144,7 +159,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 4.5,
+        "averageRating": {
+          "value": 4,
+          "range": [true, true, true, true]
+        },
         "count": 104
       },
       "flags": {
@@ -169,7 +187,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 5,
+        "averageRating": {
+          "value": 5,
+          "range": [true, true, true, true, true]
+        },
         "count": 2
       },
       "flags": {
@@ -194,7 +215,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 4,
+        "averageRating": {
+          "value": 4,
+          "range": [true, true, true, true]
+        },
         "count": 66
       },
       "flags": {
@@ -219,7 +243,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 2,
+        "averageRating": {
+          "value": 2,
+          "range": [true, true]
+        },
         "count": 11
       },
       "flags": {
@@ -243,7 +270,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 3.5,
+        "averageRating": {
+          "value": 3,
+          "range": [true, true, true]
+        },
         "count": 13
       },
       "flags": {
@@ -268,7 +298,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 4.5,
+        "averageRating": {
+          "value": 4,
+          "range": [true, true, true, true]
+        },
         "count": 56
       },
       "flags": {
@@ -294,12 +327,15 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 5,
+        "averageRating": {
+          "value": 5,
+          "range": [true, true, true, true, true]
+        },
         "count": 42
       },
       "flags": {
         "liked": false,
-        "new": false
+        "new": true
       },
       "types": [
         "music",
@@ -320,7 +356,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": null,
+        "averageRating": {
+          "value": 0,
+          "range": []
+        },
         "count": 0
       },
       "flags": {
@@ -345,7 +384,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 4,
+        "averageRating": {
+          "value": 4,
+          "range": [true, true, true, true]
+        },
         "count": 122
       },
       "flags": {
@@ -369,7 +411,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 3,
+        "averageRating": {
+          "value": 3,
+          "range": [true, true, true]
+        },
         "count": 15
       },
       "flags": {
@@ -393,7 +438,9 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 1,
+        "averageRating": {
+          "value": 1
+        },
         "count": 2
       },
       "flags": {
@@ -418,7 +465,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 3.75,
+        "averageRating": {
+          "value": 3,
+          "range": [true, true, true]
+        },
         "count": 78
       },
       "flags": {
@@ -445,12 +495,15 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 5,
+        "averageRating": {
+          "value": 5,
+          "range": [true, true, true, true, true]
+        },
         "count": 17
       },
       "flags": {
         "liked": false,
-        "new": false
+        "new": true
       },
       "types": [
         "tours",
@@ -471,7 +524,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 3.5,
+        "averageRating": {
+          "value": 3,
+          "range": [true, true, true]
+        },
         "count": 37
       },
       "flags": {
@@ -498,7 +554,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 4,
+        "averageRating": {
+          "value": 4,
+          "range": [true, true, true, true]
+        },
         "count": 99
       },
       "flags": {
@@ -523,7 +582,10 @@
         "lng": 0
       },
       "reviews": {
-        "averageRaiting": 3.9,
+        "averageRating": {
+          "value": 3,
+          "range": [true, true, true]
+        },
         "count": 145
       },
       "flags": {

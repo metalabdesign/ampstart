@@ -60,8 +60,13 @@ limitations under the License.
                 glyphs are used here instead for the map icon and rating.
                 see: https://github.com/ampproject/amphtml/issues/8214
               -->
+              {{#reviews.averageRating}}
+                <div class="inline-block relative mr1 no-select">
+                  <div class="silver">★★★★★</div>
+                  <div class="green absolute top-0">{{#range}}★{{/range}}</div>
+                </div>
+              {{/reviews.averageRating}}
               {{#reviews.count}}
-                <span class="green mr1">★★★★★</span>
                 <span class="gray mr1">{{reviews.count}} Reviews</span>
               {{/reviews.count}}
               {{^reviews.count}}
