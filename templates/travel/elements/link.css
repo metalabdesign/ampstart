@@ -30,11 +30,6 @@
   border-bottom: calc(2 / 16rem) solid rgba(0,0,0,0.25);
 }
 
-.block-link:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
-}
-
 .link.gray:link, .link.gray:visited {
   color: var(--gray);
 }
