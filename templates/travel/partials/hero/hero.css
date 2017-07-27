@@ -15,42 +15,109 @@
  */
 
 .travel-hero {
-  padding-top: var(--fixed-navbar-height);
-  padding-bottom: calc(85 / 16rem);
+  height: 0;
+  transition: height 1000ms ease-in-out;
+  pointer-events: none;
+}
+
+.travel-hero-visible {
+  height: 100vmax;
+  pointer-events: all;
+}
+
+@media (--breakpoint-md) {
+  :root .travel-hero {
+    height: auto;
+    pointer-events: all;
+  }
+}
+
+.travel-hero-bg,
+.travel-hero-angles,
+.travel-hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .travel-hero-bg {
-  background: #E7EFF2;
-  position: absolute;
-  top: calc(10vw - (120 / 16rem));
-  left: -5vw;
-  right: -10vw;
-  height: 80vh;
+  height: 70vmax;
   background-image: url(https://static.pexels.com/photos/307008/pexels-photo-307008.jpeg);
   background-size: cover;
   background-position: 70% 30%;
+  transform: translateY(-20vmax) scale(1.3);
+  transition: transform 1000ms ease-in-out;
 }
 
-@media (--breakpoint-lg) {
-  .travel-hero-bg {
-    top: calc((10 / 100 * var(--width-lg)) - (120 / 16rem));
+.travel-hero-visible .travel-hero-bg {
+  transform: translateY(0) scale(1);
+}
+
+@media (--breakpoint-md) {
+  :root .travel-hero-bg {
+    height: auto;
+    bottom: calc(-200 / 16rem);
+    transform: translateY(0) scale(1);
   }
 }
 
 .travel-hero-bg-fade {
   position: absolute;
-  height: calc(50vh + 18rem);
+  height: calc(300 / 16rem);
   left: 0;
   right: 0;
-  top: calc(100% - 18rem);
-  background-image: linear-gradient(180deg, color(var(--black) a(0)) 0%, var(--black) 18rem);
+  bottom: -1px;
+  background-image: linear-gradient(180deg, transparent 0%, var(--black) 100%);
+}
+
+@media (--breakpoint-md) {
+  :root .travel-hero-bg-fade {
+    height: 30vh;
+  }
+}
+
+.travel-hero-angles {
+  z-index: 1;
+}
+
+@media (--breakpoint-md) {
+  :root .travel-hero-angles {
+    height: auto;
+    z-index: auto;
+  }
+}
+
+.travel-hero-content {
+  padding-top: var(--fixed-navbar-height);
+  align-self: flex-end;
+  height: 100vmax;
+  transform: translateY(-30vmax);
+  transition: transform 1000ms ease-in-out;
+}
+
+.travel-hero-visible .travel-hero-content {
+  transform: translateY(0);
+}
+
+@media (--breakpoint-md) {
+  :root .travel-hero-content {
+    padding-top: calc(var(--fixed-navbar-height) + (56 / 16rem));
+    padding-bottom: calc(48 / 16rem);
+    height: auto;
+    position: relative;
+    transform: translateY(0);
+  }
+}
+
+.travel-hero-content-inner {
+  align-self: flex-end;
 }
 
 .travel-hero-heading {
   color: var(--white);
   font-size: calc(60 / 16rem);
   font-weight: 700;
-  margin-top: calc(190 / 16rem);
   margin-bottom: 1rem;
 }
 
@@ -63,7 +130,6 @@
 @media (--breakpoint-md) {
   .travel-hero-heading {
     font-size: 4.6rem;
-    margin-top: calc(72 / 16rem);
     color: var(--black);
   }
 
@@ -73,58 +139,101 @@
   }
 }
 
-.travel-hero-search {
-  margin-top: 4.25rem;
-  max-width: calc(530 / 16rem)
+@media (--breakpoint-md) {
+  .travel-hero-search {
+    margin-top: 4.25rem;
+    max-width: calc(530 / 16rem)
+  }
 }
 
+.travel-hero-search-dates {
+  color: var(--white);
+  justify-content: space-around;
+}
+
+.travel-hero-search-dates .date-input {
+  flex: 1 1 auto;
+}
+
+
+@media (--breakpoint-md) {
+  .travel-hero-search-dates {
+    justify-content: flex-start;
+    color: var(--black);
+  }
+
+  .travel-hero-search-dates .date-input {
+    flex: none;
+  }
+}
 
 .travel-hero-angle-1,
 .travel-hero-angle-2,
 .travel-hero-angle-3 {
   position: absolute;
-  width: 300vw;
+  width: 400vw;
+  transform-origin: 50% 0;
+}
+
+.travel-hero-angle-left {
+  transform: translateX(0);
+}
+
+.travel-hero-angle-right {
+  transform: translateX(100%);
 }
 
 .travel-hero-angle-1 {
   height: calc(800 / 16rem);
-  transform: translate(-50%, calc(-47vw + (900 / 16rem))) rotate(20deg);
+  transform: translate(-50%, -3rem) rotate(20deg);
+  transition: transform 1000ms ease-in-out;
   background-color: #FAFBFC;
 }
 
-@media (--breakpoint-lg) {
-  .travel-hero-angle-1 {
-    transform: translate(-50%, calc((-47 / 100 * var(--width-lg)) + (900 / 16rem))) rotate(20deg);
+.travel-hero-visible .travel-hero-angle-1 {
+  transform: translate(-50%, calc(100vmax - 3rem)) rotate(20deg);
+}
+
+@media (--breakpoint-md) {
+  :root .travel-hero-angle-1  {
+    transform: translate(-50%, 38%) rotate(20deg);
   }
 }
 
 .travel-hero-angle-2 {
   height: calc(1000 / 16rem);
-  transform: translate(-50%, calc(-26vw + (1150 / 16rem))) rotate(20deg);
+  transform: translate(-50%, 16rem) rotate(20deg);
+  transition: transform 1000ms ease-in-out;
   background-color: var(--white);
 }
 
-@media (--breakpoint-lg) {
-  .travel-hero-angle-2 {
-    transform: translate(-50%, calc((-26 / 100 * var(--width-lg)) + (1347 / 16rem))) rotate(20deg);
+.travel-hero-visible .travel-hero-angle-2  {
+  transform: translate(-50%, calc(100vmax + 20rem)) rotate(20deg);
+}
+
+@media (--breakpoint-md) {
+  :root .travel-hero-angle-2  {
+    transform: translate(-50%, calc(56% + (300 / 16rem))) rotate(20deg);
   }
 }
 
 .travel-hero-angle-3 {
-  right: 0;
-  height: calc(23vw + (240 / 16rem));
-  transform: translate(50%, calc(-4.6vw + (800 / 16rem))) rotate(-7deg);
+  height: calc(500 / 16rem);
+  transform: translate(-50%, -6rem) rotate(-20deg);
+  opacity: 0;
   background-image: linear-gradient(90deg, color(#CFE0E7 a(0.2)) 20%, color(#F3F6F7 a(0.4)) 50%);
+  transition: transform 1000ms ease-in-out, opacity 500ms ease-in-out 500ms;
 }
 
-@media (--breakpoint-lg) {
-  .travel-hero-angle-3 {
-    height: calc((23 / 100 * var(--width-lg)) + (240 / 16rem));
-    transform: translate(50%, calc((-4.6 / 100 * var(--width-lg)) + (800 / 16rem))) rotate(-7deg);
+.travel-hero-visible .travel-hero-angle-3 {
+  opacity: 1;
+  transform: translate(-50%, calc(100vmax + 4rem)) rotate(-5deg);
+  transition: transform 1000ms ease-in-out, opacity 500ms ease-in-out;
+}
+
+@media (--breakpoint-md) {
+  :root .travel-hero-angle-3 {
+    opacity: 1;
+    transform: translate(-50%, calc(720 / 16rem)) rotate(-5deg);
   }
-}
-
-
-.travel-hero-angle-4 {
-
 }

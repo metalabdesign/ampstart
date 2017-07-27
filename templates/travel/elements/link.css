@@ -35,7 +35,7 @@
 }
 
 .link.gray:hover {
-  color: color(var(--gray) w(+ 30%) s(+ 20%));
+  color: color(var(--gray) w(+ 30%));
 }
 
 .link.gray:focus {

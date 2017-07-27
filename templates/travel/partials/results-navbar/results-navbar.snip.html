@@ -20,7 +20,7 @@ limitations under the License.
 <header class="travel-results-navbar bg-purple">
   <div class="px1 md-px2 flex justify-between items-stretch">
     <div class="flex items-stretch">
-      <div class="h2 white pointer my1 md-my2" role="button" tabindex="0" on="tap:AMP.setState({ui_viewIndex: 0})">
+      <div class="h2 white pointer my1 md-my2" role="button" tabindex="0" on="tap:AMP.setState({ui_viewIndex: 0, ui_hero: true})">
         {{> ../icon/logo.snip.html}}
       </div>
       <div class="ml4 flex items-center xs-hide sm-hide">
@@ -47,7 +47,7 @@ limitations under the License.
                   >
                   <span class="icon">📍</span>
                 </label>
-                <label class="travel-search-date input-dark rounded white ml2 travel-search-date-touched">
+                <label class="date-input input-dark rounded white ml2 date-input-touched">
                   <input
                     type="date"
                     placeholder="yyyy-mm-dd"
@@ -57,11 +57,11 @@ limitations under the License.
                     value="{{stats.startDate.raw}}"
                   >
                   <span class="icon">✈︎</span>
-                  <div class="travel-search-date-label">
+                  <div class="date-input-label">
                     Departure
                   </div>
                 </label>
-                <label class="travel-search-date input-dark rounded white ml2 travel-search-date-touched">
+                <label class="date-input input-dark rounded white ml2 date-input-touched">
                   <input
                     type="date"
                     placeholder="yyyy-mm-dd"
@@ -71,7 +71,7 @@ limitations under the License.
                     value="{{stats.endDate.raw}}"
                   >
                   <span class="icon">✈︎</span>
-                  <div class="travel-search-date-label">
+                  <div class="date-input-label">
                     Return
                   </div>
                 </label>
@@ -83,7 +83,7 @@ limitations under the License.
     </div>
     <div class="flex flex-auto items-center md-hide lg-hide">
       <amp-list
-        class="block-list flex-auto center"
+        class="flex block-list flex-auto center"
         layout="flex-item"
         {{> ../util/amp-list-props.snip.html}}
       >
