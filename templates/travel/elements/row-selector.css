@@ -20,6 +20,7 @@
  * Style an <amp-selector> element as row of options
  */
 .row-selector {
+  overflow-y: hidden;
   overflow-x: auto;
   white-space: nowrap;
 }
