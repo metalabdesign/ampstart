@@ -37,19 +37,19 @@
   content: "";
   display: block;
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 3rem;
+  right: 3rem;
   bottom: 2rem;
-  left: 2rem;
-  box-shadow: 0 0 1.5rem 2rem color(var(--black) a(0.15));
+  left: 3rem;
+  box-shadow: 0 0 2.2rem 2.2rem color(var(--black) a(0.2));
 }
 
 .travel-popular-tilt-left::before {
   transform-origin: 2rem calc(100% + 2rem);
-  transform: translateY(0.25rem) rotate(1.5deg);
+  transform: translateY(0.28rem) rotate(2.5deg);
 }
 
 .travel-popular-tilt-right::before {
   transform-origin: calc(100% + 2rem) calc(100% + 2rem);
-  transform: translateY(0.25rem) rotate(-1.5deg);
+  transform: translateY(0.28rem) rotate(-2.5deg);
 }
