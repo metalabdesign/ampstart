@@ -15,9 +15,10 @@
  */
 
 .travel-discover-panel {
-  max-width: calc(370 / 16rem);
+  max-width: calc(440 / 16rem);
 }
 
 .travel-discover-heading {
-  font-size: calc(50 / 16rem);
+  font-size: calc(56 / 16rem);
+  margin-bottom: 0.3rem;
 }

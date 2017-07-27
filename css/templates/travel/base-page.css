@@ -105,6 +105,7 @@ body {
   font-family: var(--font-family-primary);
   line-height: var(--line-height-2);
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 *, *::before, *::after {

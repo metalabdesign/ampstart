@@ -15,11 +15,15 @@
  */
 
 .travel-activities {
+}
 
+.travel-activities-activity .circle {
+  margin-bottom: calc(2 / 16rem);
 }
 
 .travel-activities-activity {
-  transition: transform 0.1s;
+  transition: transform 0.2s;
+  margin: 0 1.2rem;
 }
 
 .travel-activities-activity:hover {
