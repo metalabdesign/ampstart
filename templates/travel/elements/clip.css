@@ -21,30 +21,55 @@
  *
  */
 
-.clip {
+:root .clip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-height: 100vh;
+  max-width: 100vw;
   clip: rect(0 0 0 0);
 }
 
 @media (--breakpoint-xs) {
-  .xs-clip {
+  :root .xs-clip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-height: 100vh;
+    max-width: 100vw;
     clip: rect(0 0 0 0);
   }
 }
 
 @media (--breakpoint-sm-md) {
-  .sm-clip {
+  :root .sm-clip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-height: 100vh;
+    max-width: 100vw;
     clip: rect(0 0 0 0);
   }
 }
 
 @media (--breakpoint-md-lg) {
-  .md-clip {
+  :root .md-clip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-height: 100vh;
+    max-width: 100vw;
     clip: rect(0 0 0 0);
   }
 }
 
 @media (--breakpoint-lg) {
-  .lg-clip {
+  :root .lg-clip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-height: 100vh;
+    max-width: 100vw;
     clip: rect(0 0 0 0);
   }
 }

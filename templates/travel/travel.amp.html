@@ -29,7 +29,7 @@ limitations under the License.
       [slide]="ui_viewIndex"
       on="slideChange:AMP.setState({ui_viewIndex: event.index})"
     >
-      <section>
+      <section class="bg-black">
         <div
           class="view-controller-view view-controller-view-active"
           [class]="'view-controller-view' + (ui_viewIndex == 0 ? ' view-controller-view-active' : '')"
@@ -42,7 +42,7 @@ limitations under the License.
             Put all sections below the hero in a relatve positioned div to pull
             them above the absolutely positioned angled divs below the hero.
           -->
-          <div class="relative">
+          <div class="relative z1">
             {{> ./partials/discover/discover.snip.html}}
 
             {{> ./partials/activities/activities.snip.html}}
