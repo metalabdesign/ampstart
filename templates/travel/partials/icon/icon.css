@@ -28,3 +28,8 @@
 .icon-square, .icon-sqhare > svg {
   width: var(--icon-size);
 }
+
+.hack-icon-map {
+  background: url(../../img/travel/map-pin.png) no-repeat 50% 50%;
+  background-size: contain;
+}

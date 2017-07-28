@@ -72,7 +72,10 @@ limitations under the License.
               {{^reviews.count}}
                 <span class="gray mr1">Not Yet Reviewed</span>
               {{/reviews.count}}
-                <span class="gray">📍 {{location.city}}</span>
+                <span class="gray nowrap">
+                  <span class="icon hack-icon-map"></span>
+                  {{location.city}}
+                </span>
             </div>
           </div>
           {{/results}}
