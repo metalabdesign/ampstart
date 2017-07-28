@@ -125,7 +125,8 @@ body {
   cursor: pointer;
 }
 
-.focus:focus {
+.focus:focus,
+*:focus .focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(0,0,0,.25);
 }
@@ -139,9 +140,13 @@ body {
   box-sizing: border-box;
 }
 
-/* For some reason, this class is absent in the latest version of basscss. */
-.flex-grow {
-  flex: 1 0 auto
+.flip {
+  transition: transform 100ms;
+  transform: rotate(0);
+}
+
+.flip-flipped {
+  transform: rotate(180deg);
 }
 
 .no-select {
