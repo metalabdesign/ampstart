@@ -43,6 +43,10 @@
   opacity: 1;
 }
 
+.date-input input:focus {
+  outline: none;
+}
+
 .date-input-touched input ~ .date-input-label,
 .date-input input:focus ~ .date-input-label {
   opacity: 0;
