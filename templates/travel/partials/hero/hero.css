@@ -107,6 +107,7 @@
   bottom: -5vmax;
   left: -5vmax;
   opacity: 0;
+  background: var(--silver)
 }
 .travel-hero-bg-img img {
   object-fit: cover;
