@@ -20,14 +20,21 @@ limitations under the License.
 <section class="sm-hide xs-hide relative z2">
   <div class="flex mxn2 px1 md-px2">
     <div
-      class="flex flex-auto overflow-hidden focus pointer"
+      class="flex flex-auto overflow-hidden pointer no-focus"
       role="button"
       tabindex="0"
       on="tap:AMP.setState({ui_filterPane: !ui_filterPane, ui_sortPane: false})"
     >
       <div class="pl2 pr1 py2 nowrap border-bottom border-silver flex-none">
-        <span class="semibold">Filters</span>
-        <span class="gray">{{> ../icon/caret-down-small.snip.html}}</span>
+        <span class=focus>
+          <span class="semibold">Filters</span>
+          <span
+            class="gray inline-block flip"
+            [class]="'gray inline-block flip' + (ui_filterPane ? ' flip-flipped' : '')"
+          >
+            {{> ../icon/caret-down-small.snip.html}}
+          </span>
+        </span>
       </div>
 
       <div class="pl1 py2 nowrap border-bottom border-silver flex-none">
@@ -103,20 +110,27 @@ limitations under the License.
 
     <div class="flex-none">
       <div
-        class="pl1 pr2 py2 md-pl2 nowrap border-left border-bottom border-silver pointer focus relative z2"
+        class="pl1 pr2 py2 md-pl2 nowrap border-left border-bottom border-silver pointer no-focus relative z2"
         role="button"
         tabindex="0"
         on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: !ui_sortPane})"
       >
-        <span class="gray">Sort by</span>
-        <span class="semibold">
-          {{#data.sort}}
-            <span {{^selected}}class="hide"{{/selected}} [class]="fields_sort == '{{value}}' ? '' : 'hide'">
-              {{text}}
-            </span>
-          {{/data.sort}}
+        <span class=focus>
+          <span class="gray">Sort by</span>
+          <span class="semibold">
+            {{#data.sort}}
+              <span {{^selected}}class="hide"{{/selected}} [class]="fields_sort == '{{value}}' ? '' : 'hide'">
+                {{text}}
+              </span>
+            {{/data.sort}}
+          </span>
+          <span
+            class="gray inline-block flip"
+            [class]="'gray inline-block flip' + (ui_sortPane ? ' flip-flipped' : '')"
+          >
+            {{> ../icon/caret-down-small.snip.html}}
+          </span>
         </span>
-        <span class="gray">{{> ../icon/caret-down-small.snip.html}}</span>
       </div>
       {{> ./sort-pane.snip.html}}
     </div>
