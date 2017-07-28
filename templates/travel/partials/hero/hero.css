@@ -282,7 +282,7 @@
 }
 
 .travel-hero-angle-2 {
-  height: calc(1000 / 16rem);
+  height: calc(1400 / 16rem);
   transform: translate(-50%, 16rem) rotate(20deg);
   transition: transform 1000ms ease-in-out;
   background-color: var(--white);
@@ -294,7 +294,7 @@
 
 @media (--breakpoint-md) {
   :root .travel-hero-angle-2  {
-    transform: translate(-50%, calc(56% + (300 / 16rem))) rotate(20deg);
+    transform: translate(-50%, calc(860 / 16rem)) rotate(20deg);
   }
 }
 
