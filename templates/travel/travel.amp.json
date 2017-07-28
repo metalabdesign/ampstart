@@ -36,6 +36,17 @@
       "font-stylesheets": [
         "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700"
       ]
+    },
+    "partials": {
+      "hero": {
+        "images": [{
+          "src": "../../img/travel/hero-1@2x.jpg"
+        }, {
+          "src": "../../img/travel/hero-2@2x.jpg"
+        }, {
+          "src": "../../img/travel/hero-3@2x.jpg"
+        }]
+      }
     }
   }
 }

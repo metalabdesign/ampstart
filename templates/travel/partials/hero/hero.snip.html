@@ -17,11 +17,19 @@ limitations under the License.
 }}
 
 <!-- Hero -->
+{{#partials.hero}}
 <section
   class="relative travel-hero travel-hero-visible"
   [class]="'relative travel-hero' + (ui_hero ? ' travel-hero-visible' : '')"
 >
   <div class="travel-hero-bg">
+    {{#images}}
+      <amp-img
+        class="travel-hero-bg-img"
+        src="{{src}}"
+        height="80vmax"
+      ></amp-img>
+    {{/images}}
     <div class="travel-hero-bg-fade"></div>
   </div>
 
@@ -85,8 +93,8 @@ limitations under the License.
 
         <div class="flex my2 travel-hero-search-dates">
           <label
-            class="date-input"
-            [class]="'date-input' + (fields_departure ? ' date-input-touched' : '')"
+            class="date-input focus"
+            [class]="'date-input focus' + (fields_departure ? ' date-input-touched' : '')"
           >
             <input
               type="date"
@@ -107,8 +115,8 @@ limitations under the License.
             </div>
           </label>
           <label
-            class="date-input"
-            [class]="'date-input' + (fields_return ? ' date-input-touched' : '')"
+            class="date-input focus"
+            [class]="'date-input focus' + (fields_return ? ' date-input-touched' : '')"
           >
             <input
               type="date"
@@ -165,4 +173,5 @@ limitations under the License.
   </div>
 
 </section>
+{{/partials.hero}}
 <!--/ Hero -->
