@@ -6,7 +6,9 @@
     "public": "dist",
     "cleanUrls": true,
     "redirects": [],
-    "rewrites": [ {
+    "rewrites": [{
+      "source": "/api/places", "function": "places"
+    }, {
       "source": "/api/search", "function": "search"
     }]
   }
