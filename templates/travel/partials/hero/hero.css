@@ -17,13 +17,13 @@
 @keyframes travel-hero-bg-img-1 {
   0% {
     opacity: 0;
-    transform: translate(5vmax, 2vmax) scale(1.2);
+    transform: translate(5vmax, 2vmax) scale(1.1);
   }
   5% {
-    opacity: 1;
+    opacity: 0.9;
   }
   33% {
-    opacity: 1;
+    opacity: 0.9;
   }
   38% {
     opacity: 0;
@@ -34,17 +34,17 @@
 @keyframes travel-hero-bg-img-2 {
   0% {
     opacity: 0;
-    transform: translate(-2vmax, 2vmax) scale(1);
+    transform: translate(-2vmax, 0vmax) scale(1);
   }
   5% {
-    opacity: 1;
+    opacity: 0.9;
   }
   30% {
-    opacity: 1;
+    opacity: 0.9;
   }
   35% {
     opacity: 0;
-    transform: translate(2vmax, -2vmax) scale(1.2);
+    transform: translate(2vmax, -2vmax) scale(1.1);
   }
 }
 
@@ -54,14 +54,14 @@
     transform: translate(0, 2vmax) scale(1);
   }
   5% {
-    opacity: 1;
+    opacity: 0.9;
   }
   30% {
-    opacity: 1;
+    opacity: 0.9;
   }
   35% {
     opacity: 0;
-    transform: translate(0, -2vmax) scale(1.2);
+    transform: translate(0, -2vmax) scale(1.1);
   }
 }
 
@@ -121,15 +121,15 @@
 }
 
 .travel-hero-bg-img:nth-child(1) {
-  animation: 60s travel-hero-bg-img-1 linear infinite;
+  animation: 18s travel-hero-bg-img-1 linear infinite;
 }
 
 .travel-hero-bg-img:nth-child(2) {
-  animation: 60s travel-hero-bg-img-2 linear 20s infinite;
+  animation: 18s travel-hero-bg-img-2 linear 6s infinite;
 }
 
 .travel-hero-bg-img:nth-child(3) {
-  animation: 60s travel-hero-bg-img-3 linear 40s infinite;
+  animation: 18s travel-hero-bg-img-3 linear 12s infinite;
 }
 
 @media (--breakpoint-md) {
@@ -196,7 +196,6 @@
   color: var(--white);
   font-size: calc(60 / 16rem);
   font-weight: 700;
-  margin-bottom: 1rem;
   animation: fade-and-slideup 0.4s 0.2s ease-in-out both;
 }
 
@@ -210,11 +209,9 @@
 @media (--breakpoint-md) {
   .travel-hero-heading {
     font-size: 4.6rem;
-    color: var(--black);
   }
 
   .travel-hero-subheading {
-    color: var(--black);
     font-size: calc(24 / 16rem);
   }
 }
