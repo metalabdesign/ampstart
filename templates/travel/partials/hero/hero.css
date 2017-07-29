@@ -169,7 +169,7 @@
 .travel-hero-content {
   padding-top: var(--fixed-navbar-height);
   align-self: flex-end;
-  height: 100vmax;
+  height: calc(100vmax - 70px);
   transform: translateY(-30vmax);
   transition: transform 1000ms ease-in-out;
 }
