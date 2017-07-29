@@ -263,7 +263,7 @@ exports.search = functions.https.onRequest((req, res) => {
           max: 100
         },
       },
-      location: 'Mexico',
+      location: req.query.query || 'mexico',
       resultCount: results.length,
       startDate: {
         raw: '2017-06-07',
