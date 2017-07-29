@@ -1,6 +1,7 @@
 const functions = require('firebase-functions');
 const fs = require('fs');
-
+var https = require("https");
+var url = require('url');
 
 // travelData is the sample data that we use to demo filtering on the frontend.
 const travelData = JSON.parse(fs.readFileSync('data.json', 'utf8'));
@@ -328,3 +329,26 @@ function getSVGGraphPathData(data, width, height) {
 
   return commands.join(' ');
 };
+
+exports.places = functions.https.onRequest((req, res) => {
+  const options = {
+    hostname: 'maps.googleapis.com',
+    path: '/maps/api/place/autocomplete/json?key=' +
+      'AIzaSyBDsTXH8OfdfCLMm_EJ5AAQyb71xPlos8Y' +
+      '&' + (url.parse(req.url).query || ''),
+  };
+
+  let data = '';
+  https.get(options, (response) => {
+    response.on('data', (chunk) => {
+      data += chunk;
+    });
+
+    response.on('end', () => {
+      res.end(`{"items": [${data}]}`);
+    });
+  }).on('error', (err) => {
+    res.statusCode = 500;
+    res.end();
+  });
+});

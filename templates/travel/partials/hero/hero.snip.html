@@ -55,14 +55,19 @@ limitations under the License.
           <label class="input-icon shadow rounded">
             <input
               class="input border input-big input-clear rounded"
+              list="locations"
               type="text"
               name="query"
               placeholder="Where would you like to go?"
               on="
                 change:AMP.setState({
                   fields_query: event.value,
+                  fields_query_live: event.value,
                   fields_query_edited: query_query != event.value
-                })
+                });
+                input-debounced:AMP.setState({
+                  fields_query_live: event.value
+                });
               "
               value=""
               [value]="fields_query"
@@ -75,14 +80,19 @@ limitations under the License.
           <label class="input-icon shadow rounded">
             <input
               class="input input-big rounded"
+              list="locations"
               type="text"
               name="query"
               placeholder="Where would you like to go?"
               on="
                 change:AMP.setState({
                   fields_query: event.value,
+                  fields_query_live: event.value,
                   fields_query_edited: query_query != event.value
-                })
+                });
+                input-debounced:AMP.setState({
+                  fields_query_live: event.value
+                });
               "
               value=""
               [value]="fields_query"
@@ -90,6 +100,23 @@ limitations under the License.
             {{> ../icon/map-pin.snip.html}}
           </label>
         </div>
+
+        <amp-list
+          class="inline-list clip"
+          layout="flex-item"
+          src="/api/places?types=(regions)&types=(cities)&input="
+          [src]="'/api/places?types=(regions)&types=(cities)&input=' + fields_query_live"
+        >
+          <template type="amp-mustache">
+            {{=[[ ]]=}}
+            <datalist id="locations">
+              {{#predictions}}
+              <option value="{{description}}">
+              {{/predictions}}
+            </datalist>
+            [[={{ }}=]]
+          </template>
+        </amp-list>
 
         <div class="flex my2 travel-hero-search-dates">
           <label
@@ -171,7 +198,6 @@ limitations under the License.
       </div>
     </div>
   </div>
-
 </section>
 {{/partials.hero}}
 <!--/ Hero -->

@@ -13,7 +13,9 @@
         "value": "max-age=0"
       }]
     }],
-    "rewrites": [ {
+    "rewrites": [{
+      "source": "/api/places", "function": "places"
+    }, {
       "source": "/api/search", "function": "search"
     }]
   }
