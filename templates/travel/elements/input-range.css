@@ -73,7 +73,7 @@
 }
 
 .input-range:focus::-webkit-slider-runnable-track {
-  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
+  /*box-shadow: 0 0 0 3px rgba(0,0,0,.25);*/
 }
 
 .input-range::-moz-range-track {
@@ -84,7 +84,7 @@
 }
 
 .input-range:focus::-moz-range-track {
-  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
+  /*box-shadow: 0 0 0 3px rgba(0,0,0,.25);*/
 }
 
 .input-range:focus {
