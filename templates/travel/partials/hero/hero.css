@@ -39,10 +39,10 @@
   5% {
     opacity: 0.9;
   }
-  30% {
+  33% {
     opacity: 0.9;
   }
-  35% {
+  38% {
     opacity: 0;
     transform: translate(2vmax, -2vmax) scale(1.1);
   }
@@ -56,10 +56,10 @@
   5% {
     opacity: 0.9;
   }
-  30% {
+  33% {
     opacity: 0.9;
   }
-  35% {
+  38% {
     opacity: 0;
     transform: translate(0, -2vmax) scale(1.1);
   }

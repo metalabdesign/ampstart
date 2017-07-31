@@ -40,11 +40,11 @@
     "partials": {
       "hero": {
         "images": [{
-          "src": "https://source.unsplash.com/A-NVHPka9Rk/2500x1400"
+          "src": "../../img/travel/hero-2.jpg"
         }, {
-          "src": "https://source.unsplash.com/IRXeN7LXyAw/2500x1400"
+          "src": "../../img/travel/hero-3.jpg"
         }, {
-          "src": "https://source.unsplash.com/GyALQFQ9cp4/2500x1400"
+          "src": "../../img/travel/hero-1.jpg"
         }]
       }
     }
