@@ -73,7 +73,7 @@
 .travel-results-result-link,
 .travel-results-result-flags,
 .travel-results-result-like {
-  transition: transform 100ms;
+  transition: transform 200ms;
 }
 
 .travel-results-result-link:hover,
