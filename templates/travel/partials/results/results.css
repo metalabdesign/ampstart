@@ -41,3 +41,51 @@
 .travel-results-result:nth-child(9) { animation-delay: 80ms; }
 .travel-results-result:nth-child(10) { animation-delay: 90ms; }
 .travel-results-result:nth-child(11) { animation-delay: 10ms; }
+
+.travel-results-result-link {
+  display: block;
+  border-radius: var(--border-radius);
+  position: relative;
+}
+
+.travel-results-result-flags {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.travel-results-result-like {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.travel-results-result-flags,
+.travel-results-result-like {
+  pointer-events: none;
+}
+
+.travel-results-result-flags > *,
+.travel-results-result-like > * {
+  pointer-events: all;
+}
+
+.travel-results-result-link,
+.travel-results-result-flags,
+.travel-results-result-like {
+  transition: transform 100ms;
+}
+
+.travel-results-result-link:hover,
+.travel-results-result-link:focus {
+  outline: none;
+}
+
+.travel-results-result-link:hover,
+.travel-results-result-link:focus,
+.travel-results-result-link:hover ~ .travel-results-result-flags,
+.travel-results-result-link:focus ~ .travel-results-result-flags,
+.travel-results-result-link:hover ~ .travel-results-result-like,
+.travel-results-result-link:focus ~ .travel-results-result-like {
+  transform: translateY(-0.5rem);
+}
