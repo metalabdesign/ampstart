@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+:root .travel-popular .travel-results-result {
+  animation: none;
+}
+
 .travel-popular-tilt-left,
 .travel-popular-tilt-right {
   display: inline-block;
@@ -22,12 +26,12 @@
   perspective-origin: 50% calc(100% + 4rem);
 }
 
-.travel-popular-tilt-left > *:first-child {
+.travel-popular-tilt-left .travel-results-result {
   transform-origin: 0 0;
   transform: rotateY(-15deg);
 }
 
-.travel-popular-tilt-right > *:first-child {
+.travel-popular-tilt-right .travel-results-result {
   transform-origin: 100% 0;
   transform: rotateY(15deg);
 }
