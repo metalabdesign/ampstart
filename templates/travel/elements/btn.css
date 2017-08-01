@@ -23,6 +23,7 @@
 .btn {
   /* Prevent btn bold weight. */
   font-weight: inherit;
+  transition: box-shadow 250ms, transform 250ms;
 }
 
 .btn.block {
@@ -30,13 +31,14 @@
   display: block;
 }
 
-.btn:focus {
-  outline: none;
-  border-color: rgba(0,0,0,.125);
-  /*box-shadow: 0 0 0 3px rgba(0,0,0,.25);*/
-}
-
 .btn:disabled {
   opacity: 0.5;
   cursor: default;
+}
+
+.btn:not(:disabled):hover,
+.btn:not(:disabled):focus {
+  outline: none;
+  transform: scale(1.02) translateY(calc(0.02 / 1 * -100%));
+  box-shadow: 0 0.4rem 2rem color(var(--black) a(0.12));
 }
