@@ -52,7 +52,6 @@
   --z4: 4;
 
   --letter-spacing: 1;
-  --caps-letter-spacing: .2em;
 
   */
   --bold-font-weight: 700;
@@ -64,6 +63,8 @@
   --line-height-2: 1.4;
   --line-height-3: 1.6;
   --line-height-4: 2;
+
+  --caps-letter-spacing: 0;
 
   --h1: 2rem;
   --h2: 1.5rem;
