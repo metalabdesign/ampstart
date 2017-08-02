@@ -13,40 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@import 'base-page-vars';
 
-*, *::before, *::after {
-  box-sizing: border-box;
+
+.ampstart-gallery-component-map .ampstart-gallery-component-map-heading {
+  width: calc((240 / 16) * 1rem);
+  margin-bottom: 3rem;
 }
 
-/* Body */
-body {
-  background: var(--color-body-background);
-  color: var(--color-font-default);
-  font-family: var(--font-family);
-  min-width: var(--body-min-width);
-  overflow-x: hidden;
-  font-smooth: always;
-  -webkit-font-smoothing: antialiased;
+.ampstart-gallery-component-map .ampstart-gallery-component-button {
+  margin-left: calc(3.5vw + 1rem);
 }
 
-main {
-  max-width: var(--content-max-width);
-  margin: 0 auto;
+@media (--breakpoint-lg) {
+  .ampstart-gallery-component-map-button {
+    margin-left: calc((40 / 16) * 1rem);
+  }
 }
 
-p {
-  padding: 0;
-  margin: 0;
-}
-
-
-/* Accents */
-.ampstart-accent {
-  color: var(--color-font-accent);
-}
-
-#content:target {
-  margin-top: calc(0px - var(--navbar-height));
-  padding-top: var(--navbar-height);
+.ampstart-gallery-component-map-frame {
+  margin-top: calc((120 / 16) * 1rem);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 10%, rgba(0,0,0,1) calc((140 / 16) * 1rem));
 }
