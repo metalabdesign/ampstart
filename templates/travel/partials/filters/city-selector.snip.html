@@ -47,11 +47,7 @@ limitations under the License.
           {{#isSelected}}<div option="{{name}}" selected>{{/isSelected}}
           {{^isSelected}}<div option="{{name}}">{{/isSelected}}
             <span>
-              <!--
-                amp-img fails to load inside amp-list inside amp-carousel
-                see: https://jsbin.com/beyoruz/edit?html,output
-              -->
-              <amp-img layout="flex-item" src="{{img}}"></amp-img>
+              <amp-img class="circle" layout="flex-item" src="/img/travel/city/{{img}}.jpg"></amp-img>
               {{name}}
             </span>
           </div>

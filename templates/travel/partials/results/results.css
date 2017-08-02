@@ -76,16 +76,16 @@
   transition: transform 200ms;
 }
 
-.travel-results-result-link:hover,
+.travel-results-result:hover .travel-results-result-link,
 .travel-results-result-link:focus {
   outline: none;
 }
 
-.travel-results-result-link:hover,
+.travel-results-result:hover .travel-results-result-link,
 .travel-results-result-link:focus,
-.travel-results-result-link:hover ~ .travel-results-result-flags,
+.travel-results-result:hover .travel-results-result-flags,
 .travel-results-result-link:focus ~ .travel-results-result-flags,
-.travel-results-result-link:hover ~ .travel-results-result-like,
+.travel-results-result:hover .travel-results-result-like,
 .travel-results-result-link:focus ~ .travel-results-result-like {
   transform: translateY(-0.5rem);
 }

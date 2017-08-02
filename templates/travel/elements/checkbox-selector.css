@@ -48,7 +48,6 @@
   height: calc(28 / 16rem);
   margin-right: calc(10 / 16rem);
   background: var(--silver);
-  border-radius: 50%;
 }
 
 .checkbox-selector [option]::before,

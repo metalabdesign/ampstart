@@ -113,6 +113,10 @@ body {
   box-sizing: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Util classes. */
 .min-0 {
   min-width: 0;
@@ -165,6 +169,14 @@ body {
 .collapse {
   height: 0;
   overflow: hidden;
+}
+
+/* Prevent strange bug where amp-img elements randomly lose rounded corners. */
+amp-img.rounded img {
+  border-radius: var(--border-radius)
+}
+amp-img.circle img {
+  border-radius: 50%
 }
 
 @keyframes fade-and-slideup {

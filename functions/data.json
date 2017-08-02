@@ -1,8 +1,9 @@
 {
   "activities": [
     {
-      "id": "xxx-xxx-xx0",
+      "id": "0",
       "name": "Sail Around the Eastern Mexican Coast",
+      "img": "sail-around-coast",
       "price": {
         "value": 92,
         "currency": "USD"
@@ -31,8 +32,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-xx1",
+      "id": "1",
       "name": "A Tour of the Beaches of Canc\u00fan with a Local",
+      "img": "tour-beaches-cancun",
       "price": {
         "value": 70,
         "currency": "USD"
@@ -61,8 +63,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-xx2",
+      "id": "2",
       "name": "Roads of the City",
+      "img": "roads-of-city",
       "price": {
         "value": 199,
         "currency": "USD"
@@ -89,8 +92,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-xx3",
+      "id": "3",
       "name": "Beer Excursion of Mexico City",
+      "img": "beer-excursion-mexico-city",
       "price": {
         "value": 40,
         "currency": "USD"
@@ -119,8 +123,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-xx4",
+      "id": "4",
       "name": "Surf Day. Board and Wetsuits Included in Price!",
+      "img": "surf-day",
       "price": {
         "value": 100,
         "currency": "USD"
@@ -147,8 +152,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-xx5",
+      "id": "5",
       "name": "Parque Zoologico",
+      "img": "parque-zoologico",
       "price": {
         "value": 20,
         "currency": "USD"
@@ -175,8 +181,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-xx6",
+      "id": "6",
       "name": "The Best Coffee in Mexico. Free Coffee for 2 hours",
+      "img": "best-coffee-mexico",
       "price": {
         "value": 5,
         "currency": "USD"
@@ -203,8 +210,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-xx7",
+      "id": "7",
       "name": "Top Fashion Spots with Instagram Blogger",
+      "img": "top-fashion-instagram",
       "price": {
         "value": 45,
         "currency": "USD"
@@ -231,8 +239,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-xx8",
+      "id": "8",
       "name": "Mexican Meat Market",
+      "img": "mexican-meat-market",
       "price": {
         "value": 19,
         "currency": "USD"
@@ -258,8 +267,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-xx9",
+      "id": "9",
       "name": "Bake Traditional Sweet Bread",
+      "img": "bake-traditional-sweet-bread",
       "price": {
         "value": 46,
         "currency": "USD"
@@ -286,8 +296,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-x10",
+      "id": "10",
       "name": "Run Through Mexico City with an Olympian",
+      "img": "run-through-mexico",
       "price": {
         "value": 149,
         "currency": "USD"
@@ -315,8 +326,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-x11",
+      "id": "11",
       "name": "Discover Oaxaca's Electronic Music Scene with a Top DJ",
+      "img": "discover-electronic-scene",
       "price": {
         "value": 113,
         "currency": "USD"
@@ -344,8 +356,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-x12",
+      "id": "12",
       "name": "View the National Museum with an Archeologist",
+      "img": "national-museum-archeologist",
       "price": {
         "value": 79,
         "currency": "USD"
@@ -372,8 +385,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-x13",
+      "id": "13",
       "name": "Ride a Motorcycle along the Coast",
+      "img": "motorcycle-coast",
       "price": {
         "value": 245,
         "currency": "USD"
@@ -399,35 +413,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-x13",
-      "name": "Ride a Motorcycle along the Coast",
-      "price": {
-        "value": 245,
-        "currency": "USD"
-      },
-      "location": {
-        "city": "Canc\u00fan",
-        "lat": 0,
-        "lng": 0
-      },
-      "reviews": {
-        "averageRating": {
-          "value": 3,
-          "range": [true, true, true]
-        },
-        "count": 15
-      },
-      "flags": {
-        "liked": false,
-        "new": false
-      },
-      "types": [
-        "tours"
-      ]
-    },
-    {
-      "id": "xxx-xxx-x14",
+      "id": "14",
       "name": "Bike Around an Active Volcano",
+      "img": "bike-around-volcano",
       "price": {
         "value": 34,
         "currency": "USD"
@@ -453,8 +441,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-x15",
+      "id": "15",
       "name": "Taste Authentic Tapas",
+      "img": "authentic-tapas",
       "price": {
         "value": 79,
         "currency": "USD"
@@ -483,8 +472,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-x16",
+      "id": "16",
       "name": "Skateboard Around the City",
+      "img": "skateboard-around-city",
       "price": {
         "value": 49,
         "currency": "USD"
@@ -512,8 +502,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-x17",
+      "id": "17",
       "name": "Go Golfing with a Local Pro",
+      "img": "golfing-with-pro",
       "price": {
         "value": 129,
         "currency": "USD"
@@ -542,8 +533,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-x18",
+      "id": "18",
       "name": "Learn Photography While Exploring the City",
+      "img": "learn-photography",
       "price": {
         "value": 89,
         "currency": "USD"
@@ -570,8 +562,9 @@
       ]
     },
     {
-      "id": "xxx-xxx-x19",
+      "id": "19",
       "name": "Enjoy a Traditional Dinner... In the Sky!",
+      "img": "dinner-in-sky",
       "price": {
         "value": 256,
         "currency": "USD"
@@ -599,28 +592,58 @@
         "drinks",
         "danger"
       ]
+    },
+    {
+      "id": "20",
+      "name": "Swim with dolphins",
+      "img": "swim-with-dolphins",
+      "price": {
+        "value": 315,
+        "currency": "USD"
+      },
+      "location": {
+        "city": "Tijuana",
+        "lat": 0,
+        "lng": 0
+      },
+      "reviews": {
+        "averageRating": {
+          "value": 5,
+          "range": [true, true, true, true, true]
+        },
+        "count": 134
+      },
+      "flags": {
+        "liked": false,
+        "new": false
+      },
+      "types": [
+        "nature",
+        "active",
+        "water"
+      ]
     }
   ],
   "cities": [
     {
       "name": "La Paz",
-      "img": "https://unsplash.it/100/100?r=1"
+      "img": "la-paz"
     },
     {
       "name": "Cancún",
-      "img": "https://unsplash.it/100/100?r=2"
+      "img": "cancun"
     },
     {
       "name": "Mexico City",
-      "img": "https://unsplash.it/100/100?r=3"
+      "img": "mexico-city"
     },
     {
       "name": "Oaxaca",
-      "img": "https://unsplash.it/100/100?r=4"
+      "img": "oaxaca"
     },
     {
       "name": "Tijuana",
-      "img": "https://unsplash.it/100/100?r=5"
+      "img": "tijuana"
     }
   ]
 }

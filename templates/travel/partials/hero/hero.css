@@ -17,7 +17,7 @@
 @keyframes travel-hero-bg-img-1 {
   0% {
     opacity: 0;
-    transform: translate(5vmax, 2vmax) scale(1.1);
+    transform: translate3d(5vmax, 2vmax, 0) scale(1.1);
   }
   5% {
     opacity: 0.9;
@@ -27,14 +27,14 @@
   }
   38% {
     opacity: 0;
-    transform: translate(0, -2vmax) scale(1);
+    transform: translate3d(0, -2vmax, 0) scale(1);
   }
 }
 
 @keyframes travel-hero-bg-img-2 {
   0% {
     opacity: 0;
-    transform: translate(-2vmax, 0vmax) scale(1);
+    transform: translate3d(-2vmax, 0vmax, 0) scale(1);
   }
   5% {
     opacity: 0.9;
@@ -44,14 +44,14 @@
   }
   38% {
     opacity: 0;
-    transform: translate(2vmax, -2vmax) scale(1.1);
+    transform: translate3d(2vmax, -2vmax, 0) scale(1.1);
   }
 }
 
 @keyframes travel-hero-bg-img-3 {
   0% {
     opacity: 0;
-    transform: translate(0, 2vmax) scale(1);
+    transform: translate3d(0, 2vmax, 0) scale(1);
   }
   5% {
     opacity: 0.9;
