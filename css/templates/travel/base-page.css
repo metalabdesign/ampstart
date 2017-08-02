@@ -162,6 +162,11 @@ body {
   animation: fade-and-slideup 0.8s 0.6s ease-out both;
 }
 
+.collapse {
+  height: 0;
+  overflow: hidden;
+}
+
 @keyframes fade-and-slideup {
   from {
     opacity: 0;
