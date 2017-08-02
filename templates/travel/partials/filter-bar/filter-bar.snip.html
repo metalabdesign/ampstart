@@ -116,6 +116,12 @@ limitations under the License.
         on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: !ui_sortPane})"
       >
         <span class="focus-child">
+          {{#data.sort}}
+            <div aria-hidden class="no-select overflow-hidden collapse">
+              Sort by <span class="semibold">{{text}}</span> <span class="icon"></span>
+            </div>
+          {{/data.sort}}
+
           <span class="gray">Sort by</span>
           <span class="semibold">
             {{#data.sort}}
