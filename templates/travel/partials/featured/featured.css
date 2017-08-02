@@ -58,17 +58,11 @@
   transform: scale(1.3);
 }
 
-.travel-featured-tile .travel-featured-overlay > * {
+.travel-featured-tile .travel-featured-overlay {
   transition: transform 2s ease-out;
 }
 
-.travel-featured-tile:focus .travel-featured-overlay > *:nth-child(1),
-.travel-featured-tile:hover .travel-featured-overlay > *:nth-child(1) {
-  transform: translateY(0.5rem);
-}
-
-.travel-featured-tile:focus .travel-featured-overlay > *:nth-child(2),
-.travel-featured-tile:hover .travel-featured-overlay > *:nth-child(2) {
+.travel-featured-tile:hover .travel-featured-overlay {
   transform: translateY(1rem);
 }
 
