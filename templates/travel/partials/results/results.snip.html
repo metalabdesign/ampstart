@@ -40,12 +40,19 @@ limitations under the License.
               {{/flags.new}}
               <div class="travel-results-result-like">
                 <div class="p1">
-                  <button
-                    class="button-reset like{{#flags.liked}} like-liked{{/flags.liked}}"
-                    type="submit"
-                    name="activity_id"
-                    value="{{id}}"
-                  ></button>
+                  <div
+                    class="like{{#flags.liked}} like-liked{{/flags.liked}}"
+                    aria-role="button"
+                    tabindex="0"
+                  >
+                    <div class="like-heart-tiny like-heart-solid"></div>
+                    <div class="like-heart-tiny like-heart-solid"></div>
+                    <div class="like-heart-tiny like-heart-solid"></div>
+
+                    <div class="like-heart like-heart-white"></div>
+                    <div class="like-heart like-heart-solid"></div>
+                    <div class="like-heart like-heart-outline"></div>
+                  </div>
                 </div>
               </div>
             </div>
