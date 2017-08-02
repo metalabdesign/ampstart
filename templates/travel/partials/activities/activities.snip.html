@@ -26,10 +26,9 @@ limitations under the License.
     <div class="container-padded">
       <div class="flex justify-center p1 md-px1 mxn1">
         {{#data.types}}
-          <div
+          <a
+            href="travel-results.amp"
             class="travel-activities-activity type-{{value}} pointer"
-            role="button"
-            tabindex="0"
             on="
               tap:AMP.setState({
                 ui_viewIndex: 1,
@@ -46,9 +45,9 @@ limitations under the License.
             <div class="center line-height-4 semibold">
               {{text}}
             </div>
-          </div>
+          </a>
         {{/data.types}}
-      </div>
+      </a>
     </div>
   </div>
 </section>

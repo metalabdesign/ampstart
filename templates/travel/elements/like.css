@@ -40,7 +40,12 @@
   flex: 1;
 }
 
-.like {
+.like input {
+  position: absolute;
+  clip: rect(0 0 0 0);
+}
+
+.like-hearts {
   display: inline-block;
   width: 2rem;
   height: 2rem;
@@ -50,11 +55,7 @@
   cursor: pointer;
 }
 
-.like:focus {
-  outline: none;
-}
-
-.like::before {
+.like-hearts::before {
   content: "";
   display: block;
   position: absolute;
@@ -117,29 +118,24 @@
   transform: translate3d(0,0,0) scale(1);
 }
 
-.like:focus::before,
-.like-liked::before {
+.like input:checked + .like-hearts::before {
   animation: 1.2s like-before both;
 }
 
-.like:focus .like-heart-tiny,
-.like-liked .like-heart-tiny {
+.like input:checked + .like-hearts > .like-heart-tiny {
   animation-duration: 0.6s;
   animation-name: like-heart-tiny;
 }
 
-.like:focus .like-heart.like-heart-outline,
-.like-liked .like-heart.like-heart-outline {
+.like input:checked + .like-hearts > .like-heart.like-heart-outline {
   opacity: 0;
 }
 
-.like:focus .like-heart.like-heart-solid,
-.like-liked .like-heart.like-heart-solid {
+.like input:checked + .like-hearts > .like-heart.like-heart-solid {
   animation: 1.2s like-heart-solid both cubic-bezier(0.445,  0.050, 0.550, 0.950) ;
 }
 
-.like:focus .like-heart.like-heart-white,
-.like-liked .like-heart.like-heart-white {
+.like input:checked + .like-hearts > .like-heart.like-heart-white {
   animation: 1.2s like-heart-white both;
 }
 

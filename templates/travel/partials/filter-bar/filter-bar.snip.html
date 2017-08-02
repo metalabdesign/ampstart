@@ -26,14 +26,12 @@ limitations under the License.
       on="tap:AMP.setState({ui_filterPane: !ui_filterPane, ui_sortPane: false})"
     >
       <div class="pl2 pr1 py2 nowrap border-bottom border-silver flex-none">
-        <span class="focus-child">
-          <span class="semibold">Filters</span>
-          <span
-            class="gray inline-block flip"
-            [class]="'gray inline-block flip' + (ui_filterPane ? ' flip-flipped' : '')"
-          >
-            {{> ../icon/caret-down-small.snip.html}}
-          </span>
+        <span class="semibold">Filters</span>
+        <span
+          class="gray inline-block flip"
+          [class]="'gray inline-block flip' + (ui_filterPane ? ' flip-flipped' : '')"
+        >
+          {{> ../icon/caret-down-small.snip.html}}
         </span>
       </div>
 
@@ -41,14 +39,12 @@ limitations under the License.
         <span class="gray">Price</span>
       </div>
 
-      <div class="min-0 border-bottom border-silver">
-        <div class="fade-right pr1 py2">
-          <span
-            class="badge gray"
-            [class]="query_maxPrice < 801 ? 'badge green' : 'badge gray'"
-            [text]="query_maxPrice < 801 ? 'Up to $' + round(query_maxPrice) : 'Any price'"
-          >Any price</span>
-        </div>
+      <div class="pr1 py2 nowrap border-bottom border-silver">
+        <span
+          class="badge gray"
+          [class]="query_maxPrice < 801 ? 'badge green' : 'badge gray'"
+          [text]="query_maxPrice < 801 ? 'Up to $' + round(query_maxPrice) : 'Any price'"
+        >Any price</span>
       </div>
 
       <div class="pl1 py2 nowrap border-bottom border-silver flex-none">
@@ -115,14 +111,16 @@ limitations under the License.
         tabindex="0"
         on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: !ui_sortPane})"
       >
-        <span class="focus-child">
+        <span class="gray">Sort by</span>
+        <div class="inline-block">
+          <!--
+            Render an invisible set of labels to force the element to always be
+            the width of the widest label.
+          -->
           {{#data.sort}}
-            <div aria-hidden class="no-select overflow-hidden collapse">
-              Sort by <span class="semibold">{{text}}</span> <span class="icon"></span>
-            </div>
+            <div aria-hidden class="semibold no-select overflow-hidden collapse">{{text}}</div>
           {{/data.sort}}
 
-          <span class="gray">Sort by</span>
           <span class="semibold">
             {{#data.sort}}
               <span {{^selected}}class="hide"{{/selected}} [class]="fields_sort == '{{value}}' ? '' : 'hide'">
@@ -130,12 +128,12 @@ limitations under the License.
               </span>
             {{/data.sort}}
           </span>
-          <span
-            class="gray inline-block flip"
-            [class]="'gray inline-block flip' + (ui_sortPane ? ' flip-flipped' : '')"
-          >
-            {{> ../icon/caret-down-small.snip.html}}
-          </span>
+        </div>
+        <span
+          class="gray inline-block flip"
+          [class]="'gray inline-block flip' + (ui_sortPane ? ' flip-flipped' : '')"
+        >
+          {{> ../icon/caret-down-small.snip.html}}
         </span>
       </div>
       {{> ./sort-pane.snip.html}}
