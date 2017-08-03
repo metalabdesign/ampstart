@@ -276,13 +276,19 @@ exports.search = functions.https.onRequest((req, res) => {
       },
     };
 
-    // The entire api response is wrapped in an `items` array in order to
-    // make amp-list mustache template rendering more flexible.
-    res.json({items: [{
-      stats: stats,
-      results: results,
-    }]});
-  });
+    const sendResponse = function () {
+      res.json({items: [{
+        stats: stats,
+        results: results,
+      }]})
+    };
+
+    if (req.query.delay) {
+      setTimeout(sendResponse, parseInt(req.query.delay, 10));
+    } else {
+      sendResponse();
+    }
+  })
 });
 
 // Helpers
