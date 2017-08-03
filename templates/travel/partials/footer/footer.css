@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+.travel-footer .link.gray:focus {
+  border-bottom: calc(2 / 16rem) solid rgba(255,255,255,0.25);
+}
+
 .travel-footer-bg {
   position: absolute;
   top: 0;
