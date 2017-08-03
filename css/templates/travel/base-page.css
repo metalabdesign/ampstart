@@ -91,6 +91,7 @@
 /*
  * Template partials.
  */
+@import '../../../templates/travel/partials/angles/angles.css';
 @import '../../../templates/travel/partials/activities/activities.css';
 @import '../../../templates/travel/partials/discover/discover.css';
 @import '../../../templates/travel/partials/footer/footer.css';
@@ -164,6 +165,8 @@ a {
 
 .travel-landing-content {
   animation: fade-and-slideup 0.8s 0.6s ease-out both;
+  padding-top: 1000px;
+  margin-top: -1000px;
 }
 
 .collapse {
