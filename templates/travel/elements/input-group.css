@@ -55,6 +55,7 @@
 
 .input-group-sep {
   position: relative;
+  z-index: 1;
   display: block;
   width: 0;
   height: calc(22 / 16rem);
@@ -62,4 +63,9 @@
   border-left-style: solid;
   margin: 0 -0.5px;
   pointer-events: none;
+}
+
+.input-group > .btn:hover {
+  transform: none;
+  box-shadow: none;
 }
