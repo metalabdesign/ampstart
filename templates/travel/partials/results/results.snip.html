@@ -101,7 +101,41 @@ limitations under the License.
             {{/results}}
           {{/results.length}}
           {{^results.length}}
-            NO RESULTS
+            <div class="travel-results-empty">
+              <div>
+                <div class="h1 center mb1">
+                  <span class="img-icon-sad-face-gray"></span>
+                </div>
+                <div class="h1 gray center">No adventures for that search</div>
+                <div class="gray center">
+                  You can
+                  <span
+                    class="underline pointer"
+                    role="button"
+                    tabindex="0"
+                    on="
+                      tap:
+                        AMP.setState({ui_reset: false}),
+                        AMP.setState({
+                          ui_filterPane: true,
+                          ui_reset: true,
+                          query_maxPrice: fields_maxPrice_initial,
+                          fields_maxPrice: fields_maxPrice_initial,
+                          fields_maxPrice_live: fields_maxPrice_initial,
+                          fields_maxPrice_edited: false,
+                          query_city: fields_city_initial,
+                          fields_city: fields_city_initial,
+                          fields_city_edited: false,
+                          query_type: fields_type_initial,
+                          fields_type: fields_type_initial,
+                          fields_type_edited: false
+                        })
+                    "
+                  >reset filters</span>
+                  to see more results
+                </div>
+              </div>
+            </div>
           {{/results.length}}
         </div>
         [[={{ }}=]]
