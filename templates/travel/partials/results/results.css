@@ -93,3 +93,20 @@
 
   animation: fade-and-slideup 0.4s ease-in-out both;
 }
+
+.travel-results-list > [class^="i-amphtml-loading-container"] {
+  position: fixed;
+  top: calc(150 / 16rem);
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  min-height: calc(200 / 16rem);
+}
+
+.travel-results-list > [class^="i-amphtml-loading-container"] > .amp-active::before {
+  content: "Loading results..."
+}
+
+.travel-results-list > [class^="i-amphtml-loading-container"] > .amp-active > div {
+  display: none;
+}
