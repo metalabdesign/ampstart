@@ -83,11 +83,12 @@
 }
 
 .checkbox-selector [option]::after {
-  content: "✔";
+  content: "";
+  background: url(../../img/travel/icon/checkmark-purple.png) no-repeat 50% 50%;
+  background-size: contain;
   text-align: center;
   display: block;
   opacity: 0;
-  color: var(--purple);
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   transition: none;
   /* Override the page font to prevent the emoji glyph from displaying. */
