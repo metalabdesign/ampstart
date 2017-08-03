@@ -78,3 +78,18 @@
 .travel-results-result-link:focus ~ .travel-results-result-like {
   transform: translateY(-0.5rem);
 }
+
+.travel-results-empty {
+  position: fixed;
+  top: calc(150 / 16rem);
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  min-height: calc(200 / 16rem);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: fade-and-slideup 0.4s ease-in-out both;
+}

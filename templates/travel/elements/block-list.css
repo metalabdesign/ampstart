@@ -23,6 +23,7 @@
 .block-list {
   min-height: 1px;
   min-width: 1px;
+  position: static;
 }
 
 .block-list [role="list"] {

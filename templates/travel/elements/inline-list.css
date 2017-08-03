@@ -20,6 +20,10 @@
  * Style an <amp-list> element to display itself and its children as inline
  * elements.
  */
+.inline-list {
+  position: static;
+}
+
 .inline-list,
 .inline-list [role="list"],
 .inline-list [role="listitem"] {
