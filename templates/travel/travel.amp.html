@@ -45,12 +45,7 @@ limitations under the License.
       </div>
   </body>
   <script type="text/javascript">
-    document.querySelector('script[src="https://cdn.ampproject.org/v0.js"]')
-      .addEventListener('load', function() {
-        if (!AMP.isExperimentOn('amp-fx-parallax')) {
-          AMP.toggleExperiment('amp-fx-parallax');
-        }
-      });
+    document.cookie = 'AMP_EXP=amp-fx-parallax';
   </script>
 </html>
 {{/travel}}
