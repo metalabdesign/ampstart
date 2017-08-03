@@ -63,7 +63,7 @@
 
 @media (--breakpoint-md) {
   .travel-angle-3 {
-    transform: translate(-50%, 46rem) rotate(-5deg);
+    transform: translate(-50%, 16rem) rotate(-5deg);
     animation: fade 0.3s 0.6s ease-in-out both;
   }
 }
