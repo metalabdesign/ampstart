@@ -31,6 +31,7 @@ limitations under the License.
         on="
           select:
             AMP.setState({
+              ui_reset: false,
               fields_city: fields_city.includes(event.targetOption)
                 ? copyAndSplice(fields_city, fields_city.indexOf(event.targetOption), 1)
                 : fields_city.concat([event.targetOption]),
@@ -47,7 +48,9 @@ limitations under the License.
           {{#isSelected}}<div option="{{name}}" selected>{{/isSelected}}
           {{^isSelected}}<div option="{{name}}">{{/isSelected}}
             <span>
-              <amp-img class="circle" layout="flex-item" src="/img/travel/city/{{img}}.jpg"></amp-img>
+              <div class="checkbox-selector-img">
+                <amp-img class="circle" layout="flex-item" src="/img/travel/city/{{img}}.jpg"></amp-img>
+              </div>
               {{name}}
             </span>
           </div>

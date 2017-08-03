@@ -30,7 +30,7 @@ limitations under the License.
           class="no-focus"
           role="button"
           tabindex="-1"
-          on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})"
+          on="tap:AMP.setState({ui_filterPane: false, ui_reset: false, ui_sortPane: false})"
         >
           {{> ./partials/results-navbar/results-navbar.snip.html}}
         </div>
@@ -44,7 +44,7 @@ limitations under the License.
         <div
           class="no-focus flex-auto overflow-auto"
           role="button"
-          tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: false})"
+          tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_reset: false, ui_sortPane: false})"
         >
             {{> ./partials/results/results.snip.html}}
           </div>

@@ -20,16 +20,14 @@
  * Style an <amp-selector> element as a list of labeled checkboxes.
  */
 .checkbox-selector {
-  margin-top: -0.5rem;
-  margin-bottom: -0.5rem;
+  margin: calc(-6 / 16rem);
 }
 
 .checkbox-selector [option] {
   display: flex;
   align-items: center;
   position: relative;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: calc(6 / 16rem);
 }
 
 .checkbox-selector [option] > span {
@@ -44,10 +42,18 @@
 }
 
 .checkbox-selector [option] amp-img {
-  width: calc(28 / 16rem);
-  height: calc(28 / 16rem);
+  width: calc(38 / 16rem);
+  height: calc(38 / 16rem);
   margin-right: calc(10 / 16rem);
   background: var(--silver);
+  position: relative;
+
+  transition: transform 300ms ease-in-out;
+}
+
+.checkbox-selector [option] amp-img img {
+  opacity: 0.5;
+  transition: opacity 150ms steps(1, start) 150ms, transform 150ms steps(1, start) 150ms;
 }
 
 .checkbox-selector [option]::before,
@@ -68,23 +74,53 @@
   display: block;
   border-radius: var(--border-radius);
   border: 1px solid var(--silver);
+
+  transition: border-color 300ms;
+}
+
+.checkbox-selector [option]:focus::before {
+  border-color: color(var(--purple) w(50));
 }
 
 .checkbox-selector [option]::after {
   content: "✔";
   text-align: center;
-  display: none;
+  display: block;
+  opacity: 0;
   color: var(--purple);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: none;
   /* Override the page font to prevent the emoji glyph from displaying. */
   font-family: 'sans-serif';
 }
 
 .checkbox-selector [option][selected]::after {
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition: clip-path 0.3s ease-in;
   display: block;
+}
+
+.checkbox-selector [option][selected] amp-img {
+  transform: rotateY(180deg);
+}
+
+.checkbox-selector [option][selected] amp-img img {
+  opacity: 1;
+  transform: scaleX(-1);
 }
 
 .checkbox-selector [option]:focus {
   outline: none;
+}
+
+.checkbox-selector-img {
+  transition: transform 300ms;
+}
+
+.checkbox-selector [option]:hover .checkbox-selector-img,
+.checkbox-selector [option]:focus .checkbox-selector-img {
+  transform: scale(1.2);
 }
 
 .checkbox-selector [option]:focus::before {

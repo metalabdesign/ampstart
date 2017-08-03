@@ -17,7 +17,7 @@ limitations under the License.
 }}
 
 <!-- Filter Bar -->
-<section class="sm-hide xs-hide relative z2">
+<section class="travel-filter-bar sm-hide xs-hide relative z2">
   <div class="flex mxn2 px1 md-px2">
     <div
       class="flex flex-auto overflow-hidden pointer no-focus"
@@ -109,7 +109,7 @@ limitations under the License.
         class="pl1 pr2 py2 md-pl2 nowrap border-left border-bottom border-silver pointer no-focus relative z2"
         role="button"
         tabindex="0"
-        on="tap:AMP.setState({ui_filterPane: false, ui_sortPane: !ui_sortPane})"
+        on="tap:AMP.setState({ui_filterPane: false, ui_reset: false, ui_sortPane: !ui_sortPane})"
       >
         <span class="gray">Sort by</span>
         <div class="inline-block">
