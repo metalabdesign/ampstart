@@ -18,22 +18,20 @@ limitations under the License.
 
 <!-- Hero -->
 {{#partials.hero}}
-<section class="relative z1 travel-hero">
-  <!--
-  <div class="travel-hero-bg">
-    {{#images}}
-      <amp-img
-        class="travel-hero-bg-img"
-        src="{{src}}"
-        height="80vmax"
-      ></amp-img>
-    {{/images}}
-    <div class="travel-hero-bg-fade"></div>
-  </div>
-   -->
+<div class="travel-hero-bg" amp-fx-parallax="0.5">
+  {{#images}}
+    <amp-img
+      class="travel-hero-bg-img"
+      src="{{src}}"
+      height="80vmax"
+    ></amp-img>
+  {{/images}}
+  <div class="travel-hero-bg-fade"></div>
+</div>
 
+<section class="relative travel-hero">
   <div class="travel-hero-content container flex items-center">
-    <div class="travel-hero-content-inner relative px1 md-px2 flex-auto">
+    <div amp-fx-parallax="0.75" class="travel-hero-content-inner relative px1 md-px2 flex-auto">
       <h1 class="travel-hero-heading mb2 line-height-1">Adventures<br class="md-hide lg-hide"/> made&nbsp;easy</h1>
       <div class="travel-hero-subheading xs-hide sm-hide">Find and book activities, tours, and experiences.</div>
       <!-- Search Form -->
@@ -175,13 +173,8 @@ limitations under the License.
         </div>
       </div>
       <!--/ Search Form -->
-      <div class="center my1 md-hide lg-hide">
-        <button
-          class="btn gray"
-          on="tap:AMP.setState({ui_hero: false})"
-        >
-          Discover adventures {{> ../icon/caret-down-small.snip.html}}
-        </button>
+      <div class="travel-hero-discover center mt1 md-hide lg-hide gray">
+        Discover adventures {{> ../icon/caret-down-small.snip.html}}
       </div>
     </div>
   </div>

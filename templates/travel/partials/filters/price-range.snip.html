@@ -46,6 +46,7 @@ limitations under the License.
     [value]="'' + fields_maxPrice"
     on="
       change:AMP.setState({
+        ui_reset: false,
         fields_maxPrice: event.value,
         fields_maxPrice_live: event.value,
         fields_maxPrice_edited: event.value != query_maxPrice

@@ -24,10 +24,8 @@
       "title": "Travel Template",
       "canonical-path": "templates/travel/travel.amp",
       "extensions": [
-        "amp-carousel",
-        "amp-selector",
-        "amp-bind",
-        "amp-list"
+        "amp-fx-parallax",
+        "amp-bind"
       ],
       "templates": [
         "amp-mustache"

@@ -20,10 +20,10 @@
     transform: translate3d(5vmax, 2vmax, 0) scale(1.1);
   }
   5% {
-    opacity: 0.9;
+    opacity: 1;
   }
   33% {
-    opacity: 0.9;
+    opacity: 1;
   }
   38% {
     opacity: 0;
@@ -37,10 +37,10 @@
     transform: translate3d(-2vmax, 0vmax, 0) scale(1);
   }
   5% {
-    opacity: 0.9;
+    opacity: 1;
   }
   33% {
-    opacity: 0.9;
+    opacity: 1;
   }
   38% {
     opacity: 0;
@@ -54,10 +54,10 @@
     transform: translate3d(0, 2vmax, 0) scale(1);
   }
   5% {
-    opacity: 0.9;
+    opacity: 1;
   }
   33% {
-    opacity: 0.9;
+    opacity: 1;
   }
   38% {
     opacity: 0;
@@ -71,21 +71,14 @@
 
 @media (--breakpoint-md) {
   .travel-hero {
+    z-index: 1;
     height: auto;
   }
 }
 
-.travel-hero-bg,
-.travel-hero-angles,
-.travel-hero-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
 .travel-hero-bg {
-  position: relative;
+  position: absolute;
+  width: 100%;
   height: 70vmax;
   animation: fade 0.8s ease-out both;
 }
@@ -108,6 +101,8 @@
 
 .travel-hero-bg-img:nth-child(1) {
   animation: 18s travel-hero-bg-img-1 linear infinite;
+  background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QBoRXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAIdpAAQAAAABAAAATgAAAAAAAABIAAAAAQAAAEgAAAABAAGkNAACAAAAAQAAAAAAAAAA/+EJlmh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8APD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczphdXg9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvYXV4LyIgeG1sbnM6ZXhpZkVYPSJodHRwOi8vY2lwYS5qcC9leGlmLzEuMC8iIGF1eDpMZW5zPSIiIGV4aWZFWDpMZW5zTW9kZWw9IiIvPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDw/eHBhY2tldCBlbmQ9InciPz7/7QAsUGhvdG9zaG9wIDMuMAA4QklNBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/+ICIElDQ19QUk9GSUxFAAEBAAACEGxjbXMCEAAAbW50clJHQiBYWVogB9wAAQAZAAMAKQA5YWNzcEFQUEwAAAAAAAAAAAAA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') no-repeat 50% 50%;
+  background-size: cover;
 }
 
 .travel-hero-bg-img:nth-child(2) {
@@ -120,8 +115,8 @@
 
 @media (--breakpoint-md) {
   .travel-hero-bg {
+    position: relative;
     height: auto;
-    bottom: calc(-200 / 16rem);
   }
 }
 
@@ -134,20 +129,18 @@
   background-image: linear-gradient(180deg, transparent 0%, var(--black) calc(300 / 16rem));
 }
 
-@media (--breakpoint-md) {
-  .travel-hero-bg-fade {
-    height: 30vh;
-  }
-}
-
 .travel-hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   padding-top: var(--fixed-navbar-height);
   align-self: flex-end;
   height: calc(100vmax - 70px);
 }
 
 @media (--breakpoint-md) {
-  :root .travel-hero-content {
+  .travel-hero-content {
     padding-top: calc(var(--fixed-navbar-height) + (56 / 16rem));
     padding-bottom: calc(48 / 16rem);
     height: auto;
@@ -163,14 +156,12 @@
   color: var(--white);
   font-size: calc(60 / 16rem);
   font-weight: 700;
-  animation: fade-and-slideup 0.4s 0.2s ease-in-out both;
 }
 
 .travel-hero-subheading {
   color: var(--white);
   font-size: calc(18 / 16rem);
   font-weight: 600;
-  animation: fade-and-slideup 0.4s 0.3s ease-in-out both;
 }
 
 @media (--breakpoint-md) {
@@ -187,7 +178,6 @@
   .travel-hero-search {
     margin-top: 4.25rem;
     max-width: calc(530 / 16rem);
-    animation: fade-and-slideup 0.4s 0.4s ease-in-out both;
   }
 }
 
@@ -210,4 +200,40 @@
   .travel-hero-search-dates .date-input {
     flex: none;
   }
+}
+
+.travel-hero-heading {
+  animation: fade-and-slideup 0.4s 0.2s ease-in-out both;
+}
+
+.travel-hero-subheading {
+  animation: fade-and-slideup 0.4s 0.25s ease-in-out both;
+}
+
+.travel-hero-search .input-icon {
+  animation: fade-and-slideup 0.4s 0.3s ease-in-out both;
+}
+
+.travel-hero-search-dates {
+  animation: fade-and-slideup 0.4s 0.35s ease-in-out both;
+}
+
+.travel-hero-search .btn {
+  animation: fade-and-slideup 0.4s 0.4s ease-in-out both;
+}
+
+.travel-hero-discover {
+  animation: fade-and-slideup 0.4s 0.45s ease-in-out both;
+}
+
+.travel-angles {
+  animation: fade-and-slideup 0.4s 0.5s ease-in-out both;
+}
+
+.travel-discover {
+  animation: fade-and-slideup 0.4s 0.55s ease-in-out both;
+}
+
+.travel-activities {
+  animation: fade-and-slideup 0.4s 0.6s ease-in-out both;
 }
