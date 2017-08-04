@@ -32,9 +32,9 @@ limitations under the License.
 -->
 }}
 
-src="/api/search?delay=3000&maxPrice=0{{!departure=&return=}}&query=&sort=popularity-desc"
+src="/api/search?maxPrice=0{{!departure=&return=}}&query=&sort=popularity-desc"
 [src]="
-  '/api/search?delay=3000&maxPrice=' + (query_maxPrice < 801 ? query_maxPrice : 0) +
+  '/api/search?maxPrice=' + (query_maxPrice < 801 ? query_maxPrice : 0) +
   {{!'&departure=' + query_departure +}}
   {{!'&return=' + query_return +}}
   '&query=' + query_query +
