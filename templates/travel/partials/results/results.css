@@ -106,7 +106,7 @@
 .travel-results-list > [class^="i-amphtml-loading-container"] > .amp-active {
   width: calc(40 / 16rem);
   height: calc(40 / 16rem);
-  box-shadow: 0 0 0 calc(4 / 16rem) var(--gray) inset;
+  box-shadow: 0 0 0 calc(4 / 16rem) var(--silver) inset;
   border-radius: 50%;
   background: var(--white);
   overflow: hidden;
@@ -115,31 +115,18 @@
   animation: fade-and-slideup 0.4s 0.2s ease-in-out both;
 }
 
-.travel-results-list > [class^="i-amphtml-loading-container"] > .amp-active::before,
 .travel-results-list > [class^="i-amphtml-loading-container"] > .amp-active::after {
   display: block;
   content: "";
   position: absolute;
+  width: calc(112 / 16rem);
+  height: calc(14 / 16rem);
   top: 0;
   bottom: 0;
   margin: auto;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='760px' height='190px' viewBox='0 0 760 190'><path stroke='#8F98A3' stroke-width='30' fill='none' d='M0,45 C95.0000001,45 95.0000001,145 190.000001,145 C285.000001,145 285.000001,45 380.000001,45 C475.000001,45 475.000001,145 570,145 C665,145 665,45 760,45'></path></svg>");
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='760px' height='190px' viewBox='0 0 760 190'><path stroke='#e3e5e8' stroke-width='50' fill='none' d='M0,45 C95.0000001,45 95.0000001,145 190.000001,145 C285.000001,145 285.000001,45 380.000001,45 C475.000001,45 475.000001,145 570,145 C665,145 665,45 760,45'></path></svg>");
   background-size: contain;
-}
-
-.travel-results-list > [class^="i-amphtml-loading-container"] > .amp-active::before {
-  width: calc(88 / 16rem);
-  height: calc(22 / 16rem);
-  bottom: calc(4 / 16rem);
-  opacity: 0.5;
-  animation: travel-results-list-loading 4s -0.3s linear reverse infinite;
-}
-
-.travel-results-list > [class^="i-amphtml-loading-container"] > .amp-active::after {
-  width: calc(104 / 16rem);
-  height: calc(26 / 16rem);
-  top: calc(4 / 16rem);
-  animation: travel-results-list-loading 4s linear infinite;
+  animation: travel-results-list-loading 2s linear infinite;
 }
 
 .travel-results-list > [class^="i-amphtml-loading-container"] > .amp-active > div {
