@@ -40,7 +40,7 @@
 @import '../../../templates/travel/elements/object-cover';
 /*@import '../../../templates/travel/elements/overlay';*/
 /*@import '../../../templates/travel/elements/pane';*/
-/*@import '../../../templates/travel/elements/pill';*/
+@import '../../../templates/travel/elements/pill';
 /*@import '../../../templates/travel/elements/row-selector';*/
 @import '../../../templates/travel/elements/shadow';
 @import '../../../templates/travel/elements/spacing';
