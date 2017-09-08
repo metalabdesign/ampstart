@@ -1,0 +1,142 @@
+/**
+ * Copyright 2016 The AMP Start Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * button-selector
+ *
+ * Style an <amp-selector> element as a grid of buttons.
+ */
+.button-selector {
+  margin: calc(-6 / 16rem);
+}
+
+.button-selector [option] {
+  margin: calc(6 / 16rem);
+  position: relative;
+}
+
+.button-selector-inactive,
+.button-selector-active {
+  display: flex;
+  position: relative;
+  height: calc(38 / 16rem);
+  padding-left: calc(12 / 16rem);
+  padding-right: calc(10 / 16rem);
+
+  border-radius: calc(38 / 16rem * 0.5);
+  border: 2px solid var(--silver);
+
+  cursor: pointer;
+
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+
+  transition: border-color 0.3s;
+}
+
+.button-selector [option]:focus .button-selector-inactive,
+.button-selector [option][selected] .button-selector-inactive {
+  border-color: currentColor;
+}
+
+.button-selector [option]:focus:not(:hover) .button-selector-active {
+  border-color: rgba(0,0,0,0.25);
+}
+
+.button-selector-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition-delay: 0.3s;
+}
+
+.button-selector-inactive::after,
+.button-selector-active::after {
+  content: "+";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 1.6em;
+  transition: transform 100ms ease-out;
+}
+
+.button-selector-content {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.button-selector [option] svg.icon {
+  margin-right: calc(10 / 16rem);
+  transition: transform 300ms;
+}
+
+.button-selector-active {
+  background: currentColor;
+  border-color: currentColor;
+  opacity: 0;
+  clip-path: circle(0% at 0 50%);
+  transition: clip-path 0.4s, opacity 0.4s;
+}
+
+.button-selector [option]:hover .button-selector-active {
+  opacity: 0.75;
+  clip-path: circle(calc(40 / 16rem) at 0 50%);
+}
+
+.button-selector [option][selected] .button-selector-active,
+.button-selector [option][selected]:hover .button-selector-active {
+  opacity: 1;
+  clip-path: circle(142% at 0 50%);
+}
+
+.button-selector [option][selected]:hover .button-selector-active {
+  opacity: 1;
+  clip-path: circle(calc(142% - (36 / 16rem)) at 0 50%);
+}
+
+.button-selector-active .button-selector-content,
+.button-selector-active::after {
+  color: var(--white);
+}
+
+.button-selector [option][selected] {
+  /* Override core amp [option][selected] styles. */
+  outline: none;
+  cursor: pointer;
+}
+
+.button-selector [option]:hover .button-selector-active::after,
+.button-selector [option]:hover .button-selector-inactive::after,
+.button-selector [option][selected] .button-selector-active::after,
+.button-selector [option][selected] .button-selector-inactive::after {
+  transform: rotate(45deg);
+}
+
+.button-selector [option][selected]:hover:not(:focus) .button-selector-active::after,
+.button-selector [option][selected]:hover:not(:focus) .button-selector-inactive::after {
+  transform: rotate(0deg);
+}
+
+.button-selector [option]:focus {
+  outline: none;
+}

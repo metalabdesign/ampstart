@@ -1,0 +1,73 @@
+{{!
+<!---
+Copyright 2016 The AMP Start Authors. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS-IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+}}
+
+<!-- Filter Overlay -->
+<div class="absolute md-clip lg-clip">
+  <div class="overlay" [class]="'overlay' + (ui_filterPane ? ' overlay-visible' : '')">
+    <div class="overlay-header bg-white">
+      <div class="border-bottom border-silver mx1 md-mx2 relative flex items-center">
+        <!--
+          Use a div the same height as an icon to achieve the same height
+          as the results page header without an explicit shared height value.
+         -->
+        <div class="icon my1 h2 flex-none"></div>
+        <amp-list
+          class="block-list flex center flex-auto"
+          layout="flex-item"
+          {{> ../util/amp-list-props.snip.html}}
+        >
+          <template type="amp-mustache">
+            {{=[[ ]]=}}
+              <div class="h3 bold">
+                {{stats.resultCount}} Results
+              </div>
+              <div class="h6 gray line-height-4 caps spacing-wide">
+                {{stats.location}}
+                {{#stats.startDate}}{{#stats.endDate}}
+                   &bull; {{stats.startDate.formatted}} - {{stats.endDate.formatted}}
+                {{/stats.endDate}}{{/stats.startDate}}
+              </div>
+            [[={{ }}=]]
+          </template>
+        </amp-list>
+
+        <div class="absolute top-0 bottom-0 left-0 flex items-center">
+          <div
+            class="gray pointer focus"
+            role="button"
+            tabindex="0"
+            {{>../util/reset-button-props.snip.html}}
+          >
+            Reset
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white overlay-content">
+      <div class="container px1 md-px2 py1">
+        {{> ../filters/filters.snip.html}}
+      </div>
+    </div>
+    <div class="bg-white overlay-footer">
+      <button class="btn btn-big semibold white bg-purple h3 block layout-fill" {{> ../util/apply-button-props.snip.html}}>
+        Apply Filters
+      </button>
+    </div>
+  </div>
+</div>
+<!--/ Filter Overlay -->

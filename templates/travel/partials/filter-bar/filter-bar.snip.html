@@ -1,0 +1,143 @@
+{{!
+<!---
+Copyright 2016 The AMP Start Authors. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS-IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+}}
+
+<!-- Filter Bar -->
+<section class="travel-filter-bar sm-hide xs-hide relative z2">
+  <div class="flex mxn2 px1 md-px2">
+    <div
+      class="flex flex-auto overflow-hidden pointer no-focus"
+      role="button"
+      tabindex="0"
+      on="tap:AMP.setState({ui_filterPane: !ui_filterPane, ui_sortPane: false})"
+    >
+      <div class="pl2 pr1 py2 nowrap border-bottom border-silver flex-none">
+        <span class="semibold">Filters</span>
+        <span
+          class="gray inline-block flip"
+          [class]="'gray inline-block flip' + (ui_filterPane ? ' flip-flipped' : '')"
+        >
+          {{> ../icon/caret-down-small.snip.html}}
+        </span>
+      </div>
+
+      <div class="pl1 py2 nowrap border-bottom border-silver flex-none">
+        <span class="gray">Price</span>
+      </div>
+
+      <div class="pr1 py2 nowrap border-bottom border-silver">
+        <span
+          class="badge gray"
+          [class]="query_maxPrice < 801 ? 'badge green' : 'badge gray'"
+          [text]="query_maxPrice < 801 ? 'Up to $' + round(query_maxPrice) : 'Any price'"
+        >Any price</span>
+      </div>
+
+      <div class="pl1 py2 nowrap border-bottom border-silver flex-none">
+        <span class="gray">Type</span>
+      </div>
+
+      <div class="min-0 border-bottom border-silver">
+        <div class="fade-right pr1 py2">
+          <span
+            class="badge gray"
+            [class]="'badge gray' + (query_type.length > 0 && query_type.length < {{data.types.length}} ? ' hide' : '')"
+          >All types</span>
+
+          {{#data.types}}<span class="badge green hide" [class]="'badge green' + (query_type.includes('{{value}}') ? '' : ' hide')">{{text}}</span>{{/data.types}}
+        </div>
+      </div>
+
+      <div class="pl1 py2 nowrap border-bottom border-silver flex-none">
+        <span class="gray">City</span>
+      </div>
+
+      <div class="flex-auto min-0 border-bottom border-silver">
+        <div class="fade-right pr1 py2">
+          <amp-list
+            class="inline-list"
+            layout="flex-item"
+            {{> ../util/amp-list-props.snip.html}}
+          >
+            <template type="amp-mustache">
+              {{=[[ ]]=}}
+              {{#stats.allCities}}<span class="badge gray">All cities</span>{{/stats.allCities}}
+              {{^stats.allCities}}
+              {{#stats.cities}}{{#isSelected}}<span class="badge green">{{name}}</span>{{/isSelected}}{{/stats.cities}}
+              {{/stats.allCities}}
+              [[={{ }}=]]
+            </template>
+          </amp-list>
+        </div>
+      </div>
+
+      <div class="px1 md-pr2 py2 nowrap border-bottom border-silver flex-none">
+        <amp-list
+          class="inline-list"
+          layout="flex-item"
+          {{> ../util/amp-list-props.snip.html}}
+        >
+          <template type="amp-mustache">
+            {{=[[ ]]=}}
+            <span class="purple">
+              {{stats.resultCount}}
+              <span class="sm-hide xs-hide md-hide">Tours &amp; Activities Found</span>
+              <span class="lg-hide">Results</span>
+            </span>
+            [[={{ }}=]]
+          </template>
+        </amp-list>
+      </div>
+    </div>
+
+    <div class="flex-none">
+      <div
+        class="pl1 pr2 py2 md-pl2 nowrap border-left border-bottom border-silver pointer no-focus relative z2"
+        role="button"
+        tabindex="0"
+        on="tap:AMP.setState({ui_filterPane: false, ui_reset: false, ui_sortPane: !ui_sortPane})"
+      >
+        <span class="gray">Sort by</span>
+        <div class="inline-block">
+          <!--
+            Render an invisible set of labels to force the element to always be
+            the width of the widest label.
+          -->
+          {{#data.sort}}
+            <div aria-hidden class="semibold no-select overflow-hidden collapse">{{text}}</div>
+          {{/data.sort}}
+
+          <span class="semibold">
+            {{#data.sort}}
+              <span {{^selected}}class="hide"{{/selected}} [class]="fields_sort == '{{value}}' ? '' : 'hide'">
+                {{text}}
+              </span>
+            {{/data.sort}}
+          </span>
+        </div>
+        <span
+          class="gray inline-block flip"
+          [class]="'gray inline-block flip' + (ui_sortPane ? ' flip-flipped' : '')"
+        >
+          {{> ../icon/caret-down-small.snip.html}}
+        </span>
+      </div>
+      {{> ./sort-pane.snip.html}}
+    </div>
+  </div>
+</section>
+<!--/ Filter Bar -->
