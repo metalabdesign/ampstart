@@ -44,34 +44,5 @@ limitations under the License.
         </div>
       </div>
   </body>
-  <script type="text/javascript">
-    (function() {
-      var active = document.cookie.split(';')
-        .map(function (cookie) {
-          return cookie.split('=');
-        })
-        .find(function (cookie) {
-          return cookie[0] === 'AMP_EXP' && /amp-fx-parallax/.test(cookie[1]);
-        });
-
-      var link = document.querySelector('#parallax');
-
-      function toggle() {
-        if (active) {
-          document.cookie = 'AMP_EXP=; Max-Age=0';
-        } else {
-          document.cookie = 'AMP_EXP=amp-fx-parallax'
-        }
-      }
-
-      if (active) {
-        link.innerHTML = 'Disable parallax';
-      } else {
-        link.innerHTML = 'Enable parallax';
-      }
-
-      link.addEventListener('click', toggle);
-    })();
-  </script>
 </html>
 {{/travel}}

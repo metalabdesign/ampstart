@@ -25,7 +25,6 @@
       "canonical-path": "templates/travel/travel.amp",
       "extensions": [
         "amp-list",
-        "amp-fx-parallax",
         "amp-bind"
       ],
       "templates": [
