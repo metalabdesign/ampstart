@@ -49,7 +49,7 @@
 
 .travel-featured-tile:hover amp-img,
 .travel-featured-tile:focus amp-img {
-  box-shadow: 0 0.6rem 2rem color(var(--black) a(0.4));
+  box-shadow: 0 0.6rem 2rem var(--box-shadow-color-dark);
   transform: scale(1.05);
 }
 

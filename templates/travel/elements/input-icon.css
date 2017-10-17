@@ -64,5 +64,5 @@
 
 .input-icon > .input-dark + .icon,
 .input-icon > .input-clear + .icon {
-  color: color(var(--white) a(0.4));
+  color: rgba(255,255,255,.4);
 }

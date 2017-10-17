@@ -38,7 +38,7 @@
 
 .btn:not(:disabled):hover {
   transform: scale(1.02) translateY(calc(0.02 / 1 * -100%));
-  box-shadow: 0 0.4rem 2rem color(var(--black) a(0.12));
+  box-shadow: 0 0.4rem 2rem var(--box-shadow-color-dark);
 }
 
 .btn:not(:disabled):focus {

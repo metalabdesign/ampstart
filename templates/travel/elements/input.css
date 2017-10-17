@@ -49,11 +49,10 @@
 .input-clear {
   color: var(--white);
   background: none;
-  border-color: color(var(--white) a(0.4));
+  border-color: rgba(255, 255, 255, .4);
 }
 
 .input:focus {
-  /*box-shadow: 0 0 0 3px rgba(0,0,0,.25);*/
   outline: 0;
 }
 

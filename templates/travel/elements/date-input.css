@@ -15,11 +15,11 @@
 }
 
 .date-input.input-dark .date-input-label {
-  color: color(var(--white) a(0.75));
+  color: rgba(255, 255, 255, .75);
 }
 
 .date-input.input-dark .icon {
-  color: color(var(--white) a(0.4));
+  color: rgba(255, 255, 255, .75);
 }
 
 .date-input input {
