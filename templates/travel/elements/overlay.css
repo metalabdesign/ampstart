@@ -53,19 +53,11 @@
   transition: opacity 200ms, transform 200ms ease-out;
 }
 
-.overlay-header {
-
-}
-
 .overlay-content {
   flex: auto;
   min-height: 0;
   overflow: hidden;
   overflow-y: auto;
-}
-
-.overlay-footer {
-
 }
 
 .overlay-fx-scale {

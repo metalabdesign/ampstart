@@ -1,0 +1,79 @@
+/**
+  * Copyright 2017 The AMP Start Authors. All Rights Reserved.
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+  * you may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at
+  *
+  *      http://www.apache.org/licenses/LICENSE-2.0
+  *
+  * Unless required by applicable law or agreed to in writing, software
+  * distributed under the License is distributed on an "AS-IS" BASIS,
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  */
+
+/*! Bassplate | MIT License | http://github.com/basscss/bassplate */
+@import 'normalize.css';
+
+/* Basscss Modules */
+@import 'basscss-type-scale';
+@import 'basscss-typography';
+@import 'basscss-layout';
+@import 'basscss-align';
+@import 'basscss-margin';
+@import 'basscss-padding';
+@import 'basscss-grid';
+@import 'basscss-flexbox';
+@import 'basscss-position';
+@import 'basscss-border';
+@import 'basscss-hide';
+
+/* Optional Modules (not included in Basscss by default) */
+@import 'basscss-addons/modules/responsive-margin';
+@import 'basscss-addons/modules/responsive-padding';
+@import 'basscss-addons/modules/btn';
+@import 'basscss-addons/modules/btn-outline';
+@import 'basscss-addons/modules/btn-sizes';
+@import 'basscss-addons/modules/colors';
+@import 'basscss-addons/modules/background-colors';
+@import 'basscss-addons/modules/border-colors';
+
+@import './page-vars';
+
+@import '../../../templates/travel/elements/activity-type-color';
+@import '../../../templates/travel/elements/btn';
+@import '../../../templates/travel/elements/clip';
+@import '../../../templates/travel/elements/container';
+@import '../../../templates/travel/elements/date-input';
+@import '../../../templates/travel/elements/inline-list';
+@import '../../../templates/travel/elements/input-group';
+@import '../../../templates/travel/elements/input-icon';
+@import '../../../templates/travel/elements/input.css';
+@import '../../../templates/travel/elements/like';
+@import '../../../templates/travel/elements/link';
+@import '../../../templates/travel/elements/object-cover';
+@import '../../../templates/travel/elements/pane';
+@import '../../../templates/travel/elements/pill';
+@import '../../../templates/travel/elements/row-selector';
+@import '../../../templates/travel/elements/shadow';
+@import '../../../templates/travel/elements/spacing';
+@import '../../../templates/travel/elements/typography';
+
+/*
+ * Template partials.
+ */
+ @import '../../../templates/travel/partials/activities/activities';
+ @import '../../../templates/travel/partials/angles/angles';
+ @import '../../../templates/travel/partials/discover/discover';
+ @import '../../../templates/travel/partials/footer/footer';
+ @import '../../../templates/travel/partials/featured/featured';
+ @import '../../../templates/travel/partials/filter-bar/filter-bar';
+ @import '../../../templates/travel/partials/filters/filters';
+ @import '../../../templates/travel/partials/hero/hero';
+ @import '../../../templates/travel/partials/icon/icon';
+ @import '../../../templates/travel/partials/popular/popular';
+ @import '../../../templates/travel/partials/results/results';
+ @import '../../../templates/travel/partials/results-navbar/results-navbar';
+ @import '../../../templates/travel/partials/sort-bar/sort-bar';

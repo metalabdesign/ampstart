@@ -18,7 +18,7 @@ limitations under the License.
 
 <!-- Hero -->
 {{#partials.hero}}
-<div class="travel-hero-bg" amp-fx-parallax="0.5">
+<div class="travel-hero-bg">
   {{#images}}
     <amp-img
       class="travel-hero-bg-img"
@@ -31,7 +31,7 @@ limitations under the License.
 
 <section class="relative travel-hero">
   <div class="travel-hero-content container flex items-center">
-    <div amp-fx-parallax="0.75" class="travel-hero-content-inner relative px1 md-px2 flex-auto">
+    <div class="travel-hero-content-inner relative px1 md-px2 flex-auto">
       <h1 class="travel-hero-heading mb2 line-height-1">Adventures<br class="md-hide lg-hide"/> made&nbsp;easy</h1>
       <div class="travel-hero-subheading xs-hide sm-hide">Find and book activities, tours, and experiences.</div>
       <!-- Search Form -->
@@ -151,24 +151,24 @@ limitations under the License.
             </div>
           </label>
         </div>
-
         <div class="md-hide lg-hide">
           <a
             href="travel-results.amp"
-            class="btn rounded center semibold white block layout-fill bg-purple btn-big"
             {{> ../util/apply-button-props.snip.html}}
           >
-            <span class="h3">Find Adventures &amp; Tours</span>
+            <button class="ampstart-btn btn rounded center semibold white block layout-fill bg-purple btn-big">
+              Find Adventures &amp; Tours
+            </button>
           </a>
         </div>
-
         <div class="xs-hide sm-hide">
           <a
             href="travel-results.amp"
-            class="btn rounded center semibold white bg-purple btn-big"
             {{> ../util/apply-button-props.snip.html}}
           >
-            <span class="h3">Find Adventures &amp; Tours</span>
+            <button class="ampstart-btn btn rounded center semibold white bg-purple btn-big">
+              Find Adventures &amp; Tours
+            </button>
           </a>
         </div>
       </div>
