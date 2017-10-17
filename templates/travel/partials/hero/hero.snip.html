@@ -151,15 +151,26 @@ limitations under the License.
             </div>
           </label>
         </div>
-
-        <a
-          href="travel-results.amp"
-          {{> ../util/apply-button-props.snip.html}}
-        >
-          {{#button}}
-          <input type="button" name="{{name}}" value="{{value}}" id="{{name}}" class="ampstart-btn mb3 {{classes}}"/>
-          {{/button}}
-        </a>
+        <div class="md-hide lg-hide">
+          <a
+            href="travel-results.amp"
+            {{> ../util/apply-button-props.snip.html}}
+          >
+            <button class="ampstart-btn btn rounded center semibold white block layout-fill bg-purple btn-big">
+              Find Adventures &amp; Tours
+            </button>
+          </a>
+        </div>
+        <div class="xs-hide sm-hide">
+          <a
+            href="travel-results.amp"
+            {{> ../util/apply-button-props.snip.html}}
+          >
+            <button class="ampstart-btn btn rounded center semibold white bg-purple btn-big">
+              Find Adventures &amp; Tours
+            </button>
+          </a>
+        </div>
       </div>
       <!--/ Search Form -->
       <div class="travel-hero-discover center mt1 md-hide lg-hide gray">

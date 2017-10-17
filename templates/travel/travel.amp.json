@@ -43,11 +43,7 @@
           "src": "../../img/travel/hero-3.jpg"
         }, {
           "src": "../../img/travel/hero-1.jpg"
-        }],
-        "button": {
-          "value": "Find Adventures & Tours",
-          "classes": "btn rounded center semibold white bg-purple btn-big"
-        }
+        }]
       }
     }
   }
