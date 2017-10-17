@@ -22,6 +22,9 @@
       "sidebar-id": "sidebar",
       "sidebaronly": true,
       "sidebarclasses": ["gallery-sidebar"],
+      "sidebartitle": {
+        "title": "Current Exhibitions"
+      },
       "nav": {
         "link": {
           "nav-item-classes": ["gallery-sidebar-nav-item"],
