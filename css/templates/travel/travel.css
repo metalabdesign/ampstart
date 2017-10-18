@@ -19,7 +19,6 @@
 /*
  * Custom elements.
  */
-@import '../../../templates/travel/elements/_activity-type-color';
 @import '../../../templates/travel/elements/_btn';
 @import '../../../templates/travel/elements/_clip';
 @import '../../../templates/travel/elements/_container';
@@ -28,7 +27,6 @@
 @import '../../../templates/travel/elements/_input-group';
 @import '../../../templates/travel/elements/_input-icon';
 @import '../../../templates/travel/elements/_input';
-@import '../../../templates/travel/elements/_like';
 @import '../../../templates/travel/elements/_link';
 @import '../../../templates/travel/elements/_object-cover';
 @import '../../../templates/travel/elements/_pill';
@@ -40,12 +38,5 @@
 /*
  * Template partials.
  */
-@import '../../../templates/travel/partials/angles/_angles';
-@import '../../../templates/travel/partials/activities/_activities';
-@import '../../../templates/travel/partials/discover/_discover';
-@import '../../../templates/travel/partials/footer/_footer';
-@import '../../../templates/travel/partials/featured/_featured';
 @import '../../../templates/travel/partials/hero/_hero';
 @import '../../../templates/travel/partials/icon/_icon';
-@import '../../../templates/travel/partials/popular/_popular';
-@import '../../../templates/travel/partials/results/_results';
