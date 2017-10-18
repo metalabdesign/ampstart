@@ -94,7 +94,7 @@
   animation: fade-and-slideup 0.4s ease-in-out both;
 }
 
-.travel-results-list > [class^="i-amphtml-loading-container"] {
+.travel-results-list > div {
   position: fixed;
   top: calc(150 / 16rem);
   left: 0;
@@ -103,7 +103,7 @@
   min-height: calc(200 / 16rem);
 }
 
-.travel-results-list > [class^="i-amphtml-loading-container"] > .amp-active {
+.travel-results-list > div > .amp-active {
   width: calc(40 / 16rem);
   height: calc(40 / 16rem);
   box-shadow: 0 0 0 calc(4 / 16rem) var(--silver) inset;
@@ -115,7 +115,7 @@
   animation: fade-and-slideup 0.4s 0.2s ease-in-out both;
 }
 
-.travel-results-list > [class^="i-amphtml-loading-container"] > .amp-active::after {
+.travel-results-list > div > .amp-active::after {
   display: block;
   content: "";
   position: absolute;
@@ -129,7 +129,7 @@
   animation: travel-results-list-loading 2s linear infinite;
 }
 
-.travel-results-list > [class^="i-amphtml-loading-container"] > .amp-active > div {
+.travel-results-list > div > .amp-active > div {
   display: none;
 }
 
