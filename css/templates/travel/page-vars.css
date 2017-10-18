@@ -219,18 +219,6 @@ amp-img.circle img {
   }
 }
 
-
-@keyframes fade-and-scale {
-  from {
-    opacity: 0;
-    transform: scale(1.1);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 @keyframes fade {
   from {
     opacity: 0;
