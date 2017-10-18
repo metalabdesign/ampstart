@@ -79,7 +79,7 @@
 }
 
 .checkbox-selector [option]:focus::before {
-  border-color: color(var(--purple) w(50));
+  border-color: #a480e3;
 }
 
 .checkbox-selector [option]::after {
@@ -122,8 +122,4 @@
 .checkbox-selector [option]:hover .checkbox-selector-img,
 .checkbox-selector [option]:focus .checkbox-selector-img {
   transform: scale(1.2);
-}
-
-.checkbox-selector [option]:focus::before {
-  /*box-shadow: 0 0 0 3px rgba(0,0,0,.25);*/
 }

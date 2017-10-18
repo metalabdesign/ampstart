@@ -22,12 +22,12 @@
 }
 
 .link:hover {
-  color: color(var(--purple) w(+ 30%) s(+ 20%));
+  color: #b99aef;
 }
 
 .link:focus {
   outline: none;
-  border-bottom: calc(2 / 16rem) solid color(var(--black) a(0.2));
+  border-bottom: calc(2 / 16rem) solid var(--box-shadow-color);
 }
 
 .link.gray:link, .link.gray:visited {
@@ -35,5 +35,5 @@
 }
 
 .link.gray:hover {
-  color: color(var(--gray) w(+ 30%));
+  color: #b4b4b4;
 }
