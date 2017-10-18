@@ -40,21 +40,23 @@ limitations under the License.
         "
         [selected]="fields_city"
       >
-        {{#stats.cities}}
-          <!--
-            "The attribute 'option' may not appear in tag 'div'."
-            see: https://github.com/ampproject/amphtml/pull/9585
-          -->
-          {{#isSelected}}<div option="{{name}}" selected>{{/isSelected}}
-          {{^isSelected}}<div option="{{name}}">{{/isSelected}}
-            <span>
-              <div class="checkbox-selector-img">
-                <amp-img class="circle" layout="flex-item" src="/img/travel/city/{{img}}.jpg"></amp-img>
-              </div>
-              {{name}}
-            </span>
-          </div>
-        {{/stats.cities}}
+      <ul>
+          {{#stats.cities}}
+            <!--
+              "The attribute 'option' may not appear in tag 'div'."
+              see: https://github.com/ampproject/amphtml/pull/9585
+            -->
+            {{#isSelected}}<li option="{{name}}" selected>{{/isSelected}}
+            {{^isSelected}}<li option="{{name}}">{{/isSelected}}
+              <span>
+                <div class="checkbox-selector-img">
+                  <amp-img class="circle" layout="flex-item" src="/img/travel/city/{{img}}.jpg"></amp-img>
+                </div>
+                {{name}}
+              </span>
+            </li>
+          {{/stats.cities}}
+        </ul>
       </amp-selector>
     [[={{ }}=]]
   </template>

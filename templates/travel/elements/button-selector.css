@@ -24,7 +24,7 @@
 }
 
 .button-selector [option] {
-  margin: calc(6 / 16rem);
+  padding: calc(6 / 16rem);
   position: relative;
 }
 
@@ -91,6 +91,8 @@
 }
 
 .button-selector-active {
+  margin-top: calc(6 / 16rem);
+  margin-left: calc(6 / 16rem);
   background: currentColor;
   border-color: currentColor;
   opacity: 0;
