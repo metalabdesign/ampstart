@@ -14,33 +14,31 @@
  * limitations under the License.
  */
 
-@import './travel-base';
-
+@import './page';
 /*
  * Custom elements.
  */
-@import '../../../templates/travel/elements/activity-type-color.css';
-@import '../../../templates/travel/elements/badge.css';
-@import '../../../templates/travel/elements/block-list.css';
-@import '../../../templates/travel/elements/btn.css';
-@import '../../../templates/travel/elements/button-selector.css';
+@import '../../../templates/travel/elements/activity-type-color';
+@import '../../../templates/travel/elements/badge';
+@import '../../../templates/travel/elements/block-list';
+@import '../../../templates/travel/elements/btn';
+@import '../../../templates/travel/elements/button-selector';
 @import '../../../templates/travel/elements/checkbox-selector';
 @import '../../../templates/travel/elements/clip';
 @import '../../../templates/travel/elements/container';
 @import '../../../templates/travel/elements/date-input';
 @import '../../../templates/travel/elements/fade-right';
-@import '../../../templates/travel/elements/inline-list.css';
-/*@import '../../../templates/travel/elements/input-group.css';*/
-@import '../../../templates/travel/elements/input-icon.css';
-@import '../../../templates/travel/elements/input-range.css';
-@import '../../../templates/travel/elements/input.css';
+@import '../../../templates/travel/elements/inline-list';
+@import '../../../templates/travel/elements/input-icon';
+@import '../../../templates/travel/elements/input-range';
+@import '../../../templates/travel/elements/input';
 @import '../../../templates/travel/elements/like';
 @import '../../../templates/travel/elements/link';
 @import '../../../templates/travel/elements/list-selector';
-/*@import '../../../templates/travel/elements/object-cover';*/
 @import '../../../templates/travel/elements/overlay';
 @import '../../../templates/travel/elements/pane';
 @import '../../../templates/travel/elements/pill';
+@import '../../../templates/travel/elements/responsive';
 @import '../../../templates/travel/elements/row-selector';
 @import '../../../templates/travel/elements/shadow';
 @import '../../../templates/travel/elements/spacing';
@@ -49,16 +47,9 @@
 /*
  * Template partials.
  */
-/*@import '../../../templates/travel/partials/angles/angles.css';*/
-/*@import '../../../templates/travel/partials/activities/activities.css';*/
-/*@import '../../../templates/travel/partials/discover/discover.css';*/
-/*@import '../../../templates/travel/partials/footer/footer.css';*/
-/*@import '../../../templates/travel/partials/featured/featured.css';*/
 @import '../../../templates/travel/partials/filter-bar/filter-bar.css';
 @import '../../../templates/travel/partials/filters/filters.css';
-/*@import '../../../templates/travel/partials/hero/hero.css';*/
 @import '../../../templates/travel/partials/icon/icon.css';
-/*@import '../../../templates/travel/partials/popular/popular.css';*/
 @import '../../../templates/travel/partials/results/results.css';
 @import '../../../templates/travel/partials/results-navbar/results-navbar.css';
 @import '../../../templates/travel/partials/sort-bar/sort-bar.css';

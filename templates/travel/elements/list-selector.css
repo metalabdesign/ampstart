@@ -29,13 +29,11 @@
 
 .list-selector [option]:focus {
   outline: none;
-  /*box-shadow: 0 0 0 3px rgba(0,0,0,.25);*/
 }
 
 .list-selector [option][selected] {
   /* Override core amp [option][selected] styles. */
   cursor: pointer;
   outline: none;
-
-  background: color(var(--green) a(0.2));
+  background: rgba(71,176,116,.2);
 }

@@ -25,7 +25,7 @@ limitations under the License.
       tabindex="0"
       on="tap:AMP.setState({ui_filterPane: !ui_filterPane, ui_sortPane: false})"
     >
-      <div class="pl2 pr1 py2 nowrap border-bottom border-silver flex-none">
+      <div class="pl2 pr1 py2 nowrap border-bottom input-border-gray flex-none">
         <span class="semibold">Filters</span>
         <span
           class="gray inline-block flip"
@@ -35,11 +35,11 @@ limitations under the License.
         </span>
       </div>
 
-      <div class="pl1 py2 nowrap border-bottom border-silver flex-none">
+      <div class="pl1 py2 nowrap border-bottom input-border-gray flex-none">
         <span class="gray">Price</span>
       </div>
 
-      <div class="pr1 py2 nowrap border-bottom border-silver">
+      <div class="pr1 py2 nowrap border-bottom input-border-gray">
         <span
           class="badge gray"
           [class]="query_maxPrice < 801 ? 'badge green' : 'badge gray'"
@@ -47,11 +47,11 @@ limitations under the License.
         >Any price</span>
       </div>
 
-      <div class="pl1 py2 nowrap border-bottom border-silver flex-none">
+      <div class="pl1 py2 nowrap border-bottom input-border-gray flex-none">
         <span class="gray">Type</span>
       </div>
 
-      <div class="min-0 border-bottom border-silver">
+      <div class="min-0 border-bottom input-border-gray">
         <div class="fade-right pr1 py2">
           <span
             class="badge gray"
@@ -62,11 +62,11 @@ limitations under the License.
         </div>
       </div>
 
-      <div class="pl1 py2 nowrap border-bottom border-silver flex-none">
+      <div class="pl1 py2 nowrap border-bottom input-border-gray flex-none">
         <span class="gray">City</span>
       </div>
 
-      <div class="flex-auto min-0 border-bottom border-silver">
+      <div class="flex-auto min-0 border-bottom input-border-gray">
         <div class="fade-right pr1 py2">
           <amp-list
             class="inline-list"
@@ -85,7 +85,7 @@ limitations under the License.
         </div>
       </div>
 
-      <div class="px1 md-pr2 py2 nowrap border-bottom border-silver flex-none">
+      <div class="px1 md-pr2 py2 nowrap border-bottom input-border-gray flex-none">
         <amp-list
           class="inline-list"
           layout="flex-item"
@@ -106,7 +106,7 @@ limitations under the License.
 
     <div class="flex-none">
       <div
-        class="pl1 pr2 py2 md-pl2 nowrap border-left border-bottom border-silver pointer no-focus relative z2"
+        class="pl1 pr2 py2 md-pl2 nowrap border-left border-bottom input-border-gray pointer no-focus relative z2"
         role="button"
         tabindex="0"
         on="tap:AMP.setState({ui_filterPane: false, ui_reset: false, ui_sortPane: !ui_sortPane})"

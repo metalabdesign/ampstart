@@ -13,18 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@media (--breakpoint-md) {
+  .md-px1 { padding-left:   var(--space-1); padding-right:  var(--space-1) }
+  .md-px2 { padding-left:   var(--space-2); padding-right:  var(--space-2) }
+  .md-py2 { padding-top:    var(--space-2); padding-bottom: var(--space-2) }
+  .md-pl2 { padding-left:   var(--space-2) }
+  .md-pr2 { padding-right:  var(--space-2) }
+  .md-pt4 { padding-top:    var(--space-4) }
 
-.shadow,
-.shadow-hover {
-  box-shadow: 0 0.4rem 1.1rem var(--box-shadow-color-light);
-}
-
-.shadow-hover {
-  transition: box-shadow 250ms, transform 250ms;
-}
-
-.shadow-hover:not(:disabled):hover,
-.shadow-hover:not(:disabled):focus {
-  transform: scale(1.02) translateY(calc(0.02 / 1 * -100%));
-  box-shadow: 0 0.4rem 2rem var(--box-shadow-color-dark);
+  .md-mx2 { margin-left:   var(--space-2); margin-right:  var(--space-2) }
 }

@@ -33,23 +33,25 @@ limitations under the License.
   "
   [selected]="fields_type"
 >
-  {{#data.types}}
-    <div class="col col-6">
-      <div option="{{value}}" class="type-{{value}}">
-        <div class="button-selector-inactive">
-          <span class="button-selector-content">
-            {{> ../icon/icon.snip.html}}
-            {{text}}
-          </span>
-        </div>
-        <div class="button-selector-active">
-          <span class="button-selector-content">
-            {{> ../icon/icon.snip.html}}
-            {{text}}
-          </span>
-        </div>
-      </div>
-    </div>
-  {{/data.types}}
+  <ul>
+    {{#data.types}}
+      <!-- <div class=""> -->
+        <li option="{{value}}" class="col col-6 type-{{value}}">
+          <div class="button-selector-inactive">
+            <span class="button-selector-content">
+              {{> ../icon/icon.snip.html}}
+              {{text}}
+            </span>
+          </div>
+          <div class="button-selector-active">
+            <span class="button-selector-content">
+              {{> ../icon/icon.snip.html}}
+              {{text}}
+            </span>
+          </div>
+        </li>
+      <!-- </div> -->
+    {{/data.types}}
+  </ul>
 </amp-selector>
 <!--/ Type Selector -->

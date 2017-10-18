@@ -19,17 +19,17 @@ limitations under the License.
 <!-- Filter Pane -->
 <div class="pane" [class]="'pane' + (ui_filterPane ? ' pane-visible' : '')">
   <div class="pane-overflow left-0 right-0 pb2 sm-clip xs-clip">
-    <div class="pane-content shadow bg-white border-bottom border-silver">
+    <div class="pane-content shadow bg-white border-bottom input-border-gray">
       <div class="container px1 md-px2 py1">
         {{> ../filters/filters.snip.html}}
       </div>
-      <div class="mx1 md-mx2 border-top border-silver"></div>
+      <div class="mx1 md-mx2 border-top input-border-gray"></div>
       <div class="container px1 md-px2 py1 center">
-        <button class="btn rounded semibold" {{>../util/reset-button-props.snip.html}}>
+        <button class="btn rounded semibold bg-white" {{>../util/reset-button-props.snip.html}}>
           Reset Filters
         </button>
         <button
-          class="btn rounded semibold white bg-purple"
+          class="ampstart-btn btn rounded semibold white bg-purple"
           disabled
           [disabled]="!fields_maxPrice_edited && !fields_city_edited && !fields_type_edited && !ui_reset"
           {{> ../util/apply-button-props.snip.html}}

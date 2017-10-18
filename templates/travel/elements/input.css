@@ -49,25 +49,15 @@
 .input-clear {
   color: var(--white);
   background: none;
-  border-color: color(var(--white) a(0.4));
+  border-color: rgba(255, 255, 255, .4);
 }
 
 .input:focus {
-  /*box-shadow: 0 0 0 3px rgba(0,0,0,.25);*/
   outline: 0;
-}
-
-.input-small {
-  padding: var(--input-small-padding-y) var(--input-small-padding-x);
 }
 
 .input-big {
   padding: var(--input-big-padding-y) var(--input-big-padding-x);
-}
-
-.input-narrow {
-  padding-left: var(--input-narrow-padding-x);
-  padding-right: var(--input-narrow-padding-x);
 }
 
 .input::-webkit-input-placeholder {
@@ -110,4 +100,8 @@
 
 .input-clear:-ms-input-placeholder {
   opacity: 0.4;
+}
+
+.input-border-gray {
+  border-color: var(--silver);
 }

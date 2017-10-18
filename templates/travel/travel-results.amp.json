@@ -22,7 +22,7 @@
     },
     "head-tag": {
       "title": "Travel Template",
-      "canonical-path": "templates/travel/travel.amp",
+      "canonical-path": "templates/travel/travel-results.amp",
       "extensions": [
         "amp-selector",
         "amp-bind",
