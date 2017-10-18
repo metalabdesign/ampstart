@@ -13,27 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@media (--breakpoint-md) {
+  .md-px1 { padding-left:   var(--space-1); padding-right:  var(--space-1) }
+  .md-px2 { padding-left:   var(--space-2); padding-right:  var(--space-2) }
+  .md-py2 { padding-top:    var(--space-2); padding-bottom: var(--space-2) }
+  .md-pl2 { padding-left:   var(--space-2) }
+  .md-pr2 { padding-right:  var(--space-2) }
+  .md-pt4 { padding-top:    var(--space-4) }
 
-.link:link, .link:visited {
-  transition: color .15s ease-in;
-  color: var(--purple);
-  text-decoration: none;
-  transition: color 0.15s ease-in;
-}
-
-.link:hover {
-  color: #b99aef;
-}
-
-.link:focus {
-  outline: none;
-  border-bottom: calc(2 / 16rem) solid var(--box-shadow-color);
-}
-
-.link.gray:link, .link.gray:visited {
-  color: var(--gray);
-}
-
-.link.gray:hover {
-  color: #b4b4b4;
+  .md-mx2 { margin-left:   var(--space-2); margin-right:  var(--space-2) }
 }

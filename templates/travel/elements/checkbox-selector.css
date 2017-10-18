@@ -79,7 +79,7 @@
 }
 
 .checkbox-selector [option]:focus::before {
-  border-color: color(var(--purple) w(50));
+  border-color: #a480e3;
 }
 
 .checkbox-selector [option]::after {

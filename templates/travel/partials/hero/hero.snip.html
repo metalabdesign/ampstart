@@ -152,26 +152,26 @@ limitations under the License.
           </label>
         </div>
 
-        <div class="md-hide lg-hide">
-          <a
-            href="travel-results.amp"
-            class="btn rounded center semibold white block layout-fill bg-purple btn-big"
-            {{> ../util/apply-button-props.snip.html}}
-          >
-            <span class="h3">Find Adventures &amp; Tours</span>
-          </a>
-        </div>
-
-        <div class="xs-hide sm-hide">
-          <a
-            href="travel-results.amp"
-            class="btn rounded center semibold white bg-purple btn-big"
-            {{> ../util/apply-button-props.snip.html}}
-          >
-            <span class="h3">Find Adventures &amp; Tours</span>
-          </a>
-        </div>
+      <div class="md-hide lg-hide">
+        <a
+          href="travel-results.amp"
+          {{> ../util/apply-button-props.snip.html}}
+        >
+          <button class="ampstart-btn btn rounded center semibold white block layout-fill bg-purple input-big">
+            Find Adventures &amp; Tours
+          </button>
+        </a>
       </div>
+      <div class="xs-hide sm-hide">
+        <a
+          href="travel-results.amp"
+          class="ampstart-btn btn rounded center semibold white inline-block bg-purple input-big"
+          {{> ../util/apply-button-props.snip.html}}
+        >
+          Find Adventures &amp; Tours
+        </a>
+      </div>
+
       <!--/ Search Form -->
       <div class="travel-hero-discover center mt1 md-hide lg-hide gray">
         Discover adventures {{> ../icon/caret-down-small.snip.html}}

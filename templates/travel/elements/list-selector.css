@@ -35,6 +35,5 @@
   /* Override core amp [option][selected] styles. */
   cursor: pointer;
   outline: none;
-
-  /*background: color(var(--green) a(0.2));*/
+  background: rgba(71,176,116,.2);
 }

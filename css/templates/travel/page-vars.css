@@ -25,7 +25,7 @@
   --black:  #323A43;
 
   --gray:   #8f98a3;
-  --silver: #323A43;
+  --silver: #e3e5e8;
 
   --box-shadow-color: rgba(50,58,67,.2);
   --box-shadow-color-light: rgba(50,58,67,.12);
@@ -67,6 +67,15 @@
   --type-water-color: #3abee8;
 
   /* input element */
+  --button-padding-y: .5rem;
+  --button-padding-x: 1rem;
+  --button-small-padding-y: .25rem;
+  --button-small-padding-x: .5rem;
+  --button-big-padding-y: 1rem;
+  --button-big-padding-x: 1.25rem;
+  --button-narrow-padding-x: .5rem;
+  --button-line-height: 1.125rem;
+
   --input-padding-y: var(--button-padding-y);
   --input-padding-x: var(--button-padding-x);
   --input-line-height: var(--button-line-height);
@@ -98,34 +107,22 @@
 
   --caps-letter-spacing: 0;
 
-  --h1: 2rem; /* 32px */
-  --h2: 1.5rem; /* 24px */
-  --h3: 1.25rem; /* 20px */
-  --h4: 1rem; /* 16px */
-  --h5: .875rem; /* 14px */
-  --h6: .75rem; /* 12px */
+  --h1: 2rem;
+  --h2: 1.5rem;
+  --h3: 1.25rem;
+  --h4: 1rem;
+  --h5: .875rem;
+  --h6: .75rem;
 
-  --space-1: 1rem; /* 16px */
-  --space-2: 1.5rem; /* 24px */
-  --space-3: 3rem; /* 48px */
-  --space-4: 5rem; /* 80px */
+  --space-1: 1rem;
+  --space-2: 1.5rem;
+  --space-3: 3rem;
+  --space-4: 4rem;
 
   --width-sm: 40rem; /* 640px */
   --width-md: 52rem; /* 832px */
   --width-lg: 72rem; /* 1152px */
   --width-xl: 88rem; /* 1408px */
-
-  --darken-3: rgba(0, 0, 0, .125);
-
-  --button-line-height: 1.125rem;
-  --button-padding-y: .5rem;
-  --button-padding-x: 1rem;
-  --button-small-padding-y: .25rem;
-  --button-small-padding-x: .5rem;
-  --button-big-padding-y: 1rem;
-  --button-big-padding-x: 1.25rem;
-  --button-narrow-padding-x: .5rem;
-  --button-background-color: var(--purple);
 
   @custom-media --breakpoint-xs (max-width: 40rem);
   @custom-media --breakpoint-v-xs (max-height: 40rem);
