@@ -1,0 +1,55 @@
+<!-- Filter Overlay -->
+<div class="absolute md-clip lg-clip">
+  <div class="overlay" [class]="'overlay' + (ui_filterPane ? ' overlay-visible' : '')">
+    <div class="overlay-header bg-white">
+      <div class="border-bottom input-border-gray mx1 md-mx2 relative flex items-center">
+        <!--
+          Use a div the same height as an icon to achieve the same height
+          as the results page header without an explicit shared height value.
+         -->
+        <div class="icon my1 h2 flex-none"></div>
+        <amp-list
+          class="block-list flex center flex-auto"
+          layout="flex-item"
+          {{> ../util/amp-list-props.snip.html}}
+        >
+          <template type="amp-mustache">
+            {{=[[ ]]=}}
+              <div class="h3 bold">
+                {{stats.resultCount}} Results
+              </div>
+              <div class="h6 gray line-height-4 caps spacing-wide">
+                {{stats.location}}
+                {{#stats.startDate}}{{#stats.endDate}}
+                   &bull; {{stats.startDate.formatted}} - {{stats.endDate.formatted}}
+                {{/stats.endDate}}{{/stats.startDate}}
+              </div>
+            [[={{ }}=]]
+          </template>
+        </amp-list>
+
+        <div class="absolute top-0 bottom-0 left-0 flex items-center">
+          <div
+            class="gray pointer focus"
+            role="button"
+            tabindex="0"
+            {{>../util/reset-button-props.snip.html}}
+          >
+            Reset
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white overlay-content">
+      <div class="container px1 md-px2 py1">
+        {{> ../filters/filters.snip.html}}
+      </div>
+    </div>
+    <div class="bg-white overlay-footer">
+      <button class="btn btn-big semibold white bg-purple h3 block layout-fill" {{> ../util/apply-button-props.snip.html}}>
+        Apply Filters
+      </button>
+    </div>
+  </div>
+</div>
+<!--/ Filter Overlay -->

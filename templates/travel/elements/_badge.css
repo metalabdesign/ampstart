@@ -1,0 +1,19 @@
+
+/*
+ * badge
+ *
+ * Add a background and border to an inline element.
+ */
+.badge {
+  padding: calc(4 / 16rem) calc(10 / 16rem);
+  border: 1px solid var(--silver);
+  border-radius: var(--border-radius);
+  background: var(--white);
+  margin-left: 0.5rem;
+}
+
+.badge.green {
+  color: var(--green);
+  border-color: transparent;
+  background: rgba(71,176,116,.2);
+}
