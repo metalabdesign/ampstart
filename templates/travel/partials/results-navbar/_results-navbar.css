@@ -1,0 +1,7 @@
+.travel-results-navbar {
+  margin-top: -4rem;
+  margin-right: -4rem;
+  margin-left: -4rem;
+
+  animation: fade-and-slideup 0.4s ease-in-out both;
+}

@@ -1,0 +1,24 @@
+
+/**
+ * list-selector
+ *
+ * Style an <amp-selector> element
+ */
+.list-selector [option] {
+  padding: calc(6 / 16rem) calc(12 / 16rem);
+  border-radius: var(--border-radius);
+  background: var(--white);
+  white-space: nowrap;
+  margin-bottom: 3px;
+}
+
+.list-selector [option]:focus {
+  outline: none;
+}
+
+.list-selector [option][selected] {
+  /* Override core amp [option][selected] styles. */
+  cursor: pointer;
+  outline: none;
+  background: rgba(71,176,116,.2);
+}
