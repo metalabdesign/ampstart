@@ -4,9 +4,7 @@
       "title": "AMP Start - UI Components",
       "canonical-path": "components",
       "extensions": [
-        "amp-carousel",
         "amp-sidebar",
-        "amp-lightbox",
         "amp-iframe",
         "amp-selector",
         "amp-analytics",
@@ -17,12 +15,12 @@
         "https://fonts.googleapis.com/css?family=Inconsolata|Montserrat"
       ],
       "favicon": {
-        "href": "../img/www/amp_favicon.png"
+        "href": "/img/www/amp_favicon.png"
       }
     },
     "navbar": {
       "logo": {
-        "url": "../img/www/amp_start_logo.svg",
+        "url": "/img/www/amp_start_logo.svg",
         "alt": "AMP start home logo",
         "width": "119",
         "height": "26",
@@ -33,7 +31,7 @@
       "sidebar-id": "header-sidebar",
       "nav": [
         {
-          "link": {"url": "index.html#templates", "text": "Templates"}
+          "link": {"url": "templates.html", "text": "Templates"}
         },
         {
           "link": {"url": "components.html", "text": "Components", "classes": "www-current-page"}
@@ -58,6 +56,14 @@
           {"slack": "https://docs.google.com/forms/d/1wAE8w3K5preZnBkRk-MD1QkX8FmlRDxd_vs4bFSeJlQ/viewform?fbzx=4406980310789882877"},
           {"wordpress": "https://amphtml.wordpress.com"}
         ]
+      },
+      "sidebarimage": {
+        "url": "/img/www/amp_start_logo.svg",
+        "width": 119,
+        "height": 26,
+        "alt": "AMP start home logo",
+        "classes": "block col-6 mt2 mb4",
+        "href": "/"
       }
     },
     "components": [
@@ -422,6 +428,17 @@
               }
             },
             "code-file": "dropcap"
+          },
+          {
+            "render": {
+              "iframe": {
+                "url": "render/initialcap.amp.html",
+                "width": false,
+                "height": "220",
+                "layout": "fixed-height"
+              }
+            },
+            "code-file": "initialcap"
           },
           {
             "render": {

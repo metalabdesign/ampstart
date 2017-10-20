@@ -28,15 +28,14 @@ limitations under the License.
   </header>
   <amp-selector layout="container">
   <main class="flex pl2">
-    <aside class="www-components-sec-nav col-2 xs-hide sm-hide relative">
-      <ul class="www-component-anchors list-reset m0 pt0 pb3 px1 caps">
+    <aside class="www-secondary-nav col-2 xs-hide sm-hide relative">
+      <ul class="www-secondary-nav-anchors list-reset m0 pt0 pb3 px1 caps">
         {{#components}}
-          <li class="clearfix mb3"><a href="#{{id}}" class="www-component-anchor text-decoration-none left" option="">{{name}}</a></li>
+          <li class="clearfix mb3"><a href="#{{id}}" class="www-secondary-nav-anchor text-decoration-none left" option="">{{name}}</a></li>
         {{/components}}
       </ul>
     </aside>
     <article class="www-components flex-auto col-8">
-
       {{#components}}
         <section class="www-component-desc flex-column justify-center" id="{{id}}">
           <h2 class="www-heading pb4 mb2 relative">{{name}}</h2>
@@ -74,11 +73,13 @@ limitations under the License.
             {{#code-file}}
             <div class="www-example-code mb4">
               <amp-accordion disable-session-states>
-                <section>
+                <section aria-label="Collapsed HTML Code for Amp Start UI Component">
                   <h3 class="caps h4 border-none py2">HTML</h3>
                   <!-- HTML markup used to render the element/component -->
                   <div class="pb2">
-                  <include src="dist/hl-partials/{{.}}.html"></include>
+                    <div aria-hidden="true"><include aria-hidden src="dist/hl-partials/{{.}}.html"></include></div>
+                    <!-- a11y readbale/selectable code -->
+                    <code class="hide"><include src="dist/hl-partials/esc-{{.}}.html"></include></code>
                   </div>
                 </section>
               </amp-accordion>

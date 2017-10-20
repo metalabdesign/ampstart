@@ -1,0 +1,50 @@
+
+/**
+ * row-selector
+ *
+ * Style an <amp-selector> element as row of options
+ */
+.row-selector {
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.row-selector [option] {
+  display: inline-block;
+  color: var(--gray);
+  padding-top: 1rem;
+}
+
+.row-selector [option]:not(:last-of-type) {
+  margin-right: 2rem;
+}
+
+.row-selector [option][selected] {
+  color: var(--green);
+}
+
+.row-selector [option][selected] {
+  /* Override core amp [option][selected] styles. */
+  cursor: pointer;
+  outline: none;
+}
+
+.row-selector [option]:focus {
+
+}
+
+.row-selector [option]::after {
+  content: "\2022";
+  display: block;
+  text-align: center;
+  opacity: 0;
+}
+
+.row-selector [option][selected]::after {
+  opacity: 0.5;
+}
+
+.row-selector [option]:focus {
+  outline: none;
+}
