@@ -16,7 +16,10 @@
 
 /* Buttons */
 .ampstart-btn {
+  font-family: inherit;
+  font-weight: inherit;
   font-size: 1rem;
+  line-height: var(--line-height-2);
   padding: 0.7em 0.8em;
   text-decoration: none;
   white-space: nowrap;
@@ -28,10 +31,18 @@
   border: var(--border-width) solid var(--color-font-primary);
 }
 
+.ampstart-btn:visited {
+  color: var(--color-font-primary);
+}
+
 .ampstart-btn-secondary {
   background-color: var(--color-secondary);
   color: var(--color-font-secondary);
   border: var(--border-width) solid var(--color-font-secondary);
+}
+
+.ampstart-btn-secondary:visited {
+  color: var(--color-font-secondary);
 }
 
 .ampstart-btn:active

@@ -51,6 +51,11 @@
 .ampstart-readmore::after {
   display: block;
   content: '⌄';
+  font-size: var(--h2);
+}
+
+.ampstart-readmore-text {
+  background: var(--color-primary);
 }
 
 @media (--breakpoint-md) {

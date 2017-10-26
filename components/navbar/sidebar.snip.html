@@ -17,23 +17,36 @@ limitations under the License.
 }}
 
 <!-- Start Sidebar -->
-<amp-sidebar id="{{sidebar-id}}" class="ampstart-sidebar px3 {{^sidebaronly}}md-hide lg-hide{{/sidebaronly}}" layout="nodisplay">
+<amp-sidebar id="{{sidebar-id}}" class="ampstart-sidebar px3 {{^sidebaronly}}md-hide lg-hide{{/sidebaronly}} {{sidebarclasses}}" layout="nodisplay">
   <div class="flex justify-start items-center ampstart-sidebar-header">
-    <div role="button" on="tap:{{sidebar-id}}.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
+    <div role="button" aria-label="close sidebar" on="tap:{{sidebar-id}}.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
   </div>
   <nav class="ampstart-sidebar-nav ampstart-nav">
-    <ul class="list-reset m0 p0 caps h5">
+    <ul class="list-reset m0 p0 ampstart-label">
+      {{#sidebarimage}}
+        <li>
+          {{#href}}
+          <a href="{{.}}" class="text-decoration-none block 22">
+          {{/href}}
+          <amp-img src="{{{url}}}" width="{{width}}" height="{{height}}" layout="responsive" class="ampstart-sidebar-nav-image {{classes}}" alt="{{alt}}"{{#preloader}} noloading{{/preloader}}>
+            {{#preloader}}<div placeholder class="{{classes}}"></div>{{/preloader}}
+          </amp-img>
+          {{#href}}
+          </a>
+          {{/href}}
+        </li>
+      {{/sidebarimage}}
       {{#nav}}
         {{#link}}
-          <li class="ampstart-nav-item"><a href="{{{url}}}">{{text}}</a></li>
+          <li class="ampstart-nav-item {{nav-item-classes}}"><a {{#aria-label}}aria-label="{{.}}"{{/aria-label}} class="ampstart-nav-link" href="{{{url}}}">{{{text}}}</a></li>
         {{/link}}
         {{#dropdown}}
-          <li class="ampstart-nav-item ampstart-nav-dropdown relative">
+          <li class="ampstart-nav-item ampstart-nav-dropdown relative {{nav-item-classes}}">
             {{> ../dropdown/dropdown-inline.snip.html}}
           </li>
         {{/dropdown}}
         {{#search}}
-          <li  class="ampstart-nav-item ampstart-nav-search">
+          <li  class="ampstart-nav-item ampstart-nav-search {{nav-item-classes}}">
             <input type="text" placeholder="{{text}}"></input>
           </li>
         {{/search}}
@@ -48,9 +61,12 @@ limitations under the License.
       {{#links}}
         <li class="ampstart-faq-item"><a href="{{{link.url}}}" class="text-decoration-none">{{link.text}}</a></li>
       {{/links}}
+      {{#calltracking}}
+        <li class="ampstart-faq-item bold">
+          {{> ../calltracking/calltracking.snip.html}}
+        </li>
+      {{/calltracking}}
     </ul>
   {{/faq}}
-
-  </ul>
 </amp-sidebar>
 <!-- End Sidebar -->

@@ -23,7 +23,6 @@
 body {
   background: var(--color-body-background);
   color: var(--color-font-default);
-  line-height: var(--line-height-3);
   font-family: var(--font-family);
   min-width: var(--body-min-width);
   overflow-x: hidden;
@@ -41,13 +40,13 @@ p {
   margin: 0;
 }
 
-/* Subtitle */
-.ampstart-subtitle {
-  color: var(--color-font-subtitle);
-  font-size: var(--h5);
-}
 
 /* Accents */
 .ampstart-accent {
   color: var(--color-font-accent);
+}
+
+#content:target {
+  margin-top: calc(0px - var(--navbar-height));
+  padding-top: var(--navbar-height);
 }

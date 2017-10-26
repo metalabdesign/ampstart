@@ -1,4 +1,4 @@
-# AMP Start ⚡
+# [AMP Start](https://ampstart.com/) ⚡
 
 A collection of quick-start templates to build your AMP page quickly and easily.
 AMP Start is built on top of [Basscss](http://basscss.com/) a low-level CSS toolkit.
@@ -10,17 +10,17 @@ AMP Start is built on top of [Basscss](http://basscss.com/) a low-level CSS tool
 
 1. Install [NodeJS](https://nodejs.org).
 2. In the repo directory, run `npm i` command to install the required npm packages.
-3. Run `npm i -g gulp` command to install gulp system-wide (on Mac or Linux you may need to prefix this with `sudo`, depending on how Node was installed).
 
 ### Build & Test
 | Command                                                                 | Description                                                           |
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `gulp build`<sup>[[1]](#footnote-1)</sup>                               | Builds the AMP library.                                               |
-| `gulp clean`                                                            | Removes build output.                                                 |
-| `gulp www`                                                              | Recompile www to build directory.                                     |
-| `gulp highlight`                                                        | Build HTML for code highlighting.                                     |
-| `gulp watch`<sup>[[1]](#footnote-1)</sup>                               | Watches for changes in files, re-build.                               |
-| `gulp serve`                                                            | Serves content in repo root dir over http://localhost:8000/.|
+| `npm run build`<sup>[[1]](#footnote-1)</sup>                            | Builds the AMP library.                                               |
+| `npm run clean`                                                         | Removes build output.                                                 |
+| `npm run www`                                                           | Recompile www to build directory.                                     |
+| `npm run highlight`                                                     | Build HTML for code highlighting.                                     |
+| `npm run watch`<sup>[[1]](#footnote-1)</sup>                            | Watches for changes in files, re-builds development files.            |
+| `npm run serve`                                                         | Serves content in repo dist/ dir over http://localhost:8000/. Also, watches/livereloads for file changes. Port number can be changed with `-- --port="PORT_NUMBER_HERE"` |
+| `npm run configurator`                                                  | Serves only the amp start configurator livereload/development server at http://localhost:8080/. Port number can be changed with `-- --port="PORT_NUMBER_HERE"` |
 
 <a id="footnote-1">[1]</a> On Windows, this command must be run as administrator.
 
@@ -53,6 +53,15 @@ Beyond that, the core AMP library and builtin elements should aim for very wide 
 
 In particular, we try to maintain "it might not be perfect but isn't broken" - support for the Android 4.0 system browser and Chrome 28+ on phones.
 
+## Notes
+### amp-mustache
+Since ampstart uses the Mustache language to build files, it can conflict with the amp-mustache template. To fix this, use <% instead of {{:
+```
+  <template type="amp-mustache">
+      <%title%>
+      <amp-img src="<%imageUrl%>" width="50" height="50"></amp-img>
+  </template>
+```
 
 # Who makes AMP Start?
 

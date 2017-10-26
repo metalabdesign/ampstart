@@ -20,13 +20,13 @@ const config = require('./config');
 
 function validate() {
   return gulp.src([
-        `${config.dest.templates}/**/*.html`,
-        `${config.dest.www_pages}/**/*.html`,
-        `!${config.dest.templates}/components/**/*.html`,
+        `${config.dest.templates}/**/*amp.html`,
         `!${config.dest.hl_partials}/**/*.html`,
+        `!${config.dest.configurator}/**/*.html`,
       ])
       .pipe(validator.validate())
-      .pipe(validator.format());
+      .pipe(validator.format())
+      .pipe(validator.failAfterError());
 }
 
 gulp.task('validate', validate);

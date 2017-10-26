@@ -17,6 +17,14 @@
 @import '../../../components/lightbox/template-preview';
 @import '../shared';
 
+h2, h3 {
+  color: var(--color-black);
+}
+
+.www-index-header-action {
+  font-family: var(--font-family);
+}
+
 .www-index-templates .ampstart-btn,
 .www-header .ampstart-btn {
   background-color: transparent;
@@ -45,6 +53,18 @@
     width: 86%;
     margin: 0 7% var(--space-4);
   }
+}
+
+.www-index-showcase amp-carousel {
+  max-width: 709px;
+}
+
+.www-index-showcase amp-img {
+  margin-top: 1px;
+}
+
+.www-index-showcase amp-img[on] {
+  cursor: pointer;
 }
 
 .ampstart-footer small {

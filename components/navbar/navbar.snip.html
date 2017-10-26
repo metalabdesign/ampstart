@@ -18,43 +18,75 @@ limitations under the License.
 
 {{#navbar}}
   <!-- Start Navbar -->
-  <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4">
-    <div role="button" on="tap:{{sidebar-id}}.toggle" tabindex="0" class="ampstart-navbar-trigger {{^sidebaronly}}md-hide lg-hide{{/sidebaronly}} pr2">☰</div>
+  <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 {{responsive-layout-classes}}">
+    <div role="button" aria-label="open sidebar" on="tap:{{sidebar-id}}.toggle" tabindex="0" class="ampstart-navbar-trigger {{^sidebaronly}}md-hide lg-hide{{/sidebaronly}} pr2 {{trigger-layout-classes}} {{trigger-spacing-classes}}">{{#svg-trigger}}{{{.}}}{{/svg-trigger}}{{^svg-trigger}}☰{{/svg-trigger}}
+    </div>
     {{#logo}}
       {{#href}}
-      <a href="{{{.}}}" class="text-decoration-none inline-block mx-auto">
+      <a href="{{{.}}}" class="text-decoration-none inline-block mx-auto ampstart-headerbar-home-link {{spacing-classes}} {{classes}}">
       {{/href}}
       {{#url}}
-        <amp-img src="{{{url}}}" width="{{width}}" height="{{height}}" layout="fixed" class="my0 mx-auto {{classes}}" alt="{{name}}"></amp-img>
+        <amp-img src="{{{url}}}" width="{{width}}" height="{{height}}" layout="fixed" class="my0 mx-auto {{^href}}{{classes}}{{/href}}" alt="{{#alt}}{{.}}{{/alt}}{{^alt}}{{name}}{{/alt}}"></amp-img>
       {{/url}}
       {{^url}}
-        <div class="h3 bold caps mx-auto {{classes}}">{{name}}</div>
+        <div class="ampstart-headerbar-title mx-auto {{^href}}{{classes}}{{/href}}">{{name}}</div>
       {{/url}}
       {{#href}}
       </a>
       {{/href}}
     {{/logo}}
     {{^sidebaronly}}
-      <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
-        <ul class="list-reset center m0 p0 flex justify-center nowrap">
-          {{#nav}}
-            {{#link}}
-              <li class="ampstart-nav-item {{classes}}"><a href="{{{url}}}" class="text-decoration-none block" {{#target}}target="{{.}}"{{/target}}>{{text}}</a></li>
-            {{/link}}
-            {{#dropdown}}
-              <li class="ampstart-nav-item ampstart-nav-dropdown relative">
-                {{> ../dropdown/dropdown.snip.html}}
-              </li>
-            {{/dropdown}}
-            {{#search}}
-              <li  class="ampstart-nav-item ampstart-nav-search right-align">
-                <input type="text" placeholder="{{text}}"></input>
-              </li>
-            {{/search}}
-          {{/nav}}
-        </ul>
-      </nav>
+    <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
+      <ul class="list-reset center m0 p0 flex justify-center nowrap">
+        {{#nav}}
+          {{#link}}
+          <li class="ampstart-nav-item {{classes}}"><a href="{{{url}}}" class="text-decoration-none block" {{#target}}target="{{.}}"{{/target}}>{{text}}</a></li>
+          {{/link}}
+          {{#dropdown}}
+          <li class="ampstart-nav-item ampstart-nav-dropdown relative">
+            {{> ../dropdown/dropdown.snip.html}}
+          </li>
+          {{/dropdown}}
+          {{#search}}
+          <li  class="ampstart-nav-item ampstart-nav-search right-align">
+            <input type="text" placeholder="{{text}}"></input>
+          </li>
+          {{/search}}
+        {{/nav}}
+      </ul>
+    </nav>
     {{/sidebaronly}}
+    {{#fixeditems}}
+    <!--
+      TODO: currently "fixeditems" is an array, therefore it's not possible to
+      add additional classes to it. An alternative solution would be to make it
+      an oject, with a "classes" and "items" sub-properties:
+     "fixeditems": {
+       "classes": "col-3",
+       "items": [{
+         "link": {
+           "url": "mailto:contact@lune.com",
+           "text": "—contact@lune.com",
+           "classes": "xs-small sm-hide h6 bold"
+         }
+       }]
+     }
+     -->
+    <div class="ampstart-headerbar-fixed center m0 p0 flex justify-center nowrap {{fixeditems-layout-classes}}">
+      <div class="mr2">
+        {{#calltracking}}
+          {{> ../calltracking/calltracking.snip.html}}
+        {{/calltracking}}
+      </div>
+      {{#link}}
+        <a href="{{{url}}}" class="text-decoration-none mr2 ampstart-headerbar-fixed-link {{classes}}" {{#target}}target={{.}}{{/target}}>
+          {{text}}
+          <div class="ampstart-headerbar-icon-wrapper relative">{{{svg}}}</div>
+        </a>
+      {{/link}}
+
+    </div>
+    {{/fixeditems}}
   </header>
   {{> sidebar.snip.html}}
   <!-- End Navbar -->
