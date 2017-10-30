@@ -14,11 +14,6 @@
   * limitations under the License.
   */
 
-/*
- * border
- *
- */
-
  .travel-border-gray {
    border-color: var(--color-silver);
  }
