@@ -15,15 +15,15 @@
  */
 
  .travel-footer {
-  background-color: var(--white);
+  background-color: var(--color-white);
 }
 
 .travel-footer amp-img {
-  background-color: var(--silver);
+  background-color: var(--color-silver);
 }
 
 .travel-footer-blog-text {
-  color: var(--gray);
+  color: var(--color-gray);
 }
 
 .travel-footer .link.gray:focus {
@@ -35,7 +35,7 @@
 }
 
 .travel-footer-right-column .blue {
-  color: var(--blue);
+  color: var(--color-blue);
 }
 
 .travel-footer-input-bg {
@@ -57,19 +57,19 @@
   top: 0;
   bottom: 0;
   right: 0;
-  background: var(--white);
+  background: var(--color-white);
 }
 
 .travel-newsletter-signup {
-  background-color: var(--white);
+  background-color: var(--color-white);
 }
 
 .travel-footer .bg-black {
-  background-color: var(--black);
+  background-color: var(--color-black);
 }
 
 .travel-footer .gray {
-  color: var(--gray);
+  color: var(--color-gray);
 }
 
 .travel-footer-wrapper {
@@ -88,7 +88,7 @@
 
   .travel-newsletter-signup .blue {
     font-size: 2rem;
-    color: var(--black);
+    color: var(--color-black);
   }
 
   .travel-footer-input-bg {
@@ -102,12 +102,12 @@
   }
 
   .travel-footer .travel-input-group > button {
-    border-color: var(--silver);
+    border-color: var(--color-silver);
     border-top-style: solid;
     border-left-width: 0px;
   }
 
   .travel-footer .travel-input-group > .travel-input {
-    border-color: var(--silver);
+    border-color: var(--color-silver);
   }
 }

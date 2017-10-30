@@ -28,7 +28,7 @@
 .travel-input {
   padding: var(--input-padding-y) var(--input-padding-x);
   line-height: var(--input-line-height);
-  background-color: var(--white);
+  background-color: var(--color-white);
   border-width: var(--border-width);
   border-style: solid;
   color: inherit;
@@ -43,5 +43,5 @@
 }
 
 .travel-input::-webkit-input-placeholder {
-  color: var(--gray);
+  color: var(--color-gray);
 }
