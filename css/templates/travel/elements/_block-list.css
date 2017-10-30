@@ -40,6 +40,6 @@
   request from firing.
  */
 .travel-block-list::after {
-  content: ' ';
+  content: "\00a0";
   display: inline;
 }

@@ -33,6 +33,17 @@ limitations under the License.
           {{> ./partials/results-navbar/results-navbar.snip.html}}
         </div>
       </div>
+        class="overlay-fx-scale"
+        [class]="'overlay-fx-scale' + (ui_filterPane ? ' overlay-fx-scale-active' : '')"
+      >
+        {{> ./partials/filter-bar/filter-bar.snip.html}}
+
+        {{> ./partials/filter-pane/filter-pane.snip.html}}
+
+        {{> ./partials/sort-bar/sort-bar.snip.html}}
+        </div>
+      </div>
+      {{> ./partials/filter-overlay/filter-overlay.snip.html}}
     </div>
   </body>
 </html>
