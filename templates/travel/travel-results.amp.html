@@ -32,6 +32,14 @@ limitations under the License.
         >
           {{> ./partials/results-navbar/results-navbar.snip.html}}
         </div>
+
+        <div
+          class="flex-auto overflow-auto"
+          role="button"
+          tabindex="-1" on="tap:AMP.setState({ui_filterPane: false, ui_reset: false, ui_sortPane: false})"
+        >
+          {{> ./partials/results/results.snip.html}}
+        </div>
       </div>
     </div>
   </body>
