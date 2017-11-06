@@ -33,7 +33,11 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # Build the project
-      - run: npm run build
+      - run:
+        command: npm run build
+        when: always
 
       # Deploy the project via Firebase
-      - run: firebase deploy --token "$FIREBASE_TOKEN"
+      - run:
+        command: firebase deploy --token "$FIREBASE_TOKEN"
+        when: always
