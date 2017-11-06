@@ -9,9 +9,6 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/node:7
-
     steps:
       - checkout
 
@@ -32,8 +29,8 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # Build the project, ignoring it if it fails
-      - run: npm run build || true
+      # Build the project
+      - run: npm run build
 
       # Deploy the project via Firebase
-      - run: NODE_ENV=production ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --project ampstart-staging-metalab
+      - run: firebase deploy --token "$FIREBASE_TOKEN"
