@@ -34,7 +34,7 @@ jobs:
 
       # Build the project, ignoring it if it fails
       - run:
-        -command: |
+        command: |
           set +e
           npm run build
 
