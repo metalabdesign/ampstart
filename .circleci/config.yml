@@ -10,7 +10,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:7.0.0
+      - image: circleci/node:7
 
     steps:
       - checkout
