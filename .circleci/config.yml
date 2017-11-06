@@ -32,12 +32,11 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # Build the project
+      # Build the project, ignoring it if it fails
       - run:
-        command: npm run build
-        when: always
+        -command: |
+          set +e
+          npm run build
 
       # Deploy the project via Firebase
-      - run:
-        command: firebase deploy --token "$FIREBASE_TOKEN"
-        when: always
+      - run: npm run build firebase deploy --token "$FIREBASE_TOKEN"
