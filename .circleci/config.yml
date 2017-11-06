@@ -36,4 +36,4 @@ jobs:
       - run: npm run build || true
 
       # Deploy the project via Firebase
-      - run: npm run build firebase deploy --token "$FIREBASE_TOKEN"
+      - run: firebase deploy --token "$FIREBASE_TOKEN"
