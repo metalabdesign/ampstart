@@ -17,12 +17,13 @@ const travelData = JSON.parse(fs.readFileSync(src, 'utf8'));
  * @param {Function} next - The next HTTP handler to execute.
  */
 function cors(req, res, next) {
-  const port =
-    new url.URL(req.query.__amp_source_origin).port;
+  const port = process.env.NODE_ENV === 'production'
+    ? null
+    : new url.URL(req.query.__amp_source_origin).port;
 
   const host = process.env.NODE_ENV === 'production'
     ? `https://${req.hostname}`
-    : `http://${req.hostname}:${port}`
+    : `http://${req.hostname}:${port}`;
 
   res.header('amp-access-control-allow-source-origin', host);
 
