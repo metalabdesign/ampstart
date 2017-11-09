@@ -25,10 +25,15 @@
 amp-img.rounded img {
   border-radius:4px;
 }
+
 amp-img.circle img {
   border-radius: 50%;
 }
 
 .travel-no-focus:focus {
   outline: none;
+}
+
+.force-render {
+  height: 1px;
 }
