@@ -28,7 +28,6 @@
 .travel-row-selector [option] {
   display: inline-block;
   color: var(--color-gray);
-  padding-top: 1rem;
 }
 
 .travel-row-selector [option]:not(:last-of-type) {
