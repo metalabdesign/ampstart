@@ -11,8 +11,18 @@
   line-height: 1;
 }
 
+.travel-results-navbar > div > .travel-results-navbar-icon {
+  position: relative;
+  top: 3px;
+}
+
+.travel-results-navbar-heading {
+  margin-top: -6px;
+}
+
 .travel-results-navbar-subheading {
   letter-spacing: .2em;
+  margin-top: 4px;
 }
 
 @media (--breakpoint-md) {
