@@ -98,6 +98,7 @@ body {
   width: calc(20vmin + (200 / 16) * 1rem);
   left: calc(20vw - (160 / 16) * 1rem);
   top: 140vh;
+  overflow: hidden;
 }
 
 .gallery-inner-background-2 {
@@ -105,6 +106,7 @@ body {
   width: calc(100vmin + (400 / 16) * 1rem);
   left: 40vw;
   top: 10vh;
+  overflow: hidden;
 }
 
 .gallery-inner-perspective {
