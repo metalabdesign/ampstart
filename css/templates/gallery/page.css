@@ -51,7 +51,7 @@ body {
 }
 
 .gallery-base-section:not(:last-child) {
-  margin-bottom: 22rem;
+  margin-bottom: 8rem;
 }
 
 .gallery-base-rich-text h2 {
@@ -112,12 +112,14 @@ body {
 }
 
 .gallery-inner-3d-row {
+  margin-bottom: 24rem;
   padding-bottom: 120%;
   position: relative;
 }
 
 @media (--breakpoint-md) {
   .gallery-inner-3d-row {
+    margin-bottom: 0;
     padding-bottom: 40%;
   }
 }
