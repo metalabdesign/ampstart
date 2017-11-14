@@ -5,7 +5,7 @@
 | templates/article/page.css    | 23871                | 23.87 KB |
 | templates/blog/page.css       | 24114                | 24.11 KB |
 | templates/e-commerce/page.css | 41579                | 41.58 KB |
-| templates/gallery/page.css    | 5633                 | 5.633 KB |
+| templates/gallery/page.css    | 5637                 | 5.637 KB |
 | templates/land-see/page.css   | 44580                | 44.58 KB |
 | templates/lune/page.css       | 47161                | 47.16 KB |
 | templates/test/page.css       | 23957                | 23.96 KB |
