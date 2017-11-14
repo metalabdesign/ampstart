@@ -16,6 +16,8 @@
 
  .gallery-sidebar {
    width: calc((375 / 16rem));
+   padding-right: 0;
+   box-sizing: content-box;
  }
 
 .gallery-sidebar a, .gallery-sidebar-close-button {
