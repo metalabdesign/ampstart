@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+.gallery-component-map .gallery-component-map-details {
+  margin-bottom: -11.5rem;
+}
+
 .gallery-component-map .gallery-component-map-heading {
   width: calc((240 / 16) * 1rem);
   margin-bottom: 3rem;
