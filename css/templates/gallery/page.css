@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 @import './page-vars';
 
 body {
@@ -29,7 +29,7 @@ body {
 
 .gallery-base-container {
   position: relative;
-  width: calc((23 / 50) * 100vw + (150 / 16) * 1rem);
+  width: calc((23 / 50) * 100vw + (150 / 16) * 1.025rem);
   max-width: calc((800 / 16) * 1rem);
 }
 
