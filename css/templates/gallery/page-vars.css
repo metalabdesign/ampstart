@@ -27,6 +27,11 @@
   --line-height: 1.6;
   --footer-height: calc((50 / 16) * 1rem);
 
+  /* Sidebar */
+  --sidebar-nav-title-height: 1.25rem;
+  --sidebar-nav-title-top: 2rem;
+  --sidebar-nav-trigger-height: 2.35rem;
+
   /* Type scale */
   --h1: 3rem; /* 48xpx */
   --h2: 2rem; /* 32px */
