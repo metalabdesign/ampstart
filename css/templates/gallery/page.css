@@ -51,7 +51,7 @@ body {
 }
 
 .gallery-base-section:not(:last-child) {
-  margin-bottom: 22rem;
+  margin-bottom: 8rem;
 }
 
 .gallery-base-rich-text h2 {
